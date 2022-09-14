@@ -1,5 +1,6 @@
  /**
 * <p>
+* Employee Management
 * Employee Controller class - used to interact and get input from users
 * To display the list of trainers and trainees
 * </p>
