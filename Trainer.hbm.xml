@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate Mapping DTD 3.0//EN" 
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.ideas2it.employee.models.Trainer" table="Trainer">
+	<id name="trainerId" column="trainer_id">
+	    <generator class="native"/>
+	</id>
+	<property name="trainingExperience" column="training_experience"></property>
+	<many-to-one name="employee" class="com.ideas2it.employee.models.Employee" 
+		     column="emp_id" not-null="true" unique="true" cascade="all" fetch="join">
+	</many-to-one>
+	<set name="trainees" table="employee_relation" fetch="select" cascade="save-update">  
+            <key column="trainer_id" />    
+            <many-to-many class="com.ideas2it.employee.models.Trainee" column="trainee_id" fetch="join"/>  
+        </set>
+    </class>
+</hibernate-mapping>
