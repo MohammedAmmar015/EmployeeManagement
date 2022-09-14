@@ -30,12 +30,15 @@ import java.util.Scanner;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 
 public class EmployeeController extends Throwable {
     private static Scanner scanner = new Scanner(System.in);
     private TraineeService traineeServiceImpl = new TraineeServiceImpl();
     private TrainerService trainerServiceImpl = new TrainerServiceImpl();
+    private Logger logger = LogManager.getLogger(EmployeeController.class);
 
     public static void main(String[] Args) {
 	EmployeeController employeeController = new EmployeeController();
@@ -65,7 +68,7 @@ public class EmployeeController extends Throwable {
 		    break;
 
 	        case 2:
-		    System.out.println("\t Trainees List ");
+		    logger.info("\t Trainees List ");
 		    viewTrainees();
 		    break;
 	    
@@ -82,7 +85,7 @@ public class EmployeeController extends Throwable {
 		    break;
 
 	        case 6:
-		    System.out.println("\t Trainers List ");
+		    logger.info("\t Trainers List ");
 		    viewTrainers();
 		    break;
 	
@@ -98,7 +101,7 @@ public class EmployeeController extends Throwable {
 		    System.exit(0);
 
 	        default:
-		    System.out.println("Invalid choice");
+		    logger.warn("Invalid choice");
 	    }
 	} while (true);
     }
@@ -134,7 +137,7 @@ public class EmployeeController extends Throwable {
 	    trainingPeriod = getUserInput(userType, Attributes.TRAINING_PERIOD);
 	    course = getUserInput(userType, Attributes.COURSE);
 	    batchNumber = getUserInput(userType, Attributes.BATCH_NUMBER);
-	    System.out.println("Number of Trainers to Add(Atleast 1 trainer):");
+	    logger.info("Number of Trainers to Add(Atleast 1 trainer):");
 	    boolean isValidType = false;
 	    do {
 	        try {
@@ -142,7 +145,7 @@ public class EmployeeController extends Throwable {
 		    isValidType = true;
 	    	    scanner.nextLine();
 	        } catch (InputMismatchException e) {
-	    	    System.out.println("Invalid Type, , Please Re-enter:");
+	    	    logger.warn("Invalid Type, Please Re-enter:");
 	    	    scanner = new Scanner(System.in);
 	        }
 	    } while (!isValidType);
@@ -162,7 +165,7 @@ public class EmployeeController extends Throwable {
 		                                           qualification, bloodGroup, trainingExperience, role);
 		}
 	    } catch (BadRequest e) {
-		System.out.println(e.getMessage());
+		logger.error(e.getMessage());
 		errors = e.getErrors();
 	    }
 	    for(Attributes errorChoice : errors) {
@@ -219,13 +222,13 @@ public class EmployeeController extends Throwable {
     private void viewTrainees() {
 	List<Trainee> trainees = traineeServiceImpl.getTrainees();
 	if (trainees.isEmpty()) {
-	    System.out.println("No Data Found to Display");
+	    logger.warn("No Data Found to Display");
 	} else {
 	    System.out.printf(Constants.TRAINEE_STRING_FORMAT,
 			      "ID", "NAME", "ADDRESS", "MOBILE_NUMBER", "EMAIL_ID", "DOJ", "BLOOD_GROUP",
 			      "TRAINING_PERIOD", "COURSE", "BATCH_NUMBER", "AGE", "EXPERIENCE", "QUALIFICATION", "TRAINERS_NAME");
 	    for (Trainee eachTrainee : trainees) {
-	    	System.out.println(eachTrainee);
+	    	logger.info(eachTrainee);
 	    } 
 	}
     }
@@ -238,13 +241,13 @@ public class EmployeeController extends Throwable {
     private void viewTrainers() {
 	List<Trainer> trainers = trainerServiceImpl.getTrainers();
 	if (trainers.isEmpty()) {
-	    System.out.println("No Data Found to Display");
+	    logger.warn("No Data Found to Display");
 	} else {
 	    System.out.printf(Constants.TRAINER_STRING_FORMAT,
 			      "ID","NAME","ADDRESS","MOBILE_NUMBER","EMAIL_ID","DOJ","BLOOD_GROUP",
 			      "TRAINING_EXPERIENCE","AGE","EXPERIENCE","QUALIFICATION", "NUMBER_OF_TRAINEES");
 	    for (Trainer eachTrainer : trainers) {
-	    	System.out.println(eachTrainer);
+	    	logger.info(eachTrainer);
 	    } 
 	}
     }
@@ -257,7 +260,7 @@ public class EmployeeController extends Throwable {
     **/
     private void removeTrainee() { 
 	boolean isValidType = false;
-	System.out.println("Enter Trainee Id to delete:");
+	logger.info("Enter Trainee Id to delete:");
 	int traineeId = 0;
 	do {
 	    try {
@@ -265,7 +268,7 @@ public class EmployeeController extends Throwable {
 		isValidType = true;
 	        traineeServiceImpl.removeTraineeById(traineeId);
 	    } catch (TraineeNotFound e) {
-	        System.out.println(e.getMessage());
+	        logger.warn(e.getMessage());
 		scanner = new Scanner(System.in);
 	    }
 	} while (!isValidType);
@@ -279,7 +282,7 @@ public class EmployeeController extends Throwable {
     **/
     private void removeTrainer() { 
 	boolean isValidType = false;
-	System.out.println("Enter Trainer Id to delete:");
+	logger.info("Enter Trainer Id to delete:");
 	int trainerId = 0;
 	do {
 	    try {
@@ -287,7 +290,7 @@ public class EmployeeController extends Throwable {
 		isValidType = true;
 	        trainerServiceImpl.removeTrainerById(trainerId);
 	    } catch (TrainerNotFound e) {
-	        System.out.println(e.getMessage());
+	        logger.warn(e.getMessage());
 		scanner = new Scanner(System.in);
 	    }
 	} while (!isValidType);
@@ -310,13 +313,13 @@ public class EmployeeController extends Throwable {
 	boolean isValidUserChoice = false;
 	int userChoice = 0;
 	int traineeId = 0;
-	System.out.println("Enter " + userType + " ID to update :");
+	logger.info("Enter " + userType + " ID to update :");
 	do {
 	    try {
 	        traineeId = scanner.nextInt();
 		isValidType = true;
 	    } catch (InputMismatchException e) {
-		System.out.println("Invalid Type, Please Re-enter correct value");
+		logger.warn("Invalid Type, Please Re-enter correct value");
 	        scanner = new Scanner(System.in);
 	    }
 	} while (!isValidType);
@@ -352,14 +355,14 @@ public class EmployeeController extends Throwable {
 			case 5:
 			    int numberOfTrainers = 0;
 		    	    isValidType = false;
-			    System.out.println("Number of Trainers to Add:");
+			    logger.info("Number of Trainers to Add:");
 		    	    do {
 	        		try {
 	    	    	    	    numberOfTrainers = scanner.nextInt();
 		     	    	    isValidType = true;
 	    	    	     	    scanner.nextLine();
 	        		} catch (InputMismatchException e) {
-	    	              	    System.out.println("Invalid Type, Please Re-enter:");
+	    	              	    logger.warn("Invalid Type, Please Re-enter:");
 	    	    	     	    scanner = new Scanner(System.in);
 	        		}
 	    	    	    } while (!isValidType);
@@ -376,14 +379,14 @@ public class EmployeeController extends Throwable {
 			    break;
 
 		    	default:
-		            System.out.println("Invalid Choice");
+		            logger.warn("Invalid Choice");
 		        }
 		    } while (!isValid);
 	        } while (!isValidUserChoice);
 	    } catch (TraineeNotFound e) {
-	        System.out.println(e.getMessage());
+	        logger.warn(e.getMessage());
 	    } catch (InputMismatchException e) {
-		System.out.println("Invalid Type, Please Re-enter correct value");
+		logger.warn("Invalid Type, Please Re-enter correct value");
 	        isValidUserChoice = false;
 	        scanner = new Scanner(System.in);
 	    }
@@ -405,7 +408,7 @@ public class EmployeeController extends Throwable {
 	boolean isValid = false;
 	boolean isValidUserChoice = false;
 	int userChoice = 0;
-	System.out.println("Enter " + userType + " ID to update :");
+	logger.info("Enter " + userType + " ID to update :");
 	int trainerId = scanner.nextInt();
 	try {
 	    Trainer trainer = trainerServiceImpl.getTrainerById(trainerId);
@@ -449,12 +452,12 @@ public class EmployeeController extends Throwable {
 			    break;
 
 		    	default:
-		            System.out.println("Invalid Choice");
+		            logger.warn("Invalid Choice");
 		    }
 		} while (!isValid);
 	    } while (!isValidUserChoice);
 	} catch (TrainerNotFound e) {
-	    System.out.println(e.getMessage());
+	    logger.warn(e.getMessage());
 	}
 	return true;
     }
@@ -471,7 +474,7 @@ public class EmployeeController extends Throwable {
     *		 value got from User
     **/
     private String getUserInput(UserType userType, Attributes inputType) {
-	System.out.println("\nEnter " + userType.value + " " + inputType.value + " :");
+	logger.info("\nEnter " + userType.value + " " + inputType.value + " :");
 	String value = scanner.nextLine();
 	return value;
     }
@@ -488,7 +491,7 @@ public class EmployeeController extends Throwable {
     private List<String> getTrainersId(UserType userType, Attributes inputType, int numberOfTrainers) {
 	List<String> trainersId = new ArrayList<>();
 	for (int i = 1; i <= numberOfTrainers; i++) {
-	    System.out.println("Enter Trainer Id - " + i + ":");
+	    logger.info("Enter Trainer Id - " + i + ":");
 	    trainersId.add(scanner.nextLine());
 	}
 	return trainersId;
@@ -509,8 +512,8 @@ public class EmployeeController extends Throwable {
 	String bloodGroup = null;
 	int bloodGroupChoice = 0;	
 	do {
-	    System.out.println("1.A+\n2.B+\n3.O+\n4.AB+\n5.A-\n6.B-\n7.O-\n8.AB-");
-	    System.out.println("Enter " + userType.value + " " + inputType.value + ":");
+	    logger.info("1.A+\n2.B+\n3.O+\n4.AB+\n5.A-\n6.B-\n7.O-\n8.AB-");
+	    logger.info("Enter " + userType.value + " " + inputType.value + ":");
 	    try {
 	        bloodGroupChoice = scanner.nextInt();
 		scanner.nextLine();
@@ -552,7 +555,7 @@ public class EmployeeController extends Throwable {
 		    break;
 
 	        default:
-		    System.out.println("Invalid Blood Group Choice");
+		    logger.warn("Invalid Blood Group Choice");
 	    }	
 	} while (bloodGroupChoice <= 0 || bloodGroupChoice >= 9);
         return bloodGroup;

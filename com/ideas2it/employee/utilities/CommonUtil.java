@@ -9,8 +9,13 @@
  **/
 package com.ideas2it.employee.utilities;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 
 public class CommonUtil {
+
+    private static Logger logger = LogManager.getLogger(CommonUtil.class);
 
     /**
     * <p> 
@@ -19,7 +24,7 @@ public class CommonUtil {
     * @return - It returns nothing
     **/
     public static void displayMenu() {
-    	System.out.println("\n\t\t Employee Management \n");
+    	logger.info("\n\t\t Employee Management \n");
 	System.out.print("Trainee\n"
 			+ "Press 1 to Add Trainee\n"
 			+ "Press 2 to List Trainee\n"
@@ -41,7 +46,7 @@ public class CommonUtil {
     * @return - It returns nothing
     **/
     private static void displayColumnNames() {
-	System.out.println("\t\tSelect Column to Update:\n"
+	logger.info("\t\tSelect Column to Update:\n"
 			  + "1.Address\n2.Mobile Number\n3.Email");
     }
 
@@ -53,7 +58,7 @@ public class CommonUtil {
     **/
     public static void displayTraineeColumns() {
 	displayColumnNames();
-	System.out.println("4.Course\n5.Trainer Names\n6.Update into DB\nPress 7 to go back to menu\nEnter choice:");
+	logger.info("4.Course\n5.Trainer Names\n6.Update into DB\nPress 7 to go back to menu\nEnter choice:");
     }
 
     /**
@@ -64,6 +69,6 @@ public class CommonUtil {
     **/
     public static void displayTrainerColumns() {
 	displayColumnNames();
-	System.out.println("4.Training Experience\n5.Update into DB\nPress 6 to go back to menu\nEnter choice:");
+	logger.info("4.Training Experience\n5.Update into DB\nPress 6 to go back to menu\nEnter choice:");
     }
 }

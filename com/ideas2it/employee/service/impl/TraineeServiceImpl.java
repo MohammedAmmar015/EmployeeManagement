@@ -34,11 +34,14 @@ import java.util.ArrayList;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 
 public class TraineeServiceImpl implements TraineeService {
     private TraineeDao traineeDao = new TraineeDaoImpl();
     private static DateTimeFormatter formatter = DateTimeFormatter.ofPattern(Constants.DATE_FORMAT);
+    private static Logger logger = LogManager.getLogger(TraineeServiceImpl.class);
 
     /**
     * <p>
@@ -142,6 +145,7 @@ public class TraineeServiceImpl implements TraineeService {
 	
 	List<Integer> validTrainersId = new ArrayList<>();
 	for (String trainerId : trainersId) {
+	    
 	    validTrainersId.add(Integer.valueOf(trainerId));
 	}
 	
@@ -151,16 +155,16 @@ public class TraineeServiceImpl implements TraineeService {
 	    Trainee trainee = new Trainee(employee, validTrainingPeriod, validCourse, validBatchNumber, validTrainersId);
 	    try { 
 	        if (traineeDao.insertTrainee(trainee)) {
-		    System.out.println("Trainee Details added Successfully");
+		    logger.info("Trainee Details added Successfully");
 	        } else {
-		    System.out.println("Trainee Not Added");
+		    logger.error("Trainee Not Added");
 	        }
 	    } catch (TrainerNotFound e) {
-		System.out.println(e.getMessage());
+		logger.error(e.getMessage());
 	    }
 	} else {
-	    System.out.println("\t\t\tPlease Re-enter the Trainee details correctly");
-	    System.out.println(errors.size() + " Errors Found");
+	    logger.warn("\t\t\tPlease Re-enter the Trainee details correctly");
+	    logger.warn(errors.size() + " Errors Found");
 	    throw new BadRequest(errors, errorMessage.toString());
 	}
 	return errors;
@@ -175,7 +179,7 @@ public class TraineeServiceImpl implements TraineeService {
     public List<Trainee> getTrainees() {
 	List<Trainee> trainees = traineeDao.retriveTrainees();
 	if (trainees.isEmpty()) {
-	    System.out.println("No Trainee Found To Display");
+	    logger.error("No Trainee Found To Display");
 	}
 	return trainees;
     }	
@@ -207,7 +211,7 @@ public class TraineeServiceImpl implements TraineeService {
     **/
     public void removeTraineeById(final int traineeId) {
 	    if (traineeDao.deleteTraineeById(traineeId)) {
-		System.out.println("Trainee Deleted Successfully");
+		logger.info("Trainee Deleted Successfully");
 	    } else {
 	        throw new TraineeNotFound(traineeId + " Not Found");
 	    }
@@ -233,7 +237,7 @@ public class TraineeServiceImpl implements TraineeService {
 	    case MOBILE_NUMBER:
 	        Long mobileNumber = null;
 	        if (!StringUtil.isValidMobileNumber(value)) {
-	    	    System.out.println("Invalid Mobile Number, It must have 10 digits");
+	    	    logger.warn("Invalid Mobile Number, It must have 10 digits");
 		    isValueValid = false;
 	        } else {
 	    	    mobileNumber = Long.valueOf(value);
@@ -244,7 +248,7 @@ public class TraineeServiceImpl implements TraineeService {
 	    case EMAIL:
 	        if (!StringUtil.isValidEmail(value)) {
 		    isValueValid = false;
-	    	    System.out.println("Invalid Email, It must End with ideas2it.com");
+	    	    logger.warn("Invalid Email, It must End with ideas2it.com");
 	        } else {
 	    	    trainee.getEmployee().setEmail(value);
 	        }
@@ -274,7 +278,7 @@ public class TraineeServiceImpl implements TraineeService {
 	        validTrainersId.add(Integer.valueOf(trainerId));
 	    } catch (InputMismatchException e) {
 		isValid = false;
-		System.out.println(e.getMessage());
+		logger.error(e.getMessage());
 	    }
 	}	
 	trainee.setTrainersId(validTrainersId);
@@ -291,9 +295,9 @@ public class TraineeServiceImpl implements TraineeService {
     **/
     public void modifyTraineeIntoDB(Trainee trainee) {
 	if (traineeDao.updateTrainee(trainee)) {
-	    System.out.println("Trainee Details Updated Successfully");
+	    logger.info("Trainee Details Updated Successfully");
 	} else {
-	    System.out.println("Failed to Update Trainee Details");
+	    logger.error("Failed to Update Trainee Details");
 	}
     } 
 }
