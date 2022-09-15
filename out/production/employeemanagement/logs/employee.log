@@ -1,0 +1,1442 @@
+2022-09-15 13:05:34,626 [main] INFO  com.ideas2it.employee.utilities.CommonUtil - 
+		 Employee Management 
+
+2022-09-15 15:07:02,065 [main] INFO  com.ideas2it.employee.utilities.CommonUtil - 
+		 Employee Management 
+
+2022-09-15 15:07:04,713 [main] WARN  com.ideas2it.employee.controller.EmployeeController - Invalid choice
+2022-09-15 15:07:04,716 [main] INFO  com.ideas2it.employee.utilities.CommonUtil - 
+		 Employee Management 
+
+2022-09-15 15:07:08,380 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Enter TRAINEE ID to update :
+2022-09-15 15:07:09,212 [main] WARN  com.ideas2it.employee.controller.EmployeeController - Invalid Type, Please Re-enter correct value
+2022-09-15 15:07:10,311 [main] WARN  com.ideas2it.employee.controller.EmployeeController - Invalid Type, Please Re-enter correct value
+2022-09-15 15:07:18,954 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.28.Final}
+2022-09-15 15:07:18,957 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2022-09-15 15:07:19,174 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 15:07:19,498 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.5.Final}
+2022-09-15 15:07:19,727 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 15:07:20,365 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 15:07:20,387 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 15:07:20,402 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 15:07:20,419 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 15:07:20,471 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2022-09-15 15:07:20,481 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/employee_db]
+2022-09-15 15:07:20,482 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=root}
+2022-09-15 15:07:20,492 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2022-09-15 15:07:20,501 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2022-09-15 15:07:21,097 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-09-15 15:07:21,277 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 15:07:21,287 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 15:07:22,238 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2a9e754e] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2022-09-15 15:07:22,622 [main] WARN  org.hibernate.orm.deprecation - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2022-09-15 15:07:22,671 [main] INFO  com.ideas2it.employee.utilities.CommonUtil - 		Select Column to Update:
+1.Address
+2.Mobile Number
+3.Email
+2022-09-15 15:07:22,672 [main] INFO  com.ideas2it.employee.utilities.CommonUtil - 4.Course
+5.Trainer Names
+6.Update into DB
+Press 7 to go back to menu
+Enter choice:
+2022-09-15 15:07:24,897 [main] WARN  com.ideas2it.employee.controller.EmployeeController - Invalid Type, Please Re-enter correct value
+2022-09-15 15:07:24,899 [main] INFO  com.ideas2it.employee.utilities.CommonUtil - 
+		 Employee Management 
+
+2022-09-15 15:54:52,933 [main] INFO  com.ideas2it.employee.utilities.CommonUtil - 
+		 Employee Management 
+
+2022-09-15 15:54:53,903 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Name :
+2022-09-15 15:54:55,684 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Address :
+2022-09-15 15:54:57,580 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Mobile Number :
+2022-09-15 15:55:00,675 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Email :
+2022-09-15 15:55:07,439 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Date of Joining :
+2022-09-15 15:55:10,719 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Date of Birth :
+2022-09-15 15:55:13,349 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Qualification :
+2022-09-15 15:55:14,797 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 1.A+
+2.B+
+3.O+
+4.AB+
+5.A-
+6.B-
+7.O-
+8.AB-
+2022-09-15 15:55:14,800 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Enter Trainee Blood Group:
+2022-09-15 15:55:15,714 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Training Period :
+2022-09-15 15:55:16,573 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Course :
+2022-09-15 15:55:18,045 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Batch Number :
+2022-09-15 15:55:18,814 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Number of Trainers to Add(Atleast 1 trainer):
+2022-09-15 15:55:20,506 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Enter Trainer Id - 1:
+2022-09-15 15:55:23,390 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Enter Trainer Id - 2:
+2022-09-15 15:55:24,532 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.28.Final}
+2022-09-15 15:55:24,536 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2022-09-15 15:55:24,765 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 15:55:25,087 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.5.Final}
+2022-09-15 15:55:25,325 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 15:55:25,960 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 15:55:25,984 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 15:55:26,003 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 15:55:26,015 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 15:55:26,085 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2022-09-15 15:55:26,101 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/employee_db]
+2022-09-15 15:55:26,104 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=root}
+2022-09-15 15:55:26,105 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2022-09-15 15:55:26,113 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2022-09-15 15:55:26,732 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-09-15 15:55:26,912 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 15:55:26,915 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 15:55:27,690 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@717a8a76] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2022-09-15 15:55:28,007 [main] WARN  org.hibernate.orm.deprecation - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2022-09-15 15:55:28,057 [main] WARN  org.hibernate.orm.deprecation - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2022-09-15 15:55:28,071 [main] WARN  org.hibernate.orm.deprecation - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2022-09-15 15:55:28,134 [main] INFO  com.ideas2it.employee.utilities.CommonUtil - 
+		 Employee Management 
+
+2022-09-15 15:55:40,120 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 	 Trainers List 
+2022-09-15 15:55:40,138 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 15:55:40,212 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 15:55:40,344 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 15:55:40,359 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 15:55:40,372 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 15:55:40,383 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 15:55:40,394 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2022-09-15 15:55:40,396 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/employee_db]
+2022-09-15 15:55:40,397 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=root}
+2022-09-15 15:55:40,403 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2022-09-15 15:55:40,404 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2022-09-15 15:55:40,446 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-09-15 15:55:40,454 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 15:55:40,456 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 15:55:40,497 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2ec92631] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2022-09-15 15:55:40,669 [main] INFO  org.hibernate.hql.internal.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+2022-09-15 15:55:40,812 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   18             syed  koyambedu    9999999999  syed@ideas2it.com 2020-12-12   A positive                100  21          1           BCA             7
+
+2022-09-15 15:55:40,828 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   19            madan  lkmsaidsi    2398028309 madan@ideas2it.com 2020-12-12   O Positive                  3  21          1           MCA             3
+
+2022-09-15 15:55:40,845 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   29        velarasan      iuwey    3827692387  iewu@ideas2it.com 2020-12-12   B Positive                200  21          1           BCA             1
+
+2022-09-15 15:55:40,846 [main] INFO  com.ideas2it.employee.utilities.CommonUtil - 
+		 Employee Management 
+
+2022-09-15 15:55:46,221 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 	 Trainees List 
+2022-09-15 15:55:46,227 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 15:55:46,262 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 15:55:46,360 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 15:55:46,382 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 15:55:46,395 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 15:55:46,403 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 15:55:46,413 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2022-09-15 15:55:46,414 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/employee_db]
+2022-09-15 15:55:46,415 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=root}
+2022-09-15 15:55:46,417 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2022-09-15 15:55:46,422 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2022-09-15 15:55:46,458 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-09-15 15:55:46,463 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 15:55:46,463 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 15:55:46,516 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@d677be9] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2022-09-15 15:55:46,686 [main] INFO  org.hibernate.hql.internal.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+2022-09-15 15:55:46,719 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   20            ammar        pbt    1111111111 ammar@ideas2it.com 2020-12-12   A positive                1   java            3  21          1           BCA madan,velarasan,
+
+2022-09-15 15:55:46,731 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   24            abrar     iudsew    9832092387 abrar@ideas2it.com 2020-12-12   O Positive                3   java            3  21          1           BCA      syed,madan,
+
+2022-09-15 15:55:46,742 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   27            akash koyambeduu    9000990009 akash@ideas2it.com 2020-12-12   B Positive                2   java            2  21          1           BCA                 
+
+2022-09-15 15:55:46,755 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   30            oewiu      iweuy    8327623873  ewuy@ideas2it.com 2020-01-01   B Positive                2      j            2  21          2           BCA      madan,syed,
+
+2022-09-15 15:55:46,771 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   31            oiewu      oewiu    8237692837  iwue@ideas2it.com 2022-09-11   B Positive                2   java            2  21          0           BCA            syed,
+
+2022-09-15 15:55:46,780 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   33            asasa   sasasasa    1221212112 rttyt@ideas2it.com 2020-11-11   A positive                1      a            1  21          1           BCA            syed,
+
+2022-09-15 15:55:46,791 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   34           wquywq    qywyuwq    8721721266 wwsakj@ideas2it.com 2020-12-12   B Positive                2      j            2  21          1           BCA            syed,
+
+2022-09-15 15:55:46,802 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   35            jsdsd     iueyre    8327293877 iewuyxz@ideas2it.com 2020-12-12   B Positive                2      j            2  21          1           BCA            syed,
+
+2022-09-15 15:55:46,814 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   36           iuewys     iweuys    9832728373  weiu@ideas2it.com 2020-12-12   B Positive                2      j            2  21          1           BSC            syed,
+
+2022-09-15 15:55:46,822 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   38          ksjajds    dkjsjds    9832793287 iwueym@ideas2it.com 2020-12-12   A positive                1      a            2  21          1             a                 
+
+2022-09-15 15:55:46,831 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   39          sdoijed    fejdkdc    9328392832 iewuew@ideas2it.com 2020-12-12   B Positive                2     ja            2  21          1           BCA                 
+
+2022-09-15 15:55:46,832 [main] INFO  com.ideas2it.employee.utilities.CommonUtil - 
+		 Employee Management 
+
+2022-09-15 16:11:59,319 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Name :
+2022-09-15 16:12:02,084 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Address :
+2022-09-15 16:12:03,568 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Mobile Number :
+2022-09-15 16:12:06,030 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Email :
+2022-09-15 16:12:18,361 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Date of Joining :
+2022-09-15 16:12:20,950 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Date of Birth :
+2022-09-15 16:12:23,300 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Qualification :
+2022-09-15 16:12:25,225 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 1.A+
+2.B+
+3.O+
+4.AB+
+5.A-
+6.B-
+7.O-
+8.AB-
+2022-09-15 16:12:25,225 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Enter Trainee Blood Group:
+2022-09-15 16:12:26,206 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Training Period :
+2022-09-15 16:12:26,902 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Course :
+2022-09-15 16:12:27,864 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Batch Number :
+2022-09-15 16:12:29,083 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Number of Trainers to Add(Atleast 1 trainer):
+2022-09-15 16:12:31,301 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Enter Trainer Id - 1:
+2022-09-15 16:12:32,688 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:12:32,703 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:12:32,781 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:12:32,796 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:12:32,812 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:12:32,812 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:12:32,828 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2022-09-15 16:12:32,828 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/employee_db]
+2022-09-15 16:12:32,828 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=root}
+2022-09-15 16:12:32,828 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2022-09-15 16:12:32,828 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2022-09-15 16:12:32,859 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-09-15 16:12:32,875 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 16:12:32,875 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 16:12:32,906 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5bccef9f] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2022-09-15 16:12:33,062 [main] WARN  org.hibernate.orm.deprecation - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2022-09-15 16:12:33,062 [main] WARN  org.hibernate.orm.deprecation - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2022-09-15 16:12:33,062 [main] WARN  org.hibernate.orm.deprecation - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2022-09-15 16:12:33,093 [main] INFO  com.ideas2it.employee.utilities.CommonUtil - 
+		 Employee Management 
+
+2022-09-15 16:13:17,803 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 	 Trainers List 
+2022-09-15 16:13:17,806 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:13:17,845 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:13:17,904 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:13:17,905 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:13:17,929 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:13:17,938 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:13:17,943 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2022-09-15 16:13:17,943 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/employee_db]
+2022-09-15 16:13:17,943 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=root}
+2022-09-15 16:13:17,953 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2022-09-15 16:13:17,954 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2022-09-15 16:13:18,001 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-09-15 16:13:18,008 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 16:13:18,009 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 16:13:18,053 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@414d2821] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2022-09-15 16:13:18,195 [main] INFO  org.hibernate.hql.internal.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+2022-09-15 16:13:18,222 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   18             syed  koyambedu    9999999999  syed@ideas2it.com 2020-12-12   A positive                100  21          1           BCA             7
+
+2022-09-15 16:13:18,235 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   19            madan  lkmsaidsi    2398028309 madan@ideas2it.com 2020-12-12   O Positive                  3  21          1           MCA             3
+
+2022-09-15 16:13:18,246 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   29        velarasan      iuwey    3827692387  iewu@ideas2it.com 2020-12-12   B Positive                200  21          1           BCA             1
+
+2022-09-15 16:13:18,247 [main] INFO  com.ideas2it.employee.utilities.CommonUtil - 
+		 Employee Management 
+
+2022-09-15 16:13:26,966 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 	 Trainees List 
+2022-09-15 16:13:26,972 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:13:26,992 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:13:27,054 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:13:27,064 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:13:27,064 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:13:27,077 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:13:27,085 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2022-09-15 16:13:27,087 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/employee_db]
+2022-09-15 16:13:27,088 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=root}
+2022-09-15 16:13:27,088 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2022-09-15 16:13:27,088 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2022-09-15 16:13:27,120 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-09-15 16:13:27,126 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 16:13:27,127 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 16:13:27,159 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@74d53d63] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2022-09-15 16:13:27,302 [main] INFO  org.hibernate.hql.internal.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+2022-09-15 16:13:27,323 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   20            ammar        pbt    1111111111 ammar@ideas2it.com 2020-12-12   A positive                1   java            3  21          1           BCA velarasan,madan,
+
+2022-09-15 16:13:27,332 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   24            abrar     iudsew    9832092387 abrar@ideas2it.com 2020-12-12   O Positive                3   java            3  21          1           BCA      syed,madan,
+
+2022-09-15 16:13:27,340 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   27            akash koyambeduu    9000990009 akash@ideas2it.com 2020-12-12   B Positive                2   java            2  21          1           BCA                 
+
+2022-09-15 16:13:27,353 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   30            oewiu      iweuy    8327623873  ewuy@ideas2it.com 2020-01-01   B Positive                2      j            2  21          2           BCA      syed,madan,
+
+2022-09-15 16:13:27,361 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   31            oiewu      oewiu    8237692837  iwue@ideas2it.com 2022-09-11   B Positive                2   java            2  21          0           BCA            syed,
+
+2022-09-15 16:13:27,371 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   33            asasa   sasasasa    1221212112 rttyt@ideas2it.com 2020-11-11   A positive                1      a            1  21          1           BCA            syed,
+
+2022-09-15 16:13:27,379 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   34           wquywq    qywyuwq    8721721266 wwsakj@ideas2it.com 2020-12-12   B Positive                2      j            2  21          1           BCA            syed,
+
+2022-09-15 16:13:27,388 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   35            jsdsd     iueyre    8327293877 iewuyxz@ideas2it.com 2020-12-12   B Positive                2      j            2  21          1           BCA            syed,
+
+2022-09-15 16:13:27,400 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   36           iuewys     iweuys    9832728373  weiu@ideas2it.com 2020-12-12   B Positive                2      j            2  21          1           BSC            syed,
+
+2022-09-15 16:13:27,409 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   38          ksjajds    dkjsjds    9832793287 iwueym@ideas2it.com 2020-12-12   A positive                1      a            2  21          1             a                 
+
+2022-09-15 16:13:27,420 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   39          sdoijed    fejdkdc    9328392832 iewuew@ideas2it.com 2020-12-12   B Positive                2     ja            2  21          1           BCA                 
+
+2022-09-15 16:13:27,421 [main] INFO  com.ideas2it.employee.utilities.CommonUtil - 
+		 Employee Management 
+
+2022-09-15 16:14:15,123 [main] INFO  com.ideas2it.employee.utilities.CommonUtil - 
+		 Employee Management 
+
+2022-09-15 16:14:16,354 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Name :
+2022-09-15 16:14:17,889 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Address :
+2022-09-15 16:14:19,252 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Mobile Number :
+2022-09-15 16:14:22,017 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Email :
+2022-09-15 16:14:27,956 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Date of Joining :
+2022-09-15 16:14:30,083 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Date of Birth :
+2022-09-15 16:14:34,344 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Qualification :
+2022-09-15 16:14:36,016 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 1.A+
+2.B+
+3.O+
+4.AB+
+5.A-
+6.B-
+7.O-
+8.AB-
+2022-09-15 16:14:36,019 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Enter Trainee Blood Group:
+2022-09-15 16:14:36,901 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Training Period :
+2022-09-15 16:14:37,591 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Course :
+2022-09-15 16:14:38,674 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Batch Number :
+2022-09-15 16:14:39,200 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Number of Trainers to Add(Atleast 1 trainer):
+2022-09-15 16:14:40,836 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Enter Trainer Id - 1:
+2022-09-15 16:14:42,472 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.28.Final}
+2022-09-15 16:14:42,474 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2022-09-15 16:14:42,697 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:14:43,019 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.5.Final}
+2022-09-15 16:14:43,261 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:14:43,870 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:14:43,893 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:14:43,910 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:14:43,922 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:14:43,979 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2022-09-15 16:14:43,990 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/employee_db]
+2022-09-15 16:14:43,991 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=root}
+2022-09-15 16:14:43,991 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2022-09-15 16:14:43,995 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2022-09-15 16:14:44,548 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-09-15 16:14:44,711 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 16:14:44,720 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 16:14:45,703 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@717a8a76] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2022-09-15 16:14:46,090 [main] WARN  org.hibernate.orm.deprecation - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2022-09-15 16:14:46,140 [main] WARN  org.hibernate.orm.deprecation - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2022-09-15 16:14:46,162 [main] WARN  org.hibernate.orm.deprecation - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2022-09-15 16:14:46,249 [main] INFO  com.ideas2it.employee.utilities.CommonUtil - 
+		 Employee Management 
+
+2022-09-15 16:14:47,645 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 	 Trainees List 
+2022-09-15 16:14:47,649 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:14:47,705 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:14:47,857 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:14:47,871 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:14:47,881 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:14:47,891 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:14:47,901 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2022-09-15 16:14:47,902 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/employee_db]
+2022-09-15 16:14:47,903 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=root}
+2022-09-15 16:14:47,908 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2022-09-15 16:14:47,910 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2022-09-15 16:14:47,947 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-09-15 16:14:47,956 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 16:14:47,957 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 16:14:47,994 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5600a278] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2022-09-15 16:14:48,173 [main] INFO  org.hibernate.hql.internal.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+2022-09-15 16:14:48,322 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   20            ammar        pbt    1111111111 ammar@ideas2it.com 2020-12-12   A positive                1   java            3  21          1           BCA madan,velarasan,
+
+2022-09-15 16:14:48,339 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   24            abrar     iudsew    9832092387 abrar@ideas2it.com 2020-12-12   O Positive                3   java            3  21          1           BCA      syed,madan,
+
+2022-09-15 16:14:48,351 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   27            akash koyambeduu    9000990009 akash@ideas2it.com 2020-12-12   B Positive                2   java            2  21          1           BCA                 
+
+2022-09-15 16:14:48,372 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   30            oewiu      iweuy    8327623873  ewuy@ideas2it.com 2020-01-01   B Positive                2      j            2  21          2           BCA      madan,syed,
+
+2022-09-15 16:14:48,390 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   31            oiewu      oewiu    8237692837  iwue@ideas2it.com 2022-09-11   B Positive                2   java            2  21          0           BCA            syed,
+
+2022-09-15 16:14:48,403 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   33            asasa   sasasasa    1221212112 rttyt@ideas2it.com 2020-11-11   A positive                1      a            1  21          1           BCA            syed,
+
+2022-09-15 16:14:48,419 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   34           wquywq    qywyuwq    8721721266 wwsakj@ideas2it.com 2020-12-12   B Positive                2      j            2  21          1           BCA            syed,
+
+2022-09-15 16:14:48,432 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   35            jsdsd     iueyre    8327293877 iewuyxz@ideas2it.com 2020-12-12   B Positive                2      j            2  21          1           BCA            syed,
+
+2022-09-15 16:14:48,449 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   36           iuewys     iweuys    9832728373  weiu@ideas2it.com 2020-12-12   B Positive                2      j            2  21          1           BSC            syed,
+
+2022-09-15 16:14:48,462 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   38          ksjajds    dkjsjds    9832793287 iwueym@ideas2it.com 2020-12-12   A positive                1      a            2  21          1             a                 
+
+2022-09-15 16:14:48,476 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   39          sdoijed    fejdkdc    9328392832 iewuew@ideas2it.com 2020-12-12   B Positive                2     ja            2  21          1           BCA                 
+
+2022-09-15 16:14:48,490 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   40            skkds      iojds    9832239823 iwowm@ideas2it.com 2020-12-12   B Positive                2      j            2  21          1           BSC            syed,
+
+2022-09-15 16:14:48,491 [main] INFO  com.ideas2it.employee.utilities.CommonUtil - 
+		 Employee Management 
+
+2022-09-15 16:16:06,103 [main] INFO  com.ideas2it.employee.utilities.CommonUtil - 
+		 Employee Management 
+
+2022-09-15 16:16:09,557 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 	 Trainees List 
+2022-09-15 16:16:09,717 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.28.Final}
+2022-09-15 16:16:09,724 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2022-09-15 16:16:09,942 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:16:10,272 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.5.Final}
+2022-09-15 16:16:10,510 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:16:11,108 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:16:11,129 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:16:11,145 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:16:11,158 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:16:11,197 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2022-09-15 16:16:11,209 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/employee_db]
+2022-09-15 16:16:11,210 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=root}
+2022-09-15 16:16:11,210 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2022-09-15 16:16:11,214 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2022-09-15 16:16:11,747 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-09-15 16:16:11,945 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 16:16:11,953 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 16:16:12,805 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@3a8fb023] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2022-09-15 16:16:13,164 [main] INFO  org.hibernate.hql.internal.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+2022-09-15 16:16:13,346 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   20            ammar        pbt    1111111111 ammar@ideas2it.com 2020-12-12   A positive                1   java            3  21          1           BCA velarasan,madan,
+
+2022-09-15 16:16:13,361 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   24            abrar     iudsew    9832092387 abrar@ideas2it.com 2020-12-12   O Positive                3   java            3  21          1           BCA      madan,syed,
+
+2022-09-15 16:16:13,370 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   27            akash koyambeduu    9000990009 akash@ideas2it.com 2020-12-12   B Positive                2   java            2  21          1           BCA                 
+
+2022-09-15 16:16:13,385 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   30            oewiu      iweuy    8327623873  ewuy@ideas2it.com 2020-01-01   B Positive                2      j            2  21          2           BCA      syed,madan,
+
+2022-09-15 16:16:13,395 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   31            oiewu      oewiu    8237692837  iwue@ideas2it.com 2022-09-11   B Positive                2   java            2  21          0           BCA            syed,
+
+2022-09-15 16:16:13,409 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   33            asasa   sasasasa    1221212112 rttyt@ideas2it.com 2020-11-11   A positive                1      a            1  21          1           BCA            syed,
+
+2022-09-15 16:16:13,420 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   34           wquywq    qywyuwq    8721721266 wwsakj@ideas2it.com 2020-12-12   B Positive                2      j            2  21          1           BCA            syed,
+
+2022-09-15 16:16:13,437 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   35            jsdsd     iueyre    8327293877 iewuyxz@ideas2it.com 2020-12-12   B Positive                2      j            2  21          1           BCA            syed,
+
+2022-09-15 16:16:13,449 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   36           iuewys     iweuys    9832728373  weiu@ideas2it.com 2020-12-12   B Positive                2      j            2  21          1           BSC            syed,
+
+2022-09-15 16:16:13,459 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   38          ksjajds    dkjsjds    9832793287 iwueym@ideas2it.com 2020-12-12   A positive                1      a            2  21          1             a                 
+
+2022-09-15 16:16:13,471 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   39          sdoijed    fejdkdc    9328392832 iewuew@ideas2it.com 2020-12-12   B Positive                2     ja            2  21          1           BCA                 
+
+2022-09-15 16:16:13,483 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   40            skkds      iojds    9832239823 iwowm@ideas2it.com 2020-12-12   B Positive                2      j            2  21          1           BSC            syed,
+
+2022-09-15 16:16:13,484 [main] INFO  com.ideas2it.employee.utilities.CommonUtil - 
+		 Employee Management 
+
+2022-09-15 16:16:14,217 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Name :
+2022-09-15 16:16:15,412 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Address :
+2022-09-15 16:16:16,489 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Mobile Number :
+2022-09-15 16:16:18,871 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Email :
+2022-09-15 16:16:24,611 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Date of Joining :
+2022-09-15 16:16:28,401 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Date of Birth :
+2022-09-15 16:16:31,194 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Qualification :
+2022-09-15 16:16:33,485 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 1.A+
+2.B+
+3.O+
+4.AB+
+5.A-
+6.B-
+7.O-
+8.AB-
+2022-09-15 16:16:33,487 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Enter Trainee Blood Group:
+2022-09-15 16:16:34,224 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Training Period :
+2022-09-15 16:16:35,122 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Course :
+2022-09-15 16:16:36,934 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Batch Number :
+2022-09-15 16:16:37,843 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Number of Trainers to Add(Atleast 1 trainer):
+2022-09-15 16:16:39,024 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Enter Trainer Id - 1:
+2022-09-15 16:16:40,906 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:16:40,932 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:16:41,061 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:16:41,075 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:16:41,087 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:16:41,096 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:16:41,110 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2022-09-15 16:16:41,112 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/employee_db]
+2022-09-15 16:16:41,116 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=root}
+2022-09-15 16:16:41,118 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2022-09-15 16:16:41,119 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2022-09-15 16:16:41,163 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-09-15 16:16:41,175 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 16:16:41,178 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 16:16:41,223 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7e1762e6] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2022-09-15 16:16:41,410 [main] WARN  org.hibernate.orm.deprecation - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2022-09-15 16:16:41,430 [main] WARN  org.hibernate.orm.deprecation - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2022-09-15 16:16:41,438 [main] WARN  org.hibernate.orm.deprecation - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2022-09-15 16:16:41,457 [main] INFO  com.ideas2it.employee.utilities.CommonUtil - 
+		 Employee Management 
+
+2022-09-15 16:17:54,682 [main] INFO  com.ideas2it.employee.utilities.CommonUtil - 
+		 Employee Management 
+
+2022-09-15 16:17:57,989 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Name :
+2022-09-15 16:17:59,753 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Address :
+2022-09-15 16:18:01,375 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Mobile Number :
+2022-09-15 16:18:03,799 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Email :
+2022-09-15 16:18:09,573 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Date of Joining :
+2022-09-15 16:18:12,573 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Date of Birth :
+2022-09-15 16:18:14,665 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Qualification :
+2022-09-15 16:18:16,014 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 1.A+
+2.B+
+3.O+
+4.AB+
+5.A-
+6.B-
+7.O-
+8.AB-
+2022-09-15 16:18:16,016 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Enter Trainee Blood Group:
+2022-09-15 16:18:17,226 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Training Period :
+2022-09-15 16:18:17,875 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Course :
+2022-09-15 16:18:18,973 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Batch Number :
+2022-09-15 16:18:19,798 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Number of Trainers to Add(Atleast 1 trainer):
+2022-09-15 16:18:23,824 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Enter Trainer Id - 1:
+2022-09-15 16:18:27,233 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.28.Final}
+2022-09-15 16:18:27,236 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2022-09-15 16:18:27,454 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:18:27,775 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.5.Final}
+2022-09-15 16:18:28,015 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:18:28,629 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:18:28,647 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:18:28,665 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:18:28,678 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:18:28,734 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2022-09-15 16:18:28,743 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/employee_db]
+2022-09-15 16:18:28,744 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=root}
+2022-09-15 16:18:28,745 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2022-09-15 16:18:28,748 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2022-09-15 16:18:29,259 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-09-15 16:18:29,413 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 16:18:29,420 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 16:18:30,205 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@717a8a76] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2022-09-15 16:18:30,562 [main] WARN  org.hibernate.orm.deprecation - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2022-09-15 16:18:30,613 [main] WARN  org.hibernate.orm.deprecation - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2022-09-15 16:18:30,625 [main] WARN  org.hibernate.orm.deprecation - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2022-09-15 16:18:30,698 [main] INFO  com.ideas2it.employee.utilities.CommonUtil - 
+		 Employee Management 
+
+2022-09-15 16:18:32,077 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 	 Trainees List 
+2022-09-15 16:18:32,086 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:18:32,142 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:18:32,291 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:18:32,311 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:18:32,324 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:18:32,334 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:18:32,345 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2022-09-15 16:18:32,346 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/employee_db]
+2022-09-15 16:18:32,348 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=root}
+2022-09-15 16:18:32,353 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2022-09-15 16:18:32,355 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2022-09-15 16:18:32,428 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-09-15 16:18:32,438 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 16:18:32,439 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 16:18:32,479 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@73b8ab2c] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2022-09-15 16:18:32,662 [main] INFO  org.hibernate.hql.internal.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+2022-09-15 16:18:32,806 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   20            ammar        pbt    1111111111 ammar@ideas2it.com 2020-12-12   A positive                1   java            3  21          1           BCA madan,velarasan,
+
+2022-09-15 16:18:32,823 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   24            abrar     iudsew    9832092387 abrar@ideas2it.com 2020-12-12   O Positive                3   java            3  21          1           BCA      syed,madan,
+
+2022-09-15 16:18:32,836 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   27            akash koyambeduu    9000990009 akash@ideas2it.com 2020-12-12   B Positive                2   java            2  21          1           BCA                 
+
+2022-09-15 16:18:32,852 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   30            oewiu      iweuy    8327623873  ewuy@ideas2it.com 2020-01-01   B Positive                2      j            2  21          2           BCA      syed,madan,
+
+2022-09-15 16:18:32,871 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   31            oiewu      oewiu    8237692837  iwue@ideas2it.com 2022-09-11   B Positive                2   java            2  21          0           BCA            syed,
+
+2022-09-15 16:18:32,886 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   33            asasa   sasasasa    1221212112 rttyt@ideas2it.com 2020-11-11   A positive                1      a            1  21          1           BCA            syed,
+
+2022-09-15 16:18:32,899 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   34           wquywq    qywyuwq    8721721266 wwsakj@ideas2it.com 2020-12-12   B Positive                2      j            2  21          1           BCA            syed,
+
+2022-09-15 16:18:32,914 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   35            jsdsd     iueyre    8327293877 iewuyxz@ideas2it.com 2020-12-12   B Positive                2      j            2  21          1           BCA            syed,
+
+2022-09-15 16:18:32,926 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   36           iuewys     iweuys    9832728373  weiu@ideas2it.com 2020-12-12   B Positive                2      j            2  21          1           BSC            syed,
+
+2022-09-15 16:18:32,939 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   38          ksjajds    dkjsjds    9832793287 iwueym@ideas2it.com 2020-12-12   A positive                1      a            2  21          1             a                 
+
+2022-09-15 16:18:32,952 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   39          sdoijed    fejdkdc    9328392832 iewuew@ideas2it.com 2020-12-12   B Positive                2     ja            2  21          1           BCA                 
+
+2022-09-15 16:18:32,967 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   40            skkds      iojds    9832239823 iwowm@ideas2it.com 2020-12-12   B Positive                2      j            2  21          1           BSC            syed,
+
+2022-09-15 16:18:32,980 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   41           ksoijs      disdi    9328729383 ownkjk@ideas2it.com 2020-12-12   O Positive                3      j            3  21          1           BCA            syed,
+
+2022-09-15 16:18:32,982 [main] INFO  com.ideas2it.employee.utilities.CommonUtil - 
+		 Employee Management 
+
+2022-09-15 16:18:37,591 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Name :
+2022-09-15 16:18:38,955 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Address :
+2022-09-15 16:18:40,114 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Mobile Number :
+2022-09-15 16:18:45,067 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Email :
+2022-09-15 16:18:50,879 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Date of Joining :
+2022-09-15 16:18:55,108 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Date of Birth :
+2022-09-15 16:18:57,218 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Qualification :
+2022-09-15 16:18:58,872 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 1.A+
+2.B+
+3.O+
+4.AB+
+5.A-
+6.B-
+7.O-
+8.AB-
+2022-09-15 16:18:58,874 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Enter Trainee Blood Group:
+2022-09-15 16:18:59,882 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Training Period :
+2022-09-15 16:19:00,544 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Course :
+2022-09-15 16:19:01,578 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Batch Number :
+2022-09-15 16:19:02,125 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Number of Trainers to Add(Atleast 1 trainer):
+2022-09-15 16:19:03,434 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Enter Trainer Id - 1:
+2022-09-15 16:19:04,600 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Enter Trainer Id - 2:
+2022-09-15 16:19:05,701 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:19:05,725 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:19:05,819 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:19:05,827 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:19:05,844 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:19:05,854 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:19:05,864 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2022-09-15 16:19:05,865 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/employee_db]
+2022-09-15 16:19:05,867 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=root}
+2022-09-15 16:19:05,869 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2022-09-15 16:19:05,870 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2022-09-15 16:19:05,908 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-09-15 16:19:05,919 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 16:19:05,922 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 16:19:05,963 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@740ad32e] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2022-09-15 16:19:06,135 [main] WARN  org.hibernate.orm.deprecation - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2022-09-15 16:19:06,138 [main] WARN  org.hibernate.orm.deprecation - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2022-09-15 16:19:06,140 [main] WARN  org.hibernate.orm.deprecation - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2022-09-15 16:19:06,155 [main] INFO  com.ideas2it.employee.utilities.CommonUtil - 
+		 Employee Management 
+
+2022-09-15 16:19:13,796 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 	 Trainees List 
+2022-09-15 16:19:13,801 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:19:13,825 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:19:13,912 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:19:13,920 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:19:13,927 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:19:13,935 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:19:13,941 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2022-09-15 16:19:13,944 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/employee_db]
+2022-09-15 16:19:13,944 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=root}
+2022-09-15 16:19:13,945 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2022-09-15 16:19:13,945 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2022-09-15 16:19:13,975 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-09-15 16:19:13,987 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 16:19:13,988 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 16:19:14,028 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4e14d520] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2022-09-15 16:19:14,182 [main] INFO  org.hibernate.hql.internal.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+2022-09-15 16:19:14,203 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   20            ammar        pbt    1111111111 ammar@ideas2it.com 2020-12-12   A positive                1   java            3  21          1           BCA velarasan,madan,
+
+2022-09-15 16:19:14,216 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   24            abrar     iudsew    9832092387 abrar@ideas2it.com 2020-12-12   O Positive                3   java            3  21          1           BCA      madan,syed,
+
+2022-09-15 16:19:14,228 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   27            akash koyambeduu    9000990009 akash@ideas2it.com 2020-12-12   B Positive                2   java            2  21          1           BCA                 
+
+2022-09-15 16:19:14,245 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   30            oewiu      iweuy    8327623873  ewuy@ideas2it.com 2020-01-01   B Positive                2      j            2  21          2           BCA      syed,madan,
+
+2022-09-15 16:19:14,267 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   31            oiewu      oewiu    8237692837  iwue@ideas2it.com 2022-09-11   B Positive                2   java            2  21          0           BCA            syed,
+
+2022-09-15 16:19:14,279 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   33            asasa   sasasasa    1221212112 rttyt@ideas2it.com 2020-11-11   A positive                1      a            1  21          1           BCA            syed,
+
+2022-09-15 16:19:14,289 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   34           wquywq    qywyuwq    8721721266 wwsakj@ideas2it.com 2020-12-12   B Positive                2      j            2  21          1           BCA            syed,
+
+2022-09-15 16:19:14,297 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   35            jsdsd     iueyre    8327293877 iewuyxz@ideas2it.com 2020-12-12   B Positive                2      j            2  21          1           BCA            syed,
+
+2022-09-15 16:19:14,306 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   36           iuewys     iweuys    9832728373  weiu@ideas2it.com 2020-12-12   B Positive                2      j            2  21          1           BSC            syed,
+
+2022-09-15 16:19:14,315 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   38          ksjajds    dkjsjds    9832793287 iwueym@ideas2it.com 2020-12-12   A positive                1      a            2  21          1             a                 
+
+2022-09-15 16:19:14,322 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   39          sdoijed    fejdkdc    9328392832 iewuew@ideas2it.com 2020-12-12   B Positive                2     ja            2  21          1           BCA                 
+
+2022-09-15 16:19:14,332 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   40            skkds      iojds    9832239823 iwowm@ideas2it.com 2020-12-12   B Positive                2      j            2  21          1           BSC            syed,
+
+2022-09-15 16:19:14,341 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   41           ksoijs      disdi    9328729383 ownkjk@ideas2it.com 2020-12-12   O Positive                3      j            3  21          1           BCA            syed,
+
+2022-09-15 16:19:14,341 [main] INFO  com.ideas2it.employee.utilities.CommonUtil - 
+		 Employee Management 
+
+2022-09-15 16:27:54,499 [main] INFO  com.ideas2it.employee.utilities.CommonUtil - 
+		 Employee Management 
+
+2022-09-15 16:28:00,005 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Name :
+2022-09-15 16:28:06,733 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Address :
+2022-09-15 16:28:15,074 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Mobile Number :
+2022-09-15 16:28:19,644 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Email :
+2022-09-15 16:28:26,899 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Date of Joining :
+2022-09-15 16:28:30,231 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Date of Birth :
+2022-09-15 16:28:32,983 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Qualification :
+2022-09-15 16:28:34,794 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 1.A+
+2.B+
+3.O+
+4.AB+
+5.A-
+6.B-
+7.O-
+8.AB-
+2022-09-15 16:28:34,796 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Enter Trainee Blood Group:
+2022-09-15 16:28:37,030 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Training Period :
+2022-09-15 16:28:37,814 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Course :
+2022-09-15 16:28:39,307 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Batch Number :
+2022-09-15 16:28:40,464 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Number of Trainers to Add(Atleast 1 trainer):
+2022-09-15 16:28:42,488 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Enter Trainer Id - 1:
+2022-09-15 16:28:43,649 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Enter Trainer Id - 2:
+2022-09-15 16:28:47,011 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.28.Final}
+2022-09-15 16:28:47,017 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2022-09-15 16:28:47,236 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:28:47,567 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.5.Final}
+2022-09-15 16:28:47,801 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:28:48,411 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:28:48,431 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:28:48,448 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:28:48,459 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:28:48,515 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2022-09-15 16:28:48,524 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/employee_db]
+2022-09-15 16:28:48,526 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=root}
+2022-09-15 16:28:48,526 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2022-09-15 16:28:48,541 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2022-09-15 16:28:49,090 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-09-15 16:28:49,276 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 16:28:49,283 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 16:28:50,101 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@717a8a76] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2022-09-15 16:28:50,529 [main] WARN  org.hibernate.orm.deprecation - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2022-09-15 16:28:50,586 [main] WARN  org.hibernate.orm.deprecation - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2022-09-15 16:28:50,601 [main] WARN  org.hibernate.orm.deprecation - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2022-09-15 16:28:50,650 [main] INFO  com.ideas2it.employee.utilities.CommonUtil - 
+		 Employee Management 
+
+2022-09-15 16:28:53,572 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Name :
+2022-09-15 16:28:55,004 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Address :
+2022-09-15 16:28:56,270 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Mobile Number :
+2022-09-15 16:28:58,464 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Email :
+2022-09-15 16:29:04,277 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Date of Joining :
+2022-09-15 16:29:06,311 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Date of Birth :
+2022-09-15 16:29:10,587 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Qualification :
+2022-09-15 16:29:12,504 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 1.A+
+2.B+
+3.O+
+4.AB+
+5.A-
+6.B-
+7.O-
+8.AB-
+2022-09-15 16:29:12,505 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Enter Trainee Blood Group:
+2022-09-15 16:29:16,245 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Training Period :
+2022-09-15 16:29:19,332 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Course :
+2022-09-15 16:29:21,742 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Batch Number :
+2022-09-15 16:29:22,749 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Number of Trainers to Add(Atleast 1 trainer):
+2022-09-15 16:29:26,305 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Enter Trainer Id - 1:
+2022-09-15 16:29:27,303 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Enter Trainer Id - 2:
+2022-09-15 16:29:28,295 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:29:28,343 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:29:28,463 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:29:28,479 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:29:28,493 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:29:28,495 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:29:28,505 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2022-09-15 16:29:28,505 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/employee_db]
+2022-09-15 16:29:28,513 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=root}
+2022-09-15 16:29:28,516 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2022-09-15 16:29:28,523 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2022-09-15 16:29:28,563 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-09-15 16:29:28,572 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 16:29:28,573 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 16:29:28,606 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@76220ef1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2022-09-15 16:29:28,771 [main] WARN  org.hibernate.orm.deprecation - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2022-09-15 16:29:28,774 [main] WARN  org.hibernate.orm.deprecation - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2022-09-15 16:29:28,777 [main] WARN  org.hibernate.orm.deprecation - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2022-09-15 16:29:28,798 [main] INFO  com.ideas2it.employee.utilities.CommonUtil - 
+		 Employee Management 
+
+2022-09-15 16:31:33,561 [main] INFO  com.ideas2it.employee.utilities.CommonUtil - 
+		 Employee Management 
+
+2022-09-15 16:31:35,636 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Name :
+2022-09-15 16:31:36,897 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Address :
+2022-09-15 16:31:37,848 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Mobile Number :
+2022-09-15 16:31:40,765 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Email :
+2022-09-15 16:31:46,685 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Date of Joining :
+2022-09-15 16:31:48,959 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Date of Birth :
+2022-09-15 16:31:51,165 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Qualification :
+2022-09-15 16:31:53,017 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 1.A+
+2.B+
+3.O+
+4.AB+
+5.A-
+6.B-
+7.O-
+8.AB-
+2022-09-15 16:31:53,018 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Enter Trainee Blood Group:
+2022-09-15 16:31:53,842 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Training Period :
+2022-09-15 16:31:54,432 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Course :
+2022-09-15 16:31:55,395 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Batch Number :
+2022-09-15 16:31:56,455 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Number of Trainers to Add(Atleast 1 trainer):
+2022-09-15 16:31:58,343 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Enter Trainer Id - 1:
+2022-09-15 16:31:59,523 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Enter Trainer Id - 2:
+2022-09-15 16:32:01,602 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.28.Final}
+2022-09-15 16:32:01,604 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2022-09-15 16:32:01,840 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:32:02,168 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.5.Final}
+2022-09-15 16:32:02,387 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:32:03,007 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:32:03,029 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:32:03,045 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:32:03,058 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:32:03,106 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2022-09-15 16:32:03,117 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/employee_db]
+2022-09-15 16:32:03,119 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=root}
+2022-09-15 16:32:03,126 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2022-09-15 16:32:03,145 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2022-09-15 16:32:03,704 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-09-15 16:32:03,869 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 16:32:03,880 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 16:32:04,678 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@717a8a76] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2022-09-15 16:32:05,015 [main] WARN  org.hibernate.orm.deprecation - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2022-09-15 16:32:05,053 [main] WARN  org.hibernate.orm.deprecation - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2022-09-15 16:32:05,071 [main] WARN  org.hibernate.orm.deprecation - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2022-09-15 16:32:05,118 [main] INFO  com.ideas2it.employee.utilities.CommonUtil - 
+		 Employee Management 
+
+2022-09-15 16:32:48,291 [main] INFO  com.ideas2it.employee.utilities.CommonUtil - 
+		 Employee Management 
+
+2022-09-15 16:32:48,768 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Name :
+2022-09-15 16:32:49,901 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Address :
+2022-09-15 16:32:51,405 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Mobile Number :
+2022-09-15 16:32:53,730 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Email :
+2022-09-15 16:32:59,141 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Date of Joining :
+2022-09-15 16:33:02,862 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Date of Birth :
+2022-09-15 16:33:06,724 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Qualification :
+2022-09-15 16:33:08,163 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 1.A+
+2.B+
+3.O+
+4.AB+
+5.A-
+6.B-
+7.O-
+8.AB-
+2022-09-15 16:33:08,165 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Enter Trainee Blood Group:
+2022-09-15 16:33:08,899 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Training Period :
+2022-09-15 16:33:09,703 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Course :
+2022-09-15 16:33:11,939 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Batch Number :
+2022-09-15 16:33:12,824 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Number of Trainers to Add(Atleast 1 trainer):
+2022-09-15 16:33:14,415 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Enter Trainer Id - 1:
+2022-09-15 16:33:15,325 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Enter Trainer Id - 2:
+2022-09-15 16:33:16,539 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.28.Final}
+2022-09-15 16:33:16,542 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2022-09-15 16:33:16,775 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:33:17,082 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.5.Final}
+2022-09-15 16:33:17,284 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:33:17,907 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:33:17,928 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:33:17,948 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:33:17,964 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:33:18,014 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2022-09-15 16:33:18,030 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/employee_db]
+2022-09-15 16:33:18,031 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=root}
+2022-09-15 16:33:18,031 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2022-09-15 16:33:18,035 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2022-09-15 16:33:18,621 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-09-15 16:33:18,779 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 16:33:18,791 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 16:33:19,618 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@717a8a76] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2022-09-15 16:33:20,014 [main] WARN  org.hibernate.orm.deprecation - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2022-09-15 16:33:20,069 [main] WARN  org.hibernate.orm.deprecation - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2022-09-15 16:33:20,084 [main] WARN  org.hibernate.orm.deprecation - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2022-09-15 16:33:20,123 [main] INFO  com.ideas2it.employee.utilities.CommonUtil - 
+		 Employee Management 
+
+2022-09-15 16:34:27,162 [main] INFO  com.ideas2it.employee.utilities.CommonUtil - 
+		 Employee Management 
+
+2022-09-15 16:34:27,540 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Name :
+2022-09-15 16:34:29,739 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Address :
+2022-09-15 16:34:31,282 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Mobile Number :
+2022-09-15 16:34:34,050 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Email :
+2022-09-15 16:34:39,004 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Date of Joining :
+2022-09-15 16:34:41,438 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Date of Birth :
+2022-09-15 16:34:43,639 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Qualification :
+2022-09-15 16:34:44,909 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 1.A+
+2.B+
+3.O+
+4.AB+
+5.A-
+6.B-
+7.O-
+8.AB-
+2022-09-15 16:34:44,911 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Enter Trainee Blood Group:
+2022-09-15 16:34:45,893 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Training Period :
+2022-09-15 16:34:46,493 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Course :
+2022-09-15 16:34:47,422 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Batch Number :
+2022-09-15 16:34:48,025 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Number of Trainers to Add(Atleast 1 trainer):
+2022-09-15 16:34:49,132 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Enter Trainer Id - 1:
+2022-09-15 16:34:50,042 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Enter Trainer Id - 2:
+2022-09-15 16:34:51,103 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.28.Final}
+2022-09-15 16:34:51,105 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2022-09-15 16:34:51,326 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:34:51,664 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.5.Final}
+2022-09-15 16:34:51,861 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:34:52,464 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:34:52,486 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:34:52,506 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:34:52,527 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:34:52,581 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2022-09-15 16:34:52,589 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/employee_db]
+2022-09-15 16:34:52,590 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=root}
+2022-09-15 16:34:52,596 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2022-09-15 16:34:52,600 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2022-09-15 16:34:53,174 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-09-15 16:34:53,368 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 16:34:53,373 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 16:34:54,316 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@717a8a76] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2022-09-15 16:34:54,694 [main] WARN  org.hibernate.orm.deprecation - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2022-09-15 16:34:54,757 [main] WARN  org.hibernate.orm.deprecation - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2022-09-15 16:34:54,771 [main] WARN  org.hibernate.orm.deprecation - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2022-09-15 16:34:54,816 [main] INFO  com.ideas2it.employee.utilities.CommonUtil - 
+		 Employee Management 
+
+2022-09-15 16:38:33,050 [main] INFO  com.ideas2it.employee.utilities.CommonUtil - 
+		 Employee Management 
+
+2022-09-15 16:38:33,607 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Name :
+2022-09-15 16:38:34,877 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Address :
+2022-09-15 16:38:36,442 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Mobile Number :
+2022-09-15 16:38:39,212 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Email :
+2022-09-15 16:38:45,763 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Date of Joining :
+2022-09-15 16:38:50,101 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Date of Birth :
+2022-09-15 16:38:54,695 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Qualification :
+2022-09-15 16:38:56,166 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 1.A+
+2.B+
+3.O+
+4.AB+
+5.A-
+6.B-
+7.O-
+8.AB-
+2022-09-15 16:38:56,168 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Enter Trainee Blood Group:
+2022-09-15 16:38:56,864 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Training Period :
+2022-09-15 16:38:57,534 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Course :
+2022-09-15 16:38:58,541 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Batch Number :
+2022-09-15 16:38:59,322 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Number of Trainers to Add(Atleast 1 trainer):
+2022-09-15 16:39:00,507 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Enter Trainer Id - 1:
+2022-09-15 16:39:01,501 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Enter Trainer Id - 2:
+2022-09-15 16:39:02,531 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.28.Final}
+2022-09-15 16:39:02,534 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2022-09-15 16:39:02,764 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:39:03,099 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.5.Final}
+2022-09-15 16:39:03,342 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:39:03,970 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:39:03,991 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:39:04,009 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:39:04,023 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:39:04,079 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2022-09-15 16:39:04,092 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/employee_db]
+2022-09-15 16:39:04,093 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=root}
+2022-09-15 16:39:04,099 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2022-09-15 16:39:04,105 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2022-09-15 16:39:04,663 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-09-15 16:39:04,843 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 16:39:04,849 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 16:39:05,704 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@717a8a76] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2022-09-15 16:39:06,074 [main] WARN  org.hibernate.orm.deprecation - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2022-09-15 16:39:06,147 [main] WARN  org.hibernate.orm.deprecation - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2022-09-15 16:39:06,160 [main] WARN  org.hibernate.orm.deprecation - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2022-09-15 16:39:06,203 [main] INFO  com.ideas2it.employee.utilities.CommonUtil - 
+		 Employee Management 
+
+2022-09-15 16:41:50,146 [main] INFO  com.ideas2it.employee.utilities.CommonUtil - 
+		 Employee Management 
+
+2022-09-15 16:41:56,275 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Name :
+2022-09-15 16:41:58,088 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Address :
+2022-09-15 16:41:59,389 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Mobile Number :
+2022-09-15 16:42:01,725 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Email :
+2022-09-15 16:42:08,135 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Date of Joining :
+2022-09-15 16:42:12,785 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Date of Birth :
+2022-09-15 16:42:15,219 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Qualification :
+2022-09-15 16:42:17,394 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 1.A+
+2.B+
+3.O+
+4.AB+
+5.A-
+6.B-
+7.O-
+8.AB-
+2022-09-15 16:42:17,397 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Enter Trainee Blood Group:
+2022-09-15 16:42:18,517 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Training Period :
+2022-09-15 16:42:19,380 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Course :
+2022-09-15 16:42:20,132 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Batch Number :
+2022-09-15 16:42:20,976 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Number of Trainers to Add(Atleast 1 trainer):
+2022-09-15 16:42:21,997 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Enter Trainer Id - 1:
+2022-09-15 16:42:22,920 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Enter Trainer Id - 2:
+2022-09-15 16:42:24,010 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.28.Final}
+2022-09-15 16:42:24,012 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2022-09-15 16:42:24,242 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:42:24,569 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.5.Final}
+2022-09-15 16:42:24,793 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:42:25,430 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:42:25,450 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:42:25,467 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:42:25,478 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:42:25,534 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2022-09-15 16:42:25,544 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/employee_db]
+2022-09-15 16:42:25,545 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=root}
+2022-09-15 16:42:25,545 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2022-09-15 16:42:25,548 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2022-09-15 16:42:26,065 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-09-15 16:42:26,233 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 16:42:26,242 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 16:42:27,109 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@717a8a76] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2022-09-15 16:42:27,479 [main] WARN  org.hibernate.orm.deprecation - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2022-09-15 16:42:27,536 [main] WARN  org.hibernate.orm.deprecation - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2022-09-15 16:42:27,550 [main] WARN  org.hibernate.orm.deprecation - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2022-09-15 16:42:27,626 [main] INFO  com.ideas2it.employee.utilities.CommonUtil - 
+		 Employee Management 
+
+2022-09-15 16:42:29,680 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 	 Trainees List 
+2022-09-15 16:42:29,687 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:42:29,712 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:42:29,829 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:42:29,845 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:42:29,857 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:42:29,869 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:42:29,880 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2022-09-15 16:42:29,881 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/employee_db]
+2022-09-15 16:42:29,882 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=root}
+2022-09-15 16:42:29,884 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2022-09-15 16:42:29,888 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2022-09-15 16:42:29,925 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-09-15 16:42:29,937 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 16:42:29,939 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 16:42:29,975 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2e44cb34] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2022-09-15 16:42:30,146 [main] INFO  org.hibernate.hql.internal.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+2022-09-15 16:42:30,286 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   20            ammar        pbt    1111111111 ammar@ideas2it.com 2020-12-12   A positive                1   java            3  21          1           BCA velarasan,madan,
+
+2022-09-15 16:42:30,301 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   24            abrar     iudsew    9832092387 abrar@ideas2it.com 2020-12-12   O Positive                3   java            3  21          1           BCA      madan,syed,
+
+2022-09-15 16:42:30,312 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   27            akash koyambeduu    9000990009 akash@ideas2it.com 2020-12-12   B Positive                2   java            2  21          1           BCA                 
+
+2022-09-15 16:42:30,337 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   30            oewiu      iweuy    8327623873  ewuy@ideas2it.com 2020-01-01   B Positive                2      j            2  21          2           BCA      syed,madan,
+
+2022-09-15 16:42:30,349 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   31            oiewu      oewiu    8237692837  iwue@ideas2it.com 2022-09-11   B Positive                2   java            2  21          0           BCA            syed,
+
+2022-09-15 16:42:30,363 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   33            asasa   sasasasa    1221212112 rttyt@ideas2it.com 2020-11-11   A positive                1      a            1  21          1           BCA            syed,
+
+2022-09-15 16:42:30,375 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   34           wquywq    qywyuwq    8721721266 wwsakj@ideas2it.com 2020-12-12   B Positive                2      j            2  21          1           BCA            syed,
+
+2022-09-15 16:42:30,389 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   35            jsdsd     iueyre    8327293877 iewuyxz@ideas2it.com 2020-12-12   B Positive                2      j            2  21          1           BCA            syed,
+
+2022-09-15 16:42:30,402 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   36           iuewys     iweuys    9832728373  weiu@ideas2it.com 2020-12-12   B Positive                2      j            2  21          1           BSC            syed,
+
+2022-09-15 16:42:30,416 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   38          ksjajds    dkjsjds    9832793287 iwueym@ideas2it.com 2020-12-12   A positive                1      a            2  21          1             a                 
+
+2022-09-15 16:42:30,429 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   39          sdoijed    fejdkdc    9328392832 iewuew@ideas2it.com 2020-12-12   B Positive                2     ja            2  21          1           BCA                 
+
+2022-09-15 16:42:30,444 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   40            skkds      iojds    9832239823 iwowm@ideas2it.com 2020-12-12   B Positive                2      j            2  21          1           BSC            syed,
+
+2022-09-15 16:42:30,454 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   41           ksoijs      disdi    9328729383 ownkjk@ideas2it.com 2020-12-12   O Positive                3      j            3  21          1           BCA            syed,
+
+2022-09-15 16:42:30,470 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   42          sjaskdl     kdskds    2938792387 mxznb@ideas2it.com 2020-12-12   O Positive                3      a            3  21          1           BCS      syed,madan,
+
+2022-09-15 16:42:30,470 [main] INFO  com.ideas2it.employee.utilities.CommonUtil - 
+		 Employee Management 
+
+2022-09-15 16:45:22,197 [main] INFO  com.ideas2it.employee.utilities.CommonUtil - 
+		 Employee Management 
+
+2022-09-15 16:45:27,185 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Name :
+2022-09-15 16:45:28,816 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Address :
+2022-09-15 16:45:30,525 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Mobile Number :
+2022-09-15 16:45:33,633 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Email :
+2022-09-15 16:45:38,544 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Date of Joining :
+2022-09-15 16:45:41,451 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Date of Birth :
+2022-09-15 16:45:45,034 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Qualification :
+2022-09-15 16:45:46,971 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 1.A+
+2.B+
+3.O+
+4.AB+
+5.A-
+6.B-
+7.O-
+8.AB-
+2022-09-15 16:45:46,972 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Enter Trainee Blood Group:
+2022-09-15 16:45:47,906 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Training Period :
+2022-09-15 16:45:48,499 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Course :
+2022-09-15 16:45:49,614 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Batch Number :
+2022-09-15 16:45:50,410 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Number of Trainers to Add(Atleast 1 trainer):
+2022-09-15 16:45:51,440 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Enter Trainer Id - 1:
+2022-09-15 16:45:52,656 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Enter Trainer Id - 2:
+2022-09-15 16:45:55,520 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.28.Final}
+2022-09-15 16:45:55,523 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2022-09-15 16:45:55,751 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:45:56,056 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.5.Final}
+2022-09-15 16:45:56,273 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:45:56,920 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:45:56,945 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:45:56,961 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:45:56,975 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:45:57,025 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2022-09-15 16:45:57,037 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/employee_db]
+2022-09-15 16:45:57,039 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=root}
+2022-09-15 16:45:57,047 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2022-09-15 16:45:57,053 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2022-09-15 16:45:57,609 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-09-15 16:45:57,777 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 16:45:57,786 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 16:45:58,627 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1d585fb] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2022-09-15 16:45:59,057 [main] WARN  org.hibernate.orm.deprecation - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2022-09-15 16:45:59,110 [main] WARN  org.hibernate.orm.deprecation - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2022-09-15 16:45:59,128 [main] WARN  org.hibernate.orm.deprecation - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2022-09-15 16:45:59,221 [main] ERROR com.ideas2it.employee.controller.EmployeeController - Failed to Insert
+2022-09-15 16:45:59,221 [main] INFO  com.ideas2it.employee.utilities.CommonUtil - 
+		 Employee Management 
+
+2022-09-15 16:46:12,533 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 	 Trainees List 
+2022-09-15 16:46:12,537 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:46:12,577 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:46:12,688 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:46:12,701 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:46:12,715 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:46:12,726 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:46:12,735 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2022-09-15 16:46:12,737 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/employee_db]
+2022-09-15 16:46:12,738 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=root}
+2022-09-15 16:46:12,740 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2022-09-15 16:46:12,740 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2022-09-15 16:46:12,779 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-09-15 16:46:12,789 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 16:46:12,792 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 16:46:12,831 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2a984952] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2022-09-15 16:46:13,011 [main] INFO  org.hibernate.hql.internal.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+2022-09-15 16:46:13,155 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   20            ammar        pbt    1111111111 ammar@ideas2it.com 2020-12-12   A positive                1   java            3  21          1           BCA madan,velarasan,
+
+2022-09-15 16:46:13,172 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   24            abrar     iudsew    9832092387 abrar@ideas2it.com 2020-12-12   O Positive                3   java            3  21          1           BCA      syed,madan,
+
+2022-09-15 16:46:13,181 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   27            akash koyambeduu    9000990009 akash@ideas2it.com 2020-12-12   B Positive                2   java            2  21          1           BCA                 
+
+2022-09-15 16:46:13,206 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   30            oewiu      iweuy    8327623873  ewuy@ideas2it.com 2020-01-01   B Positive                2      j            2  21          2           BCA      syed,madan,
+
+2022-09-15 16:46:13,224 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   31            oiewu      oewiu    8237692837  iwue@ideas2it.com 2022-09-11   B Positive                2   java            2  21          0           BCA            syed,
+
+2022-09-15 16:46:13,245 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   33            asasa   sasasasa    1221212112 rttyt@ideas2it.com 2020-11-11   A positive                1      a            1  21          1           BCA            syed,
+
+2022-09-15 16:46:13,257 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   34           wquywq    qywyuwq    8721721266 wwsakj@ideas2it.com 2020-12-12   B Positive                2      j            2  21          1           BCA            syed,
+
+2022-09-15 16:46:13,273 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   35            jsdsd     iueyre    8327293877 iewuyxz@ideas2it.com 2020-12-12   B Positive                2      j            2  21          1           BCA            syed,
+
+2022-09-15 16:46:13,288 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   36           iuewys     iweuys    9832728373  weiu@ideas2it.com 2020-12-12   B Positive                2      j            2  21          1           BSC            syed,
+
+2022-09-15 16:46:13,302 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   38          ksjajds    dkjsjds    9832793287 iwueym@ideas2it.com 2020-12-12   A positive                1      a            2  21          1             a                 
+
+2022-09-15 16:46:13,317 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   39          sdoijed    fejdkdc    9328392832 iewuew@ideas2it.com 2020-12-12   B Positive                2     ja            2  21          1           BCA                 
+
+2022-09-15 16:46:13,332 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   40            skkds      iojds    9832239823 iwowm@ideas2it.com 2020-12-12   B Positive                2      j            2  21          1           BSC            syed,
+
+2022-09-15 16:46:13,348 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   41           ksoijs      disdi    9328729383 ownkjk@ideas2it.com 2020-12-12   O Positive                3      j            3  21          1           BCA            syed,
+
+2022-09-15 16:46:13,366 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   42          sjaskdl     kdskds    2938792387 mxznb@ideas2it.com 2020-12-12   O Positive                3      a            3  21          1           BCS      madan,syed,
+
+2022-09-15 16:46:13,380 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   43         sijaijsa    asiioas    9283769238 oisdu@ideas2it.com 2020-12-12   O Positive                3      a            3  21          1           BSC      madan,syed,
+
+2022-09-15 16:46:13,381 [main] INFO  com.ideas2it.employee.utilities.CommonUtil - 
+		 Employee Management 
+
+2022-09-15 16:47:29,890 [main] INFO  com.ideas2it.employee.utilities.CommonUtil - 
+		 Employee Management 
+
+2022-09-15 16:47:30,872 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Name :
+2022-09-15 16:47:32,190 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Address :
+2022-09-15 16:47:33,416 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Mobile Number :
+2022-09-15 16:47:36,842 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Email :
+2022-09-15 16:47:44,829 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Date of Joining :
+2022-09-15 16:47:48,742 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Date of Birth :
+2022-09-15 16:47:53,509 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Qualification :
+2022-09-15 16:47:54,756 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 1.A+
+2.B+
+3.O+
+4.AB+
+5.A-
+6.B-
+7.O-
+8.AB-
+2022-09-15 16:47:54,758 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Enter Trainee Blood Group:
+2022-09-15 16:47:55,424 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Training Period :
+2022-09-15 16:47:55,953 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Course :
+2022-09-15 16:47:56,848 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Batch Number :
+2022-09-15 16:47:57,441 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Number of Trainers to Add(Atleast 1 trainer):
+2022-09-15 16:47:58,632 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Enter Trainer Id - 1:
+2022-09-15 16:47:59,991 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Enter Trainer Id - 2:
+2022-09-15 16:48:00,960 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.28.Final}
+2022-09-15 16:48:00,964 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2022-09-15 16:48:01,182 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:48:01,519 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.5.Final}
+2022-09-15 16:48:01,753 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:48:02,384 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:48:02,404 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:48:02,420 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:48:02,432 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 16:48:02,489 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2022-09-15 16:48:02,500 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/employee_db]
+2022-09-15 16:48:02,501 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=root}
+2022-09-15 16:48:02,502 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2022-09-15 16:48:02,506 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2022-09-15 16:48:03,031 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-09-15 16:48:03,213 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 16:48:03,217 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 16:48:04,083 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1d585fb] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2022-09-15 16:48:04,426 [main] WARN  org.hibernate.orm.deprecation - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2022-09-15 16:48:04,477 [main] WARN  org.hibernate.orm.deprecation - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2022-09-15 16:48:04,489 [main] WARN  org.hibernate.orm.deprecation - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2022-09-15 16:48:04,554 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Inserted Successfully
+2022-09-15 16:48:04,557 [main] INFO  com.ideas2it.employee.utilities.CommonUtil - 
+		 Employee Management 
+
+2022-09-15 17:11:08,662 [main] INFO  com.ideas2it.employee.utilities.CommonUtil - 
+		 Employee Management 
+
+2022-09-15 17:12:05,876 [main] WARN  com.ideas2it.employee.controller.EmployeeController - Invalid choice
+2022-09-15 17:12:05,877 [main] INFO  com.ideas2it.employee.utilities.CommonUtil - 
+		 Employee Management 
+
+2022-09-15 17:12:09,417 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Name :
+2022-09-15 17:12:12,137 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Address :
+2022-09-15 17:12:13,174 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Mobile Number :
+2022-09-15 17:12:15,884 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Email :
+2022-09-15 17:12:22,608 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Date of Joining :
+2022-09-15 17:12:26,872 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Date of Birth :
+2022-09-15 17:12:31,329 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Qualification :
+2022-09-15 17:12:32,945 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 1.A+
+2.B+
+3.O+
+4.AB+
+5.A-
+6.B-
+7.O-
+8.AB-
+2022-09-15 17:12:32,947 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Enter Trainee Blood Group:
+2022-09-15 17:12:33,821 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Training Period :
+2022-09-15 17:12:34,483 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Course :
+2022-09-15 17:12:36,061 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 
+Enter Trainee Batch Number :
+2022-09-15 17:12:36,696 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Number of Trainers to Add(Atleast 1 trainer):
+2022-09-15 17:12:38,414 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Enter Trainer Id - 1:
+2022-09-15 17:12:39,887 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Enter Trainer Id - 2:
+2022-09-15 17:12:42,805 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.28.Final}
+2022-09-15 17:12:42,810 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2022-09-15 17:12:43,167 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 17:12:43,660 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.5.Final}
+2022-09-15 17:12:43,982 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 17:12:44,832 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 17:12:44,860 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 17:12:44,886 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 17:12:44,905 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 17:12:44,973 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2022-09-15 17:12:44,992 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/employee_db]
+2022-09-15 17:12:44,993 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=root}
+2022-09-15 17:12:44,996 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2022-09-15 17:12:45,006 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2022-09-15 17:12:45,768 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-09-15 17:12:46,004 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 17:12:46,012 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 17:12:47,261 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@698ac187] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2022-09-15 17:12:47,801 [main] WARN  org.hibernate.orm.deprecation - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2022-09-15 17:12:47,869 [main] WARN  org.hibernate.orm.deprecation - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2022-09-15 17:12:47,897 [main] WARN  org.hibernate.orm.deprecation - HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+2022-09-15 17:12:48,004 [main] INFO  com.ideas2it.employee.controller.EmployeeController - Trainee Inserted Successfully
+2022-09-15 17:12:48,005 [main] INFO  com.ideas2it.employee.utilities.CommonUtil - 
+		 Employee Management 
+
+2022-09-15 17:12:50,399 [main] INFO  com.ideas2it.employee.controller.EmployeeController - 	 Trainees List 
+2022-09-15 17:12:50,408 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-configuration. Use namespace http://www.hibernate.org/dtd/hibernate-configuration instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 17:12:50,469 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 17:12:50,692 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 17:12:50,707 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 17:12:50,728 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 17:12:50,746 [main] WARN  org.hibernate.orm.deprecation - HHH90000012: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/hibernate-mapping. Use namespace http://www.hibernate.org/dtd/hibernate-mapping instead.  Support for obsolete DTD/XSD namespaces may be removed at any time.
+2022-09-15 17:12:50,754 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2022-09-15 17:12:50,754 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/employee_db]
+2022-09-15 17:12:50,754 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=root}
+2022-09-15 17:12:50,754 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2022-09-15 17:12:50,770 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2022-09-15 17:12:50,837 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-09-15 17:12:50,851 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 17:12:50,851 [main] WARN  org.hibernate.orm.deprecation - HHH90000010: The fetch attribute on <many-to-many> has been deprecated. Instead of fetch="select", use lazy="extra" with <map>, <set>, <bag>, <idbag>, or <list>, which will only initialize entities (not as a proxy) as needed.
+2022-09-15 17:12:50,930 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@60e67c06] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2022-09-15 17:12:51,207 [main] INFO  org.hibernate.hql.internal.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+2022-09-15 17:12:51,408 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   20            ammar        pbt    1111111111 ammar@ideas2it.com 2020-12-12   A positive                1   java            3  21          1           BCA madan,velarasan,
+
+2022-09-15 17:12:51,432 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   24            abrar     iudsew    9832092387 abrar@ideas2it.com 2020-12-12   O Positive                3   java            3  21          1           BCA      syed,madan,
+
+2022-09-15 17:12:51,455 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   27            akash koyambeduu    9000990009 akash@ideas2it.com 2020-12-12   B Positive                2   java            2  21          1           BCA                 
+
+2022-09-15 17:12:51,480 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   30            oewiu      iweuy    8327623873  ewuy@ideas2it.com 2020-01-01   B Positive                2      j            2  21          2           BCA      syed,madan,
+
+2022-09-15 17:12:51,501 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   31            oiewu      oewiu    8237692837  iwue@ideas2it.com 2022-09-11   B Positive                2   java            2  21          0           BCA            syed,
+
+2022-09-15 17:12:51,515 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   33            asasa   sasasasa    1221212112 rttyt@ideas2it.com 2020-11-11   A positive                1      a            1  21          1           BCA            syed,
+
+2022-09-15 17:12:51,539 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   34           wquywq    qywyuwq    8721721266 wwsakj@ideas2it.com 2020-12-12   B Positive                2      j            2  21          1           BCA            syed,
+
+2022-09-15 17:12:51,560 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   35            jsdsd     iueyre    8327293877 iewuyxz@ideas2it.com 2020-12-12   B Positive                2      j            2  21          1           BCA            syed,
+
+2022-09-15 17:12:51,579 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   36           iuewys     iweuys    9832728373  weiu@ideas2it.com 2020-12-12   B Positive                2      j            2  21          1           BSC            syed,
+
+2022-09-15 17:12:51,600 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   38          ksjajds    dkjsjds    9832793287 iwueym@ideas2it.com 2020-12-12   A positive                1      a            2  21          1             a                 
+
+2022-09-15 17:12:51,625 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   39          sdoijed    fejdkdc    9328392832 iewuew@ideas2it.com 2020-12-12   B Positive                2     ja            2  21          1           BCA                 
+
+2022-09-15 17:12:51,639 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   40            skkds      iojds    9832239823 iwowm@ideas2it.com 2020-12-12   B Positive                2      j            2  21          1           BSC            syed,
+
+2022-09-15 17:12:51,662 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   41           ksoijs      disdi    9328729383 ownkjk@ideas2it.com 2020-12-12   O Positive                3      j            3  21          1           BCA            syed,
+
+2022-09-15 17:12:51,680 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   42          sjaskdl     kdskds    2938792387 mxznb@ideas2it.com 2020-12-12   O Positive                3      a            3  21          1           BCS      syed,madan,
+
+2022-09-15 17:12:51,701 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   43         sijaijsa    asiioas    9283769238 oisdu@ideas2it.com 2020-12-12   O Positive                3      a            3  21          1           BSC      madan,syed,
+
+2022-09-15 17:12:51,718 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   44           skjiso     iduskd    9328728723 siumnbb@ideas2it.com 2020-12-12   B Positive                2      a            2  21          1           BCA      madan,syed,
+
+2022-09-15 17:12:51,734 [main] INFO  com.ideas2it.employee.controller.EmployeeController -   45          oijewiu      owieu    9238729833 woiues@ideas2it.com 2020-12-12   O Positive                3   java            3  21          1           BSC            syed,
+
+2022-09-15 17:12:51,735 [main] INFO  com.ideas2it.employee.utilities.CommonUtil - 
+		 Employee Management 
+
