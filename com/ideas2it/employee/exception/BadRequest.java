@@ -12,6 +12,7 @@ import com.ideas2it.employee.constant.Attributes;
 
 public class BadRequest extends RuntimeException {
     private List<Attributes> errors = new ArrayList<>();
+    private Integer error;
 
     /**
     * This Constructor is used to set list of Errors
@@ -23,6 +24,18 @@ public class BadRequest extends RuntimeException {
     public BadRequest(List<Attributes> errors, String message) {
 	super(message);
 	this.errors = errors;
+    }  
+
+    /**
+    * This Constructor is used to set Error
+    * @param errors
+    *		to add error
+    * @param message
+		Error Message for Invalid Details
+    **/
+    public BadRequest(Integer error, String message) {
+	super(message);
+	this.error = error;
     }  
 
     /**

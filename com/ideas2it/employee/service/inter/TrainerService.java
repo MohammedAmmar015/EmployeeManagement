@@ -75,7 +75,7 @@ public interface TrainerService {
     * @throws TrainerNotFound
     * 		Exception will be thrown, If Trainer Not found
     **/
-    public void removeTrainerById(final int trainerId) throws TrainerNotFound;
+    public boolean removeTrainerById(final int trainerId) throws TrainerNotFound;
 
 
     /**
@@ -97,6 +97,6 @@ public interface TrainerService {
     * 		- trainer object has to be passesd to get updated
     * @return - It returns nothing
     **/
-    public void modifyTrainerIntoDB(Trainer trainer);
+    public boolean modifyTrainerIntoDB(Trainer trainer);
 
 }

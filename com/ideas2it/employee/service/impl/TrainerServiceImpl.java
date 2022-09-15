@@ -29,15 +29,12 @@ import java.util.ArrayList;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 
 public class TrainerServiceImpl implements TrainerService {
 
     private TrainerDao trainerDao = new TrainerDaoImpl();
     private static DateTimeFormatter formatter = DateTimeFormatter.ofPattern(Constants.DATE_FORMAT);
-    private static Logger logger = LogManager.getLogger(TrainerServiceImpl.class);
 
     /**
     * <p>
@@ -131,14 +128,10 @@ public class TrainerServiceImpl implements TrainerService {
 	    Employee employee = new Employee(validName, validAddress, validMobileNumber, validEmail, validDateOfJoining, 
 					     validDateOfBirth, validBloodGroup, validQualification, role);
 	    Trainer trainer = new Trainer(employee, validTrainingExperience);
-	    if (trainerDao.insertTrainer(trainer)) {
-		logger.info("Trainer details Added Successfully");
-	    } else {
-		logger.error("There are Some issue in Adding Trainer Details");
-	    }
+	    trainerDao.insertTrainer(trainer);
 	} else {
-	    logger.warn(errors.size() + " Errors Found");
-	    logger.warn("\t\t\tPlease Re-enter the Trainer details correctly");
+	    errorMessage.append(errors.size() + " Errors Found");
+	    errorMessage.append("\t\t\tPlease Re-enter the Trainer details correctly");
 	    throw new BadRequest(errors, errorMessage.toString());
 	}
 	return errors;
@@ -151,11 +144,7 @@ public class TrainerServiceImpl implements TrainerService {
     * @return - It returns List of Trainers
     **/
     public List<Trainer> getTrainers() {
-	List<Trainer> trainers = trainerDao.retriveTrainers();
-	if (trainers.isEmpty()) {
-	    logger.error("No Trainer Found To Display");
-	}
-	return trainers;
+	return trainerDao.retriveTrainers();
     }	
 
     /**
@@ -183,12 +172,14 @@ public class TrainerServiceImpl implements TrainerService {
     * @throws TrainerNotFound
     * 		Exception will be thrown, If Trainer Not found
     **/
-    public void removeTrainerById(final int trainerId) {
+    public boolean removeTrainerById(final int trainerId) {
+	boolean isDeleted = false;
 	if (trainerDao.deleteTrainerById(trainerId)) {
-	    logger.info("Trainer Deleted Successfully");
+	    isDeleted = true;
 	} else {
 	    throw new TrainerNotFound(trainerId + " Not Found");
 	}
+	return isDeleted;
     }
 
     /**
@@ -212,8 +203,8 @@ public class TrainerServiceImpl implements TrainerService {
 	    case MOBILE_NUMBER:
 	        Long mobileNumber = null;
 	        if (!StringUtil.isValidMobileNumber(value)) {
-	    	    logger.warn("Invalid Mobile Number, It must have 10 digits");
 		    isValueValid = false;
+		    throw new BadRequest(2, "Invalid Mobile Number!, please Re-enter correctly");
 	        } else {
 	    	    mobileNumber = Long.valueOf(value);
 		    trainer.getEmployee().setMobileNumber(mobileNumber);
@@ -223,7 +214,7 @@ public class TrainerServiceImpl implements TrainerService {
 	    case EMAIL:
 	        if (!StringUtil.isValidEmail(value)) {
 		    isValueValid = false;
-	    	    logger.warn("Invalid Email, It must End with ideas2it.com");
+	    	    throw new BadRequest(3,"Invalid Email, It must End with ideas2it.com");
 	        } else {
 	    	    trainer.getEmployee().setEmail(value);
 	        }
@@ -234,8 +225,8 @@ public class TrainerServiceImpl implements TrainerService {
 		    Integer trainingExperience = Integer.valueOf(value);
 		    trainer.setTrainingExperience(trainingExperience);
 	        } catch (NumberFormatException e) {
-		    logger.warn("Invalid Number Of Trainees");
 		    isValueValid = false;
+		    throw new BadRequest(4, "Invalid Training Experience");
 	        }
 	        break;
 	}   
@@ -248,13 +239,9 @@ public class TrainerServiceImpl implements TrainerService {
     * </p>
     * @param trainer
     * 		- trainer object has to be passesd to get updated
-    * @return - It returns nothing
+    * @return - It returns true/false
     **/
-    public void modifyTrainerIntoDB(Trainer trainer) {
-	if (trainerDao.updateTrainer(trainer)) {
-	    logger.info("Trainer Details Updated Successfully");
-	} else {
-	    logger.error("Failed to Update Trainer Details");
-	}
+    public boolean modifyTrainerIntoDB(Trainer trainer) {
+	return trainerDao.updateTrainer(trainer);
     }
 }

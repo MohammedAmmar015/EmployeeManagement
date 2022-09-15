@@ -159,15 +159,28 @@ public class EmployeeController extends Throwable {
 		    Role role = new Role("Trainee");
 		    errors = traineeServiceImpl.addTrainee(name, address, mobileNumber, email, dateOfJoining, dateOfBirth,
 			                                   qualification, bloodGroup, trainingPeriod, course, batchNumber, role, trainersId);	
+		    if (errors.size() == 0) {
+	    		logger.info("Trainee Inserted Successfully");
+		    } else {
+	   		logger.error("Failed to Insert Trainee");
+		    }
 		} else {
 		    Role role = new Role("Trainer");
 		    errors = trainerServiceImpl.addTrainer(name, address, mobileNumber, email, dateOfJoining, dateOfBirth,
 		                                           qualification, bloodGroup, trainingExperience, role);
+		    if (errors.size() == 0) {
+	    		logger.info("Trainer Inserted Successfully");
+		    } else {
+	   		logger.error("Failed to Insert Trainer");
+		    }
 		}
 	    } catch (BadRequest e) {
-		logger.error(e.getMessage());
+		logger.warn(e.getMessage());
 		errors = e.getErrors();
+	    } catch (TrainerNotFound e) {
+		logger.error(e.getMessage());
 	    }
+
 	    for(Attributes errorChoice : errors) {
 	    	switch (errorChoice) {
 	    	    case NAME:
@@ -266,9 +279,11 @@ public class EmployeeController extends Throwable {
 	    try {
 	        traineeId = scanner.nextInt();
 		isValidType = true;
-	        traineeServiceImpl.removeTraineeById(traineeId);
+	        if (traineeServiceImpl.removeTraineeById(traineeId)) {
+		    logger.info(traineeId + " - Trainee Deleted Successfully");
+		}
 	    } catch (TraineeNotFound e) {
-	        logger.warn(e.getMessage());
+	        logger.error(e.getMessage());
 		scanner = new Scanner(System.in);
 	    }
 	} while (!isValidType);
@@ -288,9 +303,11 @@ public class EmployeeController extends Throwable {
 	    try {
 	        trainerId = scanner.nextInt();
 		isValidType = true;
-	        trainerServiceImpl.removeTrainerById(trainerId);
+	        if (trainerServiceImpl.removeTrainerById(trainerId)) {
+		    logger.info(trainerId + " - Trainer Deleted Successfully");
+		}
 	    } catch (TrainerNotFound e) {
-	        logger.warn(e.getMessage());
+	        logger.error(e.getMessage());
 		scanner = new Scanner(System.in);
 	    }
 	} while (!isValidType);
@@ -331,60 +348,69 @@ public class EmployeeController extends Throwable {
 	        userChoice = scanner.nextInt();
 		scanner.nextLine();
 		do {
-		    switch (userChoice) {
-		        case 1:
-		            String address = getUserInput(userType, Attributes.ADDRESS);
-		            isValid = traineeServiceImpl.modifyTrainee(trainee, address, Attributes.ADDRESS);
-		            break;
+		    try {
+		        switch (userChoice) {
+		            case 1:
+		                String address = getUserInput(userType, Attributes.ADDRESS);
+		                isValid = traineeServiceImpl.modifyTrainee(trainee, address, Attributes.ADDRESS);
+		                break;
 
-		        case 2:
-		            String mobileNumber = getUserInput(userType, Attributes.MOBILE_NUMBER);
-		            isValid = traineeServiceImpl.modifyTrainee(trainee, mobileNumber, Attributes.MOBILE_NUMBER);
-		            break;
+		            case 2:
+		                String mobileNumber = getUserInput(userType, Attributes.MOBILE_NUMBER);
+		                isValid = traineeServiceImpl.modifyTrainee(trainee, mobileNumber, Attributes.MOBILE_NUMBER);
+		                break;
  
-		        case 3:
-		            String email = getUserInput(userType, Attributes.EMAIL);
-		            isValid = traineeServiceImpl.modifyTrainee(trainee, email, Attributes.EMAIL);
-		            break;
+		            case 3:
+		                String email = getUserInput(userType, Attributes.EMAIL);
+		                isValid = traineeServiceImpl.modifyTrainee(trainee, email, Attributes.EMAIL);
+		                break;
 
-		    	case 4:
-		            String course = getUserInput(userType, Attributes.COURSE);
-		            isValid = traineeServiceImpl.modifyTrainee(trainee, course, Attributes.COURSE);
-		            break;
+		    	    case 4:
+		                String course = getUserInput(userType, Attributes.COURSE);
+		                isValid = traineeServiceImpl.modifyTrainee(trainee, course, Attributes.COURSE);
+		                break;
 	
-			case 5:
-			    int numberOfTrainers = 0;
-		    	    isValidType = false;
-			    logger.info("Number of Trainers to Add:");
-		    	    do {
-	        		try {
-	    	    	    	    numberOfTrainers = scanner.nextInt();
-		     	    	    isValidType = true;
-	    	    	     	    scanner.nextLine();
-	        		} catch (InputMismatchException e) {
-	    	              	    logger.warn("Invalid Type, Please Re-enter:");
-	    	    	     	    scanner = new Scanner(System.in);
-	        		}
-	    	    	    } while (!isValidType);
-			    List<String> trainersId = getTrainersId(userType, Attributes.TRAINER_NAME, numberOfTrainers);
-			    isValid = traineeServiceImpl.modifyTrainerNames(trainee, trainersId, Attributes.TRAINER_NAME);
-			    break;
+			    case 5:
+			        int numberOfTrainers = 0;
+		    	        isValidType = false;
+			        logger.info("Number of Trainers to Add:");
+		    	        do {
+	        		    try {
+	    	    	    	        numberOfTrainers = scanner.nextInt();
+		     	    	        isValidType = true;
+	    	    	     	        scanner.nextLine();
+	        		    } catch (InputMismatchException e) {
+	    	              	        logger.warn("Invalid Type, Please Re-enter:");
+	    	    	     	        scanner = new Scanner(System.in);
+	        		    }
+	    	    	        } while (!isValidType);
+			        List<String> trainersId = getTrainersId(userType, Attributes.TRAINER_NAME, numberOfTrainers);
+			        isValid = traineeServiceImpl.modifyTrainerNames(trainee, trainersId, Attributes.TRAINER_NAME);
+			        break;
 			
-			case 6:
-			    traineeServiceImpl.modifyTraineeIntoDB(trainee);
+			    case 6:
+			        if (traineeServiceImpl.modifyTraineeIntoDB(trainee)) {
+				    logger.info("Trainee Details Updated Successfully");
+				} else {
+	    			    logger.error("Failed to Update Trainee Details");
+				}
+				break;
 
-		    	case 7:
-			    isValidUserChoice = true;
-			    isValid = true;
-			    break;
+		    	    case 7:
+			        isValidUserChoice = true;
+			        isValid = true;
+			        break;
 
-		    	default:
-		            logger.warn("Invalid Choice");
-		        }
+		    	    default:
+		                logger.warn("Invalid Choice");
+		            }
+			} catch(BadRequest e) {
+			    logger.warn(e.getMessage());
+			}
 		    } while (!isValid);
 	        } while (!isValidUserChoice);
 	    } catch (TraineeNotFound e) {
-	        logger.warn(e.getMessage());
+	        logger.error(e.getMessage());
 	    } catch (InputMismatchException e) {
 		logger.warn("Invalid Type, Please Re-enter correct value");
 	        isValidUserChoice = false;
@@ -444,7 +470,12 @@ public class EmployeeController extends Throwable {
 		            break;
 	
 			case 5:
-			    trainerServiceImpl.modifyTrainerIntoDB(trainer);
+			    if (trainerServiceImpl.modifyTrainerIntoDB(trainer)) {
+				logger.info("Trainer Details Updated Successfully");
+			    } else {
+	    			logger.error("Failed to Update Trainer Details");
+			    }
+			    break;
 		    
 		    	case 6:
 			    isValidUserChoice = true;
@@ -457,7 +488,7 @@ public class EmployeeController extends Throwable {
 		} while (!isValid);
 	    } while (!isValidUserChoice);
 	} catch (TrainerNotFound e) {
-	    logger.warn(e.getMessage());
+	    logger.error(e.getMessage());
 	}
 	return true;
     }

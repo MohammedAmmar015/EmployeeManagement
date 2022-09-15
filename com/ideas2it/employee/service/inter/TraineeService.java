@@ -76,7 +76,7 @@ public interface TraineeService {
     *   	Exception will e thrown, When given Id Not found
     * @return - It returns nothing
     **/
-    public void removeTraineeById(final int traineeId);
+    public boolean removeTraineeById(final int traineeId);
 
 
     /**
@@ -110,6 +110,6 @@ public interface TraineeService {
     * 		- trainee object has to be passesd to get updated
     * @return - It returns nothing
     **/
-    public void modifyTraineeIntoDB(Trainee trainee);
+    public boolean modifyTraineeIntoDB(Trainee trainee);
 
 }

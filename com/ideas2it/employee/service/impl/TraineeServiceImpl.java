@@ -34,14 +34,10 @@ import java.util.ArrayList;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 
 public class TraineeServiceImpl implements TraineeService {
     private TraineeDao traineeDao = new TraineeDaoImpl();
     private static DateTimeFormatter formatter = DateTimeFormatter.ofPattern(Constants.DATE_FORMAT);
-    private static Logger logger = LogManager.getLogger(TraineeServiceImpl.class);
 
     /**
     * <p>
@@ -152,19 +148,11 @@ public class TraineeServiceImpl implements TraineeService {
 	if (errors.isEmpty()) {
 	    Employee employee = new Employee(validName, validAddress, validMobileNumber, validEmail, validDateOfJoining, 
 					     validDateOfBirth, validBloodGroup, validQualification, role);
-	    Trainee trainee = new Trainee(employee, validTrainingPeriod, validCourse, validBatchNumber, validTrainersId);
-	    try { 
-	        if (traineeDao.insertTrainee(trainee)) {
-		    logger.info("Trainee Details added Successfully");
-	        } else {
-		    logger.error("Trainee Not Added");
-	        }
-	    } catch (TrainerNotFound e) {
-		logger.error(e.getMessage());
-	    }
+	    Trainee trainee = new Trainee(employee, validTrainingPeriod, validCourse, validBatchNumber, validTrainersId); 
+	    traineeDao.insertTrainee(trainee);
 	} else {
-	    logger.warn("\t\t\tPlease Re-enter the Trainee details correctly");
-	    logger.warn(errors.size() + " Errors Found");
+	    errorMessage.append("\t\t\tPlease Re-enter the Trainee details correctly");
+	    errorMessage.append(errors.size() + " Errors Found");
 	    throw new BadRequest(errors, errorMessage.toString());
 	}
 	return errors;
@@ -177,11 +165,7 @@ public class TraineeServiceImpl implements TraineeService {
     * @return - It returns List of Trainees
     **/
     public List<Trainee> getTrainees() {
-	List<Trainee> trainees = traineeDao.retriveTrainees();
-	if (trainees.isEmpty()) {
-	    logger.error("No Trainee Found To Display");
-	}
-	return trainees;
+	return traineeDao.retriveTrainees();
     }	
 
     /**
@@ -193,11 +177,7 @@ public class TraineeServiceImpl implements TraineeService {
     * @return - It returns single Trainee
     **/
     public Trainee getTraineeById(final int traineeId) {
-	Trainee trainee = traineeDao.retriveTraineeById(traineeId);
-	if (trainee == null) {
-	    throw new TraineeNotFound("Entered trainee not found");
-	}
-	return trainee;
+	return traineeDao.retriveTraineeById(traineeId);
     }
 	
     /**
@@ -209,12 +189,14 @@ public class TraineeServiceImpl implements TraineeService {
     *   	Exception will e thrown, When given Id Not found
     * @return - It returns nothing
     **/
-    public void removeTraineeById(final int traineeId) {
-	    if (traineeDao.deleteTraineeById(traineeId)) {
-		logger.info("Trainee Deleted Successfully");
-	    } else {
-	        throw new TraineeNotFound(traineeId + " Not Found");
-	    }
+    public boolean removeTraineeById(final int traineeId) {
+	boolean isDeleted = false;
+	if (traineeDao.deleteTraineeById(traineeId)) {
+	    isDeleted = true;
+	} else {
+	    throw new TraineeNotFound(traineeId + " Not Found");
+	}
+	return isDeleted;
     }
 
     /**
@@ -229,6 +211,9 @@ public class TraineeServiceImpl implements TraineeService {
     public boolean modifyTrainee(final Trainee trainee, final String value, final Attributes inputType) {
 	boolean isValueValid = true;
         int updatedCount = 0;
+	List<Integer> errors = new ArrayList<>();
+	StringBuilder errorMessage = new StringBuilder();	
+
 	switch (inputType) {
 	    case ADDRESS:
 	        trainee.getEmployee().setAddress(value);
@@ -237,8 +222,9 @@ public class TraineeServiceImpl implements TraineeService {
 	    case MOBILE_NUMBER:
 	        Long mobileNumber = null;
 	        if (!StringUtil.isValidMobileNumber(value)) {
-	    	    logger.warn("Invalid Mobile Number, It must have 10 digits");
 		    isValueValid = false;
+		    throw new BadRequest(2, "Invalid Mobile Number!, please Re-enter correctly");
+		    
 	        } else {
 	    	    mobileNumber = Long.valueOf(value);
 		    trainee.getEmployee().setMobileNumber(mobileNumber);
@@ -248,7 +234,7 @@ public class TraineeServiceImpl implements TraineeService {
 	    case EMAIL:
 	        if (!StringUtil.isValidEmail(value)) {
 		    isValueValid = false;
-	    	    logger.warn("Invalid Email, It must End with ideas2it.com");
+	    	    throw new BadRequest(3,"Invalid Email, It must End with ideas2it.com");
 	        } else {
 	    	    trainee.getEmployee().setEmail(value);
 	        }
@@ -257,7 +243,7 @@ public class TraineeServiceImpl implements TraineeService {
 	    case COURSE:
 	        trainee.setCourse(value);
 	        break;
-	}   
+	} 
 	return isValueValid;
     }
 
@@ -278,7 +264,6 @@ public class TraineeServiceImpl implements TraineeService {
 	        validTrainersId.add(Integer.valueOf(trainerId));
 	    } catch (InputMismatchException e) {
 		isValid = false;
-		logger.error(e.getMessage());
 	    }
 	}	
 	trainee.setTrainersId(validTrainersId);
@@ -293,11 +278,7 @@ public class TraineeServiceImpl implements TraineeService {
     * 		- trainee object has to be passesd to get updated
     * @return - It returns nothing
     **/
-    public void modifyTraineeIntoDB(Trainee trainee) {
-	if (traineeDao.updateTrainee(trainee)) {
-	    logger.info("Trainee Details Updated Successfully");
-	} else {
-	    logger.error("Failed to Update Trainee Details");
-	}
+    public boolean modifyTraineeIntoDB(Trainee trainee) {
+	return traineeDao.updateTrainee(trainee);
     } 
 }

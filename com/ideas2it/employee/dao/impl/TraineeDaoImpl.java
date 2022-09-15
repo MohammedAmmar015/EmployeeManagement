@@ -76,9 +76,7 @@ public class TraineeDaoImpl implements TraineeDao {
 	        for (int j=0; j < trainersId.size(); j++) {
 	            if (trainersId.get(j) == trainerResults.get(i).getEmployee().getId()) {
 		        trainers.add(trainerResults.get(i));
-	            } else {
-			throw new TrainerNotFound("Entered trainer id Not found");
-		    }
+	            }
 	        }
 	    }
 	    trainee.setTrainers(trainers);
