@@ -1,0 +1,14 @@
+<web-app>
+ <servlet>
+  <servlet-name>add</servlet-name>
+  <servlet-class>com.ideas2it.employee.controller.EmployeeController</servlet-class>
+ </servlet>
+ <servlet-mapping>
+  <servlet-name>add</servlet-name>
+  <url-pattern>/trainer</url-pattern>
+ </servlet-mapping>
+
+  <welcome-file-list>  
+   <welcome-file>welcome.html</welcome-file>  
+  </welcome-file-list>  
+</web-app>

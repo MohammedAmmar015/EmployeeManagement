@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.ideas2it.employee.models.Employee" table="Employee">
+        <id name="id" column="emp_id">
+	    <generator class = "native"></generator>
+        </id>
+        <property name="name" column="name"></property>
+    	<property name="address" column="address"></property>
+    	<property name="mobileNumber" column="mobile_number"></property>
+    	<property name="email" column="email_id"></property>
+    	<property name="dateOfJoining" column="date_of_join"></property>
+    	<property name="dateOfBirth" column="date_of_birth"></property>
+    	<property name="bloodGroup" column="blood_group"></property>
+    	<many-to-one name="qualification" class="com.ideas2it.employee.models.Qualification" 
+		     column="qualification_id" not-null="true" cascade="save-update" fetch="join"/>
+    	<many-to-one name="role" class="com.ideas2it.employee.models.Role" 
+		     column="role_id" not-null="true" cascade="save-update" fetch="join"/>
+    </class>
+</hibernate-mapping>
