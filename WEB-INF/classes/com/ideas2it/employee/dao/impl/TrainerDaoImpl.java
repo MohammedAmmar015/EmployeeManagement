@@ -102,9 +102,9 @@ public class TrainerDaoImpl implements TrainerDao {
 			Trainer results = (Trainer) session.createCriteria(Trainer.class).add(Restrictions.eq("employee.id", trainerId)).uniqueResult();
 			if (results != null) {
 				session.remove(results);
+				isDeleted = true;
 			}
 			transaction.commit();
-			isDeleted = true;
 		} catch(Throwable ex) {
 			ex.printStackTrace();
 		} finally {

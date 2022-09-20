@@ -168,10 +168,13 @@ public class TrainerServiceImpl implements TrainerService {
     * 		Exception will be thrown, If Trainer Not found
     **/
     public boolean removeTrainerById(final int trainerId) {
-	if (!trainerDao.deleteTrainerById(trainerId)) {
+	boolean isDeleted = false;
+	if (trainerDao.deleteTrainerById(trainerId)) {
+	    isDeleted = true;
+	} else {
 	    throw new TrainerNotFound(trainerId + " Not Found");
 	}
-	return true;
+	return isDeleted;
     }
 
     /**

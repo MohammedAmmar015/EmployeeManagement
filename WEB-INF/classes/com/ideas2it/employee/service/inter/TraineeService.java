@@ -44,7 +44,7 @@ public interface TraineeService {
     List<Attributes> addTrainee(final String tempName, final String tempAddress, final String tempMobileNumber,
 				       final String tempEmail, final String tempDateOfJoining, final String tempDateOfBirth,
 				       final String tempQualification, final String tempBloodGroup, final String tempTrainingPeriod, 
-				       final String tempCourse, final String tempBatchNumber, final Role role, final List<String> trainersId) throws BadRequest;
+				       final String tempCourse, final String tempBatchNumber, final List<String> trainersId) throws BadRequest;
 
     /**
     * <p>

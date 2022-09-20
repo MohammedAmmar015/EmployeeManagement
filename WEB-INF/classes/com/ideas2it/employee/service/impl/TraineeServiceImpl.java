@@ -53,7 +53,6 @@ public class TraineeServiceImpl implements TraineeService {
     * @param trainingPeriod - Trainee training Period(In Months)
     * @param course - Course, Trainee undergoing
     * @param batchNumber - Trainee Batch Number
-    * @param role - It has role description - Trainee
     * @param trainersId - List of trainers id
     * @throws BadRequest
     *		It throws exceptions, If any data is Invalid
@@ -63,7 +62,7 @@ public class TraineeServiceImpl implements TraineeService {
     public List<Attributes> addTrainee(final String name, final String address, final String mobileNumber,
 				    final String email, final String dateOfJoining, final String dateOfBirth,
 				    final String qualification, final String bloodGroup, final String trainingPeriod, 
-				    final String course, final String batchNumber, final Role role, final List<String> trainersId) throws BadRequest {
+				    final String course, final String batchNumber, final List<String> trainersId) throws BadRequest {
 	List<Attributes> errors = new ArrayList<>();
 	StringBuilder errorMessage = new StringBuilder();
 
@@ -93,7 +92,7 @@ public class TraineeServiceImpl implements TraineeService {
 	
 	LocalDate validDateOfJoining = null;
 	//if (DateUtil.isValidDateFormat(dateOfJoining)) {
-	    validDateOfJoining = LocalDate.parse(dateOfJoining, formatter);
+	    validDateOfJoining = LocalDate.parse(dateOfJoining);
 	    if (DateUtil.computeDays(validDateOfJoining, LocalDate.now()) < 1) {
 	    	errors.add(Attributes.DATE_OF_JOINING);
 	    	errorMessage.append(ErrorMessage.DATE_OF_JOINING.errorMessage);
@@ -105,7 +104,7 @@ public class TraineeServiceImpl implements TraineeService {
 
 	LocalDate validDateOfBirth = null;
 	//if (DateUtil.isValidDateFormat(dateOfBirth)) {
-	    validDateOfBirth = LocalDate.parse(dateOfBirth, formatter);
+	    validDateOfBirth = LocalDate.parse(dateOfBirth);
 	    if (DateUtil.computePeriod(validDateOfBirth, LocalDate.now()) < 18) {
 	    	errors.add(Attributes.DATE_OF_BIRTH);
 	    	errorMessage.append(ErrorMessage.DATE_OF_BIRTH.errorMessage);
@@ -139,6 +138,7 @@ public class TraineeServiceImpl implements TraineeService {
 	}
 	
 	if (errors.isEmpty()) {
+	    Role role = new Role("Trainee");
 	    Employee employee = new Employee(validName, address, validMobileNumber, validEmail, validDateOfJoining,
 					     validDateOfBirth, bloodGroup, validQualification, role);
 	    Trainee trainee = new Trainee(employee, validTrainingPeriod, course, validBatchNumber, validTrainersId);

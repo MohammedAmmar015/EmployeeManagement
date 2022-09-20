@@ -117,9 +117,9 @@ public class TraineeDaoImpl implements TraineeDao {
 	    Trainee result = (Trainee) session.createCriteria(Trainee.class).add(Restrictions.eq("employee.id", traineeId)).uniqueResult();
 	    if (result != null) {
 	        session.remove(result);
+		isDeleted = true;
 	    }
 	    transaction.commit();
-	    isDeleted = true;
 	} catch(Throwable ex) {
 	    ex.printStackTrace();
 	} finally {

@@ -8,12 +8,15 @@ import javax.servlet.ServletException;
 import java.io.IOException;
 import java.io.PrintWriter;  
 import java.util.List;
+import java.util.Set;
+import java.util.ArrayList;
 import com.ideas2it.employee.service.inter.TrainerService;
 import com.ideas2it.employee.service.impl.TrainerServiceImpl;
 import com.ideas2it.employee.service.inter.TraineeService;
 import com.ideas2it.employee.service.impl.TraineeServiceImpl;
 import com.ideas2it.employee.exception.BadRequest;
 import com.ideas2it.employee.exception.TrainerNotFound;
+import com.ideas2it.employee.exception.TraineeNotFound;
 import com.ideas2it.employee.models.Trainer;
 import com.ideas2it.employee.models.Trainee;
 
@@ -108,7 +111,7 @@ public class EmployeeController extends HttpServlet {
 	    out.println("<table><tr>");
 	    out.println("<th>Id</th><th>Name</th><th>Address</th><th>Date of Birth</th><th>Date of Joining</th>" 
 		      + "<th>Email</th><th>Mobile Number</th><th>Qualification</th><th>Blood Group</th>"
-		      + "<th>Training Experience</th>");
+		      + "<th>Training Experience</th><th>Number of Trainees</th>");
 	    out.println("</tr>");
 	    for (Trainer trainer : trainers) {
 		out.println("<tr>");
@@ -122,6 +125,7 @@ public class EmployeeController extends HttpServlet {
 		out.println("<td>" + trainer.getEmployee().getQualification().getDescription() + "</td>");
 		out.println("<td>" + trainer.getEmployee().getBloodGroup() + "</td>");
 		out.println("<td>" + trainer.getTrainingExperience() + "</td>");
+		out.println("<td>" + trainer.getTrainees().size() + "</td>");
 	    	out.println("</tr>");
 	    }
 	    out.println("</table>");
@@ -146,7 +150,19 @@ public class EmployeeController extends HttpServlet {
     }
 
     public void removeTrainer(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException {
-
+	response.setContentType("text/html"); 
+	PrintWriter out = response.getWriter();
+	int id = Integer.parseInt(request.getParameter("id"));
+	try {
+	    trainerServiceImpl.removeTrainerById(id);
+	    out.println(id + "Deleted Successfully");
+	    RequestDispatcher rd=request.getRequestDispatcher("/deleteTrainer.html");  
+            rd.include(request, response);
+	} catch (TrainerNotFound e) {
+	    out.println(e.getMessage());
+	    RequestDispatcher rd=request.getRequestDispatcher("/deleteTrainer.html");  
+            rd.include(request, response);
+	}
     }
 
     public void addTrainee(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException {
@@ -160,20 +176,27 @@ public class EmployeeController extends HttpServlet {
 	String dateOfBirth = request.getParameter("dateOfBirth");
 	String bloodGroup = request.getParameter("bloodGroup");
 	String qualification = request.getParameter("qualification");
-	String trainingExperience = request.getParameter("trainingExperience");
+	String trainingPeriod = request.getParameter("trainingPeriod");
+	String course = request.getParameter("course");
+	String batchNumber = request.getParameter("batchNumber");
+	String values = request.getParameter("trainersId");
+	List<String> trainersId = new ArrayList<>();
+	for (String id : values.split(",")) {
+	    trainersId.add(id);
+	}
 	try {
-	    trainerServiceImpl.addTrainer(name, address, mobileNumber, email, dateOfJoining, dateOfBirth,
-					  qualification, bloodGroup, trainingExperience);
+	    traineeServiceImpl.addTrainee(name, address, mobileNumber, email, dateOfJoining, dateOfBirth,
+					  qualification, bloodGroup, trainingPeriod, course, batchNumber, trainersId);
 	    out.println("<h6>");
 	    out.println(request.getParameter("name") + " Inserted Successfully"); 
 	    out.println("</h6>");
-	    RequestDispatcher rd=request.getRequestDispatcher("/addTrainer.html");  
+	    RequestDispatcher rd=request.getRequestDispatcher("/addTrainee.html");  
             rd.include(request, response);  
 	} catch (BadRequest e) {
 	    out.println("<h6>");
 	    out.println(e.getMessage());
 	    out.println("</h6>");
-            RequestDispatcher rd=request.getRequestDispatcher("/addTrainer.html");  
+            RequestDispatcher rd=request.getRequestDispatcher("/addTrainee.html");  
             rd.include(request, response);             
 	} finally {
 	    out.close();
@@ -189,7 +212,7 @@ public class EmployeeController extends HttpServlet {
 	    out.println("No Data Found to Display");
 	} else {
 	    out.println("<table><tr>");
-	    out.println("<th>Id</th><th>Name</th><th>Address</th><th>Date of Birth</th><th>Date of Joining</th><th>Email</th><th>Mobile Number</th><th>Qualification</th><th>Blood Group</th><th>Training Period</th><th>Course</th><th>Batch Number</th>");
+	    out.println("<th>Id</th><th>Name</th><th>Address</th><th>Date of Birth</th><th>Date of Joining</th><th>Email</th><th>Mobile Number</th><th>Qualification</th><th>Blood Group</th><th>Training Period</th><th>Course</th><th>Batch Number</th><th>Trainer Ids</th>");
 	    out.println("</tr>");
 	    for (Trainee trainee : trainees) {
 		out.println("<tr>");
@@ -205,6 +228,11 @@ public class EmployeeController extends HttpServlet {
 		out.println("<td>" + trainee.getTrainingPeriod() + "</td>");
 		out.println("<td>" + trainee.getCourse() + "</td>");
 		out.println("<td>" + trainee.getBatchNumber() + "</td>");
+		List<Integer> trainerIds = new ArrayList<>();
+		for (Trainer trainer : trainee.getTrainers()) {
+		    trainerIds.add(trainer.getEmployee().getId());
+		}
+		out.println("<td>" + trainerIds.toString() + "</td>");
 	    	out.println("</tr>");
 	    }
 	    out.println("</table>");
@@ -216,7 +244,19 @@ public class EmployeeController extends HttpServlet {
     }
 
     public void removeTrainee(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException {
-
+	response.setContentType("text/html"); 
+	PrintWriter out = response.getWriter();
+	int id = Integer.parseInt(request.getParameter("id"));
+	try {
+	    traineeServiceImpl.removeTraineeById(id);
+	    out.println(id + " Deleted Successfully");
+	    RequestDispatcher rd=request.getRequestDispatcher("/deleteTrainee.html");  
+            rd.include(request, response);
+	} catch (TraineeNotFound e) {
+	    out.println(e.getMessage());
+	    RequestDispatcher rd=request.getRequestDispatcher("/deleteTrainee.html");  
+            rd.include(request, response);
+	}
     }
   
 }  
