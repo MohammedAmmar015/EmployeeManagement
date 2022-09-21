@@ -85,7 +85,7 @@ public interface TrainerService {
     * @param inputType - Column/Attribute Name
     * @return - It returns Boolean value, If Validation failed
     **/
-    boolean modifyTrainer(final Trainer trainer, final String value, final Attributes inputType);
+    boolean modifyTrainer(Trainer trainer, int trainerId, String address, String mobileNumber, String email, String trainingExperience);
 
     /**
     * <p>

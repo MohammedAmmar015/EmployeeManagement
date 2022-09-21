@@ -186,44 +186,52 @@ public class TrainerServiceImpl implements TrainerService {
     * @param inputType - Column/Attribute Name
     * @return - It returns Boolean value, If Validation failed
     **/
-    public boolean modifyTrainer(final Trainer trainer, final String value, final Attributes inputType) {
+    public boolean modifyTrainer(Trainer trainer, int trainerId, String address, String mobileNumber, String email, String trainingExperience) {
+	List<Attributes> errors = new ArrayList<>();
+	StringBuilder errorMessage = new StringBuilder();
 	boolean isValueValid = true;
+	Long validMobileNumber;
 
-	switch (inputType) {
-	    case ADDRESS:
-	        trainer.getEmployee().setAddress(value);
-	        break;
-	
-	    case MOBILE_NUMBER:
-	        Long mobileNumber;
-	        if (!StringUtil.isValidMobileNumber(value)) {
-		    isValueValid = false;
-		    throw new BadRequest(2, "Invalid Mobile Number!, please Re-enter correctly");
-	        } else {
-	    	    mobileNumber = Long.valueOf(value);
-		    trainer.getEmployee().setMobileNumber(mobileNumber);
-	        }
-	        break;
+	if (!address.isEmpty()) {
+	    trainer.getEmployee().setAddress(address);
+	}
 
-	    case EMAIL:
-	        if (!StringUtil.isValidEmail(value)) {
-		    isValueValid = false;
-	    	    throw new BadRequest(3,"Invalid Email, It must End with ideas2it.com");
-	        } else {
-	    	    trainer.getEmployee().setEmail(value);
-	        }
-	        break;
+	if (!mobileNumber.isEmpty()) {
+	    if (!StringUtil.isValidMobileNumber(mobileNumber)) {
+		errors.add(Attributes.MOBILE_NUMBER);
+		errorMessage.append("Invalid Mobile Number!, please Re-enter correctly");
+	    } else {
+	    	validMobileNumber = Long.valueOf(mobileNumber);
+		trainer.getEmployee().setMobileNumber(validMobileNumber);
+	    }
+	}
+	    
+	if (!email.isEmpty()) {
+	    if (!StringUtil.isValidEmail(email)) {
+		errors.add(Attributes.EMAIL);
+	    	errorMessage.append("Invalid Email, It must End with ideas2it.com");
+	    } else {
+	    	trainer.getEmployee().setEmail(email);
+	    }
+	}
 
-	    case TRAINING_EXPERIENCE:
-	        try {
-		    Integer trainingExperience = Integer.valueOf(value);
-		    trainer.setTrainingExperience(trainingExperience);
-	        } catch (NumberFormatException e) {
-		    isValueValid = false;
-		    throw new BadRequest(4, "Invalid Training Experience");
-	        }
-	        break;
-	}   
+	if (!trainingExperience.isEmpty()) {
+	    try {
+		Integer validTrainingExperience = Integer.valueOf(trainingExperience);
+		trainer.setTrainingExperience(validTrainingExperience);
+	    } catch (NumberFormatException e) {
+		errors.add(Attributes.TRAINING_EXPERIENCE);
+		errorMessage.append("Invalid Training Experience");
+	    }
+	}
+
+	if (errors.isEmpty()) {
+	    trainerDao.insertTrainer(trainer);
+	} else {
+	    errorMessage.append(errors.size()).append(" Errors Found");
+	    errorMessage.append("\t\t\tPlease Re-enter the Trainer details correctly");
+	    throw new BadRequest(errors, errorMessage.toString());
+	}
 	return isValueValid;
     }
 

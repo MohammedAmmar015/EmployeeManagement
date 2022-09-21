@@ -137,11 +137,13 @@ public class EmployeeController extends HttpServlet {
 	PrintWriter out = response.getWriter();
 	int id = Integer.parseInt(request.getParameter("id"));
 	Trainer trainer;
+	String address = request.getParameter("address");
+	String mobileNumber = request.getParameter("mobileNumber");
+	String email = request.getParameter("email");
+	String trainingExperience = request.getParameter("trainingExperience");
 	try {
 	    trainer = trainerServiceImpl.getTrainerById(id);
-	    request.setAttribute("name", trainer.getEmployee().getName());
-	    RequestDispatcher rd=request.getRequestDispatcher("/addTrainer.html");  
-            rd.forward(request, response);
+	    trainerServiceImpl.modifyTrainer(trainer, id, address, mobileNumber, email, trainingExperience);
 	} catch (TrainerNotFound e) {
 	    out.println(e.getMessage());
 	    RequestDispatcher rd=request.getRequestDispatcher("/update.html");  
