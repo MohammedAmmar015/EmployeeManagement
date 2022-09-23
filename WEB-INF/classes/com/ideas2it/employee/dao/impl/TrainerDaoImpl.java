@@ -53,7 +53,7 @@ public class TrainerDaoImpl implements TrainerDao {
 			if (qualificationResult != null) {
 				trainer.getEmployee().setQualification(qualificationResult);
 			}
-			session.save(trainer);
+			session.saveOrUpdate(trainer);
 			transaction.commit();
 		} catch(Throwable ex) {
 			ex.printStackTrace();
@@ -129,9 +129,9 @@ public class TrainerDaoImpl implements TrainerDao {
 			factory = new Configuration().configure().buildSessionFactory();
 			session = factory.openSession();
 			Transaction transaction = session.beginTransaction();
-			Trainer results = (Trainer) session.createCriteria(Trainer.class).add(Restrictions.eq("employee.id", trainerId)).uniqueResult();
+			List<Trainer> results = session.createCriteria(Trainer.class).add(Restrictions.eq("employee.id", trainerId)).list();
 			if (results != null) {
-				trainer = results;
+				trainer = results.get(0);
 			}
 			transaction.commit();
 		} catch(Throwable ex) {
@@ -140,32 +140,5 @@ public class TrainerDaoImpl implements TrainerDao {
 			session.close();
 		}
 		return trainer;
-	}
-
-
-	/**
-	 * <p>
-	 * This method is used to Update Trainer object on Database using Hibernate
-	 * </p>
-	 * @param trainer
-	 *		object has to passed to perform Update operation
-	 * @return isUpdated
-	 * 		This method will Old Object
-	 **/
-	public boolean updateTrainer(Trainer trainer) {
-		boolean isUpdated = false;
-		try {
-			factory = new Configuration().configure().buildSessionFactory();
-			session = factory.openSession();
-			Transaction transaction = session.beginTransaction();
-			session.merge(trainer);
-			transaction.commit();
-			isUpdated = true;
-		} catch(Throwable ex) {
-			ex.printStackTrace();
-		} finally {
-			session.close();
-		}
-		return isUpdated;
 	}
 }

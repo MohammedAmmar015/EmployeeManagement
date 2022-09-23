@@ -54,7 +54,7 @@ public class TrainerServiceImpl implements TrainerService {
     * @throws BadRequest
     *	      Exception will be thrown, If any details get Invalid
     **/
-    public List<Attributes> addTrainer(final String name, final String address, final String mobileNumber,
+    public List<Attributes> addOrModifyTrainer(Trainer trainer, final String name, final String address, final String mobileNumber,
 				    final String email, final String dateOfJoining, final String dateOfBirth,
 				    final String qualification, final String bloodGroup, final String trainingExperience) throws BadRequest {
 	List<Attributes> errors = new ArrayList<>();
@@ -107,22 +107,37 @@ public class TrainerServiceImpl implements TrainerService {
 	    errors.add(Attributes.DATE_OF_BIRTH);
 	    errorMessage.append(ErrorMessage.DATE_OF_BIRTH.formatErrorMessage);
 	}*/
-	
-	Qualification validQualification = new Qualification(qualification);
 
-		Byte validTrainingExperience = null;
+
+	Byte validTrainingExperience = null;
 	try {
 	    validTrainingExperience = Byte.valueOf(trainingExperience);
 	} catch (NumberFormatException e) {
 	    errors.add(Attributes.TRAINING_EXPERIENCE);
 	    errorMessage.append(ErrorMessage.TRAINING_EXPERIENCE.errorMessage);
 	}
-        Role role = new Role("Trainer");
 
+	Qualification validQualification;
+	Role role;
+	Employee employee;
 	if (errors.isEmpty()) {
-	    Employee employee = new Employee(validName, address, validMobileNumber, validEmail, validDateOfJoining,
-					     validDateOfBirth, bloodGroup, validQualification, role);
-	    Trainer trainer = new Trainer(employee, validTrainingExperience);
+	    if (trainer == null) {
+		validQualification = new Qualification(qualification);
+	    	role = new Role("Trainer");
+	    	employee = new Employee(validName, address, validMobileNumber, validEmail, validDateOfJoining,
+				    validDateOfBirth, bloodGroup, validQualification, role);
+	    	trainer = new Trainer(employee, validTrainingExperience);
+	    } else {
+		trainer.getEmployee().getQualification().setDescription(qualification);
+		trainer.getEmployee().setName(validName);
+		trainer.getEmployee().setAddress(address);
+		trainer.getEmployee().setMobileNumber(validMobileNumber);
+		trainer.getEmployee().setEmail(validEmail);
+		trainer.getEmployee().setDateOfJoining(validDateOfJoining);
+		trainer.getEmployee().setDateOfBirth(validDateOfBirth);
+		trainer.getEmployee().setBloodGroup(bloodGroup);
+		trainer.setTrainingExperience(validTrainingExperience);
+	    }
 	    trainerDao.insertTrainer(trainer);
 	} else {
 	    errorMessage.append(errors.size()).append(" Errors Found");
@@ -175,75 +190,5 @@ public class TrainerServiceImpl implements TrainerService {
 	    throw new TrainerNotFound(trainerId + " Not Found");
 	}
 	return isDeleted;
-    }
-
-    /**
-    * <p>
-    * This method is used to Validate the User Input and Modify the Trainer object using Trainer Id
-    * </p>
-    * @param trainer - trainer object to update
-    * @param value - Data got from the User to Update
-    * @param inputType - Column/Attribute Name
-    * @return - It returns Boolean value, If Validation failed
-    **/
-    public boolean modifyTrainer(Trainer trainer, int trainerId, String address, String mobileNumber, String email, String trainingExperience) {
-	List<Attributes> errors = new ArrayList<>();
-	StringBuilder errorMessage = new StringBuilder();
-	boolean isValueValid = true;
-	Long validMobileNumber;
-
-	if (!address.isEmpty()) {
-	    trainer.getEmployee().setAddress(address);
-	}
-
-	if (!mobileNumber.isEmpty()) {
-	    if (!StringUtil.isValidMobileNumber(mobileNumber)) {
-		errors.add(Attributes.MOBILE_NUMBER);
-		errorMessage.append("Invalid Mobile Number!, please Re-enter correctly");
-	    } else {
-	    	validMobileNumber = Long.valueOf(mobileNumber);
-		trainer.getEmployee().setMobileNumber(validMobileNumber);
-	    }
-	}
-	    
-	if (!email.isEmpty()) {
-	    if (!StringUtil.isValidEmail(email)) {
-		errors.add(Attributes.EMAIL);
-	    	errorMessage.append("Invalid Email, It must End with ideas2it.com");
-	    } else {
-	    	trainer.getEmployee().setEmail(email);
-	    }
-	}
-
-	if (!trainingExperience.isEmpty()) {
-	    try {
-		Integer validTrainingExperience = Integer.valueOf(trainingExperience);
-		trainer.setTrainingExperience(validTrainingExperience);
-	    } catch (NumberFormatException e) {
-		errors.add(Attributes.TRAINING_EXPERIENCE);
-		errorMessage.append("Invalid Training Experience");
-	    }
-	}
-
-	if (errors.isEmpty()) {
-	    trainerDao.insertTrainer(trainer);
-	} else {
-	    errorMessage.append(errors.size()).append(" Errors Found");
-	    errorMessage.append("\t\t\tPlease Re-enter the Trainer details correctly");
-	    throw new BadRequest(errors, errorMessage.toString());
-	}
-	return isValueValid;
-    }
-
-    /**
-    * <p>
-    * This method is used to Update trainer Details into Database using Hibernate
-    * </p>
-    * @param trainer
-    * 		- trainer object has to be passed to get updated
-    * @return - It returns true/false
-    **/
-    public boolean modifyTrainerIntoDB(Trainer trainer) {
-	return trainerDao.updateTrainer(trainer);
     }
 }

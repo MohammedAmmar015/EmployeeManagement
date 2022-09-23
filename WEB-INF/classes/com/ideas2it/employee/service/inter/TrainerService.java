@@ -38,7 +38,7 @@ public interface TrainerService {
     * @throws BadRequest
     *	      Exception will be thrown, If any details get Invalid
     **/
-    List<Attributes> addTrainer(final String tempName, final String tempAddress, final String tempMobileNumber,
+    List<Attributes> addOrModifyTrainer(Trainer trainer, final String tempName, final String tempAddress, final String tempMobileNumber,
 				       final String tempEmail, final String tempDateOfJoining, final String tempDateOfBirth,
 				       final String tempQualification, final String tempBloodGroup, final String trainingExperience) 
 				       throws BadRequest;
@@ -74,27 +74,4 @@ public interface TrainerService {
     * 		Exception will be thrown, If Trainer Not found
     **/
     boolean removeTrainerById(final int trainerId) throws TrainerNotFound;
-
-
-    /**
-    * <p>
-    * This method is used to Validate the User Input and Modify the Trainer object using Trainer Id
-    * </p>
-    * @param trainer - trainer object to update
-    * @param value - Data got from the User to Update
-    * @param inputType - Column/Attribute Name
-    * @return - It returns Boolean value, If Validation failed
-    **/
-    boolean modifyTrainer(Trainer trainer, int trainerId, String address, String mobileNumber, String email, String trainingExperience);
-
-    /**
-    * <p>
-    * This method is used to Update trainer Details into Database using Hibernate
-    * </p>
-    * @param trainer
-    * 		- trainer object has to be passed to get updated
-    * @return - It returns nothing
-    **/
-    boolean modifyTrainerIntoDB(Trainer trainer);
-
 }

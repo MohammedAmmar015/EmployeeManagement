@@ -70,14 +70,14 @@ public class TraineeDaoImpl implements TraineeDao {
 	        }
 	    }
 	    trainee.setTrainers(trainers);
-	    session.save(trainee);
+	    session.saveOrUpdate(trainee);
 	    transaction.commit();
 	} catch(Throwable ex) {
 	    ex.printStackTrace();
 	} finally {
 	    session.close();
 	}
-	}
+    }
 
     /**
     * <p>
@@ -155,43 +155,5 @@ public class TraineeDaoImpl implements TraineeDao {
 	    session.close();
 	}
 	return trainee; 
-    }
-
-
-    /**
-    * <p>
-    * This method is used to Update Trainee details in Database using Hibernate
-    * </p>
-    * @param trainee
-    *		object has to passed to perform Update operation
-    * @return - Element
-    * 		This method will Old Object
-    **/
-    public boolean updateTrainee(Trainee trainee) {
-	boolean isUpdated = false;
-	try {
-            factory = new Configuration().configure().buildSessionFactory();
-	    session = factory.openSession();
-	    Transaction transaction = session.beginTransaction();
-	    List<Trainer> trainerResults = session.createCriteria(Trainer.class).list();
-	    List<Integer> trainersId = trainee.getTrainersId();
-	    Set<Trainer> trainers = new HashSet<>();
-	    for (int i=0; i < trainerResults.size(); i++) {
-	        for (int j=0; j < trainersId.size(); j++) {
-	            if (trainersId.get(j) == trainerResults.get(i).getEmployee().getId()) {
-		        trainers.add(trainerResults.get(i));
-	            }
-	        }
-	    }
-	    trainee.setTrainers(trainers);
-	    session.merge(trainee);
-	    transaction.commit();
-	    isUpdated = true;
-	} catch(Throwable ex) {
-	    ex.printStackTrace();
-	} finally {
-	    session.close();
-	}
-	return isUpdated;
     }
 }

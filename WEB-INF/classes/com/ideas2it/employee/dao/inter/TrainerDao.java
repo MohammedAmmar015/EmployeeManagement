@@ -58,17 +58,4 @@ public interface TrainerDao {
     *		 This method will return trainer Object based on Trainer id
     **/
     Trainer retrieveTrainerById(int trainerId);
-
-
-
-    /**
-    * <p>
-    * This method is used to Update Trainer Details on Database using Hibernate
-    * </p>
-    * @param trainer
-    *		object has to passed to perform Update operation
-    * @return Element
-    * 		This method will Old Object
-    **/
-    boolean updateTrainer(Trainer trainer);
 }

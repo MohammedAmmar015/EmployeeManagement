@@ -61,17 +61,4 @@ public interface TraineeDao {
     *		 This method will return trainee Object based on Trainee id
     **/
     Trainee retrieveTraineeById(int traineeId);
-
-
-
-    /**
-    * <p>
-    * This method is used to Update Trainee Details on Database using Hibernate
-    * </p>
-    * @param trainee
-    *		object has to passed to perform Update operation
-    * @return Element
-    * 		This method will Old Object
-    **/
-    boolean updateTrainee(Trainee trainee);
 }

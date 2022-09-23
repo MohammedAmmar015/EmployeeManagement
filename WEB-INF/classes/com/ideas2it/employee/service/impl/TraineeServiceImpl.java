@@ -59,7 +59,7 @@ public class TraineeServiceImpl implements TraineeService {
     * @return errors
     *         It returns List of Attributes, which failed validation 
     **/
-    public List<Attributes> addTrainee(final String name, final String address, final String mobileNumber,
+    public List<Attributes> addOrModifyTrainee(Trainee trainee, final String name, final String address, final String mobileNumber,
 				    final String email, final String dateOfJoining, final String dateOfBirth,
 				    final String qualification, final String bloodGroup, final String trainingPeriod, 
 				    final String course, final String batchNumber, final List<String> trainersId) throws BadRequest {
@@ -114,7 +114,6 @@ public class TraineeServiceImpl implements TraineeService {
 	    errorMessage.append(ErrorMessage.DATE_OF_BIRTH.formatErrorMessage);
 	}*/
 	
-	Qualification validQualification = new Qualification(qualification);
 	Byte validTrainingPeriod = null;
 	try {
 	    validTrainingPeriod = Byte.valueOf(trainingPeriod);
@@ -137,11 +136,30 @@ public class TraineeServiceImpl implements TraineeService {
 	    validTrainersId.add(Integer.valueOf(trainerId));
 	}
 	
+	Qualification validQualification;
+	Role role;
+	Employee employee;
 	if (errors.isEmpty()) {
-	    Role role = new Role("Trainee");
-	    Employee employee = new Employee(validName, address, validMobileNumber, validEmail, validDateOfJoining,
-					     validDateOfBirth, bloodGroup, validQualification, role);
-	    Trainee trainee = new Trainee(employee, validTrainingPeriod, course, validBatchNumber, validTrainersId);
+	    if (trainee == null) {
+		validQualification = new Qualification(qualification);
+	        role = new Role("Trainee");
+	    	employee = new Employee(validName, address, validMobileNumber, validEmail, validDateOfJoining,
+				    validDateOfBirth, bloodGroup, validQualification, role);
+	    	trainee = new Trainee(employee, validTrainingPeriod, course, validBatchNumber, validTrainersId);
+	    } else {
+		trainee.getEmployee().getQualification().setDescription(qualification);
+		trainee.getEmployee().setName(validName);
+		trainee.getEmployee().setAddress(address);
+		trainee.getEmployee().setMobileNumber(validMobileNumber);
+		trainee.getEmployee().setEmail(validEmail);
+		trainee.getEmployee().setDateOfJoining(validDateOfJoining);
+		trainee.getEmployee().setDateOfBirth(validDateOfBirth);
+		trainee.getEmployee().setBloodGroup(bloodGroup);
+		trainee.setTrainingPeriod(validTrainingPeriod);
+		trainee.setCourse(course);
+		trainee.setBatchNumber(validBatchNumber);
+		trainee.setTrainersId(validTrainersId);
+	    }
 	    traineeDao.insertTrainee(trainee);
 	} else {
 	    errorMessage.append("\t\t\tPlease Re-enter the Trainee details correctly");
@@ -188,83 +206,4 @@ public class TraineeServiceImpl implements TraineeService {
 	}
 	return true;
     }
-
-    /**
-    * <p>
-    * This method is used to Validate the User Input and Modify the Trainee object using Trainee Id
-    * </p>
-    * @param trainee - trainee object to update
-    * @param value - Data got from the User to Update
-    * @param inputType - Column/Attribute Name
-    * @return - It returns Boolean value, If Validation failed
-    **/
-    public boolean modifyTrainee(final Trainee trainee, final String value, final Attributes inputType) {
-	boolean isValueValid = true;
-	switch (inputType) {
-	    case ADDRESS:
-	        trainee.getEmployee().setAddress(value);
-	        break;
-	
-	    case MOBILE_NUMBER:
-	        Long mobileNumber;
-	        if (!StringUtil.isValidMobileNumber(value)) {
-		    isValueValid = false;
-		    throw new BadRequest(2, "Invalid Mobile Number!, please Re-enter correctly");
-		    
-	        } else {
-	    	    mobileNumber = Long.valueOf(value);
-		    trainee.getEmployee().setMobileNumber(mobileNumber);
-	        }
-	        break;
-
-	    case EMAIL:
-	        if (!StringUtil.isValidEmail(value)) {
-		    isValueValid = false;
-	    	    throw new BadRequest(3,"Invalid Email, It must End with ideas2it.com");
-	        } else {
-	    	    trainee.getEmployee().setEmail(value);
-	        }
-	        break;
-
-	    case COURSE:
-	        trainee.setCourse(value);
-	        break;
-	} 
-	return isValueValid;
-    }
-
-    /**
-    * <p>
-    * This method is used to Validate the List trainers Name and Modify the Trainee object using Trainee Id
-    * </p>
-    * @param trainee - trainee object to update
-    * @param trainersId- List of trainers id to update
-    * @param inputType - Column/Attribute Name
-    * @return - It returns Nothing
-    **/
-    public boolean modifyTrainerNames(Trainee trainee, List<String> trainersId, Attributes inputType) {
-	boolean isValid = true;
-	List<Integer> validTrainersId = new ArrayList<>();
-	for (String trainerId : trainersId) {
-	    try {
-	        validTrainersId.add(Integer.valueOf(trainerId));
-	    } catch (InputMismatchException e) {
-		isValid = false;
-	    }
-	}	
-	trainee.setTrainersId(validTrainersId);
-	return isValid;
-    }
-
-    /**
-    * <p>
-    * This method is used to Update trainee Details into Database using Hibernate
-    * </p>
-    * @param trainee
-    * 		- trainee object has to be passed to get updated
-    * @return - It returns nothing
-    **/
-    public boolean modifyTraineeIntoDB(Trainee trainee) {
-	return traineeDao.updateTrainee(trainee);
-    } 
 }

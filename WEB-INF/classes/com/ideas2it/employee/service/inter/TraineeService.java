@@ -41,7 +41,7 @@ public interface TraineeService {
     * @return errors
     *         It returns List of Attributes, which failed validation 
     **/
-    List<Attributes> addTrainee(final String tempName, final String tempAddress, final String tempMobileNumber,
+    List<Attributes> addOrModifyTrainee(Trainee trainee, final String tempName, final String tempAddress, final String tempMobileNumber,
 				       final String tempEmail, final String tempDateOfJoining, final String tempDateOfBirth,
 				       final String tempQualification, final String tempBloodGroup, final String tempTrainingPeriod, 
 				       final String tempCourse, final String tempBatchNumber, final List<String> trainersId) throws BadRequest;
@@ -76,39 +76,5 @@ public interface TraineeService {
     * @return - It returns nothing
     **/
     boolean removeTraineeById(final int traineeId);
-
-
-    /**
-    * <p>
-    * This method is used to Validate the User Input and Modify the Trainee object using Trainee Id
-    * </p>
-    * @param trainee - trainee object to update
-    * @param value - Data got from the User to Update
-    * @param inputType - Column/Attribute Name
-    * @return - It returns Boolean value, If Validation failed
-    **/
-    boolean modifyTrainee(final Trainee trainee, final String value, final Attributes inputType);
-
-
-    /**
-    * <p>
-    * This method is used to Validate the List trainers Name and Modify the Trainee object using Trainee Id
-    * </p>
-    * @param trainee- trainee object to update
-    * @param trainersName - Data got from the User to Update
-    * @param inputType - Column/Attribute Name
-    * @return - It returns boolean value, true/false
-    **/
-    boolean modifyTrainerNames(Trainee trainee, List<String> trainersName, Attributes inputType);
-
-    /**
-    * <p>
-    * This method is used to Update trainee Details into Database using Hibernate
-    * </p>
-    * @param trainee
-    * 		- trainee object has to be passed to get updated
-    * @return - It returns nothing
-    **/
-    boolean modifyTraineeIntoDB(Trainee trainee);
 
 }
