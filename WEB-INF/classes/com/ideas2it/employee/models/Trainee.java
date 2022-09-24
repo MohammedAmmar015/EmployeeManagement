@@ -37,12 +37,12 @@ public class Trainee extends Employee {
     * @param batchNumber - Trainee Batch Number
     * @param trainersId - List of trainers id
     **/
-    public Trainee(Employee employee, Byte trainingPeriod, String course, Byte batchNumber, List<Integer> trainersId) {
+    public Trainee(Employee employee, Byte trainingPeriod, String course, Byte batchNumber, Set<Trainer> trainers) {
 	this.employee = employee;
 	this.trainingPeriod = trainingPeriod;
 	this.course = course;
 	this.batchNumber = batchNumber;
-	this.trainersId = trainersId;
+	this.trainers = trainers;
     }
 
     public int getTraineeId() {

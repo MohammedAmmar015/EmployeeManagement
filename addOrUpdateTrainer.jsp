@@ -58,8 +58,7 @@
    Qualification : </br><input type="text" name="qualification" value="<%= qualification %>" required/></br>
    trainingExperience : </br><input type="number" name="trainingExperience" value="<%= trainingExperience %>" required/></br>
    </br><input type="submit" value="<%= heading %>"/>
+   <a href="employeeServlet?action=viewTrainer"> <input type="button" value="Back"></a>
   </form>
- </body>
-</html>
  </body>
 </html>

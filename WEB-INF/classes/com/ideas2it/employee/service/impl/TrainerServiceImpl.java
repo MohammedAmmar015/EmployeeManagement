@@ -84,30 +84,17 @@ public class TrainerServiceImpl implements TrainerService {
 	    validEmail = email;
 	}
 	
-	LocalDate validDateOfJoining = null;
-	//if (DateUtil.isValidDateFormat(dateOfJoining)) {
-	    validDateOfJoining = LocalDate.parse(dateOfJoining);
-	    if (DateUtil.computeDays(validDateOfJoining, LocalDate.now()) < 1) {
-	    	errors.add(Attributes.DATE_OF_JOINING);
-	    	errorMessage.append(ErrorMessage.DATE_OF_JOINING.errorMessage);
-	    }
-	/*} else {
+	LocalDate validDateOfJoining = LocalDate.parse(dateOfJoining);
+	if (DateUtil.computeDays(validDateOfJoining, LocalDate.now()) < 1) {
 	    errors.add(Attributes.DATE_OF_JOINING);
-	    errorMessage.append(ErrorMessage.DATE_OF_JOINING.formatErrorMessage);
-	}*/
+	    errorMessage.append(ErrorMessage.DATE_OF_JOINING.errorMessage);
+	}
 
-	LocalDate validDateOfBirth = null;
-	//if (DateUtil.isValidDateFormat(dateOfJoining)) {
-	    validDateOfBirth = LocalDate.parse(dateOfBirth);
-	    if (DateUtil.computePeriod(validDateOfBirth, LocalDate.now()) < 18) {
-	    	errors.add(Attributes.DATE_OF_BIRTH);
-	    	errorMessage.append(ErrorMessage.DATE_OF_BIRTH.errorMessage);
-	    }
-	/*} else {
+	LocalDate validDateOfBirth = LocalDate.parse(dateOfBirth);
+	if (DateUtil.computePeriod(validDateOfBirth, LocalDate.now()) < 18) {
 	    errors.add(Attributes.DATE_OF_BIRTH);
-	    errorMessage.append(ErrorMessage.DATE_OF_BIRTH.formatErrorMessage);
-	}*/
-
+	    errorMessage.append(ErrorMessage.DATE_OF_BIRTH.errorMessage);
+	}
 
 	Byte validTrainingExperience = null;
 	try {
@@ -125,7 +112,7 @@ public class TrainerServiceImpl implements TrainerService {
 		validQualification = new Qualification(qualification);
 	    	role = new Role("Trainer");
 	    	employee = new Employee(validName, address, validMobileNumber, validEmail, validDateOfJoining,
-				    validDateOfBirth, bloodGroup, validQualification, role);
+				        validDateOfBirth, bloodGroup, validQualification, role);
 	    	trainer = new Trainer(employee, validTrainingExperience);
 	    } else {
 		trainer.getEmployee().getQualification().setDescription(qualification);

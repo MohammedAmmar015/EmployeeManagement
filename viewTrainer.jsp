@@ -6,7 +6,14 @@
  <%@ page import = "java.util.List" 
 	  import = "com.ideas2it.employee.models.Trainer"
  %>
- <table border = 1 cellpadding = 5 cellspacing = 0>
+<a href="addOrUpdateTrainer.jsp?action=addTrainer"> <input type="button" value="Add Trainer"></a>
+    <%
+        List<Trainer> trainers = (List) request.getAttribute("trainers");
+        if (trainers.size() <= 0) {
+            out.println("No Data Found to Display");
+	} else {
+    %>
+</br><table border = 1 cellpadding = 5 cellspacing = 0>
     <tr>
 	<th>Id</th>
 	<th>Name</th>
@@ -20,10 +27,9 @@
 	<th>Training Experience</th>
 	<th>Number of Trainees</th>
     </tr>
-    <%
-       List<Trainer> trainers = (List) request.getAttribute("trainers");
-       for (Trainer trainer : trainers) {
-    %>
+ <%
+	for (Trainer trainer : trainers) {
+ %>
     <tr>
 	<td> <%= trainer.getEmployee().getId()%> </td>
 	<td> <%= trainer.getEmployee().getName()%> </td>
@@ -36,10 +42,14 @@
 	<td> <%= trainer.getEmployee().getBloodGroup()%> </td>
 	<td> <%= trainer.getTrainingExperience()%> </td>
 	<td> <%= trainer.getTrainees().size()%> </td>
+	<td> <a href="employeeServlet?action=removeTrainer&id=<%= trainer.getEmployee().getId()%>"> <input type="button" value="Delete"></a> </td>
+	<td> <a href="employeeServlet?action=updateTrainer&id=<%= trainer.getEmployee().getId()%>"> <input type="button" value="Update"></a> </td>
     </tr>
     <%
-       }
+        }
+	}
     %>
   </table>
+  </br><a href="index.html"> <input type="button" value="Back"></a>
 </body>
 </html>

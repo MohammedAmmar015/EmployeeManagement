@@ -8,6 +8,7 @@
 	  import = "com.ideas2it.employee.models.Trainee"
 	  import = "com.ideas2it.employee.models.Trainer"
  %>
+<a href="addOrUpdateTrainee.jsp?action=addTrainee"> <input type="button" value="Add Trainee"></a>
  <table border = 1 cellpadding = 5 cellspacing = 0>
     <tr>
 	<th>Id</th>
@@ -48,10 +49,13 @@
 	    }
 	%>
 	<td> <%= trainerIds %> </td>
+	<td> <a href="employeeServlet?action=removeTrainee&id=<%= trainee.getEmployee().getId()%>"> <input type="button" value="Delete"></a> </td>
+	<td> <a href="employeeServlet?action=updateTrainee&id=<%= trainee.getEmployee().getId()%>"> <input type="button" value="Update"></a> </td>
     </tr>
     <%
        }
     %>
   </table>
+  <a href="index.html"> <input type="button" value="Back"></a>
 </body>
 </html>

@@ -38,7 +38,7 @@ public class EmployeeController extends HttpServlet {
 		break;
 	
 	    case "updateTrainer":
-	 	updateTrainer(request, response);
+	 	getTrainerById(request, response);
 		break;
 
 	    case "removeTrainer":
@@ -54,7 +54,7 @@ public class EmployeeController extends HttpServlet {
 		break;
 	
 	    case "updateTrainee":
-	 	updateTrainee(request, response);
+	 	getTraineeById(request, response);
 		break;
 
 	    case "removeTrainee":
@@ -90,7 +90,7 @@ public class EmployeeController extends HttpServlet {
 	    out.println("<h6>");
 	    out.println(request.getParameter("name") + (trainer != null ? " Updated " : " Inserted ") + "Successfully"); 
 	    out.println("</h6>");
-	    RequestDispatcher rd=request.getRequestDispatcher("/index.html");  
+	    RequestDispatcher rd=request.getRequestDispatcher("/employeeServlet?action=viewTrainer");  
             rd.include(request, response);  
 	} catch (BadRequest e) {
 	    out.println("<h6>");
@@ -111,7 +111,7 @@ public class EmployeeController extends HttpServlet {
         requestDispatcher.forward(request, response); 
     }
 
-    public void updateTrainer(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException {
+    public void getTrainerById(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException {
 	response.setContentType("text/html"); 
 	PrintWriter out = response.getWriter();
 	int id = Integer.parseInt(request.getParameter("id"));
@@ -123,7 +123,7 @@ public class EmployeeController extends HttpServlet {
             rd.forward(request, response);
 	} catch (TrainerNotFound e) {
 	    out.println(e.getMessage());
-	    RequestDispatcher rd=request.getRequestDispatcher("/index.html");  
+	    RequestDispatcher rd=request.getRequestDispatcher("/employeeServlet?action=viewTrainer");  
             rd.include(request, response);
 	}
     }
@@ -135,11 +135,11 @@ public class EmployeeController extends HttpServlet {
 	try {
 	    trainerServiceImpl.removeTrainerById(id);
 	    out.println(id + "Deleted Successfully");
-	    RequestDispatcher rd=request.getRequestDispatcher("/index.html");  
+	    RequestDispatcher rd=request.getRequestDispatcher("/employeeServlet?action=viewTrainer");  
             rd.include(request, response);
 	} catch (TrainerNotFound e) {
 	    out.println(e.getMessage());
-	    RequestDispatcher rd=request.getRequestDispatcher("/index.html");  
+	    RequestDispatcher rd=request.getRequestDispatcher("/employeeServlet?action=viewTrainer");  
             rd.include(request, response);
 	}
     }
@@ -172,7 +172,7 @@ public class EmployeeController extends HttpServlet {
 	    
 	    out.println(request.getParameter("name") + (trainee != null ? " Updated " : " Inserted ")  + " Successfully"); 
 	    out.println("</h6>");
-	    RequestDispatcher rd=request.getRequestDispatcher("/index.html");  
+	    RequestDispatcher rd=request.getRequestDispatcher("/employeeServlet?action=viewTrainee");  
             rd.include(request, response);  
 	} catch (BadRequest e) {
 	    out.println("<h6>");
@@ -192,7 +192,7 @@ public class EmployeeController extends HttpServlet {
         requestDispatcher.forward(request, response);
     }
 
-    public void updateTrainee(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException {
+    public void getTraineeById(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException {
 	response.setContentType("text/html"); 
 	PrintWriter out = response.getWriter();
 	int id = Integer.parseInt(request.getParameter("id"));
@@ -216,11 +216,11 @@ public class EmployeeController extends HttpServlet {
 	try {
 	    traineeServiceImpl.removeTraineeById(id);
 	    out.println(id + " Deleted Successfully");
-	    RequestDispatcher rd=request.getRequestDispatcher("/index.html");  
+	    RequestDispatcher rd=request.getRequestDispatcher("/employeeServlet?action=viewTrainee");  
             rd.include(request, response);
 	} catch (TraineeNotFound e) {
 	    out.println(e.getMessage());
-	    RequestDispatcher rd=request.getRequestDispatcher("/index.html");  
+	    RequestDispatcher rd=request.getRequestDispatcher("/employeeServlet?action=viewTrainee");  
             rd.include(request, response);
 	}
     }

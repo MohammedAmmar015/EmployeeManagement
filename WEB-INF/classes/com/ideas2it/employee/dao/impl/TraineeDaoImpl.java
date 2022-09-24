@@ -25,11 +25,13 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
 
 
 public class TraineeDaoImpl implements TraineeDao {
 
-    private SessionFactory factory;
+    private SessionFactory factory = new Configuration().configure().buildSessionFactory();
     private Session session;
 
     /**
@@ -41,10 +43,9 @@ public class TraineeDaoImpl implements TraineeDao {
 	 **/
     public void insertTrainee(Trainee trainee) {
 	try {
-            factory = new Configuration().configure().buildSessionFactory();
 	    session = factory.openSession();
 	    Transaction transaction = session.beginTransaction();
-
+	   
 	    Role roleResult = (Role) session.createCriteria(Role.class)
 					    .add(Restrictions.eq("description", trainee.getEmployee().getRole().getDescription()))
 					    .uniqueResult();
@@ -58,18 +59,6 @@ public class TraineeDaoImpl implements TraineeDao {
 	    if (qualificationResult != null) {
 	        trainee.getEmployee().setQualification(qualificationResult);
 	    }
-
-	    List<Trainer> trainerResults = session.createCriteria(Trainer.class).list();
-	    List<Integer> trainersId = trainee.getTrainersId();
-	    Set<Trainer> trainers = new HashSet<>();
-	    for (int i=0; i < trainerResults.size(); i++) {
-	        for (int j=0; j < trainersId.size(); j++) {
-	            if (trainersId.get(j) == trainerResults.get(i).getEmployee().getId()) {
-		        trainers.add(trainerResults.get(i));
-	            }
-	        }
-	    }
-	    trainee.setTrainers(trainers);
 	    session.saveOrUpdate(trainee);
 	    transaction.commit();
 	} catch(Throwable ex) {
@@ -89,7 +78,6 @@ public class TraineeDaoImpl implements TraineeDao {
     public List<Trainee> retrieveTrainees() {
 	List<Trainee> trainees = new ArrayList<>();
 	try {
-            factory = new Configuration().configure().buildSessionFactory();
 	    session = factory.openSession();
 	    trainees = session.createQuery("from Trainee").list();
 	} catch(Throwable ex) {
@@ -111,7 +99,6 @@ public class TraineeDaoImpl implements TraineeDao {
     public boolean deleteTraineeById(int traineeId) {
 	boolean isDeleted = false;
 	try {
-            factory = new Configuration().configure().buildSessionFactory();
 	    session = factory.openSession();
 	    Transaction transaction = session.beginTransaction();
 	    Trainee result = (Trainee) session.createCriteria(Trainee.class).add(Restrictions.eq("employee.id", traineeId)).uniqueResult();
@@ -141,7 +128,6 @@ public class TraineeDaoImpl implements TraineeDao {
     public Trainee retrieveTraineeById(int traineeId) {
 	Trainee trainee = null;
 	try {
-            factory = new Configuration().configure().buildSessionFactory();
 	    session = factory.openSession();
 	    Transaction transaction = session.beginTransaction();
 	    Trainee result = (Trainee) session.createCriteria(Trainee.class).add(Restrictions.eq("employee.id", traineeId)).uniqueResult();

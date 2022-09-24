@@ -71,8 +71,7 @@
    Batch Number : </br><input type="number" name="batchNumber" value="<%= batchNumber %>" required/></br>
    Trainer Ids : </br><input type="text" name="trainerIds" value="<%= trainerIds %>" required/></br>
    </br><input type="submit" value="<%= heading %>"/>
+   <a href="employeeServlet?action=viewTrainer"> <input type="button" value="Back"></a>
   </form>
- </body>
-</html>
  </body>
 </html>

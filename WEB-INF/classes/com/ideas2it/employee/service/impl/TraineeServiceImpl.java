@@ -20,19 +20,25 @@ import com.ideas2it.employee.utilities.DateUtil;
 import com.ideas2it.employee.dao.impl.TraineeDaoImpl;
 import com.ideas2it.employee.dao.inter.TraineeDao;
 import com.ideas2it.employee.models.Trainee;
+import com.ideas2it.employee.models.Trainer;
 import com.ideas2it.employee.models.Employee;
 import com.ideas2it.employee.models.Role;
 import com.ideas2it.employee.models.Qualification;
 import com.ideas2it.employee.service.inter.TraineeService;
+import com.ideas2it.employee.service.inter.TrainerService;
+import com.ideas2it.employee.service.impl.TrainerServiceImpl;
 import com.ideas2it.employee.exception.BadRequest;
 import com.ideas2it.employee.exception.TraineeNotFound;
 import java.util.InputMismatchException;
 import java.util.List;
+import java.util.Set;
+import java.util.HashSet;
 import java.util.ArrayList;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class TraineeServiceImpl implements TraineeService {
+    private TrainerService trainerService = new TrainerServiceImpl();
     private TraineeDao traineeDao = new TraineeDaoImpl();
     private static DateTimeFormatter formatter = DateTimeFormatter.ofPattern(Constants.DATE_FORMAT);
 
@@ -62,7 +68,7 @@ public class TraineeServiceImpl implements TraineeService {
     public List<Attributes> addOrModifyTrainee(Trainee trainee, final String name, final String address, final String mobileNumber,
 				    final String email, final String dateOfJoining, final String dateOfBirth,
 				    final String qualification, final String bloodGroup, final String trainingPeriod, 
-				    final String course, final String batchNumber, final List<String> trainersId) throws BadRequest {
+				    final String course, final String batchNumber, final List<String> trainerIds) throws BadRequest {
 	List<Attributes> errors = new ArrayList<>();
 	StringBuilder errorMessage = new StringBuilder();
 
@@ -90,29 +96,17 @@ public class TraineeServiceImpl implements TraineeService {
 	    validEmail = email;
 	}
 	
-	LocalDate validDateOfJoining = null;
-	//if (DateUtil.isValidDateFormat(dateOfJoining)) {
-	    validDateOfJoining = LocalDate.parse(dateOfJoining);
-	    if (DateUtil.computeDays(validDateOfJoining, LocalDate.now()) < 1) {
-	    	errors.add(Attributes.DATE_OF_JOINING);
-	    	errorMessage.append(ErrorMessage.DATE_OF_JOINING.errorMessage);
-	    }
-	/*} else {
+	LocalDate validDateOfJoining = LocalDate.parse(dateOfJoining);
+	if (DateUtil.computeDays(validDateOfJoining, LocalDate.now()) < 1) {
 	    errors.add(Attributes.DATE_OF_JOINING);
-	    errorMessage.append(ErrorMessage.DATE_OF_JOINING.formatErrorMessage);
-	}*/
+	    errorMessage.append(ErrorMessage.DATE_OF_JOINING.errorMessage);
+	}
 
-	LocalDate validDateOfBirth = null;
-	//if (DateUtil.isValidDateFormat(dateOfBirth)) {
-	    validDateOfBirth = LocalDate.parse(dateOfBirth);
-	    if (DateUtil.computePeriod(validDateOfBirth, LocalDate.now()) < 18) {
-	    	errors.add(Attributes.DATE_OF_BIRTH);
-	    	errorMessage.append(ErrorMessage.DATE_OF_BIRTH.errorMessage);
-	    }
-	/*} else {
+	LocalDate validDateOfBirth = LocalDate.parse(dateOfBirth);
+	if (DateUtil.computePeriod(validDateOfBirth, LocalDate.now()) < 18) {
 	    errors.add(Attributes.DATE_OF_BIRTH);
-	    errorMessage.append(ErrorMessage.DATE_OF_BIRTH.formatErrorMessage);
-	}*/
+	    errorMessage.append(ErrorMessage.DATE_OF_BIRTH.errorMessage);
+	}
 	
 	Byte validTrainingPeriod = null;
 	try {
@@ -131,9 +125,15 @@ public class TraineeServiceImpl implements TraineeService {
 	}
 	
 	List<Integer> validTrainersId = new ArrayList<>();
-	for (String trainerId : trainersId) {
-	    
-	    validTrainersId.add(Integer.valueOf(trainerId));
+	List<Trainer> trainers = trainerService.getTrainers();
+	Set<Trainer> validTrainers = new HashSet<>();
+	for (String trainerId : trainerIds) {
+	    for (Trainer trainer : trainers) {
+	        if (Integer.valueOf(trainerId) == trainer.getEmployee().getId()) {
+		    validTrainersId.add(Integer.valueOf(trainerId));
+		    validTrainers.add(trainer);
+	        }
+	    }
 	}
 	
 	Qualification validQualification;
@@ -145,7 +145,7 @@ public class TraineeServiceImpl implements TraineeService {
 	        role = new Role("Trainee");
 	    	employee = new Employee(validName, address, validMobileNumber, validEmail, validDateOfJoining,
 				    validDateOfBirth, bloodGroup, validQualification, role);
-	    	trainee = new Trainee(employee, validTrainingPeriod, course, validBatchNumber, validTrainersId);
+	    	trainee = new Trainee(employee, validTrainingPeriod, course, validBatchNumber, validTrainers);
 	    } else {
 		trainee.getEmployee().getQualification().setDescription(qualification);
 		trainee.getEmployee().setName(validName);
