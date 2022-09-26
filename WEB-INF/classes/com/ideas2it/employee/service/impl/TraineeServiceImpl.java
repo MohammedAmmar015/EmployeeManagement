@@ -40,14 +40,12 @@ import java.time.format.DateTimeFormatter;
 public class TraineeServiceImpl implements TraineeService {
     private TrainerService trainerService = new TrainerServiceImpl();
     private TraineeDao traineeDao = new TraineeDaoImpl();
-    private static DateTimeFormatter formatter = DateTimeFormatter.ofPattern(Constants.DATE_FORMAT);
 
     /**
     * <p>
-    * This method is to Validate the Trainee details
-    * If all data is Valid. Then, Create object for that
-    * and Add it to the List
+    * This method is to Validate and add Trainee Details
     * </p>
+    * @param trainee - object of trainee
     * @param name - Trainee Name
     * @param address - Trainee Address
     * @param mobileNumber - Trainee Mobile Number
@@ -59,13 +57,13 @@ public class TraineeServiceImpl implements TraineeService {
     * @param trainingPeriod - Trainee training Period(In Months)
     * @param course - Course, Trainee undergoing
     * @param batchNumber - Trainee Batch Number
-    * @param trainersId - List of trainers id
+    * @param trainersId - List of trainer Ids
     * @throws BadRequest
     *		It throws exceptions, If any data is Invalid
     * @return errors
     *         It returns List of Attributes, which failed validation 
     **/
-    public List<Attributes> addOrModifyTrainee(Trainee trainee, final String name, final String address, final String mobileNumber,
+    public List<Integer> addOrModifyTrainee(Trainee trainee, final String name, final String address, final String mobileNumber,
 				    final String email, final String dateOfJoining, final String dateOfBirth,
 				    final String qualification, final String bloodGroup, final String trainingPeriod, 
 				    final String course, final String batchNumber, final List<String> trainerIds) throws BadRequest {
@@ -124,30 +122,29 @@ public class TraineeServiceImpl implements TraineeService {
 	    errorMessage.append(ErrorMessage.BATCH_NUMBER.errorMessage);
 	}
 	
-	List<Integer> validTrainersId = new ArrayList<>();
+	List<Integer> invalidTrainerIds = new ArrayList<>();
 	List<Trainer> trainers = trainerService.getTrainers();
 	Set<Trainer> validTrainers = new HashSet<>();
 	for (String trainerId : trainerIds) {
 	    for (Trainer trainer : trainers) {
 	        if (Integer.valueOf(trainerId) == trainer.getEmployee().getId()) {
-		    validTrainersId.add(Integer.valueOf(trainerId));
 		    validTrainers.add(trainer);
-	        }
+	        } else {
+		    invalidTrainerIds.add(Integer.valueOf(trainerId));
+		}
 	    }
 	}
 	
-	Qualification validQualification;
-	Role role;
+	Qualification validQualification = new Qualification(qualification);
+	Role role = new Role("Trainee");
 	Employee employee;
 	if (errors.isEmpty()) {
 	    if (trainee == null) {
-		validQualification = new Qualification(qualification);
-	        role = new Role("Trainee");
 	    	employee = new Employee(validName, address, validMobileNumber, validEmail, validDateOfJoining,
 				    validDateOfBirth, bloodGroup, validQualification, role);
 	    	trainee = new Trainee(employee, validTrainingPeriod, course, validBatchNumber, validTrainers);
 	    } else {
-		trainee.getEmployee().getQualification().setDescription(qualification);
+		trainee.getEmployee().setQualification(validQualification);
 		trainee.getEmployee().setName(validName);
 		trainee.getEmployee().setAddress(address);
 		trainee.getEmployee().setMobileNumber(validMobileNumber);
@@ -158,15 +155,15 @@ public class TraineeServiceImpl implements TraineeService {
 		trainee.setTrainingPeriod(validTrainingPeriod);
 		trainee.setCourse(course);
 		trainee.setBatchNumber(validBatchNumber);
-		trainee.setTrainersId(validTrainersId);
+		trainee.setTrainers(validTrainers);
 	    }
-	    traineeDao.insertTrainee(trainee);
+	    traineeDao.insertOrUpdateTrainee(trainee);
 	} else {
 	    errorMessage.append("\t\t\tPlease Re-enter the Trainee details correctly");
 	    errorMessage.append(errors.size()).append(" Errors Found");
 	    throw new BadRequest(errors, errorMessage.toString());
 	}
-	return errors;
+	return invalidTrainerIds;
     }
     
     /**

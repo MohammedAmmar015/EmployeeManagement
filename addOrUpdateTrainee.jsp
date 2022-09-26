@@ -1,8 +1,10 @@
 <html>
  <head>
   <title>Trainee</title>
+   <link rel="stylesheet" href="style.css">
  </head>
  <body>
+  <div class="addContainer">
   <%@ page import="com.ideas2it.employee.models.Trainee"
 	   import="com.ideas2it.employee.models.Trainer"	
  %>
@@ -70,8 +72,9 @@
    Course : </br><input type="text" name="course" value="<%= course %>" required/></br>
    Batch Number : </br><input type="number" name="batchNumber" value="<%= batchNumber %>" required/></br>
    Trainer Ids : </br><input type="text" name="trainerIds" value="<%= trainerIds %>" required/></br>
-   </br><input type="submit" value="<%= heading %>"/>
-   <a href="employeeServlet?action=viewTrainer"> <input type="button" value="Back"></a>
+   </br><input class = "btn" type="submit" value="<%= heading %>"/>
+   <a href="employeeServlet?action=viewTrainer"> <input class = "btn" type="button" value="Back"></a>
   </form>
+  </div>
  </body>
 </html>

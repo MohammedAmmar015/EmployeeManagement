@@ -14,8 +14,8 @@
     	<property name="dateOfBirth" column="date_of_birth"></property>
     	<property name="bloodGroup" column="blood_group"></property>
     	<many-to-one name="qualification" class="com.ideas2it.employee.models.Qualification" 
-		     column="qualification_id" not-null="true" cascade="save-update" fetch="join"/>
+		     column="qualification_id" not-null="true" cascade="save-update"/>
     	<many-to-one name="role" class="com.ideas2it.employee.models.Role" 
-		     column="role_id" not-null="true" cascade="save-update" fetch="join"/>
+		     column="role_id" not-null="true" cascade="save-update"/>
     </class>
 </hibernate-mapping>

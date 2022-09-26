@@ -1,8 +1,10 @@
 <html>
  <head>
   <title>Update Trainer</title>
+   <link rel="stylesheet" href="style.css">
  </head>
  <body>
+  <div class="addContainer">
   <%@ page import="com.ideas2it.employee.models.Trainer" %>
   <% String operation = request.getParameter("action");
 	Trainer trainer = null;
@@ -57,8 +59,9 @@
 		 <label for="ab-">AB Negative</label><br>
    Qualification : </br><input type="text" name="qualification" value="<%= qualification %>" required/></br>
    trainingExperience : </br><input type="number" name="trainingExperience" value="<%= trainingExperience %>" required/></br>
-   </br><input type="submit" value="<%= heading %>"/>
-   <a href="employeeServlet?action=viewTrainer"> <input type="button" value="Back"></a>
+   </br><input class ="btn" type="submit" value="<%= heading %>"/>
+   <a href="employeeServlet?action=viewTrainer"> <input class ="btn" type="button" value="Back"></a>
   </form>
+  </div>
  </body>
 </html>

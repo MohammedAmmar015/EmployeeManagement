@@ -18,13 +18,13 @@ public interface TraineeDao {
 
     /**
      * <p>
-     * This method is used to Insert Trainee details into Database
+     * This method is used to Insert or Update Trainee details into Database
      * Using Hibernate
      * </p>
      *
      * @param trainee trainee object has to be passed to store
      **/
-    void insertTrainee(Trainee trainee);
+    void insertOrUpdateTrainee(Trainee trainee);
 
 
     /**

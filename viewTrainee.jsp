@@ -1,6 +1,7 @@
 <html>
 <head>
  <title>View Trainee</title>
+ <link rel="stylesheet" href="style.css">
 </head>
 <body>
  <%@ page import = "java.util.List" 
@@ -8,7 +9,8 @@
 	  import = "com.ideas2it.employee.models.Trainee"
 	  import = "com.ideas2it.employee.models.Trainer"
  %>
-<a href="addOrUpdateTrainee.jsp?action=addTrainee"> <input type="button" value="Add Trainee"></a>
+ <div class ="view">
+ <h1> Trainee Portal </h1>
  <table border = 1 cellpadding = 5 cellspacing = 0>
     <tr>
 	<th>Id</th>
@@ -24,6 +26,7 @@
 	<th>Course</th>
 	<th>Batch Number</th>
 	<th>Trainers Id</th>
+	<th colspan = "2">Actions</th>
     </tr>
     <%
        List<Trainee> trainees = (List) request.getAttribute("trainees");
@@ -49,13 +52,15 @@
 	    }
 	%>
 	<td> <%= trainerIds %> </td>
-	<td> <a href="employeeServlet?action=removeTrainee&id=<%= trainee.getEmployee().getId()%>"> <input type="button" value="Delete"></a> </td>
-	<td> <a href="employeeServlet?action=updateTrainee&id=<%= trainee.getEmployee().getId()%>"> <input type="button" value="Update"></a> </td>
+	<td> <a href="employeeServlet?action=removeTrainee&id=<%= trainee.getEmployee().getId()%>"> <input class ="delete btn" type="button" value="Delete"></a> </td>
+	<td> <a href="employeeServlet?action=updateTrainee&id=<%= trainee.getEmployee().getId()%>"> <input class ="delete btn" type="button" value="Update"></a> </td>
     </tr>
     <%
        }
     %>
-  </table>
-  <a href="index.html"> <input type="button" value="Back"></a>
+  </table></br>
+  <a href="addOrUpdateTrainee.jsp?action=addTrainee"> <input class ="add btn" type="button" value="Add Trainee"></a>
+  <a href="index.html"> <input class ="back btn" type="button" value="Back"></a>
+  </div>
 </body>
 </html>

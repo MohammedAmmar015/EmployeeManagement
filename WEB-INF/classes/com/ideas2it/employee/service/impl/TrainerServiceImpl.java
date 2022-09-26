@@ -104,18 +104,16 @@ public class TrainerServiceImpl implements TrainerService {
 	    errorMessage.append(ErrorMessage.TRAINING_EXPERIENCE.errorMessage);
 	}
 
-	Qualification validQualification;
-	Role role;
+	Qualification validQualification = new Qualification(qualification);
+	Role role = new Role("Trainer");
 	Employee employee;
 	if (errors.isEmpty()) {
 	    if (trainer == null) {
-		validQualification = new Qualification(qualification);
-	    	role = new Role("Trainer");
 	    	employee = new Employee(validName, address, validMobileNumber, validEmail, validDateOfJoining,
 				        validDateOfBirth, bloodGroup, validQualification, role);
 	    	trainer = new Trainer(employee, validTrainingExperience);
 	    } else {
-		trainer.getEmployee().getQualification().setDescription(qualification);
+		trainer.getEmployee().setQualification(validQualification);
 		trainer.getEmployee().setName(validName);
 		trainer.getEmployee().setAddress(address);
 		trainer.getEmployee().setMobileNumber(validMobileNumber);
@@ -125,7 +123,7 @@ public class TrainerServiceImpl implements TrainerService {
 		trainer.getEmployee().setBloodGroup(bloodGroup);
 		trainer.setTrainingExperience(validTrainingExperience);
 	    }
-	    trainerDao.insertTrainer(trainer);
+	    trainerDao.insertOrUpdateTrainer(trainer);
 	} else {
 	    errorMessage.append(errors.size()).append(" Errors Found");
 	    errorMessage.append("\t\t\tPlease Re-enter the Trainer details correctly");

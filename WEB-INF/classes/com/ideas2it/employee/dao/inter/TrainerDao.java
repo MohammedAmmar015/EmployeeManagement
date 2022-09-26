@@ -18,12 +18,12 @@ public interface TrainerDao {
 
     /**
      * <p>
-     * This method is used to Insert Trainer Details into Database using Hibernate
+     * This method is used to Insert or Update Trainer Details into Database using Hibernate
      * </p>
      *
      * @param trainer trainer object has to be passed to store
      **/
-    void insertTrainer(Trainer trainer);
+    void insertOrUpdateTrainer(Trainer trainer);
 
 
     /**

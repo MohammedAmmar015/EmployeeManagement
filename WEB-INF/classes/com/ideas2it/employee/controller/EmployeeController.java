@@ -166,10 +166,13 @@ public class EmployeeController extends HttpServlet {
 	}
 	Trainee trainee = (Trainee) session.getAttribute("trainee");
 	try {
-	    traineeServiceImpl.addOrModifyTrainee(trainee, name, address, mobileNumber, email, dateOfJoining, dateOfBirth,
-					  qualification, bloodGroup, trainingPeriod, course, batchNumber, trainerIds);
+	    List<Integer> invalidTrainerIds = traineeServiceImpl.addOrModifyTrainee(trainee, name, address, mobileNumber, email, 
+							dateOfJoining, dateOfBirth, qualification, bloodGroup, trainingPeriod, 
+							course, batchNumber, trainerIds);
 	    out.println("<h6>");
-	    
+	    if (invalidTrainerIds.size() >= 0) {
+	        out.println(invalidTrainerIds.toString() + " - Trainer Ids Not Found"); 
+	    }
 	    out.println(request.getParameter("name") + (trainee != null ? " Updated " : " Inserted ")  + " Successfully"); 
 	    out.println("</h6>");
 	    RequestDispatcher rd=request.getRequestDispatcher("/employeeServlet?action=viewTrainee");  
