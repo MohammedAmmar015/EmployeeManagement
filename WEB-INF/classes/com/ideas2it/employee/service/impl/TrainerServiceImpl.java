@@ -36,10 +36,9 @@ public class TrainerServiceImpl implements TrainerService {
 
     /**
     * <p>
-    * This method is to Validate the Trainer details
-    * If all data is Valid. Then, Create object for that
-    * and Add it to the List 
+    * This method is to Validate and insert the Trainer details
     * </p>
+    * @param trainer - trainer object
     * @param name - Trainer Name
     * @param address - Trainer Address
     * @param mobileNumber - Trainer Mobile Number

@@ -21,18 +21,18 @@ public interface TrainerService {
 
     /**
     * <p>
-    * This method is to Validate the Trainer details
-    * If all data is Valid. Then, Create object for that
-    * and Add it to the List 
+    * This method is to Validate and insert the Trainer details
     * </p>
-    * @param tempName - Trainer Name
-    * @param tempAddress - Trainer Address
-    * @param tempMobileNumber - Trainer Mobile Number
-    * @param tempEmail - Trainer Email
-    * @param tempDateOfJoining - Date, Trainer joined
-    * @param tempDateOfBirth - Trainer Date of Birth
-    * @param tempBloodGroup - Trainer Blood Group
-    * @param tempQualification - Trainer qualification
+    * @param trainer - trainer object
+    * @param name - Trainer Name
+    * @param address - Trainer Address
+    * @param mobileNumber - Trainer Mobile Number
+    * @param email - Trainer Email
+    * @param dateOfJoining - Date, Trainer joined
+    * @param dateOfBirth - Trainer Date of Birth
+    * @param bloodGroup - Trainer Blood Group
+    * @param qualification - Trainer qualification
+    * @param trainingExperience - previous training Experience		
     * @return errors
     *         It returns List of Attributes, which failed validation 
     * @throws BadRequest
