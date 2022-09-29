@@ -26,14 +26,14 @@ import com.ideas2it.employee.exception.BadRequest;
 import java.util.List;
 import java.util.ArrayList;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 
 public class TrainerServiceImpl implements TrainerService {
 
     private TrainerDao trainerDao = new TrainerDaoImpl();
-    private static DateTimeFormatter formatter = DateTimeFormatter.ofPattern(Constants.DATE_FORMAT);
-
+    private Logger logger = LogManager.getLogger(TrainerServiceImpl.class);
     /**
     * <p>
     * This method is to Validate and insert the Trainer details
@@ -56,6 +56,7 @@ public class TrainerServiceImpl implements TrainerService {
     public List<Attributes> addOrModifyTrainer(Trainer trainer, final String name, final String address, final String mobileNumber,
 				    final String email, final String dateOfJoining, final String dateOfBirth,
 				    final String qualification, final String bloodGroup, final String trainingExperience) throws BadRequest {
+	logger.info("Entered addOrModifyTrainer() method");
 	List<Attributes> errors = new ArrayList<>();
 	StringBuilder errorMessage = new StringBuilder();
 
@@ -138,6 +139,7 @@ public class TrainerServiceImpl implements TrainerService {
     * @return - It returns List of Trainers
     **/
     public List<Trainer> getTrainers() {
+	logger.info("Entered getTrainers() method");
 	return trainerDao.retrieveTrainers();
     }	
 
@@ -150,6 +152,7 @@ public class TrainerServiceImpl implements TrainerService {
     * @return - It returns single Trainer
     **/
     public Trainer getTrainerById(final int trainerId) {
+	logger.info("Entered getTrainerById() method");
 	Trainer trainer = trainerDao.retrieveTrainerById(trainerId);
 	if (trainer == null) {
 	    throw new TrainerNotFound("Entered trainer id not Found");
@@ -167,6 +170,7 @@ public class TrainerServiceImpl implements TrainerService {
     * 		Exception will be thrown, If Trainer Not found
     **/
     public boolean removeTrainerById(final int trainerId) {
+	logger.info("Entered removeTrainerById() method");
 	boolean isDeleted = false;
 	if (trainerDao.deleteTrainerById(trainerId)) {
 	    isDeleted = true;

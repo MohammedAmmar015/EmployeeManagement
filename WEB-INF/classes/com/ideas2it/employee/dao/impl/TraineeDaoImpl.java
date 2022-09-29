@@ -15,20 +15,21 @@ import com.ideas2it.employee.models.Trainee;
 import com.ideas2it.employee.models.Role;
 import com.ideas2it.employee.models.Qualification;
 import com.ideas2it.employee.dao.inter.TraineeDao;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import org.hibernate.cfg.Configuration;
 import org.hibernate.SessionFactory;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 
 public class TraineeDaoImpl implements TraineeDao {
 
     private SessionFactory factory = new Configuration().configure().buildSessionFactory();
     private Session session;
+    private Logger logger = LogManager.getLogger(TraineeDaoImpl.class);
 
     /**
      * <p>
@@ -38,6 +39,7 @@ public class TraineeDaoImpl implements TraineeDao {
      * @param trainee trainee object has to be passed to store
      **/
     public void insertOrUpdateTrainee(Trainee trainee) {
+	logger.info("Entered insertOrUpdateTrainee() method");
         try {
             session = factory.openSession();
             Transaction transaction = session.beginTransaction();
@@ -73,6 +75,7 @@ public class TraineeDaoImpl implements TraineeDao {
      * It returns all trainees from the List
      **/
     public List<Trainee> retrieveTrainees() {
+	logger.info("Entered retriveTrainees() method");
         List<Trainee> trainees = new ArrayList<>();
         try {
             session = factory.openSession();
@@ -94,6 +97,7 @@ public class TraineeDaoImpl implements TraineeDao {
      *                  to get deleted the Trainee Object
      **/
     public boolean deleteTraineeById(int traineeId) {
+	logger.info("Entered deleteTraineeById() method");
         boolean isDeleted = false;
         try {
             session = factory.openSession();
@@ -125,6 +129,7 @@ public class TraineeDaoImpl implements TraineeDao {
      * This method will return trainee Object based on Trainee id
      **/
     public Trainee retrieveTraineeById(int traineeId) {
+	logger.info("Entered retriveTraineeById() method");
         Trainee trainee = null;
         try {
             session = factory.openSession();

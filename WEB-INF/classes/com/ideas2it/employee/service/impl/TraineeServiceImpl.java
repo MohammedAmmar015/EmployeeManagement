@@ -36,10 +36,13 @@ import java.util.HashSet;
 import java.util.ArrayList;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class TraineeServiceImpl implements TraineeService {
     private TrainerService trainerService = new TrainerServiceImpl();
     private TraineeDao traineeDao = new TraineeDaoImpl();
+    private Logger logger = LogManager.getLogger(TraineeServiceImpl.class);
 
     /**
     * <p>
@@ -67,6 +70,7 @@ public class TraineeServiceImpl implements TraineeService {
 				    final String email, final String dateOfJoining, final String dateOfBirth,
 				    final String qualification, final String bloodGroup, final String trainingPeriod, 
 				    final String course, final String batchNumber, final List<String> trainerIds) throws BadRequest {
+  	logger.info("Entered addOrModifyTrainee() method");
 	List<Attributes> errors = new ArrayList<>();
 	StringBuilder errorMessage = new StringBuilder();
 
@@ -173,6 +177,7 @@ public class TraineeServiceImpl implements TraineeService {
     * @return - It returns List of Trainees
     **/
     public List<Trainee> getTrainees() {
+  	logger.info("Entered getTrainees() method");
 	return traineeDao.retrieveTrainees();
     }	
 
@@ -185,6 +190,7 @@ public class TraineeServiceImpl implements TraineeService {
     * @return - It returns single Trainee
     **/
     public Trainee getTraineeById(final int traineeId) {
+  	logger.info("Entered getTraineeById() method");
 	return traineeDao.retrieveTraineeById(traineeId);
     }
 	
@@ -198,6 +204,7 @@ public class TraineeServiceImpl implements TraineeService {
     * @return - It returns nothing
     **/
     public boolean removeTraineeById(final int traineeId) {
+  	logger.info("Entered removeTraineeById() method");
 	if (!traineeDao.deleteTraineeById(traineeId)) {
 	    throw new TraineeNotFound(traineeId + " Not Found");
 	}

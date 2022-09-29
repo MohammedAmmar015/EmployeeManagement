@@ -15,19 +15,20 @@ import com.ideas2it.employee.models.Trainer;
 import com.ideas2it.employee.models.Role;
 import com.ideas2it.employee.models.Qualification;
 import com.ideas2it.employee.dao.inter.TrainerDao;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import org.hibernate.cfg.Configuration;
 import org.hibernate.SessionFactory;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class TrainerDaoImpl implements TrainerDao {
 
     private SessionFactory factory = new Configuration().configure().buildSessionFactory();
     private Session session;
+    private Logger logger = LogManager.getLogger(TrainerDaoImpl.class);
 
     /**
      * <p>
@@ -37,6 +38,7 @@ public class TrainerDaoImpl implements TrainerDao {
      * @param trainer trainer object has to be passed to store
      **/
     public void insertOrUpdateTrainer(Trainer trainer) {
+	logger.info("Entered insertOrUpdateTrainer() method");
         try {
             session = factory.openSession();
             Transaction transaction = session.beginTransaction();
@@ -71,6 +73,7 @@ public class TrainerDaoImpl implements TrainerDao {
      *		 It returns all trainers from the List
      **/
     public List<Trainer> retrieveTrainers() {
+	logger.info("Entered retriveTrainers() method");
         List<Trainer> trainers = new ArrayList<>();
         try {
             session = factory.openSession();
@@ -94,6 +97,7 @@ public class TrainerDaoImpl implements TrainerDao {
      *  		to get deleted the Trainer Object
      **/
     public boolean deleteTrainerById(int trainerId) {
+	logger.info("Entered deleteTrainerById() method");
         boolean isDeleted = false;
         try {
 
@@ -126,6 +130,7 @@ public class TrainerDaoImpl implements TrainerDao {
      *		 This method will return trainer Object based on Trainer id
      **/
     public Trainer retrieveTrainerById(int trainerId) {
+	logger.info("Entered retriveTrainerById() method");
         Trainer trainer = null;
         try {
             session = factory.openSession();
