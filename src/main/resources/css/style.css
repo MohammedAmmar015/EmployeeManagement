@@ -1,0 +1,52 @@
+body {
+    background-color : lightgrey;
+}
+
+.container {
+    position : absolute;
+    top : 31%;
+    left : 22%;
+    text-align : center;
+}
+
+.addContainer {
+    background-color : white;
+    width : 500px;
+    position : absolute;
+    top : 1%;
+    left : 29%;
+    text-align : center;
+}
+
+
+.link {	
+    font-size : 30px;
+    color : brown;
+}
+
+a:hover {
+    color : black;
+    font-size : 33px;
+}
+
+.view {
+    position : absolute;
+    top : 1%;
+    left :1%;
+    right : 1%;
+    text-align : center;
+}
+
+.btn {
+    font-size : 15px;
+    color : black;
+    border : 2px solid grey;
+    border-radius : 5px;
+    padding : 5px;
+}
+
+.btn:hover {
+    font-size : 15.5px;
+    background-color : black;
+    color : white;
+}
