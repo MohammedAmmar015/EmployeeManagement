@@ -22,7 +22,7 @@ public class Trainee extends Employee {
     private String course;
     private Byte batchNumber;
     private Employee employee;
-    private List<Integer> trainersId;
+    private List<Integer> trainerIds;
     private Set<Trainer> trainers;
 
     public Trainee() {
@@ -37,7 +37,6 @@ public class Trainee extends Employee {
     * @param trainingPeriod - Trainee training Period(In Months)
     * @param course - Course, Trainee undergoing
     * @param batchNumber - Trainee Batch Number
-    * @param trainersId - List of trainers id
     **/
     public Trainee(Employee employee, Byte trainingPeriod, String course, Byte batchNumber, Set<Trainer> trainers) {
 	this.employee = employee;
@@ -87,12 +86,12 @@ public class Trainee extends Employee {
 	this.employee = employee;
     }
 
-    public List<Integer> getTrainersId() {
-	return trainersId;
+    public List<Integer> getTrainerIds() {
+	return trainerIds;
     }
 
-    public void setTrainersId(List<Integer> trainersId) {
-	this.trainersId = trainersId;
+    public void setTrainerIds(List<Integer> trainerIds) {
+	this.trainerIds = trainerIds;
     }
 
     public void setTrainers(Set<Trainer> trainers) {

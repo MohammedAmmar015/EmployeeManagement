@@ -71,9 +71,11 @@ public class Trainer extends Employee {
     @Override
     public String toString() {
 	//int numberOfTrainees = trainees.size();
-	return String.format(Constants.TRAINER_STRING_FORMAT,
+	/*return String.format(Constants.TRAINER_STRING_FORMAT,
 			    employee.getId(), employee.getName(), employee.getAddress(), employee.getMobileNumber(), employee.getEmail(), 
 			    employee.getDateOfJoining(), employee.getBloodGroup().toString(), trainingExperience, NumberUtil.getAge(employee.getDateOfBirth()), 
 			    NumberUtil.getExperience(employee.getDateOfJoining()), employee.getQualification(), "numberOfTrainees");
-    } 
+	 */
+        return employee.getId() + " - " + employee.getName();
+    }
 }

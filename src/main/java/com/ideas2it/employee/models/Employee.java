@@ -20,9 +20,9 @@ public class Employee {
     private Long mobileNumber;
     private String email;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private LocalDate dateOfJoining = LocalDate.now();
+    private LocalDate dateOfJoining;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private LocalDate dateOfBirth = LocalDate.now();
+    private LocalDate dateOfBirth;
     private String bloodGroup;
     private Qualification qualification;
     private Role role;
@@ -105,12 +105,6 @@ public class Employee {
         return this.dateOfJoining;
     }
 
-    /*public void setDateOfJoining(String dateOfJoining) {
-        this.dateOfJoining = LocalDate.parse(dateOfJoining);
-    }
-
-     */
-
     public void setDateOfJoining(LocalDate dateOfJoining) {
         this.dateOfJoining = dateOfJoining;
     }
@@ -118,12 +112,6 @@ public class Employee {
     public LocalDate getDateOfBirth() {
         return dateOfBirth;
     }
-
-    /*
-    public void setDateOfBirth(String dateOfBirth) {
-        this.dateOfBirth = LocalDate.parse(dateOfBirth);
-    }
-     */
 
     public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;

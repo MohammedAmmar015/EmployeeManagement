@@ -153,4 +153,11 @@ public class TrainerDaoImpl implements TrainerDao {
         }
         return trainer;
     }
+
+    @Override
+    public void updateTrainer(Trainer trainer) {
+
+    }
+
+
 }

@@ -1,5 +1,6 @@
 package com.ideas2it.employee.service.inter;
 
+import com.ideas2it.employee.constant.Attributes;
 import com.ideas2it.employee.exception.BadRequest;
 import com.ideas2it.employee.exception.TraineeNotFound;
 import com.ideas2it.employee.models.Trainee;
@@ -41,7 +42,7 @@ public interface TraineeService {
     * @return errors
     *         It returns List of Attributes, which failed validation 
     **/
-    List<Integer> addOrModifyTrainee(final Trainee trainee) throws BadRequest;
+    List<Attributes> addOrModifyTrainee(final Trainee trainee) throws BadRequest;
 
     /**
     * <p>

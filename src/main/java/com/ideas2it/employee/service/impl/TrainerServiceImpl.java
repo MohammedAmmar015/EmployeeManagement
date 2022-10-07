@@ -45,15 +45,7 @@ public class TrainerServiceImpl implements TrainerService {
     * This method is to Validate and insert the Trainer details
     * </p>
     * @param trainer - trainer object
-    * @param name - Trainer Name
-    * @param address - Trainer Address
-    * @param mobileNumber - Trainer Mobile Number
-    * @param email - Trainer Email
-    * @param dateOfJoining - Date, Trainer joined
-    * @param dateOfBirth - Trainer Date of Birth
-    * @param bloodGroup - Trainer Blood Group
-    * @param qualification - Trainer qualification
-    * @param trainingExperience - previous training Experience		
+
     * @return errors
     *         It returns List of Attributes, which failed validation 
     * @throws BadRequest
@@ -66,13 +58,11 @@ public class TrainerServiceImpl implements TrainerService {
 	List<Attributes> errors = new ArrayList<>();
 	StringBuilder errorMessage = new StringBuilder();
 
-	logger.info(trainer);
 	String validName = trainer.getEmployee().getName();
 	if (!StringUtil.isValidName(validName)) {
-	    errors.add(Attributes.NAME);
-	    errorMessage.append(ErrorMessage.NAME.errorMessage);
+		errors.add(Attributes.NAME);
+		errorMessage.append(ErrorMessage.NAME.errorMessage);
 	}
-		logger.info("after name");
 
 	Long validMobileNumber = trainer.getEmployee().getMobileNumber();
 	if (!StringUtil.isValidMobileNumber(validMobileNumber.toString())) {
@@ -80,14 +70,12 @@ public class TrainerServiceImpl implements TrainerService {
 	    errorMessage.append(ErrorMessage.MOBILE_NUMBER.errorMessage);
 	}
 
-		logger.info("after MB");
 	String validEmail = trainer.getEmployee().getEmail();
 	if (!StringUtil.isValidEmail(validEmail)) {
 	    errors.add(Attributes.EMAIL);
 	    errorMessage.append(ErrorMessage.EMAIL.errorMessage);
 	}
 
-		logger.info("after email");
 	LocalDate validDateOfJoining = trainer.getEmployee().getDateOfJoining();
 	if (DateUtil.computeDays(validDateOfJoining, LocalDate.now()) < 1) {
 	    errors.add(Attributes.DATE_OF_JOINING);
@@ -96,35 +84,14 @@ public class TrainerServiceImpl implements TrainerService {
 
 	LocalDate validDateOfBirth = trainer.getEmployee().getDateOfBirth();
 	if (DateUtil.computePeriod(validDateOfBirth, LocalDate.now()) < 18) {
-	    errors.add(Attributes.DATE_OF_BIRTH);
-	    errorMessage.append(ErrorMessage.DATE_OF_BIRTH.errorMessage);
+		errors.add(Attributes.DATE_OF_BIRTH);
+		errorMessage.append(ErrorMessage.DATE_OF_BIRTH.errorMessage);
 	}
-		logger.info("after date");
 
-	//Qualification validQualification = new Qualification(qualification);
 	Role role = new Role("Trainer");
 	trainer.getEmployee().setRole(role);
-	//Employee employee;
 	if (errors.isEmpty()) {
-		logger.info("inside.................if");
-	   /* if (trainer == null) {
-	    	employee = new Employee(validName, address, validMobileNumber, validEmail, validDateOfJoining,
-				        validDateOfBirth, bloodGroup, validQualification, role);
-	    	trainer = new Trainer(employee, validTrainingExperience);
-	    } else {
-		trainer.getEmployee().setQualification(validQualification);
-		trainer.getEmployee().setName(validName);
-		trainer.getEmployee().setAddress(address);
-		trainer.getEmployee().setMobileNumber(validMobileNumber);
-		trainer.getEmployee().setEmail(validEmail);
-		//trainer.getEmployee().setDateOfJoining(validDateOfJoining);
-		//trainer.getEmployee().setDateOfBirth(validDateOfBirth);
-		trainer.getEmployee().setBloodGroup(bloodGroup);
-		trainer.setTrainingExperience(validTrainingExperience);
-	    }
-
-	    */
-	    trainerDao.insertOrUpdateTrainer(trainer);
+		trainerDao.insertOrUpdateTrainer(trainer);
 	} else {
 	    errorMessage.append(errors.size()).append(" Errors Found");
 	    errorMessage.append("\t\t\tPlease Re-enter the Trainer details correctly");

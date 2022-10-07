@@ -14,7 +14,7 @@
         List<Trainer> trainers = (List) request.getAttribute("trainers");
         if (trainers.size() <= 0) {
             out.println("No Data Found to Display");
-	} else {
+	    } else {
     %>
     <p > ${msg} </p>
 </br><table border = 1 cellpadding = 5 cellspacing = 0>
@@ -48,7 +48,7 @@
 	<td> <%= trainer.getTrainingExperience()%> </td>
 	<td> <%= trainer.getTrainees().size()%> </td>
 	<td> <a href="deleteTrainer?id=<%= trainer.getEmployee().getId()%>"> <input class ="delete btn" type="button" value="Delete"></a> </td>
-	<td> <a href="employeeServlet?action=updateTrainer&id=<%= trainer.getEmployee().getId()%>"> <input class ="update btn" type="button" value="Update"></a> </td>
+	<td> <a href="updateTrainer?id=<%= trainer.getEmployee().getId()%>"> <input class ="update btn" type="button" value="Update"></a> </td>
     </tr>
     <%
         }

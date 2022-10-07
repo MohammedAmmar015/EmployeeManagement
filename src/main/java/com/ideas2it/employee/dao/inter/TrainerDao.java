@@ -60,4 +60,6 @@ public interface TrainerDao {
     *		 This method will return trainer Object based on Trainer id
     **/
     Trainer retrieveTrainerById(int trainerId);
+
+    void updateTrainer(Trainer trainer);
 }

@@ -52,9 +52,7 @@ public class TraineeServiceImpl implements TraineeService {
     * @return errors
     *         It returns List of Attributes, which failed validation 
     **/
-
-
-    public List<Integer> addOrModifyTrainee(Trainee trainee) throws BadRequest {
+    public List<Attributes> addOrModifyTrainee(Trainee trainee) throws BadRequest {
   	logger.info("Entered addOrModifyTrainee() method");
 	List<Attributes> errors = new ArrayList<>();
 	StringBuilder errorMessage = new StringBuilder();
@@ -88,52 +86,27 @@ public class TraineeServiceImpl implements TraineeService {
 	    errors.add(Attributes.DATE_OF_BIRTH);
 	    errorMessage.append(ErrorMessage.DATE_OF_BIRTH.errorMessage);
 	}
-	
-	List<Integer> invalidTrainerIds = new ArrayList<>();
+
 	List<Trainer> trainers = trainerService.getTrainers();
 	Set<Trainer> validTrainers = new HashSet<>();
-	for (Integer trainerId : trainee.getTrainersId()) {
+	for (Integer trainerId : trainee.getTrainerIds()) {
 	    for (Trainer trainer : trainers) {
 	        if (trainerId == trainer.getEmployee().getId()) {
-		        validTrainers.add(trainer);
-	        } else {
-		        invalidTrainerIds.add(Integer.valueOf(trainerId));
+				validTrainers.add(trainer);
 			}
 	    }
 	}
-	
-	//Qualification validQualification = new Qualification(qualification);
+	trainee.setTrainers(validTrainers);
 	Role role = new Role("Trainee");
 	trainee.getEmployee().setRole(role);
 	if (errors.isEmpty()) {
-	   /*
-	   if (trainee == null) {
-	    	employee = new Employee(validName, address, validMobileNumber, validEmail, validDateOfJoining,
-				    validDateOfBirth, bloodGroup, validQualification, role);
-	    	trainee = new Trainee(employee, validTrainingPeriod, course, validBatchNumber, validTrainers);
-	    } else {
-		trainee.getEmployee().setQualification(validQualification);
-		trainee.getEmployee().setName(validName);
-		trainee.getEmployee().setAddress(address);
-		trainee.getEmployee().setMobileNumber(validMobileNumber);
-		trainee.getEmployee().setEmail(validEmail);
-		//trainee.getEmployee().setDateOfJoining(validDateOfJoining);
-		//trainee.getEmployee().setDateOfBirth(validDateOfBirth);
-		trainee.getEmployee().setBloodGroup(bloodGroup);
-		trainee.setTrainingPeriod(validTrainingPeriod);
-		trainee.setCourse(course);
-		trainee.setBatchNumber(validBatchNumber);
-		trainee.setTrainers(validTrainers);
-	    }
-
-	    */
 	    traineeDao.insertOrUpdateTrainee(trainee);
 	} else {
 	    errorMessage.append("\t\t\tPlease Re-enter the Trainee details correctly");
 	    errorMessage.append(errors.size()).append(" Errors Found");
 	    throw new BadRequest(errors, errorMessage.toString());
 	}
-	return invalidTrainerIds;
+	return errors;
     }
     
     /**

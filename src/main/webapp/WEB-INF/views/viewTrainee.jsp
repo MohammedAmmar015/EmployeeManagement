@@ -12,6 +12,12 @@
  <div class ="view">
  <h1> Trainee Portal </h1>
  <p > ${msg} </p>
+ <%
+     List<Trainee> trainees = (List) request.getAttribute("trainees");
+     if (trainees.size() <= 0) {
+         out.println("No Data Found to Display");
+     } else {
+ %>
  <table border = 1 cellpadding = 5 cellspacing = 0>
     <tr>
 	<th>Id</th>
@@ -30,8 +36,7 @@
 	<th colspan = "2">Actions</th>
     </tr>
     <%
-       List<Trainee> trainees = (List) request.getAttribute("trainees");
-       for (Trainee trainee : trainees) {
+        for (Trainee trainee : trainees) {
     %>
     <tr>
 	<td> <%= trainee.getEmployee().getId()%> </td>
@@ -54,13 +59,14 @@
 	%>
 	<td> <%= trainerIds %> </td>
 	<td> <a href="deleteTrainee?id=<%= trainee.getEmployee().getId()%>"> <input class ="delete btn" type="button" value="Delete"></a> </td>
-	<td> <a href="employeeServlet?action=updateTrainee&id=<%= trainee.getEmployee().getId()%>"> <input class ="delete btn" type="button" value="Update"></a> </td>
+	<td> <a href="updateTrainee?id=<%= trainee.getEmployee().getId()%>"> <input class ="update btn" type="button" value="Update"></a> </td>
     </tr>
     <%
        }
+       }
     %>
   </table></br>
-  <a href="addOrUpdateTrainee.jsp?action=addTrainee"> <input class ="add btn" type="button" value="Add Trainee"></a>
+  <a href="\traineeForm"> <input class ="add btn" type="button" value="Add Trainee"></a>
   <a href="/"> <input class ="back btn" type="button" value="Back"></a>
   </div>
 </body>

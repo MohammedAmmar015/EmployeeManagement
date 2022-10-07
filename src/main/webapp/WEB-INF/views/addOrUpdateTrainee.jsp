@@ -1,80 +1,55 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@page isELIgnored="false"%>
 <html>
  <head>
   <title>Trainee</title>
-   <link rel="stylesheet" href="resources/css/style.css">
+   <link rel="stylesheet" href="resources/css/style.css" >
  </head>
  <body>
   <div class="addContainer">
   <%@ page import="com.ideas2it.employee.models.Trainee"
 	   import="com.ideas2it.employee.models.Trainer"	
- %>
-  <% String operation = request.getParameter("action");
-	Trainee trainee = null;
-	String name = "";
-	String address = "";
-	String mobileNumber = "";
-	String email = "";
-	String dateOfJoining = "";
-	String dateOfBirth = "";
-	String qualification = "";
-	String trainingPeriod = "";
-	String course = "";
-	String batchNumber = "";
-	String trainerIds = "";
-	String bloodGroup = "";
+  %>
+  <% String operation = (String) request.getAttribute("action");
 	String heading = "Add Trainee";
 	if (operation.equals("updateTrainee")) {
-	    trainee = (Trainee) request.getAttribute("trainee");
-	    name = trainee.getEmployee().getName();
-	    address = trainee.getEmployee().getAddress();
-	    mobileNumber = String.valueOf(trainee.getEmployee().getMobileNumber());
-	    email = trainee.getEmployee().getEmail();
-	    dateOfJoining = String.valueOf(trainee.getEmployee().getDateOfJoining());
-	    dateOfBirth = String.valueOf(trainee.getEmployee().getDateOfBirth());
-	    bloodGroup = trainee.getEmployee().getBloodGroup();
-	    qualification = trainee.getEmployee().getQualification().getDescription();
-	    trainingPeriod = String.valueOf(trainee.getTrainingPeriod());
-	    course = trainee.getCourse();
-	    batchNumber = String.valueOf(trainee.getBatchNumber());
-	    for (Trainer trainer : trainee.getTrainers()) {
-	    	trainerIds = String.join(",", String.valueOf(trainer.getEmployee().getId()), trainerIds);
-	    }
 	    heading = "Update Trainee";
 	}	
-	session.setAttribute("trainee", trainee);
   %>
   <h3> <%= heading %> </h3>
-  <form action="employeeServlet?action=addOrUpdateTrainee&operation=<%=operation%>" method="post">
-   Name : <input type="text" name="name" value="<%= name %>" required/></br></br>
-   Address : <input type="text" name="address" value="<%= address %>" required/></br></br>
-   Mobile Number : <input type="number" name="mobileNumber" value="<%= mobileNumber %>" required/></br></br>
-   Email : <input type="email" name="email" value="<%= email %>" required/></br></br>
-   Date of Joining : <input type="date" name="dateOfJoining" value="<%= dateOfJoining %>" required/></br></br>
-   Date of birth : <input type="date" name="dateOfBirth" value="<%= dateOfBirth %>" required/></br></br>
-   Blood Group : <input type="radio" id="a+" name="bloodGroup" value="A Positive" <%=(bloodGroup.equals("A Positive") ? "checked = checked" : "")%>>
-		 <label for="a+">A Positive</label><br>
-		 <input type="radio" id="b+" name="bloodGroup" value="B Positive" <%=(bloodGroup.equals("B Positive") ? "checked = checked" : "")%>>
-		 <label for="b+">B Positive</label><br>
-		 <input type="radio" id="o+" name="bloodGroup" value="O Positive" <%=(bloodGroup.equals("O Positive") ? "checked = checked" : "")%>>
-		 <label for="o+">O Positive</label><br>
-		 <input type="radio" id="ab+" name="bloodGroup" value="AB Positive" <%=(bloodGroup.equals("AB Positive") ? "checked = checked" : "")%>>
-		 <label for="ab+">AB Positive</label><br>
-		 <input type="radio" id="a-" name="bloodGroup" value="A Negative" <%=(bloodGroup.equals("A Negative") ? "checked = checked" : "")%>>
-		 <label for="a-">A Negative</label><br>
-		 <input type="radio" id="b-" name="bloodGroup" value="B Negative" <%=(bloodGroup.equals("B Negative") ? "checked = checked" : "")%>>
-		 <label for="b-">B Negative</label><br>
-		 <input type="radio" id="o-" name="bloodGroup" value="O Negative" <%=(bloodGroup.equals("O Negative") ? "checked = checked" : "")%>>
-		 <label for="o-">O Negative</label><br>
-		 <input type="radio" id="ab-" name="bloodGroup" value="AB Negative" <%=(bloodGroup.equals("AB Negative") ? "checked = checked" : "")%>>
-		 <label for="ab-">AB Negative</label><br></br>
-   Qualification : <input type="text" name="qualification" value="<%= qualification %>" required/></br></br>
-   Training Period : <input type="number" name="trainingPeriod" value="<%= trainingPeriod %>" required/></br></br>
-   Course : <input type="text" name="course" value="<%= course %>" required/></br></br>
-   Batch Number : <input type="number" name="batchNumber" value="<%= batchNumber %>" required/></br></br>
-   Trainer Ids : <input type="text" name="trainerIds" value="<%= trainerIds %>" required/></br>
+  <form:form modelAttribute="trainee" action="addOrUpdateTrainee" method="get">
+    <form:hidden path="employee.id"></form:hidden>
+     Name : <form:input type="text" path="employee.name" name="name" required="required" /></br></br>
+     Address : <form:input type="text" path="employee.address" name="address" required="required" /></br></br>
+     Mobile Number : <form:input type="number" path="employee.mobileNumber" name="mobileNumber" required="required" /></br></br>
+     Email : <form:input type="email" path="employee.email" name="email" required="required" /></br></br>
+     Date of Joining : <form:input type="date" path="employee.dateOfJoining" name="dateOfJoining" required="required" /></br></br>
+     Date of birth : <form:input type="date" path="employee.dateOfBirth" name="dateOfBirth" required="required" /></br></br>
+     Blood Group : <form:select path="employee.bloodGroup">
+     <form:option value="A Positive" label="A Positive"/>
+     <form:option value="B Positive" label="B Positive"/>
+     <form:option value="O Positive" label="O Positive"/>
+     <form:option value="AB Positive" label="AB Positive"/>
+     <form:option value="A Negative" label="A Negative"/>
+     <form:option value="B Negative" label="B Negative"/>
+     <form:option value="O Negative" label="O Negative"/>
+     <form:option value="AB Negative" label="AB Negative"/>
+     </form:select>
+     Qualification : <form:input type="text" path="employee.qualification.description" name="qualification" required="required" /></br></br>
+     <form:hidden path="traineeId" />
+     Training Period : <form:input type="number" path="trainingPeriod" name="trainingPeriod" required="required" /></br></br>
+     Course : <form:input type="text" path="course" name="course" required="required" /></br></br>
+     Batch Number : <form:input type="number" path="batchNumber" name="batchNumber" required="required" /></br></br>
+     Trainer Ids : </br>
+     <form:select path="trainerIds">
+           <c:forEach var="trainer" items="${trainers}" >
+                 <form:option value="${trainer.employee.id}" label="${trainer.employee.id}"/>
+           </c:forEach>
+     </form:select>
    </br><input class = "btn" type="submit" value="<%= heading %>"/>
-   <a href="employeeServlet?action=viewTrainer"> <input class = "btn" type="button" value="Back"></a>
-  </form>
+   <a href="/"> <input class = "btn" type="button" value="Back"></a>
+  </form:form>
   </div>
  </body>
 </html>
