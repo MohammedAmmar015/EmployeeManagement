@@ -25,15 +25,6 @@ public interface TrainerService {
     * This method is to Validate and insert the Trainer details
     * </p>
     * @param trainer - trainer object
-    * @param name - Trainer Name
-    * @param address - Trainer Address
-    * @param mobileNumber - Trainer Mobile Number
-    * @param email - Trainer Email
-    * @param dateOfJoining - Date, Trainer joined
-    * @param dateOfBirth - Trainer Date of Birth
-    * @param bloodGroup - Trainer Blood Group
-    * @param qualification - Trainer qualification
-    * @param trainingExperience - previous training Experience		
     * @return errors
     *         It returns List of Attributes, which failed validation 
     * @throws BadRequest
@@ -72,5 +63,5 @@ public interface TrainerService {
     * @throws TrainerNotFound
     * 		Exception will be thrown, If Trainer Not found
     **/
-    boolean removeTrainerById(final int trainerId) throws TrainerNotFound;
+    boolean removeTrainerById(final int trainerId);
 }

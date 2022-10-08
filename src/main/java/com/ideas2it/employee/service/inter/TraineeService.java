@@ -25,18 +25,6 @@ public interface TraineeService {
     * This method is to Validate and add Trainee Details
     * </p>
     * @param trainee - object of trainee
-    * @param name - Trainee Name
-    * @param address - Trainee Address
-    * @param mobileNumber - Trainee Mobile Number
-    * @param email - Trainee Email
-    * @param dateOfJoining - Date, Trainee joined
-    * @param dateOfBirth - Trainee Date of Birth
-    * @param bloodGroup - Trainee Blood Group
-    * @param qualification - Trainee qualification
-    * @param trainingPeriod - Trainee training Period(In Months)
-    * @param course - Course, Trainee undergoing
-    * @param batchNumber - Trainee Batch Number
-    * @param trainersId - List of trainer Ids
     * @throws BadRequest
     *		It throws exceptions, If any data is Invalid
     * @return errors

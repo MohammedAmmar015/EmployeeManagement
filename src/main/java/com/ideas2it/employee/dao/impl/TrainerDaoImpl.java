@@ -40,6 +40,7 @@ public class TrainerDaoImpl implements TrainerDao {
      *
      * @param trainer trainer object has to be passed to store
      **/
+    @Override
     public void insertOrUpdateTrainer(Trainer trainer) {
 	logger.info("Entered insertOrUpdateTrainer() method");
         try {
@@ -75,6 +76,7 @@ public class TrainerDaoImpl implements TrainerDao {
      * @return - trainers
      *		 It returns all trainers from the List
      **/
+    @Override
     public List<Trainer> retrieveTrainers() {
 	logger.info("Entered retriveTrainers() method");
         List<Trainer> trainers = new ArrayList();
@@ -99,6 +101,7 @@ public class TrainerDaoImpl implements TrainerDao {
      * 		Trainer id has to be passed to this method
      *  		to get deleted the Trainer Object
      **/
+    @Override
     public boolean deleteTrainerById(int trainerId) {
 	logger.info("Entered deleteTrainerById() method");
         boolean isDeleted = false;
@@ -133,6 +136,7 @@ public class TrainerDaoImpl implements TrainerDao {
      * @return trainer
      *		 This method will return trainer Object based on Trainer id
      **/
+    @Override
     public Trainer retrieveTrainerById(int trainerId) {
 	logger.info("Entered retriveTrainerById() method");
         Trainer trainer = null;
@@ -153,11 +157,4 @@ public class TrainerDaoImpl implements TrainerDao {
         }
         return trainer;
     }
-
-    @Override
-    public void updateTrainer(Trainer trainer) {
-
-    }
-
-
 }

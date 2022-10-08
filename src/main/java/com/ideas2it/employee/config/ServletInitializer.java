@@ -5,7 +5,6 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 public class ServletInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        // TODO Auto-generated method stub
         return null;
     }
 
@@ -16,6 +15,6 @@ public class ServletInitializer extends AbstractAnnotationConfigDispatcherServle
 
     @Override
     protected String[] getServletMappings() {
-        return new String[] { "/", "*.css" };
+        return new String[] { "/" };
     }
 }

@@ -61,5 +61,4 @@ public interface TrainerDao {
     **/
     Trainer retrieveTrainerById(int trainerId);
 
-    void updateTrainer(Trainer trainer);
 }

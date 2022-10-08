@@ -40,8 +40,9 @@ public class TraineeDaoImpl implements TraineeDao {
      *
      * @param trainee trainee object has to be passed to store
      **/
+    @Override
     public void insertOrUpdateTrainee(Trainee trainee) {
-	logger.info("Entered insertOrUpdateTrainee() method");
+        logger.info("Entered insertOrUpdateTrainee() method");
         try {
             session = factory.openSession();
             Transaction transaction = session.beginTransaction();
@@ -76,8 +77,9 @@ public class TraineeDaoImpl implements TraineeDao {
      * @return - trainees
      * It returns all trainees from the List
      **/
+    @Override
     public List<Trainee> retrieveTrainees() {
-	logger.info("Entered retriveTrainees() method");
+        logger.info("Entered retriveTrainees() method");
         List<Trainee> trainees = new ArrayList();
         try {
             session = factory.openSession();
@@ -98,8 +100,9 @@ public class TraineeDaoImpl implements TraineeDao {
      * @param traineeId Trainee id has to be passed to this method
      *                  to get deleted the Trainee Object
      **/
+    @Override
     public boolean deleteTraineeById(int traineeId) {
-	logger.info("Entered deleteTraineeById() method");
+        logger.info("Entered deleteTraineeById() method");
         boolean isDeleted = false;
         try {
             session = factory.openSession();
@@ -130,8 +133,9 @@ public class TraineeDaoImpl implements TraineeDao {
      * @return trainee
      * This method will return trainee Object based on Trainee id
      **/
+    @Override
     public Trainee retrieveTraineeById(int traineeId) {
-	logger.info("Entered retriveTraineeById() method");
+        logger.info("Entered retriveTraineeById() method");
         Trainee trainee = null;
         try {
             session = factory.openSession();

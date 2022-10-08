@@ -52,9 +52,9 @@
 	<td> <%= trainee.getCourse()%> </td>
 	<td> <%= trainee.getBatchNumber()%> </td>
 	<%
-	    List<Integer> trainerIds = new ArrayList<>();
+	    String trainerIds = "";
 	    for (Trainer trainer : trainee.getTrainers()) {
-		trainerIds.add(trainer.getEmployee().getId());
+		    trainerIds = String.join(",", String.valueOf(trainer.getEmployee().getId()),trainerIds);
 	    }
 	%>
 	<td> <%= trainerIds %> </td>
