@@ -157,4 +157,23 @@ public class TrainerDaoImpl implements TrainerDao {
         }
         return trainer;
     }
+
+    @Override
+    public List<Trainer> retrieveTrainersByIds(List<Integer> trainerIds) {
+        logger.info("Entered retriveTrainersByIds() method");
+        List<Trainer> trainers = null;
+        try {
+            session = factory.openSession();
+            Transaction transaction = session.beginTransaction();
+            trainers = (List<Trainer>) session.createQuery("from Trainer where employee.id in :ids")
+                    .setParameter("ids", trainerIds)
+                    .list();
+            transaction.commit();
+        } catch (Throwable exception) {
+            exception.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return trainers;
+    }
 }

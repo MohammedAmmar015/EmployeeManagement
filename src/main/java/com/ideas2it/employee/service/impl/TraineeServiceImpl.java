@@ -19,7 +19,6 @@ import com.ideas2it.employee.exception.BadRequest;
 import com.ideas2it.employee.exception.TraineeNotFound;
 import com.ideas2it.employee.models.Trainer;
 import com.ideas2it.employee.models.Trainee;
-import com.ideas2it.employee.models.Role;
 import com.ideas2it.employee.service.inter.TraineeService;
 import com.ideas2it.employee.service.inter.TrainerService;
 import com.ideas2it.employee.utilities.DateUtil;
@@ -28,14 +27,14 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-@Component
+@Service
 public class TraineeServiceImpl implements TraineeService {
     @Autowired
     private TrainerService trainerService;
@@ -90,20 +89,9 @@ public class TraineeServiceImpl implements TraineeService {
             errorMessage.append(ErrorMessage.DATE_OF_BIRTH.errorMessage);
         }
 
-        List<Trainer> trainers = trainerService.getTrainers();
-        Set<Trainer> validTrainers = new HashSet<>();
-        for (Integer trainerId : trainee.getTrainerIds()) {
-            for (Trainer trainer : trainers) {
-                if (trainerId == trainer.getEmployee().getId()) {
-                    validTrainers.add(trainer);
-                }
-            }
-        }
-        trainee.setTrainers(validTrainers);
+        Set<Trainer> trainers = Set.copyOf(trainerService.getTrainersByIds(trainee.getTrainerIds()));
+        trainee.setTrainers(trainers);
 
-
-        Role role = new Role("Trainee");
-        trainee.getEmployee().setRole(role);
         if (errors.isEmpty()) {
             traineeDao.insertOrUpdateTrainee(trainee);
         } else {

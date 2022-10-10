@@ -61,4 +61,5 @@ public interface TrainerDao {
     **/
     Trainer retrieveTrainerById(int trainerId);
 
+    List<Trainer> retrieveTrainersByIds(List<Integer> trainerIds);
 }

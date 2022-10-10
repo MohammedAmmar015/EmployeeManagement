@@ -133,7 +133,7 @@ public class EmployeeController {
 	}
 
 	@GetMapping("/updateTrainee")
-	public String getTraineeById(@RequestParam("id") int traineeId, RedirectAttributes redirectAttributes, Model model) {
+	public String getTraineeById(@RequestParam("id") int traineeId, Model model) {
 		Trainee trainee = traineeServiceImpl.getTraineeById(traineeId);
 		model.addAttribute("trainers", trainerServiceImpl.getTrainers());
 		model.addAttribute("trainee", trainee);

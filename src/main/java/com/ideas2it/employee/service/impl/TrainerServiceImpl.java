@@ -81,8 +81,6 @@ public class TrainerServiceImpl implements TrainerService {
             errorMessage.append(ErrorMessage.DATE_OF_BIRTH.errorMessage);
         }
 
-        Role role = new Role("Trainer");
-        trainer.getEmployee().setRole(role);
         if (errors.isEmpty()) {
             trainerDao.insertOrUpdateTrainer(trainer);
         } else {
@@ -119,6 +117,12 @@ public class TrainerServiceImpl implements TrainerService {
     public Trainer getTrainerById(final int trainerId) {
         logger.info("Entered getTrainerById() method");
         return trainerDao.retrieveTrainerById(trainerId);
+    }
+
+    @Override
+    public List<Trainer> getTrainersByIds(final List<Integer> trainerIds) {
+        logger.info("Entered getTrainerById() method");
+        return trainerDao.retrieveTrainersByIds(trainerIds);
     }
 
     /**

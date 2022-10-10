@@ -15,7 +15,7 @@ import com.ideas2it.employee.utilities.NumberUtil;
 import java.util.List;
 import java.util.Set;
 
-public class Trainee extends Employee {
+public class Trainee {
 
     private int traineeId;
     private Byte trainingPeriod;

@@ -22,6 +22,9 @@
   <form:form modelAttribute="trainee" action="addOrUpdateTrainee?action=${action}" method="post">
     <form:hidden path="employee.id"/>
     <form:hidden path="traineeId" />
+    <form:select hidden="hidden" path="employee.role.description">
+         <form:option selected="selected" value="Trainee">Trainee</form:option>
+    </form:select>
      <table>
              <tr>
                  <td>
@@ -76,7 +79,8 @@
                      Blood Group :
                  </td>
                  <td>
-                     <form:select path="employee.bloodGroup">
+                     <form:select path="employee.bloodGroup" required="required">
+                        <form:option value="" label="none" selected="selected" disabled="disabled"/>
                         <form:option value="A Positive" label="A Positive"/>
                         <form:option value="B Positive" label="B Positive"/>
                         <form:option value="O Positive" label="O Positive"/>

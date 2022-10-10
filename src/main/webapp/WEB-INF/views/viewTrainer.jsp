@@ -17,8 +17,9 @@
 	    } else {
     %>
     <p > ${msg} </p>
-</br><table border = 1 cellpadding = 5 cellspacing = 0>
-    <tr>
+    <div style="height:60%; overflow-y:scroll;">
+    <table border = 1 cellpadding = 5 cellspacing = 0>
+    <tr style="position: sticky;top: 0;background:black;color:white;">
 	<th>Id</th>
 	<th>Name</th>
 	<th>Address</th>
@@ -55,7 +56,8 @@
 	}
     %>
   </table>
-  </br>
+  </div>
+  </br></br>
   <a href="trainerForm"> <input class ="add btn" type="button" value="Add Trainer"></a>
   <a href="/"> <input class ="back btn" type="button" value="Back"></a>
   </div>

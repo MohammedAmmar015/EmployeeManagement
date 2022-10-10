@@ -12,6 +12,7 @@
  <div class ="view">
  <h1> Trainee Portal </h1>
  <p > ${msg} </p>
+ <div style="height:60%; overflow-y:scroll;">
  <%
      List<Trainee> trainees = (List) request.getAttribute("trainees");
      if (trainees.size() <= 0) {
@@ -65,7 +66,9 @@
        }
        }
     %>
-  </table></br>
+  </table>
+  </div>
+  </br></br>
   <a href="\traineeForm"> <input class ="add btn" type="button" value="Add Trainee"></a>
   <a href="/"> <input class ="back btn" type="button" value="Back"></a>
   </div>
