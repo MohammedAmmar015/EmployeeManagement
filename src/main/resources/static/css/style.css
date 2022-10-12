@@ -16,13 +16,14 @@ h2 {
 
 button {
     background-color : #f9dede;
-    color : #9d5d5d;
+    color : #8b6262;
     padding : 15px;
     font-size : 18px;
     text-decoration : none;
     border : 0px;
     border-radius : 12px;
-    margin-left : auto 12px;
+    margin-left : auto 15px;
+    box-shadow : 4px 4px 8px #c1aeae;
 }
 
 button:hover {
@@ -33,7 +34,7 @@ button:hover {
 .container {
     position : absolute;
     top : 35%;
-    left : 25%;
+    left : 18%;
     text-align : center;
 }
 
