@@ -1,7 +1,7 @@
 <html>
 <head>
  <title>View Trainee</title>
- <link rel="stylesheet" href="resources/css/style.css">
+ <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
  <%@ page import = "java.util.List" 
@@ -10,17 +10,17 @@
 	  import = "com.ideas2it.employee.models.Trainer"
  %>
  <div class ="view">
- <h1> Trainee Portal </h1>
+ <h2> Trainee Portal </h2>
  <p > ${msg} </p>
- <div style="height:60%; overflow-y:scroll;">
+ <div class = "scrollable">
  <%
      List<Trainee> trainees = (List) request.getAttribute("trainees");
      if (trainees.size() <= 0) {
          out.println("No Data Found to Display");
      } else {
  %>
- <table border = 1 cellpadding = 5 cellspacing = 0>
-    <tr>
+ <table>
+    <tr class = "tableHeading">
 	<th>Id</th>
 	<th>Name</th>
 	<th>Address</th>

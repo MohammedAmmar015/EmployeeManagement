@@ -20,10 +20,7 @@ public class Trainer extends Employee {
     @Column(name = "training_experience")
     private int trainingExperience;
 
-    @ManyToMany(cascade = CascadeType.PERSIST)
-    @JoinTable(name = "employee_relation",
-            joinColumns = @JoinColumn(name = "trainer_id", referencedColumnName = "emp_id"),
-            inverseJoinColumns = @JoinColumn(name = "trainee_id", referencedColumnName = "emp_id"))
+    @ManyToMany(mappedBy = "trainers")
     private Set<Trainee> trainees;
 
 

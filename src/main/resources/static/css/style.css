@@ -1,0 +1,116 @@
+.index {
+    background-color : #817575;
+}
+
+body {
+    background-color : #e7d7d7;
+}
+
+h1 {
+    color : #f9dede;
+}
+
+h2 {
+    color : #935858;
+}
+
+button {
+    background-color : #f9dede;
+    color : #9d5d5d;
+    padding : 15px;
+    font-size : 18px;
+    text-decoration : none;
+    border : 0px;
+    border-radius : 12px;
+    margin-left : auto 12px;
+}
+
+button:hover {
+    background-color : #9d5d5d;
+    color : #f9dede;
+}
+
+.container {
+    position : absolute;
+    top : 35%;
+    left : 25%;
+    text-align : center;
+}
+
+.view {
+    position : absolute;
+    top : 6%;
+    left : 1%;
+    margin : auto 20px;
+    text-align : center;
+}
+
+.scrollable {
+    height : 300px;
+    overflow-y : scroll;
+}
+
+.tableHeading {
+    background-color : #935858;
+    color : #e7d7d7;
+    position : sticky;
+    top:0;
+}
+
+table, th, td {
+    border-collapse: collapse;
+    border : 1px solid #935858;
+}
+
+th {
+    border : 1px solid #e7d7d7;
+    font-size : 13px;
+    padding : 5px;
+}
+
+td {
+    font-size : 13px;
+    padding : 5px;
+}
+
+.delete, .update {
+    border : 1px solid #e7d7d7;
+    background-color : #935858;
+    color : #e7d7d7;
+    border-radius : 5px;
+    font-size : 14px;
+}
+
+.btn:hover {
+    background-color : #e7d7d7;
+    color : #935858;
+    border : 1px solid #935858;
+}
+
+.add, .back {
+    border : 1px solid #e7d7d7;
+    background-color : #935858;
+    color : #e7d7d7;
+    border-radius : 5px;
+    font-size : 20px;
+}
+
+.addContainer {
+    position : absolute;
+    top : 5%;
+    left : 38%;
+    background-color : #c3a6a6;
+    padding : 22px;
+    border-radius : 10px;
+    box-shadow : 8px 8px 20px #935858;
+}
+
+.formButton {
+    text-align : center;
+}
+
+.form, .form td {
+    border : 0;
+    padding : 5px;
+}
+

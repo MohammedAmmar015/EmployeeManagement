@@ -4,7 +4,7 @@
 <html>
  <head>
   <title>Trainee</title>
-   <link rel="stylesheet" href="resources/css/style.css" >
+   <link rel="stylesheet" href="/css/style.css" >
  </head>
  <body>
   <div class="addContainer">
@@ -18,13 +18,13 @@
 	    heading = "Update Trainee";
 	}	
   %>
-  <h3> <%= heading %> </h3>
+  <h2> <%= heading %> </h2>
   <form:form modelAttribute="trainee" action="addOrUpdateTrainee?action=${action}" method="post">
     <form:hidden path="id"/>
     <form:select hidden="hidden" path="role.description">
          <form:option selected="selected" value="Trainee">Trainee</form:option>
     </form:select>
-     <table>
+     <table class = "form">
              <tr>
                  <td>
                      Name :
@@ -135,12 +135,12 @@
                              </form:select>
                          </td>
                      </tr>
-                     <tr>
+                     <tr class="formButton">
                          <td>
-                             <input class ="btn" type="submit" value="<%= heading %>"/>
+                             <input class ="add btn" type="submit" value="<%= heading %>"/>
                          </td>
                          <td>
-                             <a href="/"> <input class ="btn" type="button" value="Back"/></a>
+                             <a href="/viewTrainee"> <input class ="back btn" type="button" value="Back"/></a>
                          </td>
                      </tr>
                  </table>

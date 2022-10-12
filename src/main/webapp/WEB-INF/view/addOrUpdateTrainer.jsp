@@ -11,18 +11,18 @@
 <html>
  <head>
   <title><%=heading%></title>
-   <link rel="stylesheet" href="resources/css/style.css">
+   <link rel="stylesheet" href="css/style.css">
  </head>
  <body>
     <div class="addContainer">
     <%@ page import="com.ideas2it.employee.models.Trainer" %>
-    <h3> <%= heading %> </h3>
+    <h2> <%= heading %> </h2>
     <form:form modelAttribute="trainer" action="addOrUpdateTrainer?action=${action}" method="post">
     <form:hidden path="id" />
     <form:select hidden="hidden" path="role.description">
         <form:option selected="selected" value="Trainer">Trainer</form:option>
     </form:select>
-    <table>
+    <table class="form">
         <tr>
             <td>
                 Name :
@@ -105,12 +105,12 @@
                 <form:input type="number" path="trainingExperience" name="trainingExperience" required="required"/>
             </td>
         </tr>
-        <tr>
+        <tr class="formButton">
             <td>
-                <input class ="btn" type="submit" value="<%= heading %>"/>
+                <input class ="add btn" type="submit" value="<%= heading %>"/>
             </td>
             <td>
-                <a href="/"> <input class ="btn" type="button" value="Back"/></a>
+                <a href="/viewTrainer"> <input class ="back btn" type="button" value="Back"/></a>
             </td>
         </tr>
     </table>

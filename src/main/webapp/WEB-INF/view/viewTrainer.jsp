@@ -2,14 +2,14 @@
 <html>
 <head>
  <title>View Trainer</title>
- <link rel="stylesheet" href="resources/css/style.css">
+ <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
  <%@ page import = "java.util.List" 
 	  import = "com.ideas2it.employee.models.Trainer"
  %>
  <div class = "view">
- <h1> Trainer Portal </h1>
+ <h2> Trainer Portal </h2>
     <%
         List<Trainer> trainers = (List) request.getAttribute("trainers");
         if (trainers.size() <= 0) {
@@ -17,9 +17,9 @@
 	    } else {
     %>
     <p > ${msg} </p>
-    <div style="height:60%; overflow-y:scroll;">
-    <table border = 1 cellpadding = 5 cellspacing = 0>
-    <tr style="position: sticky;top: 0;background:black;color:white;">
+    <div class="scrollable">
+    <table>
+    <tr class = "tableHeading">
 	<th>Id</th>
 	<th>Name</th>
 	<th>Address</th>

@@ -14,9 +14,13 @@ package com.ideas2it.employee.service.impl;
 
 import com.ideas2it.employee.constant.Attributes;
 import com.ideas2it.employee.constant.ErrorMessage;
+import com.ideas2it.employee.dao.QualificationDao;
+import com.ideas2it.employee.dao.RoleDao;
 import com.ideas2it.employee.dao.TraineeDao;
 import com.ideas2it.employee.exception.BadRequest;
 import com.ideas2it.employee.exception.TraineeNotFound;
+import com.ideas2it.employee.models.Qualification;
+import com.ideas2it.employee.models.Role;
 import com.ideas2it.employee.models.Trainee;
 import com.ideas2it.employee.models.Trainer;
 import com.ideas2it.employee.service.inter.TraineeService;
@@ -38,9 +42,12 @@ import java.util.Set;
 public class TraineeServiceImpl implements TraineeService {
     @Autowired
     private TrainerService trainerService;
-
     @Autowired
     private TraineeDao traineeDao;
+    @Autowired
+    private QualificationDao qualificationDao;
+    @Autowired
+    private RoleDao roleDao;
     private Logger logger = LogManager.getLogger(TraineeServiceImpl.class);
 
     /**
@@ -87,6 +94,16 @@ public class TraineeServiceImpl implements TraineeService {
         if (DateUtil.computePeriod(validDateOfBirth, LocalDate.now()) < 18) {
             errors.add(Attributes.DATE_OF_BIRTH);
             errorMessage.append(ErrorMessage.DATE_OF_BIRTH.errorMessage);
+        }
+
+        Optional<Qualification> qualification = qualificationDao.findByDescription(trainee.getQualification().getDescription());
+        if (qualification.isPresent()) {
+            trainee.setQualification(qualification.get());
+        }
+
+        Optional<Role> role = roleDao.findByDescription(trainee.getRole().getDescription());
+        if (role.isPresent()) {
+            trainee.setRole(role.get());
         }
 
         Set<Trainer> trainers = Set.copyOf(trainerService.getTrainersByIds(trainee.getTrainerIds()));
