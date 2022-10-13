@@ -117,7 +117,7 @@ public class EmployeeController {
 				redirectAttributes.addFlashAttribute("msg", trainee.getName() + " Updated Successfully");
 			}
 		} catch (Exception exception) {
-			redirectAttributes.addAttribute("msg", exception.getMessage());
+			redirectAttributes.addFlashAttribute("msg", exception.getMessage());
 		}
 		return "redirect:/viewTrainee";
 	}

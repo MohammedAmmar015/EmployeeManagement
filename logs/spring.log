@@ -1,0 +1,33 @@
+2022-10-13 16:25:43.733  INFO 6780 --- [main] c.i.e.EmployeeManagementApplication      : Starting EmployeeManagementApplication using Java 18.0.1.1 on DESKTOP-VBCVG8R with PID 6780 (C:\Users\Lenovo\Desktop\springBoot\employee\target\classes started by Lenovo in C:\Users\Lenovo\Desktop\springBoot\employee)
+2022-10-13 16:25:43.739  INFO 6780 --- [main] c.i.e.EmployeeManagementApplication      : No active profile set, falling back to 1 default profile: "default"
+2022-10-13 16:25:44.932  INFO 6780 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-13 16:25:45.060  INFO 6780 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 108 ms. Found 4 JPA repository interfaces.
+2022-10-13 16:25:46.219  INFO 6780 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8001 (http)
+2022-10-13 16:25:46.234  INFO 6780 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-10-13 16:25:46.235  INFO 6780 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-13 16:25:46.699  INFO 6780 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2022-10-13 16:25:46.719  INFO 6780 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-10-13 16:25:46.720  INFO 6780 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2852 ms
+2022-10-13 16:25:47.035  INFO 6780 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-13 16:25:47.110  INFO 6780 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2022-10-13 16:25:47.340  INFO 6780 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-13 16:25:47.466  INFO 6780 --- [main] com.zaxxer.hikari.HikariDataSource       : test - Starting...
+2022-10-13 16:25:47.922  INFO 6780 --- [main] com.zaxxer.hikari.HikariDataSource       : test - Start completed.
+2022-10-13 16:25:47.945  INFO 6780 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-10-13 16:25:49.445  INFO 6780 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-13 16:25:49.460  INFO 6780 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-13 16:25:50.185  WARN 6780 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-10-13 16:25:50.384  INFO 6780 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-10-13 16:25:50.663  INFO 6780 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8001 (http) with context path ''
+2022-10-13 16:25:50.676  INFO 6780 --- [main] c.i.e.EmployeeManagementApplication      : Started EmployeeManagementApplication in 7.698 seconds (JVM running for 8.409)
+2022-10-13 16:25:57.279  INFO 6780 --- [http-nio-8001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-13 16:25:57.279  INFO 6780 --- [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-10-13 16:25:57.281  INFO 6780 --- [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-10-13 16:25:57.320  INFO 6780 --- [http-nio-8001-exec-1] c.i.e.service.impl.TrainerServiceImpl    : Entered getTrainers() method
+2022-10-13 16:32:38.028  INFO 6780 --- [http-nio-8001-exec-3] c.i.e.service.impl.TrainerServiceImpl    : Entered getTrainers() method
+2022-10-13 16:32:39.766  INFO 6780 --- [http-nio-8001-exec-4] c.i.e.service.impl.TrainerServiceImpl    : Entered getTrainers() method
+2022-10-13 17:19:54.120  WARN 6780 --- [test housekeeper] com.zaxxer.hikari.pool.HikariPool        : test - Thread starvation or clock leap detected (housekeeper delta=24m35s659ms508µs900ns).
+2022-10-13 18:22:05.853  WARN 6780 --- [test housekeeper] com.zaxxer.hikari.pool.HikariPool        : test - Thread starvation or clock leap detected (housekeeper delta=15m11s60ms897µs100ns).
+2022-10-13 19:44:36.318  INFO 6780 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-10-13 19:44:36.328  INFO 6780 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : test - Shutdown initiated...
+2022-10-13 19:44:36.337  INFO 6780 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : test - Shutdown completed.
