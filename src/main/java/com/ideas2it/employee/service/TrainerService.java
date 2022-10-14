@@ -1,4 +1,4 @@
-package com.ideas2it.employee.service.inter;
+package com.ideas2it.employee.service;
 
 import com.ideas2it.employee.constant.Attributes;
 import com.ideas2it.employee.exception.BadRequest;

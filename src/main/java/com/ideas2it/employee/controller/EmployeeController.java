@@ -2,8 +2,8 @@ package com.ideas2it.employee.controller;
 
 import com.ideas2it.employee.models.Trainee;
 import com.ideas2it.employee.models.Trainer;
-import com.ideas2it.employee.service.inter.TraineeService;
-import com.ideas2it.employee.service.inter.TrainerService;
+import com.ideas2it.employee.service.TraineeService;
+import com.ideas2it.employee.service.TrainerService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,16 +21,17 @@ import java.util.List;
 
 @Controller
 public class EmployeeController {
+
+	private Logger logger = LogManager.getLogger(EmployeeController.class);
 	@Autowired
     private TrainerService trainerServiceImpl;
 	@Autowired
     private TraineeService traineeServiceImpl;
 
-	private Logger logger = LogManager.getLogger(EmployeeController.class);
-
-
 	/**
-	 * To Show Index Page
+	 * <p>
+	 * 	To Show Index Page
+	 * 	</p>
 	 * @return index page
 	 */
 	@RequestMapping("/")
@@ -39,7 +40,9 @@ public class EmployeeController {
 	}
 
 	/**
+	 * <p>
 	 * To show Trainer Form
+	 * </p>
 	 * @return modelAndView - to show addOrUpdateTrainer page
 	 */
 	@GetMapping("/trainerForm")
@@ -52,10 +55,12 @@ public class EmployeeController {
 	}
 
 	/**
-	 *
+	 *<p>
+	 *     to add trainer details
+	 *</p>
 	 * @param trainer get Trainer object from user
 	 * @param action addTrainer or updateTrainer Operation
-	 * @param redirectAttributes
+	 * @param redirectAttributes it holds error message to Redirect
 	 * @return to Redirect to ViewTrainer page
 	 */
 	@RequestMapping("/addOrUpdateTrainer")
@@ -73,6 +78,12 @@ public class EmployeeController {
 		return "redirect:/viewTrainer";
 	}
 
+	/**
+	 * <p>
+	 *     To View List of Trainers
+	 * </p>
+	 * @return
+	 */
 	@GetMapping( value = "/viewTrainer")
 	public ModelAndView viewTrainer() {
 		List<Trainer> trainers = trainerServiceImpl.getTrainers();
@@ -82,6 +93,14 @@ public class EmployeeController {
 		return modelAndView;
 	}
 
+	/**
+	 * <p>
+	 *     To Update Trainer Details
+	 * </p>
+	 * @param trainerId
+	 * @param model
+	 * @return
+	 */
 	@GetMapping("/updateTrainer")
 	public String getTrainerById(@RequestParam("id") int trainerId, Model model) {
 		Trainer trainer = trainerServiceImpl.getTrainerById(trainerId);
@@ -90,6 +109,14 @@ public class EmployeeController {
 		return "addOrUpdateTrainer";
 	}
 
+	/**
+	 * <p>
+	 *     To delete Trainer details
+	 * </p>
+	 * @param trainerId
+	 * @param redirectAttributes
+	 * @return
+	 */
 	@GetMapping("/deleteTrainer")
 	public String removeTrainer(@RequestParam("id") int trainerId, RedirectAttributes redirectAttributes) {
 		trainerServiceImpl.removeTrainerById(trainerId);
@@ -97,6 +124,12 @@ public class EmployeeController {
 		return "redirect:/viewTrainer";
 	}
 
+	/**
+	 * <p>
+	 * 	To show Trainee Form
+	 * </p>
+	 * @return modelAndView - to show addOrUpdateTrainee page
+	 */
 	@GetMapping("/traineeForm")
 	public ModelAndView showTraineeForm() {
 		ModelAndView modelAndView = new ModelAndView();
@@ -107,6 +140,15 @@ public class EmployeeController {
 		return modelAndView;
 	}
 
+	/**
+	 *<p>
+	 *     to add trainee details
+	 *</p>
+	 * @param trainee get Trainee object from user
+	 * @param action addTrainee or updateTrainee Operation
+	 * @param redirectAttributes it holds error message to Redirect
+	 * @return to Redirect to ViewTrainee page
+	 */
 	@RequestMapping("/addOrUpdateTrainee")
 	public String addOrUpdateTrainee(@ModelAttribute("trainee") Trainee trainee, @RequestParam("action") String action, RedirectAttributes redirectAttributes) {
 		try {
@@ -122,6 +164,12 @@ public class EmployeeController {
 		return "redirect:/viewTrainee";
 	}
 
+	/**
+	 * <p>
+	 *     To View List of Trainees
+	 * </p>
+	 * @return
+	 */
 	@GetMapping( value = "/viewTrainee")
 	public ModelAndView viewTrainee() {
 		List<Trainee> trainees = traineeServiceImpl.getTrainees();
@@ -131,6 +179,14 @@ public class EmployeeController {
 		return modelAndView;
 	}
 
+	/**
+	 * <p>
+	 *     To Update Trainee Details
+	 * </p>
+	 * @param traineeId
+	 * @param model
+	 * @return
+	 */
 	@GetMapping("/updateTrainee")
 	public String getTraineeById(@RequestParam("id") int traineeId, Model model) {
 		Trainee trainee = traineeServiceImpl.getTraineeById(traineeId);
@@ -140,6 +196,14 @@ public class EmployeeController {
 		return "addOrUpdateTrainee";
 	}
 
+	/**
+	 * <p>
+	 *     To delete Trainee details
+	 * </p>
+	 * @param traineeId
+	 * @param redirectAttributes
+	 * @return
+	 */
 	@GetMapping("/deleteTrainee")
 	public String removeTrainee(@RequestParam("id") int traineeId, RedirectAttributes redirectAttributes) {
 		traineeServiceImpl.removeTraineeById(traineeId);

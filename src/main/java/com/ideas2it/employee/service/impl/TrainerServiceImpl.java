@@ -18,7 +18,7 @@ import com.ideas2it.employee.exception.TrainerNotFound;
 import com.ideas2it.employee.models.Qualification;
 import com.ideas2it.employee.models.Role;
 import com.ideas2it.employee.models.Trainer;
-import com.ideas2it.employee.service.inter.TrainerService;
+import com.ideas2it.employee.service.TrainerService;
 import com.ideas2it.employee.utilities.DateUtil;
 import com.ideas2it.employee.utilities.StringUtil;
 import org.apache.logging.log4j.LogManager;
@@ -34,6 +34,7 @@ import java.util.Optional;
 
 @Component
 public class TrainerServiceImpl implements TrainerService {
+    private Logger logger = LogManager.getLogger(TrainerServiceImpl.class);
 
     @Autowired
     private TrainerDao trainerDao;
@@ -43,7 +44,6 @@ public class TrainerServiceImpl implements TrainerService {
 
     @Autowired
     private QualificationDao qualificationDao;
-    private Logger logger = LogManager.getLogger(TrainerServiceImpl.class);
 
     /**
      * <p>

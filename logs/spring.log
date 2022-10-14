@@ -1,33 +1,635 @@
-2022-10-13 16:25:43.733  INFO 6780 --- [main] c.i.e.EmployeeManagementApplication      : Starting EmployeeManagementApplication using Java 18.0.1.1 on DESKTOP-VBCVG8R with PID 6780 (C:\Users\Lenovo\Desktop\springBoot\employee\target\classes started by Lenovo in C:\Users\Lenovo\Desktop\springBoot\employee)
-2022-10-13 16:25:43.739  INFO 6780 --- [main] c.i.e.EmployeeManagementApplication      : No active profile set, falling back to 1 default profile: "default"
-2022-10-13 16:25:44.932  INFO 6780 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-10-13 16:25:45.060  INFO 6780 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 108 ms. Found 4 JPA repository interfaces.
-2022-10-13 16:25:46.219  INFO 6780 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8001 (http)
-2022-10-13 16:25:46.234  INFO 6780 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-10-13 16:25:46.235  INFO 6780 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
-2022-10-13 16:25:46.699  INFO 6780 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-2022-10-13 16:25:46.719  INFO 6780 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-10-13 16:25:46.720  INFO 6780 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2852 ms
-2022-10-13 16:25:47.035  INFO 6780 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-10-13 16:25:47.110  INFO 6780 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
-2022-10-13 16:25:47.340  INFO 6780 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-10-13 16:25:47.466  INFO 6780 --- [main] com.zaxxer.hikari.HikariDataSource       : test - Starting...
-2022-10-13 16:25:47.922  INFO 6780 --- [main] com.zaxxer.hikari.HikariDataSource       : test - Start completed.
-2022-10-13 16:25:47.945  INFO 6780 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2022-10-13 16:25:49.445  INFO 6780 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-10-13 16:25:49.460  INFO 6780 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-10-13 16:25:50.185  WARN 6780 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-10-13 16:25:50.384  INFO 6780 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2022-10-13 16:25:50.663  INFO 6780 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8001 (http) with context path ''
-2022-10-13 16:25:50.676  INFO 6780 --- [main] c.i.e.EmployeeManagementApplication      : Started EmployeeManagementApplication in 7.698 seconds (JVM running for 8.409)
-2022-10-13 16:25:57.279  INFO 6780 --- [http-nio-8001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-10-13 16:25:57.279  INFO 6780 --- [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-10-13 16:25:57.281  INFO 6780 --- [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2022-10-13 16:25:57.320  INFO 6780 --- [http-nio-8001-exec-1] c.i.e.service.impl.TrainerServiceImpl    : Entered getTrainers() method
-2022-10-13 16:32:38.028  INFO 6780 --- [http-nio-8001-exec-3] c.i.e.service.impl.TrainerServiceImpl    : Entered getTrainers() method
-2022-10-13 16:32:39.766  INFO 6780 --- [http-nio-8001-exec-4] c.i.e.service.impl.TrainerServiceImpl    : Entered getTrainers() method
-2022-10-13 17:19:54.120  WARN 6780 --- [test housekeeper] com.zaxxer.hikari.pool.HikariPool        : test - Thread starvation or clock leap detected (housekeeper delta=24m35s659ms508µs900ns).
-2022-10-13 18:22:05.853  WARN 6780 --- [test housekeeper] com.zaxxer.hikari.pool.HikariPool        : test - Thread starvation or clock leap detected (housekeeper delta=15m11s60ms897µs100ns).
-2022-10-13 19:44:36.318  INFO 6780 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-10-13 19:44:36.328  INFO 6780 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : test - Shutdown initiated...
-2022-10-13 19:44:36.337  INFO 6780 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : test - Shutdown completed.
+2022-10-14 11:07:26.184  INFO 11256 --- [main] c.i.e.EmployeeManagementApplication      : Starting EmployeeManagementApplication using Java 18.0.1.1 on DESKTOP-VBCVG8R with PID 11256 (C:\Users\Lenovo\Desktop\springBoot\employee\target\classes started by Lenovo in C:\Users\Lenovo\Desktop\springBoot\employee)
+2022-10-14 11:07:26.201  INFO 11256 --- [main] c.i.e.EmployeeManagementApplication      : No active profile set, falling back to 1 default profile: "default"
+2022-10-14 11:07:28.712  INFO 11256 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-14 11:07:28.929  INFO 11256 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 181 ms. Found 4 JPA repository interfaces.
+2022-10-14 11:07:31.647  INFO 11256 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8001 (http)
+2022-10-14 11:07:31.672  INFO 11256 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-10-14 11:07:31.673  INFO 11256 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-14 11:07:32.516  INFO 11256 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2022-10-14 11:07:32.534  INFO 11256 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-10-14 11:07:32.538  INFO 11256 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6081 ms
+2022-10-14 11:07:32.985  INFO 11256 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-14 11:07:33.112  INFO 11256 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2022-10-14 11:07:33.509  INFO 11256 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-14 11:07:33.734  INFO 11256 --- [main] com.zaxxer.hikari.HikariDataSource       : test - Starting...
+2022-10-14 11:07:34.634  INFO 11256 --- [main] com.zaxxer.hikari.HikariDataSource       : test - Start completed.
+2022-10-14 11:07:34.684  INFO 11256 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-10-14 11:07:37.270  INFO 11256 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-14 11:07:37.290  INFO 11256 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-14 11:07:38.569  WARN 11256 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-10-14 11:07:38.938  INFO 11256 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-10-14 11:07:39.372  INFO 11256 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8001 (http) with context path ''
+2022-10-14 11:07:39.400  INFO 11256 --- [main] c.i.e.EmployeeManagementApplication      : Started EmployeeManagementApplication in 15.007 seconds (JVM running for 16.221)
+2022-10-14 11:07:59.234  INFO 11256 --- [http-nio-8001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-14 11:07:59.234  INFO 11256 --- [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-10-14 11:07:59.237  INFO 11256 --- [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-10-14 11:08:00.742  WARN 11256 --- [http-nio-8001-exec-1] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [116] milliseconds.
+2022-10-14 11:08:25.085  INFO 11256 --- [http-nio-8001-exec-4] c.i.e.service.impl.TrainerServiceImpl    : Entered getTrainers() method
+2022-10-14 11:09:09.534  INFO 11256 --- [http-nio-8001-exec-6] c.i.e.service.impl.TrainerServiceImpl    : Entered addOrModifyTrainer() method
+2022-10-14 11:09:09.670  INFO 11256 --- [http-nio-8001-exec-7] c.i.e.service.impl.TrainerServiceImpl    : Entered getTrainers() method
+2022-10-14 11:09:23.435  INFO 11256 --- [http-nio-8001-exec-8] c.i.e.service.impl.TrainerServiceImpl    : Entered getTrainerById() method
+2022-10-14 11:09:32.791  INFO 11256 --- [http-nio-8001-exec-9] c.i.e.service.impl.TrainerServiceImpl    : Entered addOrModifyTrainer() method
+2022-10-14 11:09:32.855  INFO 11256 --- [http-nio-8001-exec-10] c.i.e.service.impl.TrainerServiceImpl    : Entered getTrainers() method
+2022-10-14 11:09:43.512  INFO 11256 --- [http-nio-8001-exec-1] c.i.e.service.impl.TrainerServiceImpl    : Entered removeTrainerById() method
+2022-10-14 11:09:43.556  INFO 11256 --- [http-nio-8001-exec-2] c.i.e.service.impl.TrainerServiceImpl    : Entered getTrainers() method
+2022-10-14 11:09:57.253  INFO 11256 --- [http-nio-8001-exec-4] c.i.e.service.impl.TraineeServiceImpl    : Entered getTrainees() method
+2022-10-14 11:10:00.077  INFO 11256 --- [http-nio-8001-exec-5] c.i.e.service.impl.TrainerServiceImpl    : Entered getTrainers() method
+2022-10-14 11:10:52.052  INFO 11256 --- [http-nio-8001-exec-6] c.i.e.service.impl.TraineeServiceImpl    : Entered addOrModifyTrainee() method
+2022-10-14 11:10:52.059  INFO 11256 --- [http-nio-8001-exec-6] c.i.e.service.impl.TrainerServiceImpl    : Entered getTrainerById() method
+2022-10-14 11:10:52.127  INFO 11256 --- [http-nio-8001-exec-7] c.i.e.service.impl.TraineeServiceImpl    : Entered getTrainees() method
+2022-10-14 11:54:52.489  WARN 11256 --- [test housekeeper] com.zaxxer.hikari.pool.HikariPool        : test - Thread starvation or clock leap detected (housekeeper delta=25m17s214ms24µs400ns).
+2022-10-14 12:44:18.905  WARN 11256 --- [test housekeeper] com.zaxxer.hikari.pool.HikariPool        : test - Thread starvation or clock leap detected (housekeeper delta=21m54s171ms528µs300ns).
+2022-10-14 13:18:08.751  WARN 11256 --- [test housekeeper] com.zaxxer.hikari.pool.HikariPool        : test - Thread starvation or clock leap detected (housekeeper delta=9m19s459ms236µs900ns).
+2022-10-14 13:20:26.109  INFO 11256 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-10-14 13:20:26.112  INFO 11256 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : test - Shutdown initiated...
+2022-10-14 13:20:26.133  INFO 11256 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : test - Shutdown completed.
+2022-10-14 14:29:24.664  INFO 2204 --- [main] c.i.e.EmployeeManagementApplicationTests : Starting EmployeeManagementApplicationTests using Java 18.0.1.1 on DESKTOP-VBCVG8R with PID 2204 (started by Lenovo in C:\Users\Lenovo\Desktop\springBoot\employee)
+2022-10-14 14:29:24.667  INFO 2204 --- [main] c.i.e.EmployeeManagementApplicationTests : No active profile set, falling back to 1 default profile: "default"
+2022-10-14 14:29:25.965  INFO 2204 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-14 14:29:26.096  INFO 2204 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 116 ms. Found 4 JPA repository interfaces.
+2022-10-14 14:29:27.407  INFO 2204 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-14 14:29:27.514  INFO 2204 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2022-10-14 14:29:27.790  INFO 2204 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-14 14:29:28.125  INFO 2204 --- [main] com.zaxxer.hikari.HikariDataSource       : test - Starting...
+2022-10-14 14:29:28.838  INFO 2204 --- [main] com.zaxxer.hikari.HikariDataSource       : test - Start completed.
+2022-10-14 14:29:28.866  INFO 2204 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-10-14 14:29:31.332  INFO 2204 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-14 14:29:31.345  INFO 2204 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-14 14:29:32.869  WARN 2204 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-10-14 14:29:33.376  INFO 2204 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-10-14 14:29:34.044  INFO 2204 --- [main] c.i.e.EmployeeManagementApplicationTests : Started EmployeeManagementApplicationTests in 9.919 seconds (JVM running for 11.788)
+2022-10-14 14:29:34.527  INFO 2204 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-10-14 14:29:34.531  INFO 2204 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : test - Shutdown initiated...
+2022-10-14 14:29:34.546  INFO 2204 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : test - Shutdown completed.
+2022-10-14 14:31:03.979  INFO 6304 --- [main] c.i.e.EmployeeManagementApplication      : Starting EmployeeManagementApplication v0.0.1-SNAPSHOT using Java 18.0.1.1 on DESKTOP-VBCVG8R with PID 6304 (C:\Users\Lenovo\Desktop\springBoot\employee\target\employee-0.0.1-SNAPSHOT.jar started by Lenovo in C:\Users\Lenovo\Desktop\springBoot\employee\target)
+2022-10-14 14:31:03.983  INFO 6304 --- [main] c.i.e.EmployeeManagementApplication      : No active profile set, falling back to 1 default profile: "default"
+2022-10-14 14:31:05.161  INFO 6304 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-14 14:31:05.294  INFO 6304 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 110 ms. Found 4 JPA repository interfaces.
+2022-10-14 14:31:06.488  INFO 6304 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8001 (http)
+2022-10-14 14:31:06.502  INFO 6304 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-10-14 14:31:06.503  INFO 6304 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-14 14:31:07.086  INFO 6304 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2022-10-14 14:31:07.435  INFO 6304 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-10-14 14:31:07.436  INFO 6304 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3331 ms
+2022-10-14 14:31:07.794  INFO 6304 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-14 14:31:07.898  INFO 6304 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2022-10-14 14:31:08.206  INFO 6304 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-14 14:31:08.391  INFO 6304 --- [main] com.zaxxer.hikari.HikariDataSource       : test - Starting...
+2022-10-14 14:31:08.951  INFO 6304 --- [main] com.zaxxer.hikari.HikariDataSource       : test - Start completed.
+2022-10-14 14:31:08.972  INFO 6304 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-10-14 14:31:10.578  INFO 6304 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-14 14:31:10.591  INFO 6304 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-14 14:31:11.409  WARN 6304 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-10-14 14:31:11.991  INFO 6304 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8001 (http) with context path ''
+2022-10-14 14:31:12.007  INFO 6304 --- [main] c.i.e.EmployeeManagementApplication      : Started EmployeeManagementApplication in 8.894 seconds (JVM running for 9.691)
+2022-10-14 14:31:28.421  INFO 6304 --- [http-nio-8001-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-14 14:31:28.422  INFO 6304 --- [http-nio-8001-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-10-14 14:31:28.433  INFO 6304 --- [http-nio-8001-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-10-14 14:31:28.500  INFO 6304 --- [http-nio-8001-exec-2] c.i.e.service.impl.TraineeServiceImpl    : Entered getTrainees() method
+2022-10-14 14:33:17.161  INFO 6304 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-10-14 14:33:17.177  INFO 6304 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : test - Shutdown initiated...
+2022-10-14 14:33:17.195  INFO 6304 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : test - Shutdown completed.
+2022-10-14 14:33:32.457  INFO 4864 --- [main] c.i.e.EmployeeManagementApplicationTests : Starting EmployeeManagementApplicationTests using Java 18.0.1.1 on DESKTOP-VBCVG8R with PID 4864 (started by Lenovo in C:\Users\Lenovo\Desktop\springBoot\employee)
+2022-10-14 14:33:32.459  INFO 4864 --- [main] c.i.e.EmployeeManagementApplicationTests : No active profile set, falling back to 1 default profile: "default"
+2022-10-14 14:33:33.751  INFO 4864 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-14 14:33:33.863  INFO 4864 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 98 ms. Found 4 JPA repository interfaces.
+2022-10-14 14:33:34.943  INFO 4864 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-14 14:33:35.027  INFO 4864 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2022-10-14 14:33:35.301  INFO 4864 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-14 14:33:35.585  INFO 4864 --- [main] com.zaxxer.hikari.HikariDataSource       : test - Starting...
+2022-10-14 14:33:36.231  INFO 4864 --- [main] com.zaxxer.hikari.HikariDataSource       : test - Start completed.
+2022-10-14 14:33:36.254  INFO 4864 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-10-14 14:33:38.247  INFO 4864 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-14 14:33:38.261  INFO 4864 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-14 14:33:39.525  WARN 4864 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-10-14 14:33:40.044  INFO 4864 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-10-14 14:33:40.598  INFO 4864 --- [main] c.i.e.EmployeeManagementApplicationTests : Started EmployeeManagementApplicationTests in 8.712 seconds (JVM running for 10.429)
+2022-10-14 14:33:41.041  INFO 4864 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-10-14 14:33:41.049  INFO 4864 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : test - Shutdown initiated...
+2022-10-14 14:33:41.062  INFO 4864 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : test - Shutdown completed.
+2022-10-14 14:34:00.927  INFO 6660 --- [main] c.i.e.EmployeeManagementApplication      : Starting EmployeeManagementApplication v0.0.1-SNAPSHOT using Java 18.0.1.1 on DESKTOP-VBCVG8R with PID 6660 (C:\Users\Lenovo\Desktop\springBoot\employee\target\employee-0.0.1-SNAPSHOT.jar started by Lenovo in C:\Users\Lenovo\Desktop\springBoot\employee\target)
+2022-10-14 14:34:00.932  INFO 6660 --- [main] c.i.e.EmployeeManagementApplication      : No active profile set, falling back to 1 default profile: "default"
+2022-10-14 14:34:02.085  INFO 6660 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-14 14:34:02.204  INFO 6660 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 95 ms. Found 4 JPA repository interfaces.
+2022-10-14 14:34:03.340  INFO 6660 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8001 (http)
+2022-10-14 14:34:03.356  INFO 6660 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-10-14 14:34:03.357  INFO 6660 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-14 14:34:03.967  INFO 6660 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2022-10-14 14:34:04.315  INFO 6660 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-10-14 14:34:04.315  INFO 6660 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3262 ms
+2022-10-14 14:34:04.689  INFO 6660 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-14 14:34:04.800  INFO 6660 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2022-10-14 14:34:05.137  INFO 6660 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-14 14:34:05.339  INFO 6660 --- [main] com.zaxxer.hikari.HikariDataSource       : test - Starting...
+2022-10-14 14:34:05.949  INFO 6660 --- [main] com.zaxxer.hikari.HikariDataSource       : test - Start completed.
+2022-10-14 14:34:05.977  INFO 6660 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-10-14 14:34:07.734  INFO 6660 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-14 14:34:07.749  INFO 6660 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-14 14:34:08.498  WARN 6660 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-10-14 14:34:09.067  INFO 6660 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8001 (http) with context path ''
+2022-10-14 14:34:09.083  INFO 6660 --- [main] c.i.e.EmployeeManagementApplication      : Started EmployeeManagementApplication in 9.103 seconds (JVM running for 9.901)
+2022-10-14 14:34:15.675  INFO 6660 --- [http-nio-8001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-14 14:34:15.676  INFO 6660 --- [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-10-14 14:34:15.682  INFO 6660 --- [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2022-10-14 14:34:15.796  INFO 6660 --- [http-nio-8001-exec-1] c.i.e.service.impl.TraineeServiceImpl    : Entered getTrainees() method
+2022-10-14 14:38:19.183  INFO 6660 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-10-14 14:38:19.187  INFO 6660 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : test - Shutdown initiated...
+2022-10-14 14:38:19.203  INFO 6660 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : test - Shutdown completed.
+2022-10-14 14:38:32.403  INFO 1788 --- [main] c.i.e.EmployeeManagementApplicationTests : Starting EmployeeManagementApplicationTests using Java 18.0.1.1 on DESKTOP-VBCVG8R with PID 1788 (started by Lenovo in C:\Users\Lenovo\Desktop\springBoot\employee)
+2022-10-14 14:38:32.406  INFO 1788 --- [main] c.i.e.EmployeeManagementApplicationTests : No active profile set, falling back to 1 default profile: "default"
+2022-10-14 14:38:33.802  INFO 1788 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-14 14:38:33.934  INFO 1788 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 112 ms. Found 4 JPA repository interfaces.
+2022-10-14 14:38:35.015  INFO 1788 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-14 14:38:35.114  INFO 1788 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2022-10-14 14:38:35.382  INFO 1788 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-14 14:38:35.629  INFO 1788 --- [main] com.zaxxer.hikari.HikariDataSource       : test - Starting...
+2022-10-14 14:38:36.332  INFO 1788 --- [main] com.zaxxer.hikari.HikariDataSource       : test - Start completed.
+2022-10-14 14:38:36.363  INFO 1788 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-10-14 14:38:38.311  INFO 1788 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-14 14:38:38.328  INFO 1788 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-14 14:38:39.600  WARN 1788 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-10-14 14:38:40.438  INFO 1788 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-10-14 14:38:41.179  INFO 1788 --- [main] c.i.e.EmployeeManagementApplicationTests : Started EmployeeManagementApplicationTests in 9.406 seconds (JVM running for 11.096)
+2022-10-14 14:38:41.637  INFO 1788 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-10-14 14:38:41.641  INFO 1788 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : test - Shutdown initiated...
+2022-10-14 14:38:41.657  INFO 1788 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : test - Shutdown completed.
+2022-10-14 14:39:15.245  INFO 13152 --- [main] c.i.e.EmployeeManagementApplication      : Starting EmployeeManagementApplication v0.0.1-SNAPSHOT using Java 18.0.1.1 on DESKTOP-VBCVG8R with PID 13152 (C:\Users\Lenovo\Desktop\springBoot\employee\target\employee-0.0.1-SNAPSHOT.war started by Lenovo in C:\Users\Lenovo\Desktop\springBoot\employee\target)
+2022-10-14 14:39:15.251  INFO 13152 --- [main] c.i.e.EmployeeManagementApplication      : No active profile set, falling back to 1 default profile: "default"
+2022-10-14 14:39:16.767  INFO 13152 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-14 14:39:16.907  INFO 13152 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 107 ms. Found 4 JPA repository interfaces.
+2022-10-14 14:39:18.638  INFO 13152 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8001 (http)
+2022-10-14 14:39:18.657  INFO 13152 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-10-14 14:39:18.658  INFO 13152 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-14 14:39:21.651  INFO 13152 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2022-10-14 14:39:22.253  INFO 13152 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-10-14 14:39:22.254  INFO 13152 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6878 ms
+2022-10-14 14:39:22.646  INFO 13152 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-14 14:39:22.761  INFO 13152 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2022-10-14 14:39:23.074  INFO 13152 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-14 14:39:23.246  INFO 13152 --- [main] com.zaxxer.hikari.HikariDataSource       : test - Starting...
+2022-10-14 14:39:23.793  INFO 13152 --- [main] com.zaxxer.hikari.HikariDataSource       : test - Start completed.
+2022-10-14 14:39:23.827  INFO 13152 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-10-14 14:39:25.554  INFO 13152 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-14 14:39:25.566  INFO 13152 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-14 14:39:26.452  WARN 13152 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-10-14 14:39:26.743  INFO 13152 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-10-14 14:39:27.063  INFO 13152 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8001 (http) with context path ''
+2022-10-14 14:39:27.093  INFO 13152 --- [main] c.i.e.EmployeeManagementApplication      : Started EmployeeManagementApplication in 12.946 seconds (JVM running for 13.817)
+2022-10-14 14:39:46.606  INFO 13152 --- [http-nio-8001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-14 14:40:28.946  INFO 13152 --- [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-10-14 14:40:28.956  INFO 13152 --- [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2022-10-14 14:40:29.046  INFO 13152 --- [http-nio-8001-exec-1] c.i.e.service.impl.TraineeServiceImpl    : Entered getTrainees() method
+2022-10-14 14:40:29.045  INFO 13152 --- [http-nio-8001-exec-3] c.i.e.service.impl.TraineeServiceImpl    : Entered getTrainees() method
+2022-10-14 14:40:45.346  INFO 13152 --- [http-nio-8001-exec-2] c.i.e.service.impl.TrainerServiceImpl    : Entered getTrainers() method
+2022-10-14 14:48:05.579  INFO 9672 --- [main] c.i.e.EmployeeManagementApplicationTests : Starting EmployeeManagementApplicationTests using Java 18.0.1.1 on DESKTOP-VBCVG8R with PID 9672 (started by Lenovo in C:\Users\Lenovo\Desktop\springBoot\employee)
+2022-10-14 14:48:05.581  INFO 9672 --- [main] c.i.e.EmployeeManagementApplicationTests : No active profile set, falling back to 1 default profile: "default"
+2022-10-14 14:48:07.251  INFO 9672 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-14 14:48:07.386  INFO 9672 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 120 ms. Found 4 JPA repository interfaces.
+2022-10-14 14:48:08.592  INFO 9672 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-14 14:48:08.687  INFO 9672 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2022-10-14 14:48:09.055  INFO 9672 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-14 14:48:09.509  INFO 9672 --- [main] com.zaxxer.hikari.HikariDataSource       : test - Starting...
+2022-10-14 14:48:10.116  INFO 9672 --- [main] com.zaxxer.hikari.HikariDataSource       : test - Start completed.
+2022-10-14 14:48:10.143  INFO 9672 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-10-14 14:48:12.173  INFO 9672 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-14 14:48:12.188  INFO 9672 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-14 14:48:13.660  WARN 9672 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-10-14 14:48:14.199  INFO 9672 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-10-14 14:48:14.803  INFO 9672 --- [main] c.i.e.EmployeeManagementApplicationTests : Started EmployeeManagementApplicationTests in 9.742 seconds (JVM running for 11.596)
+2022-10-14 14:48:15.398  INFO 9672 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-10-14 14:48:15.405  INFO 9672 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : test - Shutdown initiated...
+2022-10-14 14:48:15.423  INFO 9672 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : test - Shutdown completed.
+2022-10-14 14:48:43.542  INFO 11552 --- [main] c.i.e.EmployeeManagementApplicationTests : Starting EmployeeManagementApplicationTests using Java 18.0.1.1 on DESKTOP-VBCVG8R with PID 11552 (started by Lenovo in C:\Users\Lenovo\Desktop\springBoot\employee)
+2022-10-14 14:48:43.545  INFO 11552 --- [main] c.i.e.EmployeeManagementApplicationTests : No active profile set, falling back to 1 default profile: "default"
+2022-10-14 14:48:44.905  INFO 11552 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-14 14:48:45.029  INFO 11552 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 109 ms. Found 4 JPA repository interfaces.
+2022-10-14 14:48:46.250  INFO 11552 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-14 14:48:46.356  INFO 11552 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2022-10-14 14:48:46.628  INFO 11552 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-14 14:48:47.000  INFO 11552 --- [main] com.zaxxer.hikari.HikariDataSource       : test - Starting...
+2022-10-14 14:48:47.667  INFO 11552 --- [main] com.zaxxer.hikari.HikariDataSource       : test - Start completed.
+2022-10-14 14:48:47.694  INFO 11552 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-10-14 14:48:49.724  INFO 11552 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-14 14:48:49.741  INFO 11552 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-14 14:48:51.276  WARN 11552 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-10-14 14:48:51.874  INFO 11552 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-10-14 14:48:52.827  INFO 11552 --- [main] c.i.e.EmployeeManagementApplicationTests : Started EmployeeManagementApplicationTests in 9.797 seconds (JVM running for 11.693)
+2022-10-14 14:48:53.297  INFO 11552 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-10-14 14:48:53.302  INFO 11552 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : test - Shutdown initiated...
+2022-10-14 14:48:53.319  INFO 11552 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : test - Shutdown completed.
+2022-10-14 14:51:53.907  INFO 9368 --- [main] c.i.e.EmployeeManagementApplication      : Starting EmployeeManagementApplication v0.0.1-SNAPSHOT using Java 18.0.1.1 on DESKTOP-VBCVG8R with PID 9368 (C:\Users\Lenovo\Desktop\springBoot\employee\target\employee-0.0.1-SNAPSHOT.war started by Lenovo in C:\Users\Lenovo\Desktop\springBoot\employee\target)
+2022-10-14 14:51:53.918  INFO 9368 --- [main] c.i.e.EmployeeManagementApplication      : No active profile set, falling back to 1 default profile: "default"
+2022-10-14 14:51:55.108  INFO 9368 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-14 14:51:55.231  INFO 9368 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 99 ms. Found 4 JPA repository interfaces.
+2022-10-14 14:51:56.394  INFO 9368 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8001 (http)
+2022-10-14 14:51:56.413  INFO 9368 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-10-14 14:51:56.414  INFO 9368 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-14 14:51:59.350  INFO 9368 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2022-10-14 14:51:59.971  INFO 9368 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-10-14 14:51:59.973  INFO 9368 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5924 ms
+2022-10-14 14:52:00.379  INFO 9368 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-14 14:52:00.486  INFO 9368 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2022-10-14 14:52:00.799  INFO 9368 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-14 14:52:00.984  INFO 9368 --- [main] com.zaxxer.hikari.HikariDataSource       : test - Starting...
+2022-10-14 14:52:01.572  INFO 9368 --- [main] com.zaxxer.hikari.HikariDataSource       : test - Start completed.
+2022-10-14 14:52:01.599  INFO 9368 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-10-14 14:52:03.252  INFO 9368 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-14 14:52:03.264  INFO 9368 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-14 14:52:04.146  WARN 9368 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-10-14 14:52:04.445  INFO 9368 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-10-14 14:52:04.787  INFO 9368 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8001 (http) with context path ''
+2022-10-14 14:52:04.805  INFO 9368 --- [main] c.i.e.EmployeeManagementApplication      : Started EmployeeManagementApplication in 11.839 seconds (JVM running for 12.641)
+2022-10-14 14:52:37.177  INFO 9368 --- [http-nio-8001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-14 14:52:37.178  INFO 9368 --- [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-10-14 14:52:37.183  INFO 9368 --- [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-10-14 14:52:46.301  INFO 9368 --- [http-nio-8001-exec-4] c.i.e.service.impl.TrainerServiceImpl    : Entered getTrainers() method
+2022-10-14 15:07:13.522  INFO 9368 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-10-14 15:07:13.525  INFO 9368 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : test - Shutdown initiated...
+2022-10-14 15:07:13.540  INFO 9368 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : test - Shutdown completed.
+2022-10-14 15:11:43.784  INFO 9112 --- [main] c.i.e.EmployeeManagementApplicationTests : Starting EmployeeManagementApplicationTests using Java 18.0.1.1 on DESKTOP-VBCVG8R with PID 9112 (started by Lenovo in C:\Users\Lenovo\Desktop\springBoot\employee)
+2022-10-14 15:11:43.787  INFO 9112 --- [main] c.i.e.EmployeeManagementApplicationTests : No active profile set, falling back to 1 default profile: "default"
+2022-10-14 15:11:45.166  INFO 9112 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-14 15:11:45.287  INFO 9112 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 105 ms. Found 4 JPA repository interfaces.
+2022-10-14 15:11:46.359  INFO 9112 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-14 15:11:46.456  INFO 9112 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2022-10-14 15:11:46.735  INFO 9112 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-14 15:11:47.016  INFO 9112 --- [main] com.zaxxer.hikari.HikariDataSource       : test - Starting...
+2022-10-14 15:11:47.759  INFO 9112 --- [main] com.zaxxer.hikari.HikariDataSource       : test - Start completed.
+2022-10-14 15:11:47.783  INFO 9112 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-10-14 15:11:49.621  INFO 9112 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-14 15:11:49.638  INFO 9112 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-14 15:11:50.851  WARN 9112 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-10-14 15:11:51.412  INFO 9112 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-10-14 15:11:52.008  INFO 9112 --- [main] c.i.e.EmployeeManagementApplicationTests : Started EmployeeManagementApplicationTests in 8.766 seconds (JVM running for 10.477)
+2022-10-14 15:11:52.473  INFO 9112 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-10-14 15:11:52.476  INFO 9112 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : test - Shutdown initiated...
+2022-10-14 15:11:52.499  INFO 9112 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : test - Shutdown completed.
+2022-10-14 15:12:06.250  INFO 244 --- [main] c.i.e.EmployeeManagementApplication      : Starting EmployeeManagementApplication v0.0.1-SNAPSHOT using Java 18.0.1.1 on DESKTOP-VBCVG8R with PID 244 (C:\Users\Lenovo\Desktop\springBoot\employee\target\employee-0.0.1-SNAPSHOT.war started by Lenovo in C:\Users\Lenovo\Desktop\springBoot\employee\target)
+2022-10-14 15:12:06.256  INFO 244 --- [main] c.i.e.EmployeeManagementApplication      : No active profile set, falling back to 1 default profile: "default"
+2022-10-14 15:12:07.461  INFO 244 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-14 15:12:07.623  INFO 244 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 135 ms. Found 4 JPA repository interfaces.
+2022-10-14 15:12:08.862  INFO 244 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8001 (http)
+2022-10-14 15:12:08.879  INFO 244 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-10-14 15:12:08.880  INFO 244 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-14 15:12:11.878  INFO 244 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2022-10-14 15:12:12.456  INFO 244 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-10-14 15:12:12.457  INFO 244 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6077 ms
+2022-10-14 15:12:12.825  INFO 244 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-14 15:12:12.914  INFO 244 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2022-10-14 15:12:13.202  INFO 244 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-14 15:12:13.389  INFO 244 --- [main] com.zaxxer.hikari.HikariDataSource       : test - Starting...
+2022-10-14 15:12:13.915  INFO 244 --- [main] com.zaxxer.hikari.HikariDataSource       : test - Start completed.
+2022-10-14 15:12:13.941  INFO 244 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-10-14 15:12:15.605  INFO 244 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-14 15:12:15.619  INFO 244 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-14 15:12:16.479  WARN 244 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-10-14 15:12:16.755  INFO 244 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-10-14 15:12:17.098  INFO 244 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8001 (http) with context path ''
+2022-10-14 15:12:17.116  INFO 244 --- [main] c.i.e.EmployeeManagementApplication      : Started EmployeeManagementApplication in 11.817 seconds (JVM running for 12.626)
+2022-10-14 15:12:30.427  INFO 244 --- [http-nio-8001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-14 15:12:30.429  INFO 244 --- [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-10-14 15:12:30.435  INFO 244 --- [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2022-10-14 15:12:30.551  INFO 244 --- [http-nio-8001-exec-1] c.i.e.service.impl.TraineeServiceImpl    : Entered getTrainees() method
+2022-10-14 15:12:37.366 ERROR 244 --- [http-nio-8001-exec-1] o.a.c.c.C.[.[localhost].[/].[jsp]        : Servlet.service() for servlet [jsp] threw exception
+
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [61] in the jsp file: [/WEB-INF/view/viewTrainee.jsp]
+trainerIds cannot be resolved to a variable
+58:                             trainerNames = String.join(",", String.valueOf(trainer.getName()),trainerNames);
+59:                         }
+60:                     %>
+61:                     <td> <%= trainerIds %></td>
+62:                     <td><a href="deleteTrainee?id=<%= trainee.getId()%>"> <input class="delete btn" type="button"
+63:                                                                                  value="Delete"></a></td>
+64:                     <td><a href="updateTrainee?id=<%= trainee.getId()%>"> <input class="update btn" type="button"
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102) ~[tomcat-embed-jasper-9.0.65.jar!/:na]
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:213) ~[tomcat-embed-jasper-9.0.65.jar!/:na]
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:509) ~[tomcat-embed-jasper-9.0.65.jar!/:na]
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:397) ~[tomcat-embed-jasper-9.0.65.jar!/:na]
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:367) ~[tomcat-embed-jasper-9.0.65.jar!/:na]
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:351) ~[tomcat-embed-jasper-9.0.65.jar!/:na]
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:605) ~[tomcat-embed-jasper-9.0.65.jar!/:na]
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399) ~[tomcat-embed-jasper-9.0.65.jar!/:na]
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:379) ~[tomcat-embed-jasper-9.0.65.jar!/:na]
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:327) ~[tomcat-embed-jasper-9.0.65.jar!/:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.65.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:111) ~[spring-web-5.3.23.jar!/:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:111) ~[spring-web-5.3.23.jar!/:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:111) ~[spring-web-5.3.23.jar!/:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:711) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:385) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:313) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:171) ~[spring-webmvc-5.3.23.jar!/:5.3.23]
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:316) ~[spring-webmvc-5.3.23.jar!/:5.3.23]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1405) ~[spring-webmvc-5.3.23.jar!/:5.3.23]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1149) ~[spring-webmvc-5.3.23.jar!/:5.3.23]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088) ~[spring-webmvc-5.3.23.jar!/:5.3.23]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964) ~[spring-webmvc-5.3.23.jar!/:5.3.23]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.23.jar!/:5.3.23]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.23.jar!/:5.3.23]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.23.jar!/:5.3.23]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.65.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.23.jar!/:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar!/:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.23.jar!/:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar!/:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.23.jar!/:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar!/:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-10-14 15:12:37.380 ERROR 244 --- [http-nio-8001-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [61] in the jsp file: [/WEB-INF/view/viewTrainee.jsp]
+trainerIds cannot be resolved to a variable
+58:                             trainerNames = String.join(",", String.valueOf(trainer.getName()),trainerNames);
+59:                         }
+60:                     %>
+61:                     <td> <%= trainerIds %></td>
+62:                     <td><a href="deleteTrainee?id=<%= trainee.getId()%>"> <input class="delete btn" type="button"
+63:                                                                                  value="Delete"></a></td>
+64:                     <td><a href="updateTrainee?id=<%= trainee.getId()%>"> <input class="update btn" type="button"
+
+
+Stacktrace:] with root cause
+
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [61] in the jsp file: [/WEB-INF/view/viewTrainee.jsp]
+trainerIds cannot be resolved to a variable
+58:                             trainerNames = String.join(",", String.valueOf(trainer.getName()),trainerNames);
+59:                         }
+60:                     %>
+61:                     <td> <%= trainerIds %></td>
+62:                     <td><a href="deleteTrainee?id=<%= trainee.getId()%>"> <input class="delete btn" type="button"
+63:                                                                                  value="Delete"></a></td>
+64:                     <td><a href="updateTrainee?id=<%= trainee.getId()%>"> <input class="update btn" type="button"
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102) ~[tomcat-embed-jasper-9.0.65.jar!/:na]
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:213) ~[tomcat-embed-jasper-9.0.65.jar!/:na]
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:509) ~[tomcat-embed-jasper-9.0.65.jar!/:na]
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:397) ~[tomcat-embed-jasper-9.0.65.jar!/:na]
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:367) ~[tomcat-embed-jasper-9.0.65.jar!/:na]
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:351) ~[tomcat-embed-jasper-9.0.65.jar!/:na]
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:605) ~[tomcat-embed-jasper-9.0.65.jar!/:na]
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399) ~[tomcat-embed-jasper-9.0.65.jar!/:na]
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:379) ~[tomcat-embed-jasper-9.0.65.jar!/:na]
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:327) ~[tomcat-embed-jasper-9.0.65.jar!/:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.65.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:111) ~[spring-web-5.3.23.jar!/:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:111) ~[spring-web-5.3.23.jar!/:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:111) ~[spring-web-5.3.23.jar!/:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:711) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:385) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:313) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:171) ~[spring-webmvc-5.3.23.jar!/:5.3.23]
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:316) ~[spring-webmvc-5.3.23.jar!/:5.3.23]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1405) ~[spring-webmvc-5.3.23.jar!/:5.3.23]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1149) ~[spring-webmvc-5.3.23.jar!/:5.3.23]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088) ~[spring-webmvc-5.3.23.jar!/:5.3.23]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964) ~[spring-webmvc-5.3.23.jar!/:5.3.23]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.23.jar!/:5.3.23]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.23.jar!/:5.3.23]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.23.jar!/:5.3.23]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.65.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.23.jar!/:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar!/:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.23.jar!/:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar!/:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.23.jar!/:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar!/:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.65.jar!/:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-10-14 15:13:06.660  INFO 244 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-10-14 15:13:06.670  INFO 244 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : test - Shutdown initiated...
+2022-10-14 15:13:06.686  INFO 244 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : test - Shutdown completed.
+2022-10-14 15:13:24.010  INFO 2376 --- [main] c.i.e.EmployeeManagementApplicationTests : Starting EmployeeManagementApplicationTests using Java 18.0.1.1 on DESKTOP-VBCVG8R with PID 2376 (started by Lenovo in C:\Users\Lenovo\Desktop\springBoot\employee)
+2022-10-14 15:13:24.014  INFO 2376 --- [main] c.i.e.EmployeeManagementApplicationTests : No active profile set, falling back to 1 default profile: "default"
+2022-10-14 15:13:25.347  INFO 2376 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-14 15:13:25.467  INFO 2376 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 104 ms. Found 4 JPA repository interfaces.
+2022-10-14 15:13:26.590  INFO 2376 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-14 15:13:26.684  INFO 2376 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2022-10-14 15:13:26.973  INFO 2376 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-14 15:13:27.263  INFO 2376 --- [main] com.zaxxer.hikari.HikariDataSource       : test - Starting...
+2022-10-14 15:13:27.916  INFO 2376 --- [main] com.zaxxer.hikari.HikariDataSource       : test - Start completed.
+2022-10-14 15:13:27.942  INFO 2376 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-10-14 15:13:29.801  INFO 2376 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-14 15:13:29.821  INFO 2376 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-14 15:13:31.073  WARN 2376 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-10-14 15:13:31.635  INFO 2376 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-10-14 15:13:32.219  INFO 2376 --- [main] c.i.e.EmployeeManagementApplicationTests : Started EmployeeManagementApplicationTests in 8.802 seconds (JVM running for 10.546)
+2022-10-14 15:13:32.669  INFO 2376 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-10-14 15:13:32.674  INFO 2376 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : test - Shutdown initiated...
+2022-10-14 15:13:32.692  INFO 2376 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : test - Shutdown completed.
+2022-10-14 15:14:22.462  INFO 12424 --- [main] c.i.e.EmployeeManagementApplication      : Starting EmployeeManagementApplication v0.0.1-SNAPSHOT using Java 18.0.1.1 on DESKTOP-VBCVG8R with PID 12424 (C:\Users\Lenovo\Desktop\springBoot\employee\target\employee-0.0.1-SNAPSHOT.jar started by Lenovo in C:\Users\Lenovo\Desktop\springBoot\employee\target)
+2022-10-14 15:14:22.468  INFO 12424 --- [main] c.i.e.EmployeeManagementApplication      : No active profile set, falling back to 1 default profile: "default"
+2022-10-14 15:14:23.608  INFO 12424 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-14 15:14:23.723  INFO 12424 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 96 ms. Found 4 JPA repository interfaces.
+2022-10-14 15:14:24.871  INFO 12424 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8001 (http)
+2022-10-14 15:14:24.887  INFO 12424 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-10-14 15:14:24.888  INFO 12424 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-14 15:14:25.520  INFO 12424 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2022-10-14 15:14:25.891  INFO 12424 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-10-14 15:14:25.892  INFO 12424 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3294 ms
+2022-10-14 15:14:26.262  INFO 12424 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-14 15:14:26.364  INFO 12424 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2022-10-14 15:14:26.688  INFO 12424 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-14 15:14:26.880  INFO 12424 --- [main] com.zaxxer.hikari.HikariDataSource       : test - Starting...
+2022-10-14 15:14:27.488  INFO 12424 --- [main] com.zaxxer.hikari.HikariDataSource       : test - Start completed.
+2022-10-14 15:14:27.508  INFO 12424 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-10-14 15:14:29.149  INFO 12424 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-14 15:14:29.160  INFO 12424 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-14 15:14:29.987  WARN 12424 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-10-14 15:14:30.601  INFO 12424 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8001 (http) with context path ''
+2022-10-14 15:14:30.621  INFO 12424 --- [main] c.i.e.EmployeeManagementApplication      : Started EmployeeManagementApplication in 9.071 seconds (JVM running for 9.9)
+2022-10-14 15:14:35.798  INFO 12424 --- [http-nio-8001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-14 15:14:35.800  INFO 12424 --- [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-10-14 15:14:35.809  INFO 12424 --- [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2022-10-14 15:14:35.936  INFO 12424 --- [http-nio-8001-exec-1] c.i.e.service.impl.TraineeServiceImpl    : Entered getTrainees() method
+2022-10-14 15:14:35.936  INFO 12424 --- [http-nio-8001-exec-2] c.i.e.service.impl.TraineeServiceImpl    : Entered getTrainees() method
+2022-10-14 15:14:36.159  INFO 12424 --- [http-nio-8001-exec-3] c.i.e.service.impl.TraineeServiceImpl    : Entered getTrainees() method
+2022-10-14 15:14:51.079  INFO 12424 --- [http-nio-8001-exec-4] c.i.e.service.impl.TraineeServiceImpl    : Entered getTrainees() method
+2022-10-14 15:14:52.434  INFO 12424 --- [http-nio-8001-exec-5] c.i.e.service.impl.TraineeServiceImpl    : Entered getTrainees() method
+2022-10-14 15:14:52.864  INFO 12424 --- [http-nio-8001-exec-6] c.i.e.service.impl.TraineeServiceImpl    : Entered getTrainees() method
+2022-10-14 15:18:09.525  INFO 12280 --- [main] c.i.e.EmployeeManagementApplicationTests : Starting EmployeeManagementApplicationTests using Java 18.0.1.1 on DESKTOP-VBCVG8R with PID 12280 (started by Lenovo in C:\Users\Lenovo\Desktop\springBoot\employee)
+2022-10-14 15:18:09.528  INFO 12280 --- [main] c.i.e.EmployeeManagementApplicationTests : No active profile set, falling back to 1 default profile: "default"
+2022-10-14 15:18:10.899  INFO 12280 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-14 15:18:11.044  INFO 12280 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 127 ms. Found 4 JPA repository interfaces.
+2022-10-14 15:18:12.444  INFO 12280 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-14 15:18:12.544  INFO 12280 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2022-10-14 15:18:12.818  INFO 12280 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-14 15:18:13.159  INFO 12280 --- [main] com.zaxxer.hikari.HikariDataSource       : test - Starting...
+2022-10-14 15:18:13.847  INFO 12280 --- [main] com.zaxxer.hikari.HikariDataSource       : test - Start completed.
+2022-10-14 15:18:13.870  INFO 12280 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-10-14 15:18:16.306  INFO 12280 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-14 15:18:16.332  INFO 12280 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-14 15:18:17.946  WARN 12280 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-10-14 15:18:18.108  INFO 12424 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-10-14 15:18:18.155  INFO 12424 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : test - Shutdown initiated...
+2022-10-14 15:18:18.231  INFO 12424 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : test - Shutdown completed.
+2022-10-14 15:18:18.584  INFO 12280 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-10-14 15:18:19.324  INFO 12280 --- [main] c.i.e.EmployeeManagementApplicationTests : Started EmployeeManagementApplicationTests in 10.376 seconds (JVM running for 12.163)
+2022-10-14 15:18:19.817  INFO 12280 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-10-14 15:18:19.826  INFO 12280 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : test - Shutdown initiated...
+2022-10-14 15:18:19.843  INFO 12280 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : test - Shutdown completed.
+2022-10-14 15:18:33.152  INFO 7780 --- [main] c.i.e.EmployeeManagementApplicationTests : Starting EmployeeManagementApplicationTests using Java 18.0.1.1 on DESKTOP-VBCVG8R with PID 7780 (started by Lenovo in C:\Users\Lenovo\Desktop\springBoot\employee)
+2022-10-14 15:18:33.154  INFO 7780 --- [main] c.i.e.EmployeeManagementApplicationTests : No active profile set, falling back to 1 default profile: "default"
+2022-10-14 15:18:34.420  INFO 7780 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-14 15:18:34.535  INFO 7780 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 102 ms. Found 4 JPA repository interfaces.
+2022-10-14 15:18:35.602  INFO 7780 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-14 15:18:35.694  INFO 7780 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2022-10-14 15:18:35.960  INFO 7780 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-14 15:18:36.213  INFO 7780 --- [main] com.zaxxer.hikari.HikariDataSource       : test - Starting...
+2022-10-14 15:18:36.918  INFO 7780 --- [main] com.zaxxer.hikari.HikariDataSource       : test - Start completed.
+2022-10-14 15:18:36.947  INFO 7780 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-10-14 15:18:38.650  INFO 7780 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-14 15:18:38.670  INFO 7780 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-14 15:18:39.899  WARN 7780 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-10-14 15:18:40.433  INFO 7780 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-10-14 15:18:40.967  INFO 7780 --- [main] c.i.e.EmployeeManagementApplicationTests : Started EmployeeManagementApplicationTests in 8.336 seconds (JVM running for 10.162)
+2022-10-14 15:18:41.409  INFO 7780 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-10-14 15:18:41.412  INFO 7780 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : test - Shutdown initiated...
+2022-10-14 15:18:41.431  INFO 7780 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : test - Shutdown completed.
+2022-10-14 15:19:08.498  INFO 11184 --- [main] c.i.e.EmployeeManagementApplication      : Starting EmployeeManagementApplication v0.0.1-SNAPSHOT using Java 18.0.1.1 on DESKTOP-VBCVG8R with PID 11184 (C:\Users\Lenovo\Desktop\springBoot\employee\target\employee-0.0.1-SNAPSHOT.jar started by Lenovo in C:\Users\Lenovo\Desktop\springBoot\employee\target)
+2022-10-14 15:19:08.511  INFO 11184 --- [main] c.i.e.EmployeeManagementApplication      : No active profile set, falling back to 1 default profile: "default"
+2022-10-14 15:19:09.753  INFO 11184 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-14 15:19:09.857  INFO 11184 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 86 ms. Found 4 JPA repository interfaces.
+2022-10-14 15:19:11.030  INFO 11184 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8001 (http)
+2022-10-14 15:19:11.045  INFO 11184 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-10-14 15:19:11.046  INFO 11184 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-14 15:19:11.665  INFO 11184 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2022-10-14 15:19:12.044  INFO 11184 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-10-14 15:19:12.045  INFO 11184 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3387 ms
+2022-10-14 15:19:12.394  INFO 11184 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-14 15:19:12.495  INFO 11184 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2022-10-14 15:19:12.869  INFO 11184 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-14 15:19:13.068  INFO 11184 --- [main] com.zaxxer.hikari.HikariDataSource       : test - Starting...
+2022-10-14 15:19:13.647  INFO 11184 --- [main] com.zaxxer.hikari.HikariDataSource       : test - Start completed.
+2022-10-14 15:19:13.673  INFO 11184 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-10-14 15:19:15.419  INFO 11184 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-14 15:19:15.434  INFO 11184 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-14 15:19:16.270  WARN 11184 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-10-14 15:19:16.903  INFO 11184 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8001 (http) with context path ''
+2022-10-14 15:19:16.929  INFO 11184 --- [main] c.i.e.EmployeeManagementApplication      : Started EmployeeManagementApplication in 9.462 seconds (JVM running for 10.266)
+2022-10-14 15:19:20.244  INFO 11184 --- [http-nio-8001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-14 15:19:20.245  INFO 11184 --- [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-10-14 15:19:20.256  INFO 11184 --- [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2022-10-14 15:19:20.374  INFO 11184 --- [http-nio-8001-exec-1] c.i.e.service.impl.TraineeServiceImpl    : Entered getTrainees() method
+2022-10-14 15:19:35.953  INFO 11184 --- [http-nio-8001-exec-2] c.i.e.service.impl.TrainerServiceImpl    : Entered getTrainers() method
+2022-10-14 15:19:39.994  INFO 11184 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-10-14 15:19:40.001  INFO 11184 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : test - Shutdown initiated...
+2022-10-14 15:19:40.027  INFO 11184 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : test - Shutdown completed.
+2022-10-14 15:19:46.824  INFO 11588 --- [main] c.i.e.EmployeeManagementApplication      : Starting EmployeeManagementApplication v0.0.1-SNAPSHOT using Java 18.0.1.1 on DESKTOP-VBCVG8R with PID 11588 (C:\Users\Lenovo\Desktop\springBoot\employee\target\employee-0.0.1-SNAPSHOT.war started by Lenovo in C:\Users\Lenovo\Desktop\springBoot\employee\target)
+2022-10-14 15:19:46.849  INFO 11588 --- [main] c.i.e.EmployeeManagementApplication      : No active profile set, falling back to 1 default profile: "default"
+2022-10-14 15:19:48.094  INFO 11588 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-10-14 15:19:48.228  INFO 11588 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 102 ms. Found 4 JPA repository interfaces.
+2022-10-14 15:19:49.605  INFO 11588 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8001 (http)
+2022-10-14 15:19:49.627  INFO 11588 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-10-14 15:19:49.629  INFO 11588 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-10-14 15:19:52.597  INFO 11588 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2022-10-14 15:19:53.184  INFO 11588 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-10-14 15:19:53.185  INFO 11588 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6189 ms
+2022-10-14 15:19:53.575  INFO 11588 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-10-14 15:19:53.682  INFO 11588 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2022-10-14 15:19:54.002  INFO 11588 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-10-14 15:19:54.161  INFO 11588 --- [main] com.zaxxer.hikari.HikariDataSource       : test - Starting...
+2022-10-14 15:19:54.752  INFO 11588 --- [main] com.zaxxer.hikari.HikariDataSource       : test - Start completed.
+2022-10-14 15:19:54.788  INFO 11588 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-10-14 15:19:56.392  INFO 11588 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-10-14 15:19:56.406  INFO 11588 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-10-14 15:19:57.287  WARN 11588 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-10-14 15:19:57.578  INFO 11588 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-10-14 15:19:57.912  INFO 11588 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8001 (http) with context path ''
+2022-10-14 15:19:57.930  INFO 11588 --- [main] c.i.e.EmployeeManagementApplication      : Started EmployeeManagementApplication in 12.087 seconds (JVM running for 12.92)
+2022-10-14 15:20:01.321  INFO 11588 --- [http-nio-8001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-10-14 15:20:01.331  INFO 11588 --- [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-10-14 15:20:01.337  INFO 11588 --- [http-nio-8001-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2022-10-14 15:20:01.453  INFO 11588 --- [http-nio-8001-exec-1] c.i.e.service.impl.TrainerServiceImpl    : Entered getTrainers() method
+2022-10-14 15:20:08.335  WARN 11588 --- [http-nio-8001-exec-1] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [131] milliseconds.
+2022-10-14 15:20:13.156  INFO 11588 --- [http-nio-8001-exec-2] c.i.e.service.impl.TraineeServiceImpl    : Entered getTrainees() method
+2022-10-14 15:21:12.179  INFO 11588 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-10-14 15:21:12.205  INFO 11588 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : test - Shutdown initiated...
+2022-10-14 15:21:12.236  INFO 11588 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : test - Shutdown completed.

@@ -2,6 +2,7 @@ package com.ideas2it.employee.dao;
 
 import com.ideas2it.employee.models.Trainee;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 
 /**
@@ -15,6 +16,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @since 12/08/2022
  *
  **/
+@Repository
 public interface TraineeDao extends JpaRepository<Trainee, Integer> {
 
 }

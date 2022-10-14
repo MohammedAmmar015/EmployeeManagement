@@ -23,8 +23,8 @@ import com.ideas2it.employee.models.Qualification;
 import com.ideas2it.employee.models.Role;
 import com.ideas2it.employee.models.Trainee;
 import com.ideas2it.employee.models.Trainer;
-import com.ideas2it.employee.service.inter.TraineeService;
-import com.ideas2it.employee.service.inter.TrainerService;
+import com.ideas2it.employee.service.TraineeService;
+import com.ideas2it.employee.service.TrainerService;
 import com.ideas2it.employee.utilities.DateUtil;
 import com.ideas2it.employee.utilities.StringUtil;
 import org.apache.logging.log4j.LogManager;
@@ -40,6 +40,7 @@ import java.util.Set;
 
 @Service
 public class TraineeServiceImpl implements TraineeService {
+    private Logger logger = LogManager.getLogger(TraineeServiceImpl.class);
     @Autowired
     private TrainerService trainerService;
     @Autowired
@@ -48,7 +49,6 @@ public class TraineeServiceImpl implements TraineeService {
     private QualificationDao qualificationDao;
     @Autowired
     private RoleDao roleDao;
-    private Logger logger = LogManager.getLogger(TraineeServiceImpl.class);
 
     /**
      * <p>

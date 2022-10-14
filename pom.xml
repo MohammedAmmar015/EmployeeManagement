@@ -11,6 +11,7 @@
 	<groupId>com.ideas2it</groupId>
 	<artifactId>employee</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 	<name>EmployeeManagement</name>
 	<description>Employee Management Project</description>
 	<properties>
@@ -54,6 +55,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>${project.parent.version}</version>
 			</plugin>
 		</plugins>
 	</build>
