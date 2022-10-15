@@ -10,6 +10,7 @@
 package com.ideas2it.employee.models;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
 @Table(name = "qualification")
@@ -49,11 +50,26 @@ public class Qualification {
 
     public void setDescription(String description) {
 	this.description = description;
-    } 
+    }
 
     @Override
     public String toString() {
-	return description;
+        return "Qualification{" +
+                "qualificationId=" + qualificationId +
+                ", description='" + description + '\'' +
+                '}';
     }
-	
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Qualification that = (Qualification) o;
+        return qualificationId == that.qualificationId && Objects.equals(description, that.description);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(qualificationId, description);
+    }
 }

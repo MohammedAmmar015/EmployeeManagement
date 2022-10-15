@@ -18,9 +18,9 @@
 <div class="addContainer">
 
     <h2> <%= heading %> </h2>
-    <form:form modelAttribute="trainer" action="addOrUpdateTrainer?action=${action}" method="post">
+    <form:form modelAttribute="trainerDto" action="addOrUpdateTrainer?action=${action}" method="post">
         <form:hidden path="id"/>
-        <form:select hidden="hidden" path="role.description">
+        <form:select hidden="hidden" path="roleDto.description">
             <form:option selected="selected" value="Trainer">Trainer</form:option>
         </form:select>
         <table class="form">
@@ -95,7 +95,7 @@
                     Qualification :
                 </td>
                 <td>
-                    <form:input type="text" path="qualification.description" name="qualification" required="required"/>
+                    <form:input type="text" path="qualificationDto.description" name="qualification" required="required"/>
                 </td>
             </tr>
             <tr>

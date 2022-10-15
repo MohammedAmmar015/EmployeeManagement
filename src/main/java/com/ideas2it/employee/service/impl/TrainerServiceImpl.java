@@ -13,8 +13,10 @@ import com.ideas2it.employee.constant.ErrorMessage;
 import com.ideas2it.employee.dao.QualificationDao;
 import com.ideas2it.employee.dao.RoleDao;
 import com.ideas2it.employee.dao.TrainerDao;
+import com.ideas2it.employee.dto.TrainerDto;
 import com.ideas2it.employee.exception.BadRequest;
 import com.ideas2it.employee.exception.TrainerNotFound;
+import com.ideas2it.employee.mapper.TrainerMapper;
 import com.ideas2it.employee.models.Qualification;
 import com.ideas2it.employee.models.Role;
 import com.ideas2it.employee.models.Trainer;
@@ -24,91 +26,95 @@ import com.ideas2it.employee.utilities.StringUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-
-@Component
+@Service
 public class TrainerServiceImpl implements TrainerService {
     private Logger logger = LogManager.getLogger(TrainerServiceImpl.class);
-
-    @Autowired
     private TrainerDao trainerDao;
-
-    @Autowired
     private RoleDao roleDao;
+    private QualificationDao qualificationDao;
+    private TrainerMapper trainerMapper;
 
     @Autowired
-    private QualificationDao qualificationDao;
+    public TrainerServiceImpl(TrainerDao trainerDao, RoleDao roleDao,
+                              QualificationDao qualificationDao,
+                              TrainerMapper trainerMapper) {
+        this.trainerDao = trainerDao;
+        this.roleDao = roleDao;
+        this.qualificationDao = qualificationDao;
+        this.trainerMapper = trainerMapper;
+    }
 
     /**
      * <p>
      * This method is to Validate and insert the Trainer details
      * </p>
      *
-     * @param trainer - trainer object
+     * @param trainerDto - trainer object
      * @return errors
      * It returns List of Attributes, which failed validation
      * @throws BadRequest Exception will be thrown, If any details get Invalid
      **/
     @Override
-    public List<Attributes> addOrModifyTrainer(Trainer trainer) throws BadRequest {
+    public int addOrModifyTrainer(TrainerDto trainerDto) throws BadRequest {
         logger.info("Entered addOrModifyTrainer() method");
         List<Attributes> errors = new ArrayList<>();
         StringBuilder errorMessage = new StringBuilder();
 
-        String validName = trainer.getName();
+        String validName = trainerDto.getName();
         if (!StringUtil.isValidName(validName)) {
             errors.add(Attributes.NAME);
             errorMessage.append(ErrorMessage.NAME.errorMessage);
         }
 
-        Long validMobileNumber = trainer.getMobileNumber();
+        Long validMobileNumber = trainerDto.getMobileNumber();
         if (!StringUtil.isValidMobileNumber(validMobileNumber.toString())) {
             errors.add(Attributes.MOBILE_NUMBER);
             errorMessage.append(ErrorMessage.MOBILE_NUMBER.errorMessage);
         }
 
-        String validEmail = trainer.getEmail();
+        String validEmail = trainerDto.getEmail();
         if (!StringUtil.isValidEmail(validEmail)) {
             errors.add(Attributes.EMAIL);
             errorMessage.append(ErrorMessage.EMAIL.errorMessage);
         }
 
-        LocalDate validDateOfJoining = trainer.getDateOfJoining();
+        LocalDate validDateOfJoining = trainerDto.getDateOfJoining();
         if (DateUtil.computeDays(validDateOfJoining, LocalDate.now()) < 1) {
             errors.add(Attributes.DATE_OF_JOINING);
             errorMessage.append(ErrorMessage.DATE_OF_JOINING.errorMessage);
         }
 
-        LocalDate validDateOfBirth = trainer.getDateOfBirth();
+        LocalDate validDateOfBirth = trainerDto.getDateOfBirth();
         if (DateUtil.computePeriod(validDateOfBirth, LocalDate.now()) < 18) {
             errors.add(Attributes.DATE_OF_BIRTH);
             errorMessage.append(ErrorMessage.DATE_OF_BIRTH.errorMessage);
         }
-
-        Optional<Qualification> qualification = qualificationDao.findByDescription(trainer.getQualification().getDescription());
-        if (qualification.isPresent()) {
-            trainer.setQualification(qualification.get());
-        }
-
-        Optional<Role> role = roleDao.findByDescription(trainer.getRole().getDescription());
-        if (role.isPresent()) {
-            trainer.setRole(role.get());
-        }
-
+        Trainer savedTrainer = null;
         if (errors.isEmpty()) {
-            trainerDao.save(trainer);
+            Trainer trainer = trainerMapper.toTrainer(trainerDto);
+            Optional<Qualification> qualification = qualificationDao.findByDescription(trainer.getQualification().getDescription());
+            if (qualification.isPresent()) {
+                trainer.setQualification(qualification.get());
+            }
+
+            Optional<Role> role = roleDao.findByDescription(trainer.getRole().getDescription());
+            if (role.isPresent()) {
+                trainer.setRole(role.get());
+            }
+            savedTrainer = trainerDao.save(trainer);
         } else {
             errorMessage.append(errors.size()).append(" Errors Found");
             errorMessage.append("\t\t\tPlease Re-enter the Trainer details correctly");
             throw new BadRequest(errors, errorMessage.toString());
         }
-        return errors;
+        return savedTrainer.getId();
     }
 
     /**
@@ -119,9 +125,13 @@ public class TrainerServiceImpl implements TrainerService {
      * @return - It returns List of Trainers
      **/
     @Override
-    public List<Trainer> getTrainers() {
+    public List<TrainerDto> getTrainers() {
         logger.info("Entered getTrainers() method");
-        return trainerDao.findAll();
+        List<TrainerDto> trainers = new ArrayList<>();
+        for (Trainer trainer : trainerDao.findAll()) {
+            trainers.add(trainerMapper.toTrainerDto(trainer));
+        }
+        return trainers;
     }
 
     /**
@@ -134,13 +144,14 @@ public class TrainerServiceImpl implements TrainerService {
      * @return - It returns single Trainer
      **/
     @Override
-    public Trainer getTrainerById(final int trainerId) {
+    public TrainerDto getTrainerById(final int trainerId) {
         logger.info("Entered getTrainerById() method");
+        TrainerDto trainerDto = null;
         Optional<Trainer> trainer = trainerDao.findById(trainerId);
         if (trainer.isPresent()) {
-            return trainer.get();
+            trainerDto = trainerMapper.toTrainerDto(trainer.get());
         }
-        return null;
+        return trainerDto;
     }
 
     @Override
@@ -161,7 +172,6 @@ public class TrainerServiceImpl implements TrainerService {
      **/
     @Override
     public boolean removeTrainerById(final int trainerId) {
-
         logger.info("Entered removeTrainerById() method");
         trainerDao.deleteById(trainerId);
         return true;

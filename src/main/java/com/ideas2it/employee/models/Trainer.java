@@ -75,6 +75,7 @@ public class Trainer extends Employee {
         return "Trainer{" +
                 "trainingExperience=" + trainingExperience +
                 ", trainees=" + trainees +
+                "qualification" + getQualification() +
                 '}';
     }
 }

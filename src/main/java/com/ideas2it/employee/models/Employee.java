@@ -45,11 +45,11 @@ public class Employee {
     @Column(name = "blood_group")
     private String bloodGroup;
 
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "qualification_id", referencedColumnName = "qualification_id")
     private Qualification qualification;
 
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "role_id", referencedColumnName = "role_id")
     private Role role;
 

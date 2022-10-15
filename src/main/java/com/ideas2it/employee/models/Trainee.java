@@ -28,10 +28,6 @@ public class Trainee extends Employee {
 
     @Column(name = "batch_number")
     private Byte batchNumber;
-
-    @Transient
-    private List<Integer> trainerIds;
-
     @ManyToMany(cascade = CascadeType.PERSIST)
     @JoinTable(name = "employee_relation",
             joinColumns = @JoinColumn(name = "trainee_id", referencedColumnName = "emp_id"),
@@ -83,14 +79,6 @@ public class Trainee extends Employee {
 	this.batchNumber = batchNumber;
     }    
 
-    public List<Integer> getTrainerIds() {
-	return trainerIds;
-    }
-
-    public void setTrainerIds(List<Integer> trainerIds) {
-	this.trainerIds = trainerIds;
-    }
-
     public void setTrainers(Set<Trainer> trainers) {
 	this.trainers = trainers;
     }
@@ -102,10 +90,10 @@ public class Trainee extends Employee {
     @Override
     public String toString() {
         return "Trainee{" +
+                "id " + getId() +
                 "trainingPeriod=" + trainingPeriod +
                 ", course='" + course + '\'' +
                 ", batchNumber=" + batchNumber +
-                ", trainerIds=" + trainerIds +
                 ", trainers=" + trainers +
                 '}';
     }

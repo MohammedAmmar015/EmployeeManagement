@@ -1,6 +1,7 @@
 package com.ideas2it.employee.service;
 
 import com.ideas2it.employee.constant.Attributes;
+import com.ideas2it.employee.dto.TraineeDto;
 import com.ideas2it.employee.exception.BadRequest;
 import com.ideas2it.employee.exception.TraineeNotFound;
 import com.ideas2it.employee.models.Trainee;
@@ -24,13 +25,13 @@ public interface TraineeService {
     * <p>
     * This method is to Validate and add Trainee Details
     * </p>
-    * @param trainee - object of trainee
+    * @param traineeDto - object of trainee
     * @throws BadRequest
     *		It throws exceptions, If any data is Invalid
-    * @return errors
-    *         It returns List of Attributes, which failed validation 
+    * @return id
+    *         it returns inserted  trainee id
     **/
-    List<Attributes> addOrModifyTrainee(final Trainee trainee) throws BadRequest;
+    int addOrModifyTrainee(final TraineeDto traineeDto) throws BadRequest;
 
     /**
     * <p>
@@ -38,7 +39,7 @@ public interface TraineeService {
     * </p>
     * @return - It returns List of Trainees
     **/
-    List<Trainee> getTrainees();
+    List<TraineeDto> getTrainees();
 
 
     /**
@@ -49,7 +50,7 @@ public interface TraineeService {
     * @param traineeId - Employee/Trainee Id
     * @return - It returns single Trainee
     **/
-    Trainee getTraineeById(final int traineeId);
+    TraineeDto getTraineeById(final int traineeId);
 
 
     /**

@@ -1,7 +1,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page import="com.ideas2it.employee.models.Trainee"
-         import="com.ideas2it.employee.models.Trainer"
+<%@ page import="com.ideas2it.employee.dto.TraineeDto"
+         import="com.ideas2it.employee.dto.TrainerDto"
 %>
 <%@page isELIgnored="false"%>
 <%
@@ -19,9 +19,9 @@
 <body>
 <div class="addContainer">
     <h2> <%= heading %> </h2>
-    <form:form modelAttribute="trainee" action="addOrUpdateTrainee?action=${action}" method="post">
+        <form:form modelAttribute="traineeDto" action="addOrUpdateTrainee?action=${action}" method="post">
         <form:hidden path="id"/>
-        <form:select hidden="hidden" path="role.description">
+        <form:select hidden="hidden" path="roleDto.description">
             <form:option selected="selected" value="Trainee">Trainee</form:option>
         </form:select>
         <table class="form">
@@ -96,7 +96,7 @@
                     Qualification :
                 </td>
                 <td>
-                    <form:input type="text" path="qualification.description" name="qualification" required="required"/>
+                    <form:input type="text" path="qualificationDto.description" name="qualification" required="required"/>
                 </td>
             </tr>
             <tr>
@@ -129,7 +129,7 @@
                 </td>
                 <td>
                     <form:select path="trainerIds">
-                        <c:forEach var="trainer" items="${trainers}">
+                        <c:forEach var="trainer" items="${trainersDto}">
                             <form:option value="${trainer.id}" label="${trainer.id} - ${trainer.name}"/>
                         </c:forEach>
                     </form:select>

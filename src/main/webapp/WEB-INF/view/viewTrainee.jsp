@@ -1,7 +1,7 @@
 <%@ page import = "java.util.List"
          import = "java.util.ArrayList"
-         import = "com.ideas2it.employee.models.Trainee"
-         import = "com.ideas2it.employee.models.Trainer"
+         import = "com.ideas2it.employee.dto.TraineeDto"
+         import = "com.ideas2it.employee.dto.TrainerDto"
 %>
 <html>
 <head>
@@ -10,14 +10,14 @@
 </head>
 <body>
 <div class="view">
-    <h2> Trainee Portal </h2>
-    <p> ${msg} </p>
     <%
-        List<Trainee> trainees = (List) request.getAttribute("trainees");
+        List<TraineeDto> trainees = (List) request.getAttribute("traineesDto");
         if (trainees.size() <= 0) {
             out.println("No Data Found to Display");
         } else {
-    %>
+     %>
+    <h2> Trainee Portal </h2>
+    <p> ${msg} </p>
     <div class="scrollable">
             <table>
                 <tr class="tableHeading">
@@ -37,7 +37,7 @@
                     <th colspan="2">Actions</th>
                 </tr>
                 <%
-                for (Trainee trainee : trainees) {
+                for (TraineeDto trainee : trainees) {
                 %>
                 <tr>
                     <td> <%= trainee.getId()%></td>
@@ -47,18 +47,12 @@
                     <td> <%= trainee.getDateOfJoining()%></td>
                     <td> <%= trainee.getEmail()%></td>
                     <td> <%= trainee.getMobileNumber()%></td>
-                    <td> <%= trainee.getQualification().getDescription()%></td>
+                    <td> <%= trainee.getQualificationDto().getDescription()%></td>
                     <td> <%= trainee.getBloodGroup()%></td>
                     <td> <%= trainee.getTrainingPeriod()%></td>
                     <td> <%= trainee.getCourse()%></td>
                     <td> <%= trainee.getBatchNumber()%></td>
-                    <%
-                        List<String> trainerNames = new ArrayList();
-                        for (Trainer trainer : trainee.getTrainers()) {
-                            trainerNames.add(trainer.getName());
-                        }
-                    %>
-                    <td> <%= trainerNames.toString() %></td>
+                    <td> <%= trainee.getTrainersName().toString() %></td>
                     <td><a href="deleteTrainee?id=<%= trainee.getId()%>"> <input class="delete btn" type="button"
                                                                                  value="Delete"></a></td>
                     <td><a href="updateTrainee?id=<%= trainee.getId()%>"> <input class="update btn" type="button"

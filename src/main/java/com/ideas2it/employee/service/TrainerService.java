@@ -1,6 +1,7 @@
 package com.ideas2it.employee.service;
 
 import com.ideas2it.employee.constant.Attributes;
+import com.ideas2it.employee.dto.TrainerDto;
 import com.ideas2it.employee.exception.BadRequest;
 import com.ideas2it.employee.exception.TrainerNotFound;
 import com.ideas2it.employee.models.Trainer;
@@ -24,13 +25,13 @@ public interface TrainerService {
     * <p>
     * This method is to Validate and insert the Trainer details
     * </p>
-    * @param trainer - trainer object
-    * @return errors
-    *         It returns List of Attributes, which failed validation 
+    * @param trainerDto - trainer object
+    * @return id
+    *         It returns inserted trainer id
     * @throws BadRequest
     *	      Exception will be thrown, If any details get Invalid
     **/
-    List<Attributes> addOrModifyTrainer(Trainer trainer)
+    int addOrModifyTrainer(TrainerDto trainerDto)
 				       throws BadRequest;
 
 
@@ -40,7 +41,7 @@ public interface TrainerService {
     * </p>
     * @return - It returns List of Trainers
     **/
-    List<Trainer> getTrainers();
+    List<TrainerDto> getTrainers();
 
 
     /**
@@ -51,7 +52,7 @@ public interface TrainerService {
     * @param trainerId - Employee/Trainer Id
     * @return - It returns single Trainer
     **/
-    Trainer getTrainerById(final int trainerId);
+    TrainerDto getTrainerById(final int trainerId);
 
 
     List<Trainer> getTrainersByIds(List<Integer> trainerIds);

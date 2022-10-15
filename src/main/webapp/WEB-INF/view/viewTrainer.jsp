@@ -1,6 +1,6 @@
 <%@page isELIgnored="false"%>
 <%@ page import = "java.util.List"
-         import = "com.ideas2it.employee.models.Trainer"
+         import = "com.ideas2it.employee.dto.TrainerDto"
 %>
 <html>
 <head>
@@ -10,13 +10,13 @@
 <body>
 
 <div class="view">
-    <h2> Trainer Portal </h2>
     <%
-        List<Trainer> trainers = (List) request.getAttribute("trainers");
+        List<TrainerDto> trainers = (List) request.getAttribute("trainersDto");
         if (trainers.size() <= 0) {
             out.println("No Data Found to Display");
         } else {
     %>
+    <h2> Trainer Portal </h2>
         <p> ${msg} </p>
         <div class="scrollable">
             <table>
@@ -35,7 +35,7 @@
                     <th colspan="2">Actions</th>
                 </tr>
                 <%
-                    for (Trainer trainer : trainers) {
+                    for (TrainerDto trainer : trainers) {
                 %>
                 <tr>
                     <td> <%= trainer.getId()%></td>
@@ -45,10 +45,10 @@
                     <td> <%= trainer.getDateOfJoining()%></td>
                     <td> <%= trainer.getEmail()%></td>
                     <td> <%= trainer.getMobileNumber()%></td>
-                    <td> <%= trainer.getQualification().getDescription()%></td>
+                    <td> <%= trainer.getQualificationDto().getDescription()%></td>
                     <td> <%= trainer.getBloodGroup()%></td>
                     <td> <%= trainer.getTrainingExperience()%></td>
-                    <td> <%= trainer.getTrainees().size()%></td>
+                    <td> <%= trainer.getNumberOfTrainees()%></td>
                     <td><a href="deleteTrainer?id=<%= trainer.getId()%>"> <input class="delete btn" type="button"
                                                                                  value="Delete"></a></td>
                     <td><a href="updateTrainer?id=<%= trainer.getId()%>"> <input class="update btn" type="button"

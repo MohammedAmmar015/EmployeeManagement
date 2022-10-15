@@ -1,7 +1,7 @@
 package com.ideas2it.employee.controller;
 
-import com.ideas2it.employee.models.Trainee;
-import com.ideas2it.employee.models.Trainer;
+import com.ideas2it.employee.dto.TraineeDto;
+import com.ideas2it.employee.dto.TrainerDto;
 import com.ideas2it.employee.service.TraineeService;
 import com.ideas2it.employee.service.TrainerService;
 import org.apache.logging.log4j.LogManager;
@@ -23,10 +23,15 @@ import java.util.List;
 public class EmployeeController {
 
 	private Logger logger = LogManager.getLogger(EmployeeController.class);
-	@Autowired
+
     private TrainerService trainerServiceImpl;
-	@Autowired
     private TraineeService traineeServiceImpl;
+	@Autowired
+	public EmployeeController(TrainerService trainerServiceImpl,
+							  TraineeService traineeServiceImpl) {
+		this.trainerServiceImpl = trainerServiceImpl;
+		this.traineeServiceImpl = traineeServiceImpl;
+	}
 
 	/**
 	 * <p>
@@ -48,7 +53,7 @@ public class EmployeeController {
 	@GetMapping("/trainerForm")
 	public ModelAndView showTrainerForm() {
 		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.addObject("trainer", new Trainer());
+		modelAndView.addObject("trainerDto", new TrainerDto());
 		modelAndView.addObject("action", "addTrainer");
 		modelAndView.setViewName("addOrUpdateTrainer");
 		return modelAndView;
@@ -58,19 +63,19 @@ public class EmployeeController {
 	 *<p>
 	 *     to add trainer details
 	 *</p>
-	 * @param trainer get Trainer object from user
+	 * @param trainerDto get Trainer object from user
 	 * @param action addTrainer or updateTrainer Operation
 	 * @param redirectAttributes it holds error message to Redirect
 	 * @return to Redirect to ViewTrainer page
 	 */
 	@RequestMapping("/addOrUpdateTrainer")
-	public String addOrUpdateTrainer(@ModelAttribute Trainer trainer, @RequestParam("action") String action, RedirectAttributes redirectAttributes) {
+	public String addOrUpdateTrainer(@ModelAttribute TrainerDto trainerDto, @RequestParam("action") String action, RedirectAttributes redirectAttributes) {
 		try {
-			trainerServiceImpl.addOrModifyTrainer(trainer);
+			int savedTrainerId = trainerServiceImpl.addOrModifyTrainer(trainerDto);
 			if ("addTrainer".equals(action)) {
-				redirectAttributes.addFlashAttribute("msg", trainer.getName() + " Inserted Successfully");
+				redirectAttributes.addFlashAttribute("msg", savedTrainerId + " Inserted Successfully");
 			} else {
-				redirectAttributes.addFlashAttribute("msg", trainer.getName() + " Updated Successfully");
+				redirectAttributes.addFlashAttribute("msg", savedTrainerId + " Updated Successfully");
 			}
 		} catch (Exception exception) {
 			redirectAttributes.addFlashAttribute("msg", exception.getMessage());
@@ -86,9 +91,9 @@ public class EmployeeController {
 	 */
 	@GetMapping( value = "/viewTrainer")
 	public ModelAndView viewTrainer() {
-		List<Trainer> trainers = trainerServiceImpl.getTrainers();
+		List<TrainerDto> trainersDto = trainerServiceImpl.getTrainers();
 		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.addObject("trainers", trainers);
+		modelAndView.addObject("trainersDto", trainersDto);
 		modelAndView.setViewName("viewTrainer");
 		return modelAndView;
 	}
@@ -103,8 +108,8 @@ public class EmployeeController {
 	 */
 	@GetMapping("/updateTrainer")
 	public String getTrainerById(@RequestParam("id") int trainerId, Model model) {
-		Trainer trainer = trainerServiceImpl.getTrainerById(trainerId);
-		model.addAttribute("trainer", trainer);
+		TrainerDto trainerDto = trainerServiceImpl.getTrainerById(trainerId);
+		model.addAttribute("trainerDto", trainerDto	);
 		model.addAttribute("action", "updateTrainer");
 		return "addOrUpdateTrainer";
 	}
@@ -133,8 +138,8 @@ public class EmployeeController {
 	@GetMapping("/traineeForm")
 	public ModelAndView showTraineeForm() {
 		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.addObject("trainers", trainerServiceImpl.getTrainers());
-		modelAndView.addObject("trainee", new Trainee());
+		modelAndView.addObject("trainersDto", trainerServiceImpl.getTrainers());
+		modelAndView.addObject("traineeDto", new TraineeDto());
 		modelAndView.addObject("action", "addTrainee");
 		modelAndView.setViewName("addOrUpdateTrainee");
 		return modelAndView;
@@ -144,19 +149,19 @@ public class EmployeeController {
 	 *<p>
 	 *     to add trainee details
 	 *</p>
-	 * @param trainee get Trainee object from user
+	 * @param traineeDto get Trainee object from user
 	 * @param action addTrainee or updateTrainee Operation
 	 * @param redirectAttributes it holds error message to Redirect
 	 * @return to Redirect to ViewTrainee page
 	 */
 	@RequestMapping("/addOrUpdateTrainee")
-	public String addOrUpdateTrainee(@ModelAttribute("trainee") Trainee trainee, @RequestParam("action") String action, RedirectAttributes redirectAttributes) {
+	public String addOrUpdateTrainee(@ModelAttribute("traineeDto") TraineeDto traineeDto, @RequestParam("action") String action, RedirectAttributes redirectAttributes) {
 		try {
-			traineeServiceImpl.addOrModifyTrainee(trainee);
+			int savedTraineeId = traineeServiceImpl.addOrModifyTrainee(traineeDto);
 			if ("addTrainee".equals(action)) {
-				redirectAttributes.addFlashAttribute("msg", trainee.getName() + " Inserted Successfully");
+				redirectAttributes.addFlashAttribute("msg", savedTraineeId + " Inserted Successfully");
 			} else {
-				redirectAttributes.addFlashAttribute("msg", trainee.getName() + " Updated Successfully");
+				redirectAttributes.addFlashAttribute("msg", savedTraineeId + " Updated Successfully");
 			}
 		} catch (Exception exception) {
 			redirectAttributes.addFlashAttribute("msg", exception.getMessage());
@@ -172,9 +177,9 @@ public class EmployeeController {
 	 */
 	@GetMapping( value = "/viewTrainee")
 	public ModelAndView viewTrainee() {
-		List<Trainee> trainees = traineeServiceImpl.getTrainees();
+		List<TraineeDto> traineesDto = traineeServiceImpl.getTrainees();
 		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.addObject("trainees", trainees);
+		modelAndView.addObject("traineesDto", traineesDto);
 		modelAndView.setViewName("viewTrainee");
 		return modelAndView;
 	}
@@ -189,9 +194,10 @@ public class EmployeeController {
 	 */
 	@GetMapping("/updateTrainee")
 	public String getTraineeById(@RequestParam("id") int traineeId, Model model) {
-		Trainee trainee = traineeServiceImpl.getTraineeById(traineeId);
-		model.addAttribute("trainers", trainerServiceImpl.getTrainers());
-		model.addAttribute("trainee", trainee);
+		TraineeDto traineeDto = traineeServiceImpl.getTraineeById(traineeId);
+		List<TrainerDto> trainersDto = trainerServiceImpl.getTrainers();
+		model.addAttribute("trainersDto", trainersDto);
+		model.addAttribute("traineeDto", traineeDto);
 		model.addAttribute("action", "updateTrainee");
 		return "addOrUpdateTrainee";
 	}

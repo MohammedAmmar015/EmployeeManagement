@@ -17,8 +17,10 @@ import com.ideas2it.employee.constant.ErrorMessage;
 import com.ideas2it.employee.dao.QualificationDao;
 import com.ideas2it.employee.dao.RoleDao;
 import com.ideas2it.employee.dao.TraineeDao;
+import com.ideas2it.employee.dto.TraineeDto;
 import com.ideas2it.employee.exception.BadRequest;
 import com.ideas2it.employee.exception.TraineeNotFound;
+import com.ideas2it.employee.mapper.TraineeMapper;
 import com.ideas2it.employee.models.Qualification;
 import com.ideas2it.employee.models.Role;
 import com.ideas2it.employee.models.Trainee;
@@ -41,82 +43,92 @@ import java.util.Set;
 @Service
 public class TraineeServiceImpl implements TraineeService {
     private Logger logger = LogManager.getLogger(TraineeServiceImpl.class);
-    @Autowired
     private TrainerService trainerService;
-    @Autowired
     private TraineeDao traineeDao;
-    @Autowired
     private QualificationDao qualificationDao;
-    @Autowired
     private RoleDao roleDao;
+    private TraineeMapper traineeMapper;
+
+    @Autowired
+    public TraineeServiceImpl(TrainerService trainerService, TraineeDao traineeDao,
+                              QualificationDao qualificationDao, RoleDao roleDao,
+                              TraineeMapper traineeMapper) {
+        this.trainerService = trainerService;
+        this.traineeDao = traineeDao;
+        this.qualificationDao = qualificationDao;
+        this.roleDao = roleDao;
+        this.traineeMapper = traineeMapper;
+    }
 
     /**
      * <p>
      * This method is to Validate and add Trainee Details
      * </p>
-     * @param trainee - object of trainee
+     * @param traineeDto - object of trainee
      * @throws BadRequest
      *		It throws exceptions, If any data is Invalid
      * @return errors
      *         It returns List of Attributes, which failed validation
      **/
     @Override
-    public List<Attributes> addOrModifyTrainee(Trainee trainee) throws BadRequest {
+    public int addOrModifyTrainee(TraineeDto traineeDto) throws BadRequest {
         logger.info("Entered addOrModifyTrainee() method");
         List<Attributes> errors = new ArrayList<>();
         StringBuilder errorMessage = new StringBuilder();
 
-        String validName = trainee.getName();
+        String validName = traineeDto.getName();
         if (!StringUtil.isValidName(validName)) {
             errors.add(Attributes.NAME);
             errorMessage.append(ErrorMessage.NAME.errorMessage);
         }
 
-        Long validMobileNumber = trainee.getMobileNumber();
+        Long validMobileNumber = traineeDto.getMobileNumber();
         if (!StringUtil.isValidMobileNumber(validMobileNumber.toString())) {
             errors.add(Attributes.MOBILE_NUMBER);
             errorMessage.append(ErrorMessage.MOBILE_NUMBER.errorMessage);
         }
 
-        String validEmail = trainee.getEmail();
+        String validEmail = traineeDto.getEmail();
         if (!StringUtil.isValidEmail(validEmail)) {
             errors.add(Attributes.EMAIL);
             errorMessage.append(ErrorMessage.EMAIL.errorMessage);
         }
 
-        LocalDate validDateOfJoining = trainee.getDateOfJoining();
+        LocalDate validDateOfJoining = traineeDto.getDateOfJoining();
         if (DateUtil.computeDays(validDateOfJoining, LocalDate.now()) < 1) {
             errors.add(Attributes.DATE_OF_JOINING);
             errorMessage.append(ErrorMessage.DATE_OF_JOINING.errorMessage);
         }
 
-        LocalDate validDateOfBirth = trainee.getDateOfBirth();
+        LocalDate validDateOfBirth = traineeDto.getDateOfBirth();
         if (DateUtil.computePeriod(validDateOfBirth, LocalDate.now()) < 18) {
             errors.add(Attributes.DATE_OF_BIRTH);
             errorMessage.append(ErrorMessage.DATE_OF_BIRTH.errorMessage);
         }
 
-        Optional<Qualification> qualification = qualificationDao.findByDescription(trainee.getQualification().getDescription());
-        if (qualification.isPresent()) {
-            trainee.setQualification(qualification.get());
-        }
-
-        Optional<Role> role = roleDao.findByDescription(trainee.getRole().getDescription());
-        if (role.isPresent()) {
-            trainee.setRole(role.get());
-        }
-
-        Set<Trainer> trainers = Set.copyOf(trainerService.getTrainersByIds(trainee.getTrainerIds()));
-        trainee.setTrainers(trainers);
-
+        Trainee savedTrainee = null;
         if (errors.isEmpty()) {
-            traineeDao.save(trainee);
+            Set<Trainer> trainers = Set.copyOf(trainerService.getTrainersByIds(traineeDto.getTrainerIds()));
+            Trainee trainee = traineeMapper.toTrainee(traineeDto);
+            trainee.setTrainers(trainers);
+
+            Optional<Qualification> qualification = qualificationDao.findByDescription(trainee.getQualification().getDescription());
+            if (qualification.isPresent()) {
+                trainee.setQualification(qualification.get());
+            }
+
+            Optional<Role> role = roleDao.findByDescription(trainee.getRole().getDescription());
+            if (role.isPresent()) {
+                trainee.setRole(role.get());
+            }
+
+            savedTrainee = traineeDao.save(trainee);
         } else {
             errorMessage.append("\t\t\t\nPlease Re-enter the Trainee details correctly");
             errorMessage.append(errors.size()).append(" Errors Found");
             throw new BadRequest(errors, errorMessage.toString());
         }
-        return errors;
+        return savedTrainee.getId();
     }
 
     /**
@@ -126,9 +138,13 @@ public class TraineeServiceImpl implements TraineeService {
      * @return - It returns List of Trainees
      **/
     @Override
-    public List<Trainee> getTrainees() {
+    public List<TraineeDto> getTrainees() {
         logger.info("Entered getTrainees() method");
-        return traineeDao.findAll();
+        List<TraineeDto> trainees = new ArrayList<>();
+        for (Trainee trainee: traineeDao.findAll()) {
+            trainees.add(traineeMapper.toTraineeDto(trainee));
+        }
+        return trainees;
     }
 
     /**
@@ -140,19 +156,14 @@ public class TraineeServiceImpl implements TraineeService {
      * @return - It returns single Trainee
      **/
    @Override
-    public Trainee getTraineeById(final int traineeId) {
+    public TraineeDto getTraineeById(final int traineeId) {
        logger.info("Entered getTraineeById() method");
-       Trainee trainee = null;
+       TraineeDto traineeDto = null;
         Optional<Trainee> retrivedTrainee = traineeDao.findById(traineeId);
         if (retrivedTrainee.isPresent()) {
-            trainee = retrivedTrainee.get();
+            traineeDto = traineeMapper.toTraineeDto(retrivedTrainee.get());
         }
-        List<Integer> trainerIds = new ArrayList<>();
-        for (Trainer trainer : trainee.getTrainers()) {
-            trainerIds.add(trainer.getId());
-        }
-        trainee.setTrainerIds(trainerIds);
-        return trainee;
+        return traineeDto;
     }
 
     /**
