@@ -6,6 +6,13 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
+/**
+ * This is Qualification Repositiory
+ * to do CRUD operation on qualification table
+ * @author Mohammed Ammar
+ * @version 1.0
+ * @since 17/10/2022
+ */
 @Repository
 public interface QualificationDao extends JpaRepository<Qualification, Integer> {
 

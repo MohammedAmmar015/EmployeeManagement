@@ -47,17 +47,14 @@ public class TraineeServiceImpl implements TraineeService {
     private TraineeDao traineeDao;
     private QualificationDao qualificationDao;
     private RoleDao roleDao;
-    private TraineeMapper traineeMapper;
 
     @Autowired
     public TraineeServiceImpl(TrainerService trainerService, TraineeDao traineeDao,
-                              QualificationDao qualificationDao, RoleDao roleDao,
-                              TraineeMapper traineeMapper) {
+                              QualificationDao qualificationDao, RoleDao roleDao) {
         this.trainerService = trainerService;
         this.traineeDao = traineeDao;
         this.qualificationDao = qualificationDao;
         this.roleDao = roleDao;
-        this.traineeMapper = traineeMapper;
     }
 
     /**
@@ -109,7 +106,7 @@ public class TraineeServiceImpl implements TraineeService {
         Trainee savedTrainee = null;
         if (errors.isEmpty()) {
             Set<Trainer> trainers = Set.copyOf(trainerService.getTrainersByIds(traineeDto.getTrainerIds()));
-            Trainee trainee = traineeMapper.toTrainee(traineeDto);
+            Trainee trainee = TraineeMapper.convertTraineeDtoToTrainee(traineeDto);
             trainee.setTrainers(trainers);
 
             Optional<Qualification> qualification = qualificationDao.findByDescription(trainee.getQualification().getDescription());
@@ -142,7 +139,7 @@ public class TraineeServiceImpl implements TraineeService {
         logger.info("Entered getTrainees() method");
         List<TraineeDto> trainees = new ArrayList<>();
         for (Trainee trainee: traineeDao.findAll()) {
-            trainees.add(traineeMapper.toTraineeDto(trainee));
+            trainees.add(TraineeMapper.convertTraineeToTraineeDto(trainee));
         }
         return trainees;
     }
@@ -161,7 +158,7 @@ public class TraineeServiceImpl implements TraineeService {
        TraineeDto traineeDto = null;
         Optional<Trainee> retrivedTrainee = traineeDao.findById(traineeId);
         if (retrivedTrainee.isPresent()) {
-            traineeDto = traineeMapper.toTraineeDto(retrivedTrainee.get());
+            traineeDto = TraineeMapper.convertTraineeToTraineeDto(retrivedTrainee.get());
         }
         return traineeDto;
     }

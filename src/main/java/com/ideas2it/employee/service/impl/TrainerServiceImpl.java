@@ -39,16 +39,13 @@ public class TrainerServiceImpl implements TrainerService {
     private TrainerDao trainerDao;
     private RoleDao roleDao;
     private QualificationDao qualificationDao;
-    private TrainerMapper trainerMapper;
 
     @Autowired
     public TrainerServiceImpl(TrainerDao trainerDao, RoleDao roleDao,
-                              QualificationDao qualificationDao,
-                              TrainerMapper trainerMapper) {
+                              QualificationDao qualificationDao) {
         this.trainerDao = trainerDao;
         this.roleDao = roleDao;
         this.qualificationDao = qualificationDao;
-        this.trainerMapper = trainerMapper;
     }
 
     /**
@@ -98,7 +95,7 @@ public class TrainerServiceImpl implements TrainerService {
         }
         Trainer savedTrainer = null;
         if (errors.isEmpty()) {
-            Trainer trainer = trainerMapper.toTrainer(trainerDto);
+            Trainer trainer = TrainerMapper.convertTrainerDtoToTrainer(trainerDto);
             Optional<Qualification> qualification = qualificationDao.findByDescription(trainer.getQualification().getDescription());
             if (qualification.isPresent()) {
                 trainer.setQualification(qualification.get());
@@ -129,7 +126,7 @@ public class TrainerServiceImpl implements TrainerService {
         logger.info("Entered getTrainers() method");
         List<TrainerDto> trainers = new ArrayList<>();
         for (Trainer trainer : trainerDao.findAll()) {
-            trainers.add(trainerMapper.toTrainerDto(trainer));
+            trainers.add(TrainerMapper.convertTrainerToTrainerDto(trainer));
         }
         return trainers;
     }
@@ -149,7 +146,7 @@ public class TrainerServiceImpl implements TrainerService {
         TrainerDto trainerDto = null;
         Optional<Trainer> trainer = trainerDao.findById(trainerId);
         if (trainer.isPresent()) {
-            trainerDto = trainerMapper.toTrainerDto(trainer.get());
+            trainerDto = TrainerMapper.convertTrainerToTrainerDto(trainer.get());
         }
         return trainerDto;
     }
