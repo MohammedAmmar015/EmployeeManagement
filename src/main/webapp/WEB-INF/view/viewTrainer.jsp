@@ -23,16 +23,7 @@
                 <tr class="tableHeading">
                     <th>Id</th>
                     <th>Name</th>
-                    <th>Address</th>
-                    <th>Date of Birth</th>
-                    <th>Date of Joining</th>
-                    <th>Email</th>
-                    <th>Mobile Number</th>
-                    <th>Qualification</th>
-                    <th>Blood Group</th>
-                    <th>Training Experience</th>
-                    <th>Number of Trainees</th>
-                    <th colspan="2">Actions</th>
+                    <th>Action</th>
                 </tr>
                 <%
                     for (TrainerDto trainer : trainers) {
@@ -40,19 +31,8 @@
                 <tr>
                     <td> <%= trainer.getId()%></td>
                     <td> <%= trainer.getName()%></td>
-                    <td> <%= trainer.getAddress()%></td>
-                    <td> <%= trainer.getDateOfBirth()%></td>
-                    <td> <%= trainer.getDateOfJoining()%></td>
-                    <td> <%= trainer.getEmail()%></td>
-                    <td> <%= trainer.getMobileNumber()%></td>
-                    <td> <%= trainer.getQualificationDto().getDescription()%></td>
-                    <td> <%= trainer.getBloodGroup()%></td>
-                    <td> <%= trainer.getTrainingExperience()%></td>
-                    <td> <%= trainer.getNumberOfTrainees()%></td>
-                    <td><a href="deleteTrainer?id=<%= trainer.getId()%>"> <input class="delete btn" type="button"
-                                                                                 value="Delete"></a></td>
-                    <td><a href="updateTrainer?id=<%= trainer.getId()%>"> <input class="update btn" type="button"
-                                                                                 value="Update"></a></td>
+                    <td><a href="getTrainerById?id=<%= trainer.getId()%>"> <input class="update btn" type="button"
+                                                                                 value="view"></a></td>
                 </tr>
                 <%
                 }

@@ -23,18 +23,7 @@
                 <tr class="tableHeading">
                     <th>Id</th>
                     <th>Name</th>
-                    <th>Address</th>
-                    <th>Date of Birth</th>
-                    <th>Date of Joining</th>
-                    <th>Email</th>
-                    <th>Mobile Number</th>
-                    <th>Qualification</th>
-                    <th>Blood Group</th>
-                    <th>Training Period</th>
-                    <th>Course</th>
-                    <th>Batch Number</th>
-                    <th>Trainer Names</th>
-                    <th colspan="2">Actions</th>
+                    <th>Action</th>
                 </tr>
                 <%
                 for (TraineeDto trainee : trainees) {
@@ -42,21 +31,8 @@
                 <tr>
                     <td> <%= trainee.getId()%></td>
                     <td> <%= trainee.getName()%></td>
-                    <td> <%= trainee.getAddress()%></td>
-                    <td> <%= trainee.getDateOfBirth()%></td>
-                    <td> <%= trainee.getDateOfJoining()%></td>
-                    <td> <%= trainee.getEmail()%></td>
-                    <td> <%= trainee.getMobileNumber()%></td>
-                    <td> <%= trainee.getQualificationDto().getDescription()%></td>
-                    <td> <%= trainee.getBloodGroup()%></td>
-                    <td> <%= trainee.getTrainingPeriod()%></td>
-                    <td> <%= trainee.getCourse()%></td>
-                    <td> <%= trainee.getBatchNumber()%></td>
-                    <td> <%= trainee.getTrainersName().toString() %></td>
-                    <td><a href="deleteTrainee?id=<%= trainee.getId()%>"> <input class="delete btn" type="button"
-                                                                                 value="Delete"></a></td>
-                    <td><a href="updateTrainee?id=<%= trainee.getId()%>"> <input class="update btn" type="button"
-                                                                                 value="Update"></a></td>
+                    <td><a href="getTraineeById?id=<%= trainee.getId()%>"> <input class="update btn" type="button"
+                                                                                 value="view"></a></td>
                 </tr>
                 <%
                 }

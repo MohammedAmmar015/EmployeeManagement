@@ -1,0 +1,125 @@
+html, body {
+ margin:0;
+ padding:0;
+ height : 100vh;
+ font-size : 0.9rem;
+ color : #295880
+}
+
+.container {
+ height : 100vh;
+}
+
+.left {
+ min-height : 100vh;
+ background-color : white;
+ width : 30%;
+ float: left;
+ height : 100vh;
+}
+
+.right {
+ min-height : 100vh;
+ width : 70%;
+ float : right;
+ background-color : #ededed;
+ height : 100vh;
+}
+
+.profile {
+  text-align : center;
+  width : 100%;
+}
+
+img, p {
+  margin : 0;
+  color : #295880
+}
+
+.lname, .fname {
+ font-size: 2rem;
+ font-weight : bold;
+}
+
+.department {
+ font-size : 1rem;
+}
+
+img {
+ width : 12rem;
+ height : 12rem;
+ border-radius : 140px;
+}
+
+
+.details {
+    text-align : center;
+    width : 100%;
+}
+
+ul {
+    display : inline-block;
+    margin : 0;
+    padding : 0;
+}
+
+li {
+    font-size : 1rem;
+    color : #295880;
+    list-style-type: none;
+    padding-top: 21px;
+    margin: 0;
+    border-bottom: 2px solid grey;
+    width: 200px;
+}
+
+.topics {
+    font-size : 1.8rem;
+    font-weight : bold;
+}
+
+.desc {
+    padding: 0.4rem 1rem;
+}
+
+.text {
+    font-size : 1rem;
+    padding : 1rem;
+}
+
+table {
+    width : 100%;
+}
+
+.float {
+    float : right;
+}
+
+.mode {
+    color : #303042;
+    background-color: #95cd95;
+    border-radius: 25%;
+    padding: 6px;
+}
+
+.roleHead {
+    font-size : 1.1rem;
+    font-weight : bold;
+}
+
+td {
+    padding-bottom : 15px;
+}
+
+.row1 {
+    padding-bottom : 10px;
+}
+
+@media screen and (max-width: 830px) {
+  .right, .left {
+    width : 100%;
+  }
+  .details {
+    width : 100%;
+  }
+ }

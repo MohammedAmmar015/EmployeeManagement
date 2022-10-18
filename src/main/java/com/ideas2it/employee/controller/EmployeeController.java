@@ -48,12 +48,10 @@ public class EmployeeController {
 	 * @return modelAndView - to show addOrUpdateTrainer page
 	 */
 	@GetMapping("/trainerForm")
-	public ModelAndView showTrainerForm() {
-		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.addObject("trainerDto", new TrainerDto());
-		modelAndView.addObject("action", "addTrainer");
-		modelAndView.setViewName("addOrUpdateTrainer");
-		return modelAndView;
+	public String showTrainerForm(Model model) {
+		model.addAttribute("trainerDto", new TrainerDto());
+		model.addAttribute("action", "addTrainer");
+		return "addOrUpdateTrainer";
 	}
 
 	/**
@@ -66,7 +64,8 @@ public class EmployeeController {
 	 * @return to Redirect to ViewTrainer page
 	 */
 	@RequestMapping("/addOrUpdateTrainer")
-	public String addOrUpdateTrainer(@ModelAttribute TrainerDto trainerDto, @RequestParam("action") String action, RedirectAttributes redirectAttributes) {
+	public String addOrUpdateTrainer(@ModelAttribute("trainerDto") TrainerDto trainerDto, @RequestParam("action") String action, RedirectAttributes redirectAttributes) {
+		logger.info(trainerDto);
 		try {
 			int savedTrainerId = trainerServiceImpl.addOrModifyTrainer(trainerDto);
 			if ("addTrainer".equals(action)) {
@@ -104,11 +103,19 @@ public class EmployeeController {
 	 * @return
 	 */
 	@GetMapping("/updateTrainer")
-	public String getTrainerById(@RequestParam("id") int trainerId, Model model) {
+	public String updateTrainerById(@RequestParam("id") int trainerId, Model model) {
 		TrainerDto trainerDto = trainerServiceImpl.getTrainerById(trainerId);
 		model.addAttribute("trainerDto", trainerDto	);
 		model.addAttribute("action", "updateTrainer");
 		return "addOrUpdateTrainer";
+	}
+
+	@GetMapping("/getTrainerById")
+	public String getTrainerById(@RequestParam("id") int trainerId, Model model) {
+		TrainerDto trainerDto = trainerServiceImpl.getTrainerById(trainerId);
+		model.addAttribute("employee", trainerDto	);
+		model.addAttribute("role", "Trainer");
+		return "viewEmployeeInfo";
 	}
 
 	/**
@@ -190,13 +197,21 @@ public class EmployeeController {
 	 * @return
 	 */
 	@GetMapping("/updateTrainee")
-	public String getTraineeById(@RequestParam("id") int traineeId, Model model) {
+	public String updateTraineeById(@RequestParam("id") int traineeId, Model model) {
 		TraineeDto traineeDto = traineeServiceImpl.getTraineeById(traineeId);
 		List<TrainerDto> trainersDto = trainerServiceImpl.getTrainers();
 		model.addAttribute("trainersDto", trainersDto);
 		model.addAttribute("traineeDto", traineeDto);
 		model.addAttribute("action", "updateTrainee");
 		return "addOrUpdateTrainee";
+	}
+
+	@GetMapping("/getTraineeById")
+	public String getTraineeById(@RequestParam("id") int traineeId, Model model) {
+		TraineeDto traineeDto = traineeServiceImpl.getTraineeById(traineeId);
+		model.addAttribute("employee", traineeDto	);
+		model.addAttribute("role", "Trainee");
+		return "viewEmployeeInfo";
 	}
 
 	/**
