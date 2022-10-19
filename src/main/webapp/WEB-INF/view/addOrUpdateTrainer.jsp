@@ -110,10 +110,17 @@
                 <td>
                     <input class="add btn" type="submit" value="<%= heading %>"/>
                 </td>
+                <%
+                if (action.equals("updateTrainer")) {
+                %>
                 <td>
-                    <a href="/viewTrainer"> <input class="back btn" type="button" value="Back"/></a>
+                    <a href="getTrainerById?id=${trainerDto.id}"> <input class="back btn" type="button" value="Back"/></a>
                 </td>
-            </tr>
+                <% } else { %>
+                    <td>
+                         <a href="viewTrainer"> <input class="back btn" type="button" value="Back"/></a>
+                    </td>
+                <% } %>            </tr>
         </table>
     </form:form>
 </div>

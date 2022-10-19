@@ -55,8 +55,6 @@ public interface TrainerService {
     TrainerDto getTrainerById(final int trainerId);
 
 
-    List<Trainer> getTrainersByIds(List<Integer> trainerIds);
-
     /**
     * <p>
     * This method is used to remove Trainer object using Trainer Id

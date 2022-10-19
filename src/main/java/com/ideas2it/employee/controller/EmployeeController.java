@@ -65,9 +65,10 @@ public class EmployeeController {
 	 */
 	@RequestMapping("/addOrUpdateTrainer")
 	public String addOrUpdateTrainer(@ModelAttribute("trainerDto") TrainerDto trainerDto, @RequestParam("action") String action, RedirectAttributes redirectAttributes) {
-		logger.info(trainerDto);
+		logger.info("Entered addOrUpdateTrainer() method");
+		int savedTrainerId = 0;
 		try {
-			int savedTrainerId = trainerServiceImpl.addOrModifyTrainer(trainerDto);
+			savedTrainerId = trainerServiceImpl.addOrModifyTrainer(trainerDto);
 			if ("addTrainer".equals(action)) {
 				redirectAttributes.addFlashAttribute("msg", savedTrainerId + " Inserted Successfully");
 			} else {
@@ -76,7 +77,7 @@ public class EmployeeController {
 		} catch (Exception exception) {
 			redirectAttributes.addFlashAttribute("msg", exception.getMessage());
 		}
-		return "redirect:/viewTrainer";
+		return "redirect:/getTrainerById?id=" + savedTrainerId ;
 	}
 
 	/**
@@ -87,6 +88,7 @@ public class EmployeeController {
 	 */
 	@GetMapping( value = "/viewTrainer")
 	public ModelAndView viewTrainer() {
+		logger.info("Entered viewTrainer() method");
 		List<TrainerDto> trainersDto = trainerServiceImpl.getTrainers();
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject("trainersDto", trainersDto);
@@ -98,23 +100,29 @@ public class EmployeeController {
 	 * <p>
 	 *     To Update Trainer Details
 	 * </p>
-	 * @param trainerId
-	 * @param model
-	 * @return
+	 * @param trainerId id has to be pass to update
+	 * @param model object to hold trainerDto
+	 * @return view Page
 	 */
 	@GetMapping("/updateTrainer")
 	public String updateTrainerById(@RequestParam("id") int trainerId, Model model) {
+		logger.info("Entered updateTrainer() method");
 		TrainerDto trainerDto = trainerServiceImpl.getTrainerById(trainerId);
 		model.addAttribute("trainerDto", trainerDto	);
 		model.addAttribute("action", "updateTrainer");
 		return "addOrUpdateTrainer";
 	}
 
+	/**
+	 * This method is used to view Single Trainer Details
+	 * @param trainerId
+	 * @param model
+	 * @return
+	 */
 	@GetMapping("/getTrainerById")
 	public String getTrainerById(@RequestParam("id") int trainerId, Model model) {
 		TrainerDto trainerDto = trainerServiceImpl.getTrainerById(trainerId);
-		model.addAttribute("employee", trainerDto	);
-		model.addAttribute("role", "Trainer");
+		model.addAttribute("employee", trainerDto);
 		return "viewEmployeeInfo";
 	}
 
@@ -160,8 +168,10 @@ public class EmployeeController {
 	 */
 	@RequestMapping("/addOrUpdateTrainee")
 	public String addOrUpdateTrainee(@ModelAttribute("traineeDto") TraineeDto traineeDto, @RequestParam("action") String action, RedirectAttributes redirectAttributes) {
+		logger.info("Entered addOrUpdateTrainee() method");
+		int savedTraineeId = 0;
 		try {
-			int savedTraineeId = traineeServiceImpl.addOrModifyTrainee(traineeDto);
+			savedTraineeId = traineeServiceImpl.addOrModifyTrainee(traineeDto);
 			if ("addTrainee".equals(action)) {
 				redirectAttributes.addFlashAttribute("msg", savedTraineeId + " Inserted Successfully");
 			} else {
@@ -170,7 +180,7 @@ public class EmployeeController {
 		} catch (Exception exception) {
 			redirectAttributes.addFlashAttribute("msg", exception.getMessage());
 		}
-		return "redirect:/viewTrainee";
+		return "redirect:/getTraineeById?id=" + savedTraineeId;
 	}
 
 	/**
@@ -181,6 +191,7 @@ public class EmployeeController {
 	 */
 	@GetMapping( value = "/viewTrainee")
 	public ModelAndView viewTrainee() {
+		logger.info("Entered viewTrainee() method");
 		List<TraineeDto> traineesDto = traineeServiceImpl.getTrainees();
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject("traineesDto", traineesDto);
@@ -198,6 +209,7 @@ public class EmployeeController {
 	 */
 	@GetMapping("/updateTrainee")
 	public String updateTraineeById(@RequestParam("id") int traineeId, Model model) {
+		logger.info("Entered updateTraineeById() method");
 		TraineeDto traineeDto = traineeServiceImpl.getTraineeById(traineeId);
 		List<TrainerDto> trainersDto = trainerServiceImpl.getTrainers();
 		model.addAttribute("trainersDto", trainersDto);
@@ -206,11 +218,17 @@ public class EmployeeController {
 		return "addOrUpdateTrainee";
 	}
 
+	/**
+	 * This method is used to view Single Trainee Details
+	 * @param traineeId
+	 * @param model
+	 * @return
+	 */
 	@GetMapping("/getTraineeById")
 	public String getTraineeById(@RequestParam("id") int traineeId, Model model) {
+		logger.info("Entered getTraineeById() method");
 		TraineeDto traineeDto = traineeServiceImpl.getTraineeById(traineeId);
-		model.addAttribute("employee", traineeDto	);
-		model.addAttribute("role", "Trainee");
+		model.addAttribute("employee", traineeDto);
 		return "viewEmployeeInfo";
 	}
 
@@ -224,8 +242,9 @@ public class EmployeeController {
 	 */
 	@GetMapping("/deleteTrainee")
 	public String removeTrainee(@RequestParam("id") int traineeId, RedirectAttributes redirectAttributes) {
+		logger.info("Entered removeTrainee() method");
 		traineeServiceImpl.removeTraineeById(traineeId);
 		redirectAttributes.addFlashAttribute("msg", traineeId + " Successfully Deleted");
 		return "redirect:/viewTrainee";
 	}
-}  
+}

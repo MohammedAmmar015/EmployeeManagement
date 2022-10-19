@@ -151,12 +151,6 @@ public class TrainerServiceImpl implements TrainerService {
         return trainerDto;
     }
 
-    @Override
-    public List<Trainer> getTrainersByIds(final List<Integer> trainerIds) {
-        logger.info("Entered getTrainerById() method");
-        List<Trainer> trainers = trainerDao.findAllById(trainerIds);
-        return trainers;
-    }
 
     /**
      * <p>

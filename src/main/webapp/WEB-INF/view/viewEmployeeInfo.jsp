@@ -1,3 +1,4 @@
+<%@page isELIgnored="false"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,17 +11,20 @@
 <div class="container">
   <div class="left">
     <div class="profile">
-      <img src ="no-photo.jpg" alt="Profile Photo"/>
+      <img class="photo" src ="images/no-photo.jpg" alt="Profile Photo"/>
       <p class ="fname"> ${employee.name}</p>
       <p class ="department"> ${employee.roleDto.description} </p>
     </div>
     <div class="details">
       <ul>
-        <li>${employee.mobileNumber}</li>
-        <li>${employee.dateOfBirth}</li>
-        <li>${employee.qualificationDto.description}</li>
-        <li>${employee.email}</li>
-        <li>${employee.address}</li>
+        <li><img class="icon" src="images\phone-solid.svg"/>${employee.mobileNumber}</li>
+        <li><img class="icon" src="images\calendar-days-solid.svg"/>${employee.dateOfBirth}</li>
+        <li><img class="icon" src="images\user-graduate-solid.svg"/>${employee.qualificationDto.description}</li>
+        <li><img class="icon" src="images\envelope-solid.svg"/>${employee.email}</li>
+        <li><img class="icon" src="images\location-dot-solid.svg"/>${employee.address}</li>
+        <li class="update"><a class="btn" href = "update${employee.roleDto.description}?id=${employee.id}">Update</a></li>
+        <li class="delete"><a class="btn" href = "delete${employee.roleDto.description}?id=${employee.id}">Delete</a></li>
+        <li class="back"><a class="btn" href = "view${employee.roleDto.description}">Back</a></li>
       </ul>
     </div>
   </div>
@@ -35,30 +39,30 @@
       <table>
         <tr>
           <td class="row1 roleHead" colspan="2">Senior Front End Developer</td>
-          <td class="row1 float mode">Full Time</td>
+          <td class="row1 float"><p class="mode">Full Time</p></td>
         </tr>
         <tr>
-          <td>Apple Inc</td>
-          <td>Los Angeles</td>
-          <td class="float">12 April 2022</td>
+          <td><img class="icon location" src="images\building-solid.svg"/>Apple Inc</td>
+          <td><img class="icon location" src="images\location-dot-solid.svg"/>Los Angeles</td>
+          <td class="float"><img class="icon location" src="images\calendar-days-solid.svg"/>12 April 2022</td>
         </tr>
         <tr>
           <td class="row1 roleHead" colspan="2">Junior Front End Developer</td>
-          <td class="row1 float mode">Full Time</td>
+          <td class="row1 float"><p class="mode">Full Time</p></td>
         </tr>
         <tr>
-          <td>Figma</td>
-          <td>San Francisco</td>
-          <td class="float">12 April 2020 - 10 May 2021</td>
+          <td><img class="icon location" src="images\building-solid.svg"/>Figma</td>
+          <td><img class="icon location" src="images\location-dot-solid.svg"/>San Francisco</td>
+          <td class="float"><img class="icon location" src="images\calendar-days-solid.svg"/>12 April 2020 - 10 May 2021</td>
         </tr>
         <tr>
           <td class="row1 roleHead" colspan="2">Intern Developer</td>
-          <td class="row1 float mode">Full Time</td>
+          <td class="row1 float"><p class="mode">Full Time</p></td>
         </tr>
         <tr>
-          <td>Microsoft</td>
-          <td>New York City</td>
-          <td class="float">17 April 2017 - 19 July 2018</td>
+          <td><img class="icon location" src="images\building-solid.svg"/>Microsoft</td>
+          <td><img class="icon location" src="images\location-dot-solid.svg"/>New York City</td>
+          <td class="float"><img class="icon location" src="images\calendar-days-solid.svg"/>17 April 2017 - 19 July 2018</td>
         </tr>
       </table></br>
     </div>
@@ -69,15 +73,15 @@
           <td class="row1 roleHead" colspan="2">Masters in Software Engineering</td>
         </tr>
         <tr>
-          <td>Manchester Institute of Technology</td>
-          <td class="float">12 April 2020 - 10 May 2021</td>
+          <td><img class="icon location" src="images\graduation-cap-solid.svg"/>Manchester Institute of Technology</td>
+          <td class="float"><img class="icon location" src="images\calendar-days-solid.svg"/>12 April 2020 - 10 May 2021</td>
         </tr>
         <tr>
           <td class="row1 roleHead" colspan="2">Bachelor in Software Engineering</td>
         </tr>
         <tr>
-          <td>Manchester Institute of Technology</td>
-          <td class="float">12 April 2020 - 10 May 2021</td>
+          <td><img class="icon location" src="images\graduation-cap-solid.svg"/>Manchester Institute of Technology</td>
+          <td class="float"><img class="icon location" src="images\calendar-days-solid.svg"/>12 April 2020 - 10 May 2021</td>
         </tr>
       </table></br>
     </div>

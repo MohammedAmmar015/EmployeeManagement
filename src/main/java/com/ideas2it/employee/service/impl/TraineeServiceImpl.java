@@ -20,13 +20,13 @@ import com.ideas2it.employee.dao.TraineeDao;
 import com.ideas2it.employee.dto.TraineeDto;
 import com.ideas2it.employee.exception.BadRequest;
 import com.ideas2it.employee.exception.TraineeNotFound;
+import com.ideas2it.employee.helper.TrainerHelper;
 import com.ideas2it.employee.mapper.TraineeMapper;
 import com.ideas2it.employee.models.Qualification;
 import com.ideas2it.employee.models.Role;
 import com.ideas2it.employee.models.Trainee;
 import com.ideas2it.employee.models.Trainer;
 import com.ideas2it.employee.service.TraineeService;
-import com.ideas2it.employee.service.TrainerService;
 import com.ideas2it.employee.utilities.DateUtil;
 import com.ideas2it.employee.utilities.StringUtil;
 import org.apache.logging.log4j.LogManager;
@@ -43,18 +43,21 @@ import java.util.Set;
 @Service
 public class TraineeServiceImpl implements TraineeService {
     private Logger logger = LogManager.getLogger(TraineeServiceImpl.class);
-    private TrainerService trainerService;
+
+    private TrainerHelper trainerHelper;
     private TraineeDao traineeDao;
     private QualificationDao qualificationDao;
     private RoleDao roleDao;
 
     @Autowired
-    public TraineeServiceImpl(TrainerService trainerService, TraineeDao traineeDao,
-                              QualificationDao qualificationDao, RoleDao roleDao) {
-        this.trainerService = trainerService;
+    public TraineeServiceImpl(TraineeDao traineeDao,
+                              QualificationDao qualificationDao,
+                              RoleDao roleDao,
+                              TrainerHelper trainerHelper) {
         this.traineeDao = traineeDao;
         this.qualificationDao = qualificationDao;
         this.roleDao = roleDao;
+        this.trainerHelper = trainerHelper;
     }
 
     /**
@@ -105,7 +108,7 @@ public class TraineeServiceImpl implements TraineeService {
 
         Trainee savedTrainee = null;
         if (errors.isEmpty()) {
-            Set<Trainer> trainers = Set.copyOf(trainerService.getTrainersByIds(traineeDto.getTrainerIds()));
+            Set<Trainer> trainers = Set.copyOf(trainerHelper.getTrainersByIds(traineeDto.getTrainerIds()));
             Trainee trainee = TraineeMapper.convertTraineeDtoToTrainee(traineeDto);
             trainee.setTrainers(trainers);
 

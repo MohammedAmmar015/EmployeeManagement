@@ -15,6 +15,5 @@ import java.util.Optional;
  */
 @Repository
 public interface QualificationDao extends JpaRepository<Qualification, Integer> {
-
     Optional<Qualification> findByDescription(String description);
 }

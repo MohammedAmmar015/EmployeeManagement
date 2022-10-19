@@ -7,7 +7,9 @@
 <%
     String action = (String) request.getAttribute("action");
     String heading = "Add Trainee";
+    String backUrl = "viewTrainee";
     if (action.equals("updateTrainee")) {
+        backUrl = "getTraineeById?id=${traineeDto.id}";
         heading = "Update Trainee";
     }
 %>
@@ -139,9 +141,17 @@
                 <td>
                     <input class="add btn" type="submit" value="<%= heading %>"/>
                 </td>
+                <%
+                if (action.equals("updateTrainee")) {
+                %>
                 <td>
-                    <a href="/viewTrainee"> <input class="back btn" type="button" value="Back"/></a>
+                    <a href="getTraineeById?id=${traineeDto.id}"> <input class="back btn" type="button" value="Back"/></a>
                 </td>
+                <% } else { %>
+                    <td>
+                         <a href="viewTrainee"> <input class="back btn" type="button" value="Back"/></a>
+                    </td>
+                <% } %>
             </tr>
         </table>
     </form:form>
