@@ -13,12 +13,15 @@ import com.ideas2it.employee.constant.ErrorMessage;
 import com.ideas2it.employee.dao.QualificationDao;
 import com.ideas2it.employee.dao.RoleDao;
 import com.ideas2it.employee.dao.TrainerDao;
+import com.ideas2it.employee.dto.TraineeDto;
 import com.ideas2it.employee.dto.TrainerDto;
 import com.ideas2it.employee.exception.BadRequest;
 import com.ideas2it.employee.exception.TrainerNotFound;
+import com.ideas2it.employee.mapper.TraineeMapper;
 import com.ideas2it.employee.mapper.TrainerMapper;
 import com.ideas2it.employee.models.Qualification;
 import com.ideas2it.employee.models.Role;
+import com.ideas2it.employee.models.Trainee;
 import com.ideas2it.employee.models.Trainer;
 import com.ideas2it.employee.service.TrainerService;
 import com.ideas2it.employee.utilities.DateUtil;
@@ -29,9 +32,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 public class TrainerServiceImpl implements TrainerService {
@@ -96,12 +97,16 @@ public class TrainerServiceImpl implements TrainerService {
         Trainer savedTrainer = null;
         if (errors.isEmpty()) {
             Trainer trainer = TrainerMapper.convertTrainerDtoToTrainer(trainerDto);
-            Optional<Qualification> qualification = qualificationDao.findByDescription(trainer.getQualification().getDescription());
+
+            logger.error(trainer);
+            Optional<Qualification> qualification = qualificationDao.findByDescription(trainerDto.getQualificationDto().getDescription());
             if (qualification.isPresent()) {
                 trainer.setQualification(qualification.get());
             }
 
-            Optional<Role> role = roleDao.findByDescription(trainer.getRole().getDescription());
+            logger.error(trainer);
+
+            Optional<Role> role = roleDao.findByDescription(trainerDto.getRoleDto().getDescription());
             if (role.isPresent()) {
                 trainer.setRole(role.get());
             }
@@ -146,7 +151,12 @@ public class TrainerServiceImpl implements TrainerService {
         TrainerDto trainerDto = null;
         Optional<Trainer> trainer = trainerDao.findById(trainerId);
         if (trainer.isPresent()) {
+            Set<TraineeDto> traineeDtoSet = new HashSet<>();
+            for (Trainee trainee: trainer.get().getTrainees()) {
+                traineeDtoSet.add(TraineeMapper.convertTraineeToTraineeDto(trainee));
+            }
             trainerDto = TrainerMapper.convertTrainerToTrainerDto(trainer.get());
+            trainerDto.setTrainees(traineeDtoSet);
         }
         return trainerDto;
     }

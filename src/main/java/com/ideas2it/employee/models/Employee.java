@@ -15,12 +15,11 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "employee")
 @Inheritance(strategy=InheritanceType.JOINED)
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "emp_id")
+    @Column(name = "id")
     private int id;
     @Column(name = "name")
     private String name;
@@ -45,11 +44,11 @@ public class Employee {
     @Column(name = "blood_group")
     private String bloodGroup;
 
-    @ManyToOne(cascade = CascadeType.MERGE)
+    @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.PERSIST})
     @JoinColumn(name = "qualification_id", referencedColumnName = "qualification_id")
     private Qualification qualification;
 
-    @ManyToOne(cascade = CascadeType.MERGE)
+    @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.PERSIST})
     @JoinColumn(name = "role_id", referencedColumnName = "role_id")
     private Role role;
 

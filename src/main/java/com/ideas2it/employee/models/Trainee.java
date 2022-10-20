@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
-@Table(name = "trainee")
+@PrimaryKeyJoinColumn(name = "id")
 public class Trainee extends Employee {
 
     @Column(name = "training_period")
@@ -30,8 +30,8 @@ public class Trainee extends Employee {
     private Byte batchNumber;
     @ManyToMany(cascade = CascadeType.PERSIST)
     @JoinTable(name = "employee_relation",
-            joinColumns = @JoinColumn(name = "trainee_id", referencedColumnName = "emp_id"),
-            inverseJoinColumns = @JoinColumn(name = "trainer_id", referencedColumnName = "emp_id"))
+            joinColumns = @JoinColumn(name = "trainee_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "trainer_id", referencedColumnName = "id"))
     private Set<Trainer> trainers;
 
     public Trainee() {

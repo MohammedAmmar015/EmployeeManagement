@@ -112,12 +112,16 @@ public class TraineeServiceImpl implements TraineeService {
             Trainee trainee = TraineeMapper.convertTraineeDtoToTrainee(traineeDto);
             trainee.setTrainers(trainers);
 
-            Optional<Qualification> qualification = qualificationDao.findByDescription(trainee.getQualification().getDescription());
+            logger.error(traineeDto);
+
+            Optional<Qualification> qualification = qualificationDao.findByDescription(traineeDto.getQualificationDto().getDescription());
             if (qualification.isPresent()) {
                 trainee.setQualification(qualification.get());
             }
 
-            Optional<Role> role = roleDao.findByDescription(trainee.getRole().getDescription());
+            logger.error(trainee);
+
+            Optional<Role> role = roleDao.findByDescription(traineeDto.getRoleDto().getDescription());
             if (role.isPresent()) {
                 trainee.setRole(role.get());
             }
@@ -180,5 +184,16 @@ public class TraineeServiceImpl implements TraineeService {
         logger.info("Entered removeTraineeById() method");
         traineeDao.deleteById(traineeId);
         return true;
+    }
+
+    @Override
+    public List<TraineeDto> getTraineesByTrainerId(int trainerId) {
+        List<Trainee> trainees = traineeDao.retreiveTraineesByTrainerId(trainerId);
+        logger.error(trainees);
+        List<TraineeDto> traineeDtos = new ArrayList<>();
+        for (Trainee trainee: trainees) {
+            traineeDtos.add(TraineeMapper.convertTraineeToTraineeDto(trainee));
+        }
+        return traineeDtos;
     }
 }

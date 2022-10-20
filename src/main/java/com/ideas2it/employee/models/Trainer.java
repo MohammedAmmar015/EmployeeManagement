@@ -15,7 +15,7 @@ import java.time.LocalDate;
 import java.util.Set;
 
 @Entity
-@Table(name = "trainer")
+@PrimaryKeyJoinColumn(name = "id")
 public class Trainer extends Employee {
     @Column(name = "training_experience")
     private int trainingExperience;
@@ -76,6 +76,7 @@ public class Trainer extends Employee {
                 "trainingExperience=" + trainingExperience +
                 ", trainees=" + trainees +
                 "qualification" + getQualification() +
+                "role" + getRole() +
                 '}';
     }
 }

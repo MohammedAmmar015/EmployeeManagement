@@ -1,3 +1,4 @@
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <%@page isELIgnored="false"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,6 +25,11 @@
         <li><img class="icon" src="images\location-dot-solid.svg"/>${employee.address}</li>
         <li class="update"><a class="btn" href = "update${employee.roleDto.description}?id=${employee.id}">Update</a></li>
         <li class="delete"><a class="btn" href = "delete${employee.roleDto.description}?id=${employee.id}">Delete</a></li>
+        <c:if test = "${employee.roleDto.description == 'Trainer'}">
+              <li class="viewTrainee">
+                <a class="btn" href="getTraineesOfTrainer?id=${employee.id}">View Trainees</a>
+              </li>
+        </c:if>
         <li class="back"><a class="btn" href = "view${employee.roleDto.description}">Back</a></li>
       </ul>
     </div>

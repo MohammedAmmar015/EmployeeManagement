@@ -15,6 +15,7 @@ public class TrainerMapper {
         trainer.setDateOfJoining(trainerDto.getDateOfJoining());trainer.setBloodGroup(trainerDto.getBloodGroup());
         trainer.setRole(RoleMapper.convertRoleDtoToRole(trainerDto.getRoleDto()));
         trainer.setQualification(QualificationMapper.convertQualificationDtoToQualification(trainerDto.getQualificationDto()));
+        trainer.setTrainingExperience(trainerDto.getTrainingExperience());
         return trainer;
     }
 
@@ -30,6 +31,7 @@ public class TrainerMapper {
         trainerDto.setBloodGroup(trainer.getBloodGroup());
         trainerDto.setRoleDto(RoleMapper.convertRoleToRoleDto(trainer.getRole()));
         trainerDto.setQualificationDto(QualificationMapper.convertQualificationToQualificationDto(trainer.getQualification()));
+        trainerDto.setTrainingExperience(trainer.getTrainingExperience());
         trainerDto.setNumberOfTrainees(trainer.getTrainees().size());
         return trainerDto;
     }

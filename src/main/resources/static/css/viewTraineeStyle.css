@@ -1,0 +1,90 @@
+* {
+    margin : 0;
+    padding : 0;
+}
+
+body {
+    background-image: linear-gradient(to right, #7c45ca, #4234b2);
+    color : white;
+}
+
+.container {
+    width : 100%;
+}
+
+li {
+    float : left;
+    list-style-type : none;
+}
+
+.floatRight {
+    float : right;
+    position:relative;
+    right : 8%;
+    text-align: center;
+}
+
+.trainerName {
+    display: inline-block;
+    font-size: 35px;
+    margin: 7px;
+}
+
+table, th, td {
+  border : 0;
+  border-collapse: collapse;
+  background-color : white;
+}
+
+.trainerImage {
+    width: 80px;
+    height: 80px;
+    border-radius : 50%;
+    margin-left : 40px;
+}
+
+.trainerDetails {
+    margin-left: 15px;
+}
+
+.traineeImage {
+    width: 30px;
+    height: 30px;
+    border-radius : 50%;
+}
+
+.traineeTable {
+    width: 90%;
+    margin: 45px;
+    border-radius : 10px;
+    text-align: center;
+    box-shadow: 5px 5px 20px #380e7a;
+}
+
+.tableHead {
+    background-image: linear-gradient(to right, #4234b2, #7c45ca);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height : 150px;
+    color : white;
+}
+
+.numberOfTrainee {
+    font-size : 30px;
+}
+
+th, td {
+    height : 60px;
+}
+
+td {
+    color : #264d67;
+}
+
+.tableHeading {
+    color : #8b8989;
+}
+
+.traineeName {
+    color : #264d67;
+}

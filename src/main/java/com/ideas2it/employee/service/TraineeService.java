@@ -64,4 +64,5 @@ public interface TraineeService {
     **/
     boolean removeTraineeById(final int traineeId);
 
+    List<TraineeDto> getTraineesByTrainerId(int trainerId);
 }

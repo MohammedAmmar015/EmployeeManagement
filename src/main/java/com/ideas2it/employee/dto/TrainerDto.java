@@ -16,7 +16,15 @@ public class TrainerDto extends EmployeeDto {
     private int trainingExperience;
     private int numberOfTrainees;
 
+    private Set<TraineeDto> trainees;
 
+    public Set<TraineeDto> getTrainees() {
+        return trainees;
+    }
+
+    public void setTrainees(Set<TraineeDto> trainees) {
+        this.trainees = trainees;
+    }
 
     public TrainerDto() {
 

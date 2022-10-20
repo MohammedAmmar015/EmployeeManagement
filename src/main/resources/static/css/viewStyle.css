@@ -126,7 +126,7 @@ td {
     box-shadow: 1px 1px 4px #295880;
 }
 
-.update, .delete, .back{
+.update, .delete, .back, .viewTrainee {
     margin: 15px auto;
     border : none;
 }

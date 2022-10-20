@@ -91,6 +91,7 @@ public class TraineeDto extends EmployeeDto {
                 ", batchNumber=" + batchNumber +
                 ", trainerIds=" + trainerIds +
                 ", trainers=" +
+                "qualification" + getQualificationDto() +
                 '}';
     }
 }

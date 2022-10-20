@@ -23,7 +23,7 @@
                 <tr class="tableHeading">
                     <th>Id</th>
                     <th>Name</th>
-                    <th>Action</th>
+                    <th colspan="2">Action</th>
                 </tr>
                 <%
                     for (TrainerDto trainer : trainers) {
