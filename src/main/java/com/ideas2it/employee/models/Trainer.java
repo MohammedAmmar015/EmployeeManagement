@@ -2,10 +2,10 @@
  * <p>
  * Trainer class - This is POJO or Model class For Trainer
  * </p>
- * @author Mohammed Ammar
- * @version 1.0 
- * @since 12/08/2022
  *
+ * @author Mohammed Ammar
+ * @version 1.0
+ * @since 12/08/2022
  **/
 package com.ideas2it.employee.models;
 
@@ -24,17 +24,16 @@ public class Trainer extends Employee {
     private Set<Trainee> trainees;
 
 
-
     public Trainer() {
 
     }
 
     /**
-    * <p> 
-    * This is Constructor for Trainer class
-    * </p>
-    * @param trainingExperience - Number of trainees under this trainer
-    **/
+     * <p>
+     * This is Constructor for Trainer class
+     * </p>
+     * @param trainingExperience - Number of trainees under this trainer
+     **/
 
     public Trainer(int id,
                    String name,
@@ -47,27 +46,26 @@ public class Trainer extends Employee {
                    Qualification qualification,
                    Role role,
                    int trainingExperience) {
-        super( id, name, address, mobileNumber, email,
+        super(id, name, address, mobileNumber, email,
                 dateOfJoining, dateOfBirth, bloodGroup,
                 qualification, role);
-	//this.employee = employee;
-	this.trainingExperience = trainingExperience;
+        this.trainingExperience = trainingExperience;
     }
 
     public int getTrainingExperience() {
-	return this.trainingExperience;
+        return this.trainingExperience;
     }
 
     public void setTrainingExperience(int trainingExperience) {
-	this.trainingExperience = trainingExperience;
+        this.trainingExperience = trainingExperience;
+    }
+
+    public Set<Trainee> getTrainees() {
+        return trainees;
     }
 
     public void setTrainees(Set<Trainee> trainees) {
-	this.trainees = trainees;
-    } 
-
-    public Set<Trainee> getTrainees() {
-	return trainees;
+        this.trainees = trainees;
     }
 
     @Override

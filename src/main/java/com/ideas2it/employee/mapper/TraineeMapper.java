@@ -4,6 +4,8 @@ import com.ideas2it.employee.dto.TraineeDto;
 import com.ideas2it.employee.models.Trainee;
 import com.ideas2it.employee.models.Trainer;
 
+import java.math.BigInteger;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,6 +25,19 @@ public class TraineeMapper {
         trainee.setCourse(traineeDto.getCourse());
         trainee.setTrainingPeriod(traineeDto.getTrainingPeriod());
         return trainee;
+    }
+
+    public static TraineeDto convertObjectToTraineeDto(Object[] object) {
+        TraineeDto traineeDto = new TraineeDto();
+        traineeDto.setBatchNumber((Byte) object[0]);
+        traineeDto.setCourse((String) object[1]);
+        traineeDto.setTrainingPeriod((Byte) object[2]);
+        traineeDto.setId((Integer) object[3]);
+        traineeDto.setAddress((String) object[4]);
+        traineeDto.setBloodGroup((String) object[5]);
+        traineeDto.setEmail((String) object[8]);
+        traineeDto.setName((String) object[10]);
+        return traineeDto;
     }
 
     public static TraineeDto convertTraineeToTraineeDto(Trainee trainee) {

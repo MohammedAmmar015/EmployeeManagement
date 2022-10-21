@@ -188,12 +188,13 @@ public class TraineeServiceImpl implements TraineeService {
 
     @Override
     public List<TraineeDto> getTraineesByTrainerId(int trainerId) {
-        List<Trainee> trainees = traineeDao.retreiveTraineesByTrainerId(trainerId);
+        List<Object[]> trainees = traineeDao.retreiveTraineesByTrainerId(trainerId);
         logger.error(trainees);
         List<TraineeDto> traineeDtos = new ArrayList<>();
-        for (Trainee trainee: trainees) {
-            traineeDtos.add(TraineeMapper.convertTraineeToTraineeDto(trainee));
+        for (Object[] objects: trainees) {
+            traineeDtos.add(TraineeMapper.convertObjectToTraineeDto(objects));
         }
+        logger.error(traineeDtos);
         return traineeDtos;
     }
 }

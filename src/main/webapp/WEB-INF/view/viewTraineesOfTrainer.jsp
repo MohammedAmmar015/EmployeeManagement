@@ -1,8 +1,5 @@
 <%@page isELIgnored="false"%>
-<%@ page import = "java.util.Set"
-         import = "com.ideas2it.employee.dto.TraineeDto"
-         import = "com.ideas2it.employee.dto.TrainerDto"
-%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,12 +17,12 @@
                         <img class="trainerImage" src="\images\no-photo.jpg">
                     </li>
                     <li class="trainerDetails">
-                        <p class="trainerName">${trainerDto.name}</p>
-                        <p class="trainerEmail">${trainerDto.email}</p>
+                        <p class="trainerName">${trainer.name}</p>
+                        <p class="trainerEmail">${trainer.email}</p>
                     </li>
                     <li class="floatRight">
                         <p>Number of Trainee</p>
-                        <p class="numberOfTrainee">${trainerDto.numberOfTrainees}</p>
+                        <p class="numberOfTrainee">${trainer.numberOfTrainees}</p>
                     </li>
                 </ul>
             </td>
@@ -38,7 +35,7 @@
             <th>Course</th>
             <th>Batch Number</th>
         </tr>
-        <c:forEach var = "trainee" items="${traineesDto}">
+        <c:forEach var = "trainee" items="${employee}">
         <tr>
             <td><img class="traineeImage" src="\images\no-photo.jpg"></td>
             <td>${trainee.id}</td>
