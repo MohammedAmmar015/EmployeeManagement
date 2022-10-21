@@ -24,19 +24,7 @@ import java.util.List;
  **/
 @Repository
 public interface TraineeDao extends JpaRepository<Trainee, Integer> {
-    /*@Query(value = "select te.course, te.batch_number, te.training_period, emp.id, emp.name, emp.address, emp.blood_group, emp.date_of_birth, emp.date_of_join, emp.email_id, emp.mobile_number from trainee te inner join employee as emp on emp.id = te.id " +
-                    "inner join employee_relation er on er.trainee_id = te.id " +
-                    "where er.trainer_id = ?1", nativeQuery = true)
-
-
-     */
-    /*@Query(
-            value = "SELECT te.* from trainee te inner join employee_relation er on er.trainee_id = te.id where er.trainer_id = ?1",
-            nativeQuery = true)*/
     @Query(value = " SELECT te.*, e.address, e.blood_group, e.date_of_birth, e.date_of_join, e.email_id, e.mobile_number, e.name from trainee te inner join employee_relation er on er.trainee_id = te.id inner join employee e on e.id = te.id where er.trainer_id = ?1",
             nativeQuery = true)
-
-    //@Query(value = "SELECT * from Trainee te inner join employee_relation on te.id = trainee_id where trainer_id = ?1", nativeQuery = true)
-    //@Query("select te from Trainee te")
-    public List<Object[]> retreiveTraineesByTrainerId(int id);
+    List<Object[]> retreiveTraineesByTrainerId(int id);
 }
