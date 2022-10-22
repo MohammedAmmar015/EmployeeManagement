@@ -54,8 +54,8 @@ table, th, td {
 }
 
 .traineeTable {
-    width: 90%;
-    margin: 45px;
+    width: 95%;
+    margin: 20px;
     border-radius : 10px;
     text-align: center;
     box-shadow: 5px 5px 20px #380e7a;
@@ -87,4 +87,20 @@ td {
 
 .traineeName {
     color : #264d67;
+}
+
+.btn {
+    background-color : #4234b2;
+    color : white;
+    margin-top: 33px;
+    margin-left: 23px;
+    padding : 10px;
+    text-decoration : none;
+    border-radius : 10px;
+    display: inline-block;
+    box-shadow: 2px 2px 10px #380e7a;
+}
+
+.btn:hover {
+    background-color : #4f3fd1;
 }

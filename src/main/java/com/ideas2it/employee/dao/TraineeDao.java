@@ -5,9 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import javax.persistence.EntityResult;
-import javax.persistence.FieldResult;
-import javax.persistence.SqlResultSetMapping;
 import java.util.List;
 
 
@@ -24,7 +21,6 @@ import java.util.List;
  **/
 @Repository
 public interface TraineeDao extends JpaRepository<Trainee, Integer> {
-    @Query(value = " SELECT te.*, e.address, e.blood_group, e.date_of_birth, e.date_of_join, e.email_id, e.mobile_number, e.name from trainee te inner join employee_relation er on er.trainee_id = te.id inner join employee e on e.id = te.id where er.trainer_id = ?1",
-            nativeQuery = true)
-    List<Object[]> retreiveTraineesByTrainerId(int id);
+    @Query("Select te from Trainee te inner join te.trainers er where er.id = ?1")
+    List<Trainee> retreiveTraineesByTrainerId(int id);
 }

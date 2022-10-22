@@ -126,15 +126,6 @@ public class EmployeeController {
 		return "viewEmployeeInfo";
 	}
 
-	@GetMapping("/getTraineesOfTrainer")
-	public String getTraineesOfTrainer(@RequestParam("id") int trainerId, Model model) {
-		List<TraineeDto> traineesDto = traineeServiceImpl.getTraineesByTrainerId(trainerId);
-		TrainerDto trainerDto = trainerServiceImpl.getTrainerById(trainerId);
-		model.addAttribute("employee", traineesDto);
-		model.addAttribute("trainer", trainerDto);
-		return "viewTraineesOfTrainer";
-	}
-
 	/**
 	 * <p>
 	 *     To delete Trainer details
@@ -164,6 +155,21 @@ public class EmployeeController {
 		modelAndView.addObject("action", "addTrainee");
 		modelAndView.setViewName("addOrUpdateTrainee");
 		return modelAndView;
+	}
+
+	/**
+	 *  This method is used to retreive trainees of Particular Trainer using Trainer Id
+	 * @param trainerId trainer Id to be passed to retreive their trainees
+	 * @param model to hold list of trainees
+	 * @return view Trainees of Trainer page
+	 */
+	@GetMapping("/getTraineesOfTrainer")
+	public String getTraineesOfTrainer(@RequestParam("id") int trainerId, Model model) {
+		List<TraineeDto> traineesDto = traineeServiceImpl.getTraineesByTrainerId(trainerId);
+		TrainerDto trainerDto = trainerServiceImpl.getTrainerById(trainerId);
+		model.addAttribute("employee", traineesDto);
+		model.addAttribute("trainer", trainerDto);
+		return "viewTraineesOfTrainer";
 	}
 
 	/**

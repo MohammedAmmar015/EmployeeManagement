@@ -1,10 +1,8 @@
 package com.ideas2it.employee.service;
 
-import com.ideas2it.employee.constant.Attributes;
 import com.ideas2it.employee.dto.TraineeDto;
 import com.ideas2it.employee.exception.BadRequest;
 import com.ideas2it.employee.exception.TraineeNotFound;
-import com.ideas2it.employee.models.Trainee;
 
 import java.util.List;
 
@@ -64,5 +62,12 @@ public interface TraineeService {
     **/
     boolean removeTraineeById(final int traineeId);
 
+
+    /**
+     *  This method is used to retrieve Trainees of Particular Trainer
+     *  using their Trainer Id
+     * @param trainerId
+     * @return
+     */
     List<TraineeDto> getTraineesByTrainerId(int trainerId);
 }

@@ -20,7 +20,7 @@ import com.ideas2it.employee.dao.TraineeDao;
 import com.ideas2it.employee.dto.TraineeDto;
 import com.ideas2it.employee.exception.BadRequest;
 import com.ideas2it.employee.exception.TraineeNotFound;
-import com.ideas2it.employee.helper.TrainerHelper;
+import com.ideas2it.employee.helper.EmployeeHelper;
 import com.ideas2it.employee.mapper.TraineeMapper;
 import com.ideas2it.employee.models.Qualification;
 import com.ideas2it.employee.models.Role;
@@ -44,7 +44,7 @@ import java.util.Set;
 public class TraineeServiceImpl implements TraineeService {
     private Logger logger = LogManager.getLogger(TraineeServiceImpl.class);
 
-    private TrainerHelper trainerHelper;
+    private EmployeeHelper trainerHelper;
     private TraineeDao traineeDao;
     private QualificationDao qualificationDao;
     private RoleDao roleDao;
@@ -53,7 +53,7 @@ public class TraineeServiceImpl implements TraineeService {
     public TraineeServiceImpl(TraineeDao traineeDao,
                               QualificationDao qualificationDao,
                               RoleDao roleDao,
-                              TrainerHelper trainerHelper) {
+                              EmployeeHelper trainerHelper) {
         this.traineeDao = traineeDao;
         this.qualificationDao = qualificationDao;
         this.roleDao = roleDao;
@@ -186,15 +186,19 @@ public class TraineeServiceImpl implements TraineeService {
         return true;
     }
 
+    /**
+     *  This method is used to retrieve Trainees of Particular Trainer
+     *  by using Trainer Id
+     * @param trainerId
+     * @return traineeDtos
+     */
     @Override
     public List<TraineeDto> getTraineesByTrainerId(int trainerId) {
-        List<Object[]> trainees = traineeDao.retreiveTraineesByTrainerId(trainerId);
-        logger.error(trainees);
+        List<Trainee> trainees = traineeDao.retreiveTraineesByTrainerId(trainerId);
         List<TraineeDto> traineeDtos = new ArrayList<>();
-        for (Object[] objects: trainees) {
-            traineeDtos.add(TraineeMapper.convertObjectToTraineeDto(objects));
+        for (Trainee trainee: trainees) {
+            traineeDtos.add(TraineeMapper.convertTraineeToTraineeDto(trainee));
         }
-        logger.error(traineeDtos);
         return traineeDtos;
     }
 }

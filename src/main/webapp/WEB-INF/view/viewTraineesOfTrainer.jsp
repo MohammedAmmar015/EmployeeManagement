@@ -9,8 +9,11 @@
 </head>
 <body>
 <div class="container">
+    <a class="back btn" href="getTrainerById?id=${trainer.id}" >
+      Back
+    </a>
     <table class="traineeTable">
-        <tr>
+         <tr>
             <td class="tableHead" colspan="6">
                 <ul>
                     <li>

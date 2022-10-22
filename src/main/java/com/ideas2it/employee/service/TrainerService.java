@@ -1,10 +1,8 @@
 package com.ideas2it.employee.service;
 
-import com.ideas2it.employee.constant.Attributes;
 import com.ideas2it.employee.dto.TrainerDto;
 import com.ideas2it.employee.exception.BadRequest;
 import com.ideas2it.employee.exception.TrainerNotFound;
-import com.ideas2it.employee.models.Trainer;
 
 import java.util.List;
 
