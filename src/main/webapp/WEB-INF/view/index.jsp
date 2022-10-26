@@ -12,6 +12,9 @@
     <a class="portal" href="viewTrainee">
         <button>Trainee Portal</button>
     </a>
+    <a class="portal logout" href="login?logout">
+        <button>logout</button>
+    </a>
 </div>
 </body>
 </html>

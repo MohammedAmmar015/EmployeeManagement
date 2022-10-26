@@ -21,6 +21,6 @@ import java.util.List;
  **/
 @Repository
 public interface TraineeDao extends JpaRepository<Trainee, Integer> {
-    @Query("Select te from Trainee te inner join te.trainers er where er.id = ?1")
+    @Query("Select te from Trainee te join te.trainers er where er.id = ?1")
     List<Trainee> retreiveTraineesByTrainerId(int id);
 }

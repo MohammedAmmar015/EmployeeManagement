@@ -31,7 +31,7 @@
                 <tr>
                     <td> <%= trainer.getId()%></td>
                     <td> <%= trainer.getName()%></td>
-                    <td><a href="getTrainerById?id=<%= trainer.getId()%>"> <input class="update btn" type="button"
+                    <td><a href="viewTrainerById?id=<%= trainer.getId()%>"> <input class="update btn" type="button"
                                                                                  value="view"></a></td>
                 </tr>
                 <%

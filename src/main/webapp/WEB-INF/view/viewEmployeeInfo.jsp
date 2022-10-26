@@ -27,7 +27,7 @@
         <li class="delete"><a class="btn" href = "delete${employee.roleDto.description}?id=${employee.id}">Delete</a></li>
         <c:if test = "${employee.roleDto.description == 'Trainer'}">
               <li class="viewTrainee">
-                <a class="btn" href="getTraineesOfTrainer?id=${employee.id}">View Trainees</a>
+                <a class="btn" href="viewTraineesOfTrainer?id=${employee.id}">View Trainees</a>
               </li>
         </c:if>
         <li class="back"><a class="btn" href = "view${employee.roleDto.description}">Back</a></li>

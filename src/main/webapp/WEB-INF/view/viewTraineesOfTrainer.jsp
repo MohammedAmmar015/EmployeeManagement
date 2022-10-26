@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="container">
-    <a class="back btn" href="getTrainerById?id=${trainer.id}" >
+    <a class="back btn" href="viewTrainerById?id=${trainer.id}" >
       Back
     </a>
     <table class="traineeTable">

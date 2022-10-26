@@ -7,6 +7,10 @@ import com.ideas2it.employee.service.TrainerService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -28,6 +32,22 @@ public class EmployeeController {
 							  TraineeService traineeServiceImpl) {
 		this.trainerServiceImpl = trainerServiceImpl;
 		this.traineeServiceImpl = traineeServiceImpl;
+	}
+
+	@RequestMapping("/loginPage")
+	public String showLoginPage() {
+		return "loginPage";
+	}
+
+	@RequestMapping("/login")
+	public String login(Model model, String error, String logout) {
+		if (error != null)
+			model.addAttribute("errorMsg", "Your username and password are invalid.");
+
+		if (logout != null)
+			model.addAttribute("msg", "You have been logged out successfully.");
+
+		return "loginPage";
 	}
 
 	/**
@@ -119,7 +139,7 @@ public class EmployeeController {
 	 * @param model
 	 * @return
 	 */
-	@GetMapping("/getTrainerById")
+	@GetMapping("/viewTrainerById")
 	public String getTrainerById(@RequestParam("id") int trainerId, Model model) {
 		TrainerDto trainerDto = trainerServiceImpl.getTrainerById(trainerId);
 		model.addAttribute("employee", trainerDto);
@@ -163,7 +183,7 @@ public class EmployeeController {
 	 * @param model to hold list of trainees
 	 * @return view Trainees of Trainer page
 	 */
-	@GetMapping("/getTraineesOfTrainer")
+	@GetMapping("/viewTraineesOfTrainer")
 	public String getTraineesOfTrainer(@RequestParam("id") int trainerId, Model model) {
 		List<TraineeDto> traineesDto = traineeServiceImpl.getTraineesByTrainerId(trainerId);
 		TrainerDto trainerDto = trainerServiceImpl.getTrainerById(trainerId);
@@ -239,7 +259,7 @@ public class EmployeeController {
 	 * @param model
 	 * @return
 	 */
-	@GetMapping("/getTraineeById")
+	@GetMapping("/viewTraineeById")
 	public String getTraineeById(@RequestParam("id") int traineeId, Model model) {
 		logger.info("Entered getTraineeById() method");
 		TraineeDto traineeDto = traineeServiceImpl.getTraineeById(traineeId);
