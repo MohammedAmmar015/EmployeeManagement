@@ -8,9 +8,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContext;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -32,22 +29,6 @@ public class EmployeeController {
 							  TraineeService traineeServiceImpl) {
 		this.trainerServiceImpl = trainerServiceImpl;
 		this.traineeServiceImpl = traineeServiceImpl;
-	}
-
-	@RequestMapping("/loginPage")
-	public String showLoginPage() {
-		return "loginPage";
-	}
-
-	@RequestMapping("/login")
-	public String login(Model model, String error, String logout) {
-		if (error != null)
-			model.addAttribute("errorMsg", "Your username and password are invalid.");
-
-		if (logout != null)
-			model.addAttribute("msg", "You have been logged out successfully.");
-
-		return "loginPage";
 	}
 
 	/**
@@ -97,7 +78,7 @@ public class EmployeeController {
 		} catch (Exception exception) {
 			redirectAttributes.addFlashAttribute("msg", exception.getMessage());
 		}
-		return "redirect:/getTrainerById?id=" + savedTrainerId ;
+		return "redirect:/viewTrainerById?id=" + savedTrainerId ;
 	}
 
 	/**
@@ -107,11 +88,12 @@ public class EmployeeController {
 	 * @return
 	 */
 	@GetMapping( value = "/viewTrainer")
-	public ModelAndView viewTrainer() {
+	public ModelAndView viewTrainer(Authentication authentication) {
 		logger.info("Entered viewTrainer() method");
 		List<TrainerDto> trainersDto = trainerServiceImpl.getTrainers();
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject("trainersDto", trainersDto);
+		modelAndView.addObject("authority", authentication.getAuthorities().iterator().next().getAuthority());
 		modelAndView.setViewName("viewTrainer");
 		return modelAndView;
 	}
@@ -140,9 +122,10 @@ public class EmployeeController {
 	 * @return
 	 */
 	@GetMapping("/viewTrainerById")
-	public String getTrainerById(@RequestParam("id") int trainerId, Model model) {
+	public String getTrainerById(@RequestParam("id") int trainerId, Model model, Authentication authentication) {
 		TrainerDto trainerDto = trainerServiceImpl.getTrainerById(trainerId);
 		model.addAttribute("employee", trainerDto);
+		model.addAttribute("authority", authentication.getAuthorities().iterator().next().getAuthority());
 		return "viewEmployeeInfo";
 	}
 
@@ -215,7 +198,7 @@ public class EmployeeController {
 		} catch (Exception exception) {
 			redirectAttributes.addFlashAttribute("msg", exception.getMessage());
 		}
-		return "redirect:/getTraineeById?id=" + savedTraineeId;
+		return "redirect:/viewTraineeById?id=" + savedTraineeId;
 	}
 
 	/**
@@ -225,11 +208,12 @@ public class EmployeeController {
 	 * @return
 	 */
 	@GetMapping( value = "/viewTrainee")
-	public ModelAndView viewTrainee() {
+	public ModelAndView viewTrainee(Authentication authentication) {
 		logger.info("Entered viewTrainee() method");
 		List<TraineeDto> traineesDto = traineeServiceImpl.getTrainees();
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject("traineesDto", traineesDto);
+		modelAndView.addObject("authority", authentication.getAuthorities().iterator().next().getAuthority());
 		modelAndView.setViewName("viewTrainee");
 		return modelAndView;
 	}
@@ -260,10 +244,11 @@ public class EmployeeController {
 	 * @return
 	 */
 	@GetMapping("/viewTraineeById")
-	public String getTraineeById(@RequestParam("id") int traineeId, Model model) {
+	public String getTraineeById(@RequestParam("id") int traineeId, Model model, Authentication authentication ) {
 		logger.info("Entered getTraineeById() method");
 		TraineeDto traineeDto = traineeServiceImpl.getTraineeById(traineeId);
 		model.addAttribute("employee", traineeDto);
+		model.addAttribute("authority", authentication.getAuthorities().iterator().next().getAuthority());
 		return "viewEmployeeInfo";
 	}
 

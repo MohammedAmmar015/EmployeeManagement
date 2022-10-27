@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trainer</title>
   <link rel="stylesheet" href="/css/viewStyle.css" >
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <div class="container">
@@ -18,16 +19,18 @@
     </div>
     <div class="details">
       <ul>
-        <li><img class="icon" src="images\phone-solid.svg"/>${employee.mobileNumber}</li>
-        <li><img class="icon" src="images\calendar-days-solid.svg"/>${employee.dateOfBirth}</li>
-        <li><img class="icon" src="images\user-graduate-solid.svg"/>${employee.qualificationDto.description}</li>
-        <li><img class="icon" src="images\envelope-solid.svg"/>${employee.email}</li>
-        <li><img class="icon" src="images\location-dot-solid.svg"/>${employee.address}</li>
-        <li class="update"><a class="btn" href = "update${employee.roleDto.description}?id=${employee.id}">Update</a></li>
-        <li class="delete"><a class="btn" href = "delete${employee.roleDto.description}?id=${employee.id}">Delete</a></li>
-        <c:if test = "${employee.roleDto.description == 'Trainer'}">
+        <li><i class="fa fa-phone"></i>${employee.mobileNumber}</li>
+        <li><i class="fa fa-calendar" ></i></i>${employee.dateOfBirth}</li>
+        <li><i class="fa fa-graduation-cap" ></i>${employee.qualificationDto.description}</li>
+        <li><i class="fa fa-envelope"></i>${employee.email}</li>
+        <li><i class="fa fa-map-marker" ></i>${employee.address}</li>
+        <c:if test = "${authority == 'ROLE_ADMIN'}">
+             <li class="update"><a class="btn" href = "update${employee.roleDto.description}?id=${employee.id}">Update</a></li>
+             <li class="delete"><a class="btn" href = "delete${employee.roleDto.description}?id=${employee.id}">Delete</a></li>
+        </c:if>
+         <c:if test = "${employee.roleDto.description == 'Trainer'}">
               <li class="viewTrainee">
-                <a class="btn" href="viewTraineesOfTrainer?id=${employee.id}">View Trainees</a>
+                <a class="btn" href="viewTraineesOfTrainer?id=${employee.id}">Trainees</a>
               </li>
         </c:if>
         <li class="back"><a class="btn" href = "view${employee.roleDto.description}">Back</a></li>
@@ -48,27 +51,27 @@
           <td class="row1 float"><p class="mode">Full Time</p></td>
         </tr>
         <tr>
-          <td><img class="icon location" src="images\building-solid.svg"/>Apple Inc</td>
-          <td><img class="icon location" src="images\location-dot-solid.svg"/>Los Angeles</td>
-          <td class="float"><img class="icon location" src="images\calendar-days-solid.svg"/>12 April 2022</td>
+          <td><i class="fa fa-building"></i>Apple Inc</td>
+          <td><i class="fa fa-map-marker" >Los Angeles</td>
+          <td class="float"><i class="fa fa-calendar" ></i>12 April 2022</td>
         </tr>
         <tr>
           <td class="row1 roleHead" colspan="2">Junior Front End Developer</td>
           <td class="row1 float"><p class="mode">Full Time</p></td>
         </tr>
         <tr>
-          <td><img class="icon location" src="images\building-solid.svg"/>Figma</td>
-          <td><img class="icon location" src="images\location-dot-solid.svg"/>San Francisco</td>
-          <td class="float"><img class="icon location" src="images\calendar-days-solid.svg"/>12 April 2020 - 10 May 2021</td>
+          <td><i class="fa fa-building"></i>Figma</td>
+          <td><i class="fa fa-map-marker" >San Francisco</td>
+          <td class="float"><i class="fa fa-calendar" ></i>12 April 2020 - 10 May 2021</td>
         </tr>
         <tr>
           <td class="row1 roleHead" colspan="2">Intern Developer</td>
           <td class="row1 float"><p class="mode">Full Time</p></td>
         </tr>
         <tr>
-          <td><img class="icon location" src="images\building-solid.svg"/>Microsoft</td>
-          <td><img class="icon location" src="images\location-dot-solid.svg"/>New York City</td>
-          <td class="float"><img class="icon location" src="images\calendar-days-solid.svg"/>17 April 2017 - 19 July 2018</td>
+          <td><i class="fa fa-building"></i>Microsoft</td>
+          <td><i class="fa fa-map-marker" >   New York City</td>
+          <td class="float"><i class="fa fa-calendar" ></i>17 April 2017 - 19 July 2018</td>
         </tr>
       </table></br>
     </div>
@@ -79,15 +82,15 @@
           <td class="row1 roleHead" colspan="2">Masters in Software Engineering</td>
         </tr>
         <tr>
-          <td><img class="icon location" src="images\graduation-cap-solid.svg"/>Manchester Institute of Technology</td>
-          <td class="float"><img class="icon location" src="images\calendar-days-solid.svg"/>12 April 2020 - 10 May 2021</td>
+          <td><i class="fa fa-graduation-cap"></i>Manchester Institute of Technology</td>
+          <td class="float"><i class="fa fa-calendar" ></i>12 April 2020 - 10 May 2021</td>
         </tr>
         <tr>
           <td class="row1 roleHead" colspan="2">Bachelor in Software Engineering</td>
         </tr>
         <tr>
-          <td><img class="icon location" src="images\graduation-cap-solid.svg"/>Manchester Institute of Technology</td>
-          <td class="float"><img class="icon location" src="images\calendar-days-solid.svg"/>12 April 2020 - 10 May 2021</td>
+          <td><i class="fa fa-graduation-cap"></i>Manchester Institute of Technology</td>
+          <td class="float"><i class="fa fa-calendar" ></i></i>12 April 2020 - 10 May 2021</td>
         </tr>
       </table></br>
     </div>

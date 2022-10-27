@@ -5,44 +5,38 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 @EnableWebSecurity
-public class SecurityConfiguration {
+public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     private Logger logger = LogManager.getLogger(SecurityConfiguration.class);
     @Autowired
     private UserDetailsService customUserDetailService;
 
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        logger.info("1st configure - auth");
+        auth
+                .userDetailsService(customUserDetailService)
+                .passwordEncoder(passwordEncoder());
+    }
 
-    @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        logger.info("2st configure - author");
         http
                 .authorizeRequests()
                 .antMatchers("/", "/view*").hasAnyRole("USER", "ADMIN")
                 .antMatchers("/*Form", "/addOrUpdate*").hasRole("ADMIN")
                 .and()
-                .formLogin()
-                .loginPage("/login")
-                .permitAll()
-                .defaultSuccessUrl("/");
-
-        http.authenticationProvider(daoAuthenticationProvider());
-        return http.build();
-    }
-
-    @Bean
-    public DaoAuthenticationProvider daoAuthenticationProvider() {
-        DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
-        provider.setUserDetailsService(customUserDetailService);
-        provider.setPasswordEncoder(passwordEncoder());
-        return provider;
+                .formLogin();
     }
 
     @Bean

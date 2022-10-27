@@ -58,7 +58,7 @@ li {
     list-style-type: none;
     padding-top: 20px;
     margin: 0;
-    border-bottom: 2px solid grey;
+    border-bottom: 2px solid lightgrey;
     width: 230px;
 }
 
@@ -139,6 +139,9 @@ li a {
     background-color : #5b92c0;
 }
 
+.fa {
+    margin-right : 5px;
+}
 
 @media screen and (max-width: 800px) {
     .right, .left {

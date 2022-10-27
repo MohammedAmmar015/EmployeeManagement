@@ -1,3 +1,4 @@
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <%@ page import = "java.util.List"
          import = "java.util.ArrayList"
          import = "com.ideas2it.employee.dto.TraineeDto"
@@ -41,7 +42,9 @@
             </table>
     </div>
     </br></br>
-    <a href="\traineeForm"> <input class="add btn" type="button" value="Add Trainee"></a>
+     <c:if test = "${authority == 'ROLE_ADMIN'}">
+           <a href="\traineeForm"> <input class="add btn" type="button" value="Add Trainee"></a>
+     </c:if>
     <a href="/"> <input class="back btn" type="button" value="Back"></a>
 </div>
 </body>
