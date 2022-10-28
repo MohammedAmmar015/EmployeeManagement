@@ -18,7 +18,7 @@
       <p class ="department"> ${employee.roleDto.description} </p>
     </div>
     <div class="details">
-      <ul>
+      <ul class="listDetails">
         <li><i class="fa fa-phone"></i>${employee.mobileNumber}</li>
         <li><i class="fa fa-calendar" ></i></i>${employee.dateOfBirth}</li>
         <li><i class="fa fa-graduation-cap" ></i>${employee.qualificationDto.description}</li>

@@ -10,7 +10,10 @@
 package com.ideas2it.employee.models;
 
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
+import javax.persistence.PrimaryKeyJoinColumn;
 import java.time.LocalDate;
 import java.util.Set;
 

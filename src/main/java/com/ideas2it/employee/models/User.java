@@ -1,7 +1,5 @@
 package com.ideas2it.employee.models;
 
-import org.springframework.security.core.userdetails.UserDetails;
-
 import javax.persistence.*;
 
 @Entity
